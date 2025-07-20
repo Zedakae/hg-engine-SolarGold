@@ -7968,7 +7968,7 @@ trainerdata 184, "Krise"
         move MOVE_DRAINING_KISS
         move MOVE_MOONLIGHT
         move MOVE_GIGA_DRAIN
-        ability ABILITY_
+        ability ABILITY_CHLOROPHYLL
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_HASTY
