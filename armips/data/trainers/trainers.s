@@ -20152,8 +20152,8 @@ trainerdata 508, "Lt. Surge"
         ivs 120
         abilityslot 0
         level 29
-        pokemon SPECIES_LAIRON
-        item ITEM_LEFTOVERS
+        pokemon SPECIES_LANTURN
+        item ITEM_TERRAIN_EXTENDER
         move MOVE_DISCHARGE
         move MOVE_PROTECT
         move MOVE_SCALD
@@ -20192,7 +20192,7 @@ trainerdata 508, "Lt. Surge"
         move MOVE_SURF
         move MOVE_THUNDERBOLT
         move MOVE_PSYCHIC
-        ability ABILITY_LEVITATE
+        ability ABILITY_SURGE_SURFER
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_MODEST
