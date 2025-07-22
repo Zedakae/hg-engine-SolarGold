@@ -307,10 +307,10 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
 		pow = pow * 31 /255;
 		#ifdef IMPLEMENT_LEVEL_CAP
 		u32 levelCap = 0;
-		if (bp->trainer_id[1] == 506 || bp->trainer_id[1] == 1 || bp->trainer_id[1] == 266 || bp->trainer_id[1] == 269) // trainer numbers and add "|| bp->trainer_id[1] == trainer#ID" and for doubles this example >> "bp->trainer[2] == lance#ID"
+		if (bp->trainer_id[1] == 506 || bp->trainer_id[1] == 508 || bp->trainer_id[1] == 1 || bp->trainer_id[1] == 266 || bp->trainer_id[1] == 269) // trainer numbers and add "|| bp->trainer_id[1] == trainer#ID" and for doubles this example >> "bp->trainer[2] == lance#ID"
 		{
 			levelCap = GetScriptVar(LEVEL_CAP_VARIABLE); level = levelCap -1;
-		} else if (bp->trainer_id[1] == 508) // trainer numbers and add "|| bp->trainer_id[1] == trainer#ID"
+		} else if (bp->trainer_id[1] == 737) // trainer numbers and add "|| bp->trainer_id[1] == trainer#ID"
 		{
 			levelCap = GetScriptVar(LEVEL_CAP_VARIABLE); level = levelCap;
 		}

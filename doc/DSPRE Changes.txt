@@ -8,13 +8,11 @@
 
 CURRENTLY WORKING ON:
 
-WHITNEY SPLIT: ROUTE 34 "TRAINERS WITH TEXT ENTRIES" // ROUTE 35 "TRAINERS WITH TEXT ENTRIES"
-// ROUTE 36 "TRAINERS WITH TEXT ENTRIES //
+ALL FIGHTS UP TO NATIONAL PARK = COMPLETED
 
-PLAYTEST TEAMS 105/GUITARIST, 106/PSYCHIC & SUPERNERD RICHARD/40 TRAINERS IN ILEX FOREST,
-CHECK TEXT ENTRIES IN GAME ETC ETC. 
+REMAINING TRAINER FIGHTS ARE WHITNEY'S GYM AND LT. SURGE OPTIONAL FIGHT IN NATIONAL PARK.
 
-ADD TRAINER TEXT TO FIGHTS trainerdata 63, 87 And 88. FINALIZE/TEAMBUILD THERE TEAMS ALSO.
+NEED TO FINISH TEAMBUILDING/COOKING LT.SURGE FIGHT WHICH IS FIGHT 508 IN DOCUMENTATION/TRAINERS.S
 
 \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 
@@ -33,6 +31,8 @@ ADDED HARD LEVEL CAPS
 6) Level 24 @ Proton Team Rocket
 
 7) Level 27 @ Bugsy Gym Leader
+
+8) Level 30 @ Trigger Tile Upon Entering Goldenrod City
 
 \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 
