@@ -20135,10 +20135,10 @@ trainerdata 507, "Chad"
         ballseal 0
     endparty
 
-trainerdata 508, "Mickey"
+trainerdata 508, "Lt. Surge"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
-    trainerclass TRAINERCLASS_SAILOR
-    nummons 5
+    trainerclass TRAINERCLASS_LEADER_LT_SURGE
+    nummons 6
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -20151,85 +20151,102 @@ trainerdata 508, "Mickey"
         // mon 0
         ivs 120
         abilityslot 0
-        level 24
-        pokemon SPECIES_PELIPPER
-        item ITEM_FOCUS_SASH
-        move MOVE_AIR_CUTTER
-        move MOVE_ICY_WIND
-        move MOVE_WATER_PULSE
-        move MOVE_U_TURN
-        ability ABILITY_DRIZZLE
-        setivs 20, 20, 20, 20, 20, 20
+        level 29
+        pokemon SPECIES_LAIRON
+        item ITEM_LEFTOVERS
+        move MOVE_DISCHARGE
+        move MOVE_PROTECT
+        move MOVE_SCALD
+        move MOVE_SIGNAL_BEAM
+        ability ABILITY_ELECTRIC_SURGE
+        setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_CALM
         additionalflags 0
         ballseal 0
 
         // mon 1
-        ivs 120
+        ivs 186
         abilityslot 0
-        level 24
-        pokemon SPECIES_SEADRA
-        item ITEM_EXPERT_BELT
-        move MOVE_DRAGON_BREATH
-        move MOVE_AURORA_BEAM
-        move MOVE_BUBBLE_BEAM
-        move MOVE_CLEAR_SMOG
-        ability ABILITY_POISON_POINT
-        setivs 20, 20, 20, 20, 20, 20
+        level 29
+        pokemon SPECIES_ZEBSTRIKA
+        item ITEM_ELECTRIC_SEED
+        move MOVE_TRAILBLAZE
+        move MOVE_WILD_CHARGE
+        move MOVE_FLAME_CHARGE
+        move MOVE_BATON_PASS
+        ability ABILITY_SAP_SIPPER
+        setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_HASTY
+        nature NATURE_ADAMANT
         additionalflags 0
         ballseal 0
 
         // mon 2
-        ivs 120
+        ivs 186
         abilityslot 0
-        level 24
-        pokemon SPECIES_LOMBRE
-        item ITEM_EVIOLITE
+        level 29
+        monwithform SPECIES_RAICHU, 1
+        item ITEM_EXPERT_BELT
         move MOVE_FAKE_OUT
-        move MOVE_KNOCK_OFF
-        move MOVE_MEGA_DRAIN
-        move MOVE_BUBBLE_BEAM
-        ability ABILITY_SWIFT_SWIM
-        setivs 20, 20, 20, 20, 20, 20
+        move MOVE_SURF
+        move MOVE_THUNDERBOLT
+        move MOVE_PSYCHIC
+        ability ABILITY_LEVITATE
+        setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_LONELY
+        nature NATURE_MODEST
         additionalflags 0
         ballseal 0
 		
 		// mon 3
-        ivs 120
+        ivs 186
         abilityslot 0
-        level 24
-        pokemon SPECIES_QUAGSIRE
-        item ITEM_LEFTOVERS
-        move MOVE_SLAM
-        move MOVE_BULLDOZE
-        move MOVE_ICE_PUNCH
-        move MOVE_YAWN
-        ability ABILITY_WATER_ABSORB
-        setivs 20, 20, 20, 20, 20, 20
+        level 29
+        pokemon SPECIES_ELECTABUZZ
+        item ITEM_EVIOLITE
+        move MOVE_BRICK_BREAK
+        move MOVE_KNOCK_OFF
+        move MOVE_BULK_UP
+        move MOVE_THUNDER_PUNCH
+        ability ABILITY_STATIC
+        setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_IMPISH
         additionalflags 0
         ballseal 0
 		
 		// mon 4
-        ivs 120
+        ivs 186
         abilityslot 0
-        level 24
-        pokemon SPECIES_AZUMARILL
-        item ITEM_SITRUS_BERRY
-        move MOVE_AQUA_TAIL
-        move MOVE_BOUNCE
-        move MOVE_SLAM
-        move MOVE_COVET
-        ability ABILITY_HUGE_POWER
-        setivs 20, 20, 20, 20, 20, 20
+        level 29
+        pokemon SPECIES_TOXTRICITY
+        item ITEM_AIR_BALLOON
+        move MOVE_POISON_JAB
+        move MOVE_SCREECH
+        move MOVE_THUNDER_PUNCH
+        move MOVE_DRAIN_PUNCH
+        ability ABILITY_PUNK_ROCK
+        setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_BASHFUL
+        nature NATURE_JOLLY
+        additionalflags 0
+        ballseal 0
+
+        // mon 5
+        ivs 186
+        abilityslot 0
+        level 29
+        pokemon SPECIES_VIKAVOLT
+        item ITEM_SITRUS_BERRY
+        move MOVE_BUG_BUZZ
+        move MOVE_CHARGE_BEAM
+        move MOVE_MUD_SHOT
+        move MOVE_VOLT_SWITCH
+        ability ABILITY_LEVITATE
+        setivs 31, 31, 31, 31, 31, 31
+        setevs 0, 0, 0, 0, 0, 0
+        nature NATURE_RELAXED
         additionalflags 0
         ballseal 0
     endparty
