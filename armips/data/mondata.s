@@ -23455,7 +23455,7 @@ mondata SPECIES_RAICHU_ALOLAN, "-----"
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FAIRY
-    abilities ABILITY_SURGE_SURFER, ABILITY_LEVITATE
+    abilities ABILITY_SURGE_SURFER, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
 
