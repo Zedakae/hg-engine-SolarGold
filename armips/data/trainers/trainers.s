@@ -20155,7 +20155,7 @@ trainerdata 508, "Lt. Surge"
         pokemon SPECIES_LANTURN
         item ITEM_TERRAIN_EXTENDER
         move MOVE_DISCHARGE
-        move MOVE_PROTECT
+        move MOVE_CHARGE
         move MOVE_SCALD
         move MOVE_SIGNAL_BEAM
         ability ABILITY_ELECTRIC_SURGE
@@ -20191,7 +20191,7 @@ trainerdata 508, "Lt. Surge"
         move MOVE_FAKE_OUT
         move MOVE_SURF
         move MOVE_THUNDERBOLT
-        move MOVE_PSYCHIC
+        move MOVE_PSYCHIC_NOISE
         ability ABILITY_SURGE_SURFER
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
