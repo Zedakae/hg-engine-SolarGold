@@ -1675,40 +1675,118 @@ trainerdata 29, "Rod"
     endparty
 
 trainerdata 30, "Whitney"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_LEADER_WHITNEY
-    nummons 2
-    item ITEM_SUPER_POTION
-    item ITEM_SUPER_POTION
+    nummons 6
     item ITEM_NONE
     item ITEM_NONE
-    aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_EVALUATE_ATTACKS | F_EXPERT_ATTACKS | 0
-    battletype SINGLE_BATTLE
+    item ITEM_NONE
+    item ITEM_NONE
+    aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_PRIORITIZE_DAMAGE | F_EXPERT_ATTACKS | F_EVALUATE_ATTACKS | 0
+    battletype DOUBLE_BATTLE
     endentry
 
     party 30
         // mon 0
-        ivs 100
+        ivs 120
         abilityslot 0
-        level 17
-        pokemon SPECIES_CLEFAIRY
-        item ITEM_NONE
-        move MOVE_DOUBLE_SLAP
-        move MOVE_MIMIC
-        move MOVE_ENCORE
-        move MOVE_METRONOME
+        level 29
+        monwithform SPECIES_WEEZING, 1
+        item ITEM_EJECT_BUTTON
+        move MOVE_MISTY_EXPLOSION
+        move MOVE_SLUDGE_BOMB
+        move MOVE_STRANGE_STEAM
+        move MOVE_POISON_GAS
+        ability ABILITY_MISTY_SURGE
+        setivs 31, 31, 31, 31, 31, 31
+        setevs 0, 0, 0, 0, 0, 0
+        nature NATURE_SASSY
+        additionalflags 0
         ballseal 0
 
         // mon 1
-        ivs 100
-        abilityslot 32
-        level 19
+        ivs 120
+        abilityslot 0
+        level 29
+        pokemon SPECIES_DELCATTY
+        item ITEM_SITRUS_BERRY
+        move MOVE_FAKE_OUT
+        move MOVE_PLAY_ROUGH
+        move MOVE_HELPING_HAND
+        move MOVE_PROTECT
+        ability ABILITY_FRIEND_GUARD
+        setivs 31, 31, 31, 31, 31, 31
+        setevs 0, 0, 0, 0, 0, 0
+        nature NATURE_QUIRKY
+        additionalflags 0
+        ballseal 0
+
+        // mon 2
+        ivs 120
+        abilityslot 0
+        level 29
+        pokemon SPECIES_TINKATON
+        item ITEM_AIR_BALLOON
+        move MOVE_PLAY_ROUGH
+        move MOVE_METAL_CLAW
+        move MOVE_FAKE_OUT
+        move MOVE_KNOCK_OFF
+        ability ABILITY_
+        setivs 31, 31, 31, 31, 31, 31
+        setevs 0, 0, 0, 0, 0, 0
+        nature NATURE_IMPISH
+        additionalflags 0
+        ballseal 0
+
+        // mon 3
+        ivs 120
+        abilityslot 0
+        level 30
+        pokemon SPECIES_UNFEZANT
+        item ITEM_MISTY_SEED
+        move MOVE_DRAINING_KISS
+        move MOVE_AIR_CUTTER
+        move MOVE_ROOST
+        move MOVE_FEATHER_DANCE
+        ability ABILITY_TRIAGE
+        setivs 31, 31, 31, 31, 31, 31
+        setevs 0, 0, 0, 0, 0, 0
+        nature NATURE_QUIET
+        additionalflags 0
+        ballseal 0
+
+        // mon 4
+        ivs 120
+        abilityslot 0
+        level 30
+        pokemon SPECIES_LOPUNNY
+        item ITEM_FOCUS_SASH
+        move MOVE_HEADBUTT
+        move MOVE_BATON_PASS
+        move MOVE_DRAIN_PUNCH
+        move MOVE_AGILITY
+        ability ABILITY_LIMBER
+        setivs 31, 31, 31, 31, 31, 31
+        setevs 0, 0, 0, 0, 0, 0
+        nature NATURE_LONELY
+        additionalflags 0
+        ballseal 0
+
+        // mon 5
+        ivs 120
+        abilityslot 0
+        level 30
         pokemon SPECIES_MILTANK
-        item ITEM_LUM_BERRY
-        move MOVE_ROLLOUT
-        move MOVE_ATTRACT
-        move MOVE_STOMP
+        item ITEM_LEFTOVERS
         move MOVE_MILK_DRINK
+        move MOVE_ICE_PUNCH
+        move MOVE_ZEN_HEADBUTT
+        move MOVE_BODY_SLAM
+        ability ABILITY_THICK_FAT
+        setivs 31, 31, 31, 31, 31, 31
+        setevs 0, 0, 0, 0, 0, 0
+        nature NATURE_ADAMANT
+        additionalflags 0
         ballseal 0
     endparty
 

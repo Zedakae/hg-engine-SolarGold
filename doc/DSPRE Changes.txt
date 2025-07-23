@@ -1157,3 +1157,23 @@ Message 6: Wow… okay, color me impressed.\nYou really held your own.\rFine! Ta
 Message 7: Not bad, newbie.\nThat was kinda fun!\rCatch you later, maybe next time I\nwon’t go easy on you…!
 
 \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+RANDOM GIVE POKEMON SCRIPT TO RE-USE
+
+FORMAT FOR GIVEPOKEMON IS 156 = POKEMON ID, 100 = THEIR LEVEL, 267 = THEIR HELD ITEM,
+0 = THEIR FORM AND 91 = THE ABILITY NUMBER # YOU PICK FROM THE LIST.
+
+Script 29:
+	LockAll 
+	SetVar 0x416F 30
+	Message 96
+	GivePokemon 156 100 267 0 91 0x800C
+	GivePokemon 28 100 266 0 181 0x800C
+	GivePokemon 195 100 187 0 11 0x800C
+	GivePokemon 286 100 272 0 90 0x800C
+	GivePokemon 323 100 237 0 125 0x800C
+	GivePokemon 880 100 155 0 238 0x800C
+	WaitButton 
+	CloseMessage 
+	ReleaseAll 
+End
