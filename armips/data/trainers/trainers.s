@@ -1725,16 +1725,16 @@ trainerdata 30, "Whitney"
         ivs 120
         abilityslot 0
         level 29
-        pokemon SPECIES_TINKATON
-        item ITEM_AIR_BALLOON
-        move MOVE_PLAY_ROUGH
-        move MOVE_METAL_CLAW
-        move MOVE_FAKE_OUT
-        move MOVE_KNOCK_OFF
-        ability ABILITY_
+        pokemon SPECIES_LOPUNNY
+        item ITEM_FOCUS_SASH
+        move MOVE_HEADBUTT
+        move MOVE_BATON_PASS
+        move MOVE_DRAIN_PUNCH
+        move MOVE_AGILITY
+        ability ABILITY_LIMBER
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_IMPISH
+        nature NATURE_LONELY
         additionalflags 0
         ballseal 0
 
@@ -1759,16 +1759,16 @@ trainerdata 30, "Whitney"
         ivs 120
         abilityslot 0
         level 30
-        pokemon SPECIES_LOPUNNY
-        item ITEM_FOCUS_SASH
-        move MOVE_HEADBUTT
-        move MOVE_BATON_PASS
-        move MOVE_DRAIN_PUNCH
-        move MOVE_AGILITY
-        ability ABILITY_LIMBER
+        pokemon SPECIES_TINKATON
+        item ITEM_AIR_BALLOON
+        move MOVE_PLAY_ROUGH
+        move MOVE_METAL_CLAW
+        move MOVE_FAKE_OUT
+        move MOVE_KNOCK_OFF
+        ability ABILITY_MOLD_BREAKER
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_LONELY
+        nature NATURE_IMPISH
         additionalflags 0
         ballseal 0
 
@@ -28987,4 +28987,4 @@ trainerdata 737, "Silver"
         move MOVE_SHADOW_BALL
         move MOVE_CONFUSE_RAY
         ballseal 0
-    endparty    
+    endparty      
