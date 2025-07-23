@@ -20187,15 +20187,15 @@ trainerdata 508, "Lt. Surge"
         abilityslot 0
         level 29
         monwithform SPECIES_RAICHU, 1
-        item ITEM_EXPERT_BELT
+        item ITEM_FOCUS_SASH
         move MOVE_FAKE_OUT
         move MOVE_SURF
         move MOVE_THUNDERBOLT
-        move MOVE_PSYCHIC_NOISE
+        move MOVE_PSYCHIC
         ability ABILITY_SURGE_SURFER
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_MODEST
+        nature NATURE_BOLD
         additionalflags 0
         ballseal 0
 		
@@ -20212,7 +20212,7 @@ trainerdata 508, "Lt. Surge"
         ability ABILITY_STATIC
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_IMPISH
+        nature NATURE_NAUGHTY
         additionalflags 0
         ballseal 0
 		
