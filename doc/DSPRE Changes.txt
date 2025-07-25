@@ -10,9 +10,9 @@ CURRENTLY WORKING ON:
 
 ALL FIGHTS UP TO NATIONAL PARK = COMPLETED
 
-REMAINING TRAINER FIGHTS ARE WHITNEY'S GYM AND LT. SURGE OPTIONAL FIGHT IN NATIONAL PARK.
+REMAINING TRAINER FIGHTS ARE WHITNEY'S GYM.
 
-NEED TO FINISH TEAMBUILDING/COOKING LT.SURGE FIGHT WHICH IS FIGHT 508 IN DOCUMENTATION/TRAINERS.S
+NEED TO FINISH TEAMBUILDING/COOKING TRAINER 22/BEAUTY CARRIE IN TRAINERS.S
 
 \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 
@@ -1155,6 +1155,135 @@ Message 4: Not ready to make waves, huh?\nFigured…\rCome back when you’ve go
 Message 5: Haha, didn’t think you’d back down!\rAlright, bring it on!\nLet’s see what you’ve got…
 Message 6: Wow… okay, color me impressed.\nYou really held your own.\rFine! Take this Expert Belt.\nYou earned it…
 Message 7: Not bad, newbie.\nThat was kinda fun!\rCatch you later, maybe next time I\nwon’t go easy on you…!
+
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+LT. SURGE INTERACTION/BATTLE (WORKING)
+
+Script 28:
+	PlayFanfare 1500
+	FacePlayer 
+	LockAll 
+	Message 90
+	WaitButton 
+	CloseMessage 
+	Message 91
+	WaitButton 
+	CloseMessage 
+	OpenTouchScreen 
+	YesNoTouchScreen 0x800C
+	CloseTouchScreen 
+	CompareVarValue 0x800C 1
+	JumpIf EQUAL Function#12
+	Message 92
+	WaitButton 
+	CloseMessage 
+	TrainerBattle 508 0 0 0
+	CheckBattleIsLost 0x800C
+	CompareVarValue 0x800C 0
+	JumpIf EQUAL Function#13
+	SetVar 0x8004 595
+	SetVar 0x8005 1
+	Message 93
+	WaitButton 
+	CloseMessage 
+	CommonScript 2008
+	Message 94
+	WaitButton 
+	CloseMessage 
+	FadeScreen 6 1 0 0
+	WaitFadeScreen 
+	RemoveOW Overworld.29
+	PlayFanfare 1538
+	WaitTime 30 0x800C
+	FadeScreen 6 1 1 0
+	WaitFadeScreen 
+	SetFlag 2553
+	ReleaseAll 
+End
+
+Function 12:
+	Message 95
+	WaitButton 
+	CloseMessage 
+	ReleaseAll 
+End 
+
+Function 13:
+	LostBattle 
+End
+
+MESSAGE 90: Power’s everything, rookie.\rYou think you’ve got it?\fProve it in a real fight!\nNo punches pulled… I hit hard.
+
+MESSAGE 91: You talk a big game…\nLet’s see if you’ve got shock value\fto back it up.\rWin, and I’ll toss ya something cool!
+
+MESSAGE 92: A gutsy move… I respect it.\rGet ready, rookie.\fThis ain’t gonna be\na light show… it’s war!
+
+MESSAGE 93: Now THAT was electric!\rYou took the hits and didn’t fry.\rYou’ve earned this Eviolite.\nBoost that hidden power!
+
+MESSAGE 94: Fun scrap, kid.\rYou’re sparkier than I figured.\fNext time I’ll switch to max voltage.\rTill then… stay charged!
+
+MESSAGE 95: Hah… no voltage in your step?\nC’mon, don’t short circuit now.\rSwing back when you’re\nfully charged!
+
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+TRIGGER TILE AT ROUTE 36 FORCING PLAYER TO GO BACK TO RADIO TOWER TO CONTINUE VANILLA STORY
+
+Script 13:
+    PlayFanfare 1500
+    LockAll
+    GetPlayerPosition 0x8004 0x8005
+    CompareVarValue 0x8005 248
+    JumpIf EQUAL Function#36
+    CompareVarValue 0x8005 249
+    JumpIf EQUAL Function#37
+    CompareVarValue 0x8005 250
+    JumpIf EQUAL Function#38    
+End
+
+Function 36:
+    Movement Overworld.5 Action#11
+    WaitMovement
+    Message 19
+    WaitButton
+    CloseMessage
+    Movement Overworld.5 Action#14
+    WaitMovement
+    Release Following
+    SetFollowingPokeMovement 55
+    Movement Player Action#17
+    ReleaseAll
+End
+
+Function 37:
+    Movement Overworld.5 Action#12
+    WaitMovement
+    Message 19
+    WaitButton
+    CloseMessage
+    Movement Overworld.5 Action#15
+    WaitMovement
+    Release Following
+    SetFollowingPokeMovement 55
+    Movement Player Action#17
+    ReleaseAll
+End
+
+Function 38:
+    Movement Overworld.5 Action#13
+    WaitMovement
+    Message 19
+    WaitButton
+    CloseMessage
+    Movement Overworld.5 Action#16
+    WaitMovement
+    Release Following
+    SetFollowingPokeMovement 55
+    Movement Player Action#17
+    ReleaseAll
+End
+
+MESSAGE 19: TEST
 
 \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 

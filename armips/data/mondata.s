@@ -4931,8 +4931,8 @@ mondata SPECIES_PORYGON2, "Porygon2"
 
 mondata SPECIES_STANTLER, "Stantler"
     basestats 73, 95, 62, 85, 85, 65
-    types TYPE_NORMAL, TYPE_NORMAL
-    catchrate 45
+    types TYPE_NORMAL, TYPE_PSYCHIC
+    catchrate 200
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
