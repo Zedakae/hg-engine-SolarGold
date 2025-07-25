@@ -29133,4 +29133,4 @@ trainerdata 737, "Silver"
         move MOVE_SHADOW_BALL
         move MOVE_CONFUSE_RAY
         ballseal 0
-    endparty   
+    endparty
