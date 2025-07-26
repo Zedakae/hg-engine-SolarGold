@@ -12421,12 +12421,12 @@ levelup SPECIES_ZEBSTRIKA
 levelup SPECIES_ROGGENROLA
     learnset MOVE_SAND_ATTACK, 1
     learnset MOVE_TACKLE, 1
-    learnset MOVE_HARDEN, 4
-    learnset MOVE_SAND_ATTACK, 7
-    learnset MOVE_MUD_SLAP, 14
-    learnset MOVE_HEADBUTT, 17
-    learnset MOVE_STEALTH_ROCK, 18
-    learnset MOVE_SMACK_DOWN, 19
+    learnset MOVE_HARDEN, 3
+    learnset MOVE_SAND_ATTACK, 6
+    learnset MOVE_SMACK_DOWN, 9
+    learnset MOVE_MUD_SLAP, 12
+    learnset MOVE_HEADBUTT, 15
+    learnset MOVE_STEALTH_ROCK, 18    
     learnset MOVE_IRON_DEFENSE, 20
     learnset MOVE_ROCK_BLAST, 23
     learnset MOVE_ROCK_SLIDE, 27
@@ -12444,18 +12444,18 @@ levelup SPECIES_BOLDORE
     learnset MOVE_HARDEN, 1
     learnset MOVE_STEALTH_ROCK, 1
     learnset MOVE_HEADBUTT, 1
-    learnset MOVE_HARDEN, 4
-    learnset MOVE_SAND_ATTACK, 7
-    learnset MOVE_MUD_SLAP, 14
-    learnset MOVE_HEADBUTT, 17
-    learnset MOVE_SMACK_DOWN, 19
-    learnset MOVE_IRON_DEFENSE, 20
-    learnset MOVE_ROCK_BLAST, 25
-    learnset MOVE_ROCK_SLIDE, 30
-    learnset MOVE_STEALTH_ROCK, 36
-    learnset MOVE_SANDSTORM, 42
-    learnset MOVE_STONE_EDGE, 48
-    learnset MOVE_EXPLOSION, 54
+    learnset MOVE_HARDEN, 3
+    learnset MOVE_SAND_ATTACK, 6
+    learnset MOVE_SMACK_DOWN, 9
+    learnset MOVE_MUD_SLAP, 12
+    learnset MOVE_HEADBUTT, 15
+    learnset MOVE_IRON_DEFENSE, 18
+    learnset MOVE_ROCK_BLAST, 24
+    learnset MOVE_ROCK_SLIDE, 29
+    learnset MOVE_STEALTH_ROCK, 33
+    learnset MOVE_SANDSTORM, 38
+    learnset MOVE_STONE_EDGE, 42
+    learnset MOVE_EXPLOSION, 50
     terminatelearnset
 
 
