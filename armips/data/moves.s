@@ -3048,7 +3048,7 @@ movedata MOVE_MUD_SLAP, "Mud-Slap"
     appeal 0x05
     contesttype CONTEST_CUTE
     terminatedata
-    movedescription MOVE_MUD_SLAP, "The user hurls mud in\nthe foe’s face to\ninflict damage and\npossibly lower its accuracy.\n"
+    movedescription MOVE_MUD_SLAP, "The user hurls mud in\nthe foe’s face to\ninflict damage and\npossibly lower its\naccuracy."
 
 movedata MOVE_OCTAZOOKA, "Octazooka"
     battleeffect MOVE_EFFECT_LOWER_ACCURACY_HIT

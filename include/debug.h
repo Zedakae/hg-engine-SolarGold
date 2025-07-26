@@ -84,6 +84,6 @@
 // #define FANCY_PRINT_NICKNAME
 
 // NOCASH_GBA_PRINT swaps from desmume prints with the syscall to NO$GBA-style prints for use with i.e. melonDS
-//#define NOCASH_GBA_PRINT
+#define NOCASH_GBA_PRINT
 
 #endif // DEBUG_H
