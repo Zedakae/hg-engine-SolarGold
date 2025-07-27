@@ -2385,7 +2385,7 @@ movedata MOVE_FLASH, "Flash"
     type TYPE_ELECTRIC
     accuracy 100
     pp 15
-    effectchance 100
+    effectchance 30
     target RANGE_SINGLE_TARGET
     priority 0
     flags FLAG_HIDE_SHADOW | FLAG_MIRROR_MOVE | FLAG_MAGIC_COAT | FLAG_PROTECT
