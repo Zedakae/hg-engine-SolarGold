@@ -59,6 +59,7 @@ BOOL TrainerAI_ShouldSwitch(struct BattleSystem * bsys, int attacker)
     FillDamageStructFromBattleMon(bsys, ctx, &attackerMon, attacker);
     FillDamageStructFromBattleMon(bsys, ctx, &defenderMon, defender);
 
+    BOOL hasDamaginMove = FALSE;
     u32 effectivenessFlag = 0;
 	u32 effectivenessOnPlayer[CLIENT_MAX] = { 0 };
     int attackerMovesKnown = GetBattlerLearnedMoveCount(bsys, ctx, attacker);
@@ -68,13 +69,14 @@ BOOL TrainerAI_ShouldSwitch(struct BattleSystem * bsys, int attacker)
         struct BattleMove attackerMove = ctx->moveTbl[attackerMoveno];
         if (attackerMove.split != SPLIT_STATUS && attackerMove.power > 1)
         {
+            hasDamaginMove = TRUE;
             u8 movetype = GetAdjustedMoveTypeBasics(ctx, attackerMoveno, attackerMon.ability, attackerMove.type);
             effectivenessOnPlayer[j] = BattleAI_GetTypeEffectiveness(bsys, ctx, movetype, &effectivenessFlag, &attackerMon, &defenderMon);
         }
         debug_printf("move %d:%d has effectiveness %d\n", j, attackerMoveno, effectivenessOnPlayer[j]);
     }
 
-    BOOL onlyIneffectiveMoves = TRUE;
+    BOOL onlyIneffectiveDamagingMoves = TRUE;
     for (int k = 0; k < attackerMovesKnown; ++k)
     {
         u32 attackerMoveno = ctx->battlemon[attacker].move[k];
@@ -87,13 +89,13 @@ BOOL TrainerAI_ShouldSwitch(struct BattleSystem * bsys, int attacker)
             case TYPE_MUL_SUPER_EFFECTIVE:
             case TYPE_MUL_DOUBLE_SUPER_EFFECTIVE:
             case TYPE_MUL_TRIPLE_SUPER_EFFECTIVE:
-                onlyIneffectiveMoves = FALSE;
+                onlyIneffectiveDamagingMoves = FALSE;
                 break;
             case TYPE_MUL_TRIPLE_NOT_EFFECTIVE:
             case TYPE_MUL_DOUBLE_NOT_EFFECTIVE:
             case TYPE_MUL_NOT_EFFECTIVE:
-                if (attackerMove.effect == MOVE_EFFECT_SWITCH_HIT) // && consider fastKills/speeds
-                    onlyIneffectiveMoves = FALSE;
+                if (attackerMove.effect == MOVE_EFFECT_SWITCH_HIT) // TODO:&& consider fastKills/speeds //encore
+                    onlyIneffectiveDamagingMoves = FALSE;
                 break;
             default: //TYPE_MUL_NO_EFFECT
                 break;
@@ -102,13 +104,13 @@ BOOL TrainerAI_ShouldSwitch(struct BattleSystem * bsys, int attacker)
     }
 
     if (attackerMon.percenthp > 67
-        && (onlyIneffectiveMoves || ((ctx->battlemon[attacker].effect_of_moves & MOVE_EFFECT_FLAG_PERISH_SONG_ACTIVE) && (BattleRand(bsys) % 2))))
+        && ((hasDamaginMove && onlyIneffectiveDamagingMoves) || (ctx->battlemon[attacker].effect_of_moves & MOVE_EFFECT_FLAG_PERISH_SONG_ACTIVE)))
     {
         int score = 0;
         int switchToSlot = BattleAI_PostKOSwitchIn_Internal(bsys, attacker, &score);
-        int rand = BattleRand(bsys) % 2;
+		int rand = BattleRand(bsys) % 5; //20%. Change this to 2 for a 50% chance
 		debug_printf("TrainerAI_ShouldSwitch: Only ineffective moves, consider(%d) switching to slot %d with score %d\n", rand, switchToSlot, score);
-        if (score >= 102 && rand == 0)
+        if (score >= 102 && rand == 0) //set to 103 to consider being faster  //TODO:consider not being 2HKO
         {
             ctx->aiSwitchedPartySlot[attacker] = switchToSlot;
             return TRUE;

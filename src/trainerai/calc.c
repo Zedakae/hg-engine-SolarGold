@@ -303,7 +303,10 @@ int LONG_CALL BattleAI_CalcBaseDamage(void* bw, struct BattleStruct* sp, int mov
         break;
         //case MOVE_RETURN:
         //case MOVE_FRUSTRATION:
-        //case MOVE_FURY_CUTTER:
+    case MOVE_FURY_CUTTER:
+        for (int n = 0; n < attacker->furyCutterCount; n++)
+            movepower *= 2;
+        break;
         //case MOVE_ROLLOUT:
         //case MOVE_ICE_BALL:
         //case MOVE_SPIT_UP:

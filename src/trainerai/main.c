@@ -30,7 +30,6 @@ struct PACKED AIContext {
 
     BOOL isDoubleBattle;
     BOOL isPartnerGrounded;
-    u32 flingPower;
 
     BOOL defenderImmuneToPoison;
     BOOL defenderImmuneToParalysis;
@@ -388,7 +387,7 @@ int LONG_CALL BasicScoring(struct BattleSystem *bsys, u32 attacker, int i, struc
             break;
         case MOVE_EFFECT_STATUS_SLEEP:
         case MOVE_EFFECT_STATUS_SLEEP_NEXT_TURN:
-            if (ai->defenderImmuneToSleep)
+            if (ai->defenderImmuneToSleep || (ai->defenderMon.effect_of_moves & MOVE_EFFECT_YAWN_COUNTER))
                 moveScore -= NEVER_USE_MOVE_20;
             break;
         case MOVE_EFFECT_STATUS_POISON:
@@ -628,8 +627,8 @@ int LONG_CALL DamagingMoveScoring(struct BattleSystem *bsys, u32 attacker, int i
 
     if (!isMoveHighestDamage && ai->attackerMoveEffect == MOVE_EFFECT_LOWER_SPEED_HIT && ctx->moveTbl[ai->attackerMove].secondaryEffectChance == 100)
     {
-        if (!ai->defenderMovesFirst && ((ai->defenderMon.ability != ABILITY_CLEAR_BODY && ai->defenderMon.ability != ABILITY_WHITE_SMOKE && ai->defenderMon.ability != ABILITY_CONTRARY) || 
-            ai->attackerMon.hasMoldBreaker))
+        if (ai->defenderMovesFirst && ((ai->defenderMon.ability != ABILITY_CLEAR_BODY && ai->defenderMon.ability != ABILITY_WHITE_SMOKE && ai->defenderMon.ability != ABILITY_CONTRARY)
+            || ai->attackerMon.hasMoldBreaker))
         {
             moveScore += 6;
         }
@@ -1908,7 +1907,6 @@ void LONG_CALL SetupStateVariables(struct BattleSystem *bsys, u32 attacker, u32 
     ai->defenderLastUsedMoveEffect = ctx->moveTbl[ai->defenderLastUsedMove].effect;
     ai->defenderTurnsOnField = ctx->total_turn - ctx->battlemon[ai->defender].moveeffect.fakeOutCount;
     ai->attackerTurnsOnField = ctx->total_turn - ctx->battlemon[attacker].moveeffect.fakeOutCount;
-   // ai->flingPower = BattleItemDataGet(ctx, ai->attackerMon.item, ITEM_PARAM_FLING_POWER);
 
     ai->defenderMovesFirst = 0;
     ai->attackerMovesFirst = 0;
