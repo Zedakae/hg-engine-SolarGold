@@ -33,7 +33,7 @@ trainerdata 0, "-"
 trainerdata 1, "Silver"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_RIVAL
-    nummons 4
+    nummons 5
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -95,6 +95,23 @@ trainerdata 1, "Silver"
         ballseal 0
 		
 		// mon 3
+        ivs 186
+        abilityslot 0
+        level 24
+        pokemon SPECIES_ELECTABUZZ
+        item ITEM_MUSCLE_BAND
+        move MOVE_THUNDER_PUNCH
+        move MOVE_KNOCK_OFF
+        move MOVE_BRICK_BREAK
+        move MOVE_BULK_UP
+        ability ABILITY_STATIC
+        setivs 25, 25, 25, 25, 25, 25
+        setevs 0, 0, 0, 0, 0, 0
+        nature NATURE_NAUGHTY
+        additionalflags 0
+        ballseal 0
+
+        // mon 4
         ivs 186
         abilityslot 0
         level 24
@@ -11378,7 +11395,7 @@ trainerdata 265, "Silver"
 trainerdata 266, "Silver"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_RIVAL
-    nummons 4
+    nummons 5
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -11438,8 +11455,25 @@ trainerdata 266, "Silver"
         nature NATURE_JOLLY
         additionalflags 0
         ballseal 0
+
+        // mon 3
+        ivs 186
+        abilityslot 0
+        level 24
+        pokemon SPECIES_ELECTABUZZ
+        item ITEM_MUSCLE_BAND
+        move MOVE_THUNDER_PUNCH
+        move MOVE_KNOCK_OFF
+        move MOVE_BRICK_BREAK
+        move MOVE_BULK_UP
+        ability ABILITY_STATIC
+        setivs 25, 25, 25, 25, 25, 25
+        setevs 0, 0, 0, 0, 0, 0
+        nature NATURE_NAUGHTY
+        additionalflags 0
+        ballseal 0
 		
-		// mon 3
+		// mon 4
         ivs 186
         abilityslot 0
         level 24
@@ -11598,7 +11632,7 @@ trainerdata 268, "Silver"
 trainerdata 269, "Silver"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_RIVAL
-    nummons 4
+    nummons 5
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -11658,8 +11692,25 @@ trainerdata 269, "Silver"
         nature NATURE_JOLLY
         additionalflags 0
         ballseal 0
+
+        // mon 3
+        ivs 186
+        abilityslot 0
+        level 24
+        pokemon SPECIES_ELECTABUZZ
+        item ITEM_MUSCLE_BAND
+        move MOVE_THUNDER_PUNCH
+        move MOVE_KNOCK_OFF
+        move MOVE_BRICK_BREAK
+        move MOVE_BULK_UP
+        ability ABILITY_STATIC
+        setivs 25, 25, 25, 25, 25, 25
+        setevs 0, 0, 0, 0, 0, 0
+        nature NATURE_NAUGHTY
+        additionalflags 0
+        ballseal 0
 		
-		// mon 3
+		// mon 4
         ivs 186
         abilityslot 0
         level 24
@@ -15965,7 +16016,7 @@ trainerdata 390, "Ray"
         item ITEM_KINGS_ROCK
         move MOVE_STOMP
         move MOVE_FLAME_CHARGE
-        move MOVE_TACKLE
+        move MOVE_DOUBLE_KICK
         move MOVE_AGILITY
         ability ABILITY_FLAME_BODY
         setivs 15, 15, 15, 15, 15, 15
