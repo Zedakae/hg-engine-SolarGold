@@ -900,7 +900,7 @@ evodata SPECIES_TENTACRUEL
     terminateevodata
 
 evodata SPECIES_GEODUDE
-    evolution EVO_LEVEL, 25, SPECIES_GRAVELER
+    evolution EVO_LEVEL, 24, SPECIES_GRAVELER
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -6904,7 +6904,7 @@ evodata SPECIES_ZEBSTRIKA
     terminateevodata
 
 evodata SPECIES_ROGGENROLA
-    evolution EVO_LEVEL, 25, SPECIES_BOLDORE
+    evolution EVO_LEVEL, 24, SPECIES_BOLDORE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -13665,7 +13665,7 @@ evodata SPECIES_PERSIAN_ALOLAN
 terminateevodata
 
 evodata SPECIES_GEODUDE_ALOLAN
-    evolutionwithform EVO_LEVEL, 25, SPECIES_GRAVELER, 1
+    evolutionwithform EVO_LEVEL, 24, SPECIES_GRAVELER, 1
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE

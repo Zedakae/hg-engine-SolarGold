@@ -1249,7 +1249,7 @@ trainerdata 21, "Bugsy"
         item ITEM_EXPERT_BELT
         move MOVE_ROCK_SLIDE
         move MOVE_X_SCISSOR
-        move MOVE_SWORDS_DANCE
+        move MOVE_ROCK_POLISH
         move MOVE_KNOCK_OFF
         ability ABILITY_SHELL_ARMOR
         setivs 31, 31, 31, 31, 31, 31
@@ -1282,7 +1282,7 @@ trainerdata 21, "Bugsy"
         pokemon SPECIES_SCIZOR
         item ITEM_METAL_COAT
         move MOVE_BULLET_PUNCH
-        move MOVE_DUAL_WINGBEAT
+        move MOVE_AERIAL_ACE
         move MOVE_FURY_CUTTER
         move MOVE_U_TURN
         ability ABILITY_TECHNICIAN
@@ -5551,10 +5551,10 @@ trainerdata 105, "Axel"
         ivs 186
         abilityslot 0
         level 25
-        pokemon SPECIES_DOTTLER
+        pokemon SPECIES_ELGYEM
         item ITEM_EVIOLITE
-        move MOVE_ALLY_SWITCH
-        move MOVE_STRUGGLE_BUG
+        move MOVE_SCREECH
+        move MOVE_PSYBEAM
         move MOVE_RECOVER
         move MOVE_REFLECT
         ability ABILITY_TELEPATHY
