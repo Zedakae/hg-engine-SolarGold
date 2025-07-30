@@ -1306,3 +1306,36 @@ Script 29:
 	CloseMessage 
 	ReleaseAll 
 End
+
+_000G: // Trainer 40
+	trainertextentry 40, TEXT_NOTICE_IN_OVERWORLD, "I ran the battle sim... Let's go!\n"
+	trainertextentry 40, TEXT_DEFEATED_IN_BATTLE, "Algorithm... failed me...\n"
+	trainertextentry 40, TEXT_DEFEATED_IN_OVERWORLD, "Back to debugging...\n"
+	trainertextentry 40, TEXT_PLAYER_LOSES, "Science wins... stats never lie!\n"
+
+_000K: // Trainer 11
+    trainertextentry 11, TEXT_NOTICE_IN_OVERWORLD, "Not all campers rely on\nfire for spark...\n"
+    trainertextentry 11, TEXT_LAST_MON_SENT_OUT, "I leave the best for last!\n"
+    trainertextentry 11, TEXT_DEFEATED_IN_BATTLE, "Back to camping it is...\nSigh...\n"
+    trainertextentry 11, TEXT_DEFEATED_IN_OVERWORLD, "Guess my spark needs some work...\n"
+    trainertextentry 11, TEXT_PLAYER_LOSES, "Looks like my spark outshone your flame\n"
+
+_000O: // Trainer 19
+    trainertextentry 19, TEXT_NOTICE_IN_OVERWORLD, "You want to pass me?\nWell come and get some!\n"
+    trainertextentry 19, TEXT_DEFEATED_IN_BATTLE, "Wow\nYou really showed me up kid…\n"
+    trainertextentry 19, TEXT_DEFEATED_IN_OVERWORLD, "You shall now pass…\nKiddo…\n"
+    trainertextentry 19, TEXT_LAST_MON_SENT_OUT, "It's now or never!\n"
+    trainertextentry 19, TEXT_PLAYER_LOSES, "Tough luck kid\nBetter luck next time, Eh…?\n"
+
+_000S: // Trainer 504
+    trainertextentry 504, TEXT_LAST_MON_SENT_OUT, "Like bedrock beneath the surface…\nMy strongest doesn’t crumble easy.\n"
+    trainertextentry 504, TEXT_DEFEATED_IN_BATTLE, "You held steady.\nI see strength beneath the surface.\n"
+    trainertextentry 504, TEXT_PLAYER_LOSES, "Even granite cracks under pressure.\nCome back when your resolve’s reforged.\n"
+
+_000W: // Trainer 105
+    trainertextentry 105, TEXT_NOTICE_IN_OVERWORLD, "Hold up! The forest's got\nrhythm, and you're about to feel the beat!\n"
+    trainertextentry 105, TEXT_LAST_MON_SENT_OUT, "This next track? A real shocker.\nHope you're tuned in!\n"
+    trainertextentry 105, TEXT_DEFEATED_IN_BATTLE, "No way… Was I off key?\nGuess your tempo was tighter.\n"
+    trainertextentry 105, TEXT_DEFEATED_IN_OVERWORLD, "The silence after the battle…\nEven louder than my guitar.\n"
+    trainertextentry 105, TEXT_PLAYER_LOSES, "Haha! The crowd goes wild!\nEncore? Not until you rehearse!\n"
+    trainertextentry 105, TEXT_PLAYER_LOSES, "Haha! The crowd goes wild!\nEncore? Not until you rehearse!\n"

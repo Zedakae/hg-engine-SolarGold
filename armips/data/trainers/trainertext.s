@@ -9,9 +9,6 @@
 _0000: // Trainer 0
        // Trainer 2
        // Trainer 3       
-       // Trainer 63
-       // Trainer 87
-       // Trainer 88
        // Trainer 107
        // Trainer 138
        // Trainer 141
@@ -109,50 +106,42 @@ _000C: // Trainer 496
     trainertextentry 496, TEXT_DEFEATED_IN_BATTLE, "...Humph!\nAre you happy you won?\n"
     trainertextentry 496, TEXT_PLAYER_LOSES, "...Humph!\nThat was a waste of time.\n"
 	
-_0017: // Trainer 40
+_000G: // Trainer 40
 	trainertextentry 40, TEXT_NOTICE_IN_OVERWORLD, "I ran the battle sim... Let's go!\n"
-	trainertextentry 40, TEXT_DEFEATED_IN_BATTLE, "Algorithm... failed me...\n"
+    trainertextentry 40, TEXT_DEFEATED_IN_BATTLE, "Algorithm... failed me...\n"
 	trainertextentry 40, TEXT_DEFEATED_IN_OVERWORLD, "Back to debugging...\n"
 	trainertextentry 40, TEXT_PLAYER_LOSES, "Science wins... stats never lie!\n"
-	
-_0018: // Trainer 497
-    trainertextentry 497, TEXT_LAST_MON_SENT_OUT, "...Humph!\nYou’re doing OK for someone weak.\n"
-    trainertextentry 497, TEXT_DEFEATED_IN_BATTLE, "...Humph!\nAre you happy you won?\n"
-    trainertextentry 497, TEXT_PLAYER_LOSES, "...Humph!\nThat was a waste of time.\n"
 
-_0019: // Trainer 11
+_000K: // Trainer 11
     trainertextentry 11, TEXT_NOTICE_IN_OVERWORLD, "Not all campers rely on\nfire for spark...\n"
     trainertextentry 11, TEXT_LAST_MON_SENT_OUT, "I leave the best for last!\n"
     trainertextentry 11, TEXT_DEFEATED_IN_BATTLE, "Back to camping it is...\nSigh...\n"
     trainertextentry 11, TEXT_DEFEATED_IN_OVERWORLD, "Guess my spark needs some work...\n"
     trainertextentry 11, TEXT_PLAYER_LOSES, "Looks like my spark outshone your flame\n"
 
-_0020: // Trainer 19
+_000O: // Trainer 19
     trainertextentry 19, TEXT_NOTICE_IN_OVERWORLD, "You want to pass me?\nWell come and get some!\n"
-    trainertextentry 19, TEXT_LAST_MON_SENT_OUT, "It's now or never!\n"
     trainertextentry 19, TEXT_DEFEATED_IN_BATTLE, "Wow\nYou really showed me up kid…\n"
     trainertextentry 19, TEXT_DEFEATED_IN_OVERWORLD, "You shall now pass…\nKiddo…\n"
+    trainertextentry 19, TEXT_LAST_MON_SENT_OUT, "It's now or never!\n"
     trainertextentry 19, TEXT_PLAYER_LOSES, "Tough luck kid\nBetter luck next time, Eh…?\n"
 
-_0021: // Trainer 504
+_000S: // Trainer 504
     trainertextentry 504, TEXT_LAST_MON_SENT_OUT, "Like bedrock beneath the surface…\nMy strongest doesn’t crumble easy.\n"
-    trainertextentry 504, TEXT_DEFEATED_IN_BATTLE, "You held steady.\nI see strength beneath the surface.\n"
+    trainertextentry 504, TEXT_DOUBLE_DEFEATED_IN_BATTLE_2, "You held steady.\nI see strength beneath the surface.\n"
     trainertextentry 504, TEXT_PLAYER_LOSES, "Even granite cracks under pressure.\nCome back when your resolve’s reforged.\n"
 
-_0022: // Trainer 105
-    trainertextentry 105, TEXT_NOTICE_IN_OVERWORLD, "Hold up! The forest's got rhythm,\nand you're about to feel the beat!\n"
-    trainertextentry 105, TEXT_LAST_MON_SENT_OUT, "This next track? A real shocker.\nHope you're tuned in!\n"
-    trainertextentry 105, TEXT_DEFEATED_IN_BATTLE, "No way… Was I off key?\nGuess your tempo was tighter.\n"
-    trainertextentry 105, TEXT_DEFEATED_IN_OVERWORLD, "The silence after the battle…\nEven louder than my guitar.\n"
-    trainertextentry 105, TEXT_PLAYER_LOSES, "Haha! The crowd goes wild!\nEncore? Not until you rehearse!\n"
-
-_0023: // Trainer 106
-    trainertextentry 106, TEXT_NOTICE_IN_OVERWORLD, "Your aura… it's restless\nLets align our energies and see what unfolds.\n"
-    trainertextentry 106, TEXT_LAST_MON_SENT_OUT, "My mind is clear.\nThis will be your final test.\n"
-    trainertextentry 106, TEXT_DEFEATED_IN_BATTLE, "Intriguing…\nYour thoughts were sharper than mine today.\n"
-    trainertextentry 106, TEXT_DEFEATED_IN_OVERWORLD, "The forest speaks softly now.\nIts wisdom favors you.\n"
-    trainertextentry 106, TEXT_PLAYER_LOSES, "I saw this outcome in a vision.\nStill, the clarity is humbling.\n"
-
+_000W: // Trainer 105
+    trainertextentry 105, TEXT_NOTICE_IN_OVERWORLD, "Axel: Hope you brought rubber boots\nthis is gonna spark!\n"
+    trainertextentry 105, TEXT_DEFEATED_IN_BATTLE, "Axel: Got unplugged… shoulda charged\nfirst.\n"
+    trainertextentry 105, TEXT_DEFEATED_IN_OVERWORLD, "Axel: Guess brain beats voltage… this\ntime.\n"
+    trainertextentry 105, TEXT_PLAYER_LOSES, "Axel: BZZT! Shocking win, huh?\n"
+	
+_0018: // Trainer 497
+    trainertextentry 497, TEXT_LAST_MON_SENT_OUT, "...Humph!\nYou’re doing OK for someone weak.\n"
+    trainertextentry 497, TEXT_DEFEATED_IN_BATTLE, "...Humph!\nAre you happy you won?\n"
+    trainertextentry 497, TEXT_PLAYER_LOSES, "...Humph!\nThat was a waste of time.\n"
+    
 _0024: // Trainer 1
     trainertextentry   1, TEXT_LAST_MON_CRITICAL, "Say, you’ve got a lot of nerve,\ncoming here...\n"
     trainertextentry   1, TEXT_LAST_MON_SENT_OUT, "That’s ridiculous. There’s no way\nI could lose to a wimp like you!\n"
@@ -236,6 +225,33 @@ _00F4: // Trainer 286
     trainertextentry 286, TEXT_LAST_MON_SENT_OUT, "I see you weren’t playing around,\neither...\n"
     trainertextentry 286, TEXT_DEFEATED_IN_BATTLE, "Humph!\nI guess it can’t be helped...\n"
     trainertextentry 286, TEXT_PLAYER_LOSES, "Hmm, seems my Pokémon are pretty good.\n"
+
+_00G4: // Trainer 106
+    trainertextentry 106, TEXT_NOTICE_IN_OVERWORLD, "Lucien: If thoughts could fight, this\nwould be a clean sweep.\n"
+    trainertextentry 106, TEXT_DEFEATED_IN_BATTLE, "Lucien: Our minds weren’t quite aligned\ntoday.\n"
+    trainertextentry 106, TEXT_DEFEATED_IN_OVERWORLD, "Lucien: Even the stars miss a\nprediction sometimes.\n"
+    trainertextentry 106, TEXT_PLAYER_LOSES, "Lucien: No surprise the cosmos\nwhispered your defeat.\n"
+
+_00H4: // Trainer 63
+    trainertextentry 63, TEXT_NOTICE_IN_OVERWORLD, "I lie in wait where blades of grass\nconceal. Now… face my fists of steel!\n"
+    trainertextentry 63, TEXT_LAST_MON_SENT_OUT, "My final fighter’s built for comebacks!\n"
+    trainertextentry 63, TEXT_DEFEATED_IN_BATTLE, "Seems hiding didn’t help my form…\n"
+    trainertextentry 63, TEXT_DEFEATED_IN_OVERWORLD, "Grass tactics… 0. Discipline… 1.\n"
+    trainertextentry 63, TEXT_PLAYER_LOSES, "Caught off guard?\nEvery strike begins with surprise.\n"
+
+_00I4: // Trainer 87
+    trainertextentry 87, TEXT_NOTICE_IN_OVERWORLD, "Georgia thinks her Magmar burns\nbrighter… She hasn’t seen nothing yet!\n"
+    trainertextentry 87, TEXT_LAST_MON_SENT_OUT, "Time to show what real steel can do!\n"
+    trainertextentry 87, TEXT_DEFEATED_IN_BATTLE, "Guess her mushrooms pack more punch…\n"
+    trainertextentry 87, TEXT_DEFEATED_IN_OVERWORLD, "Steel, stingers, and suction cups…\nStill not enough, huh?\n"
+    trainertextentry 87, TEXT_PLAYER_LOSES, "Told you octopus tactics over fairy\ndust.\n"
+
+_00J4: // Trainer 88
+    trainertextentry 88, TEXT_NOTICE_IN_OVERWORLD, "Robert brags about his shiny gears… But\nmy Ribombee's cuter and deadlier!\n"
+    trainertextentry 88, TEXT_LAST_MON_SENT_OUT, "Go Magmar! Melt the iron ego!\n"
+    trainertextentry 88, TEXT_DEFEATED_IN_BATTLE, "Nooo! Not the toxic fish again…\n"
+    trainertextentry 88, TEXT_DEFEATED_IN_OVERWORLD, "Steel might win battles…\nBut fairies win hearts!\n"
+    trainertextentry 88, TEXT_PLAYER_LOSES, "See Robert? Told you spores over screws!\n"
 
 _0104: // Trainer 287
     trainertextentry 287, TEXT_LAST_MON_CRITICAL, "I see. You weren’t coming to Kanto just\nto show off...\n"
@@ -1289,7 +1305,7 @@ _0AF8: // Trainer 417
 
 _0B04: // Trainer 65
     trainertextentry  65, TEXT_NOTICE_IN_OVERWORLD, "Are you a Trainer? Let’s have a\npractice battle.\r"
-    trainertextentry  65, TEXT_DEFEATED_IN_BATTLE, "Oh, no!\nI just can’t win...\n"
+    trainertextentry  65, TEXT_DOUBLE_DEFEATED_IN_BATTLE_2, "Oh, no!\nI just can’t win...\n"
     trainertextentry  65, TEXT_DEFEATED_IN_OVERWORLD, "You’re too strong to be a\npractice partner.\n"
     trainertextentry  65, TEXT_REMATCH_IN_OVERWORLD, "You’re here! You’re here! I’ve never\nhad a practice partner before!\r"
 
@@ -3144,7 +3160,7 @@ _1AD0: // Trainer 630
 /* Trainer   8 */ .halfword _0A14
 /* Trainer   9 */ .halfword _0C8C
 /* Trainer  10 */ .halfword _0224
-/* Trainer  11 */ .halfword _0019
+/* Trainer  11 */ .halfword _000K
 /* Trainer  12 */ .halfword _1218
 /* Trainer  13 */ .halfword _1230
 /* Trainer  14 */ .halfword _1370
@@ -3152,7 +3168,7 @@ _1AD0: // Trainer 630
 /* Trainer  16 */ .halfword _0C74
 /* Trainer  17 */ .halfword _0E08
 /* Trainer  18 */ .halfword _0A64
-/* Trainer  19 */ .halfword _0020
+/* Trainer  19 */ .halfword _000O
 /* Trainer  20 */ .halfword _014C
 /* Trainer  21 */ .halfword _0158
 /* Trainer  22 */ .halfword _0268
@@ -3173,7 +3189,7 @@ _1AD0: // Trainer 630
 /* Trainer  37 */ .halfword _1254
 /* Trainer  38 */ .halfword _0830
 /* Trainer  39 */ .halfword _0C68
-/* Trainer  40 */ .halfword _0017
+/* Trainer  40 */ .halfword _000G
 /* Trainer  41 */ .halfword _0FB4
 /* Trainer  42 */ .halfword _1170
 /* Trainer  43 */ .halfword _1008
@@ -3196,7 +3212,7 @@ _1AD0: // Trainer 630
 /* Trainer  60 */ .halfword _0A80
 /* Trainer  61 */ .halfword _0AB4
 /* Trainer  62 */ .halfword _0B20
-/* Trainer  63 */ .halfword _0000
+/* Trainer  63 */ .halfword _00H4
 /* Trainer  64 */ .halfword _0B2C
 /* Trainer  65 */ .halfword _0B04
 /* Trainer  66 */ .halfword _0AC4
@@ -3220,8 +3236,8 @@ _1AD0: // Trainer 630
 /* Trainer  84 */ .halfword _05A8
 /* Trainer  85 */ .halfword _0C98
 /* Trainer  86 */ .halfword _0C80
-/* Trainer  87 */ .halfword _0000
-/* Trainer  88 */ .halfword _0000
+/* Trainer  87 */ .halfword _00I4
+/* Trainer  88 */ .halfword _00J4
 /* Trainer  89 */ .halfword _02A4
 /* Trainer  90 */ .halfword _0CE0
 /* Trainer  91 */ .halfword _0CEC
@@ -3238,8 +3254,8 @@ _1AD0: // Trainer 630
 /* Trainer 102 */ .halfword _0980
 /* Trainer 103 */ .halfword _09D4
 /* Trainer 104 */ .halfword _09E0
-/* Trainer 105 */ .halfword _0022
-/* Trainer 106 */ .halfword _0023
+/* Trainer 105 */ .halfword _000W
+/* Trainer 106 */ .halfword _00G4
 /* Trainer 107 */ .halfword _0000
 /* Trainer 108 */ .halfword _0DFC
 /* Trainer 109 */ .halfword _0E8C
@@ -3637,7 +3653,7 @@ _1AD0: // Trainer 630
 /* Trainer 501 */ .halfword _13EC
 /* Trainer 502 */ .halfword _13F8
 /* Trainer 503 */ .halfword _1950
-/* Trainer 504 */ .halfword _0021
+/* Trainer 504 */ .halfword _000S
 /* Trainer 505 */ .halfword _1A40
 /* Trainer 506 */ .halfword _0000
 /* Trainer 507 */ .halfword _1920

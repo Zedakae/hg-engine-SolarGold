@@ -4721,7 +4721,7 @@ mondata SPECIES_REMORAID, "Remoraid"
 
 mondata SPECIES_OCTILLERY, "Octillery"
     basestats 75, 105, 75, 45, 105, 75
-    types TYPE_WATER, TYPE_WATER
+    types TYPE_WATER, TYPE_FIRE
     catchrate 75
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
