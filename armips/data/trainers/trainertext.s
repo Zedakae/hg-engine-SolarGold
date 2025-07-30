@@ -67,8 +67,6 @@ _0000: // Trainer 0
        // Trainer 476
        // Trainer 477
        // Trainer 495
-       // Trainer 506
-       // Trainer 508
        // Trainer 511
        // Trainer 514
        // Trainer 516
@@ -127,8 +125,8 @@ _000O: // Trainer 19
     trainertextentry 19, TEXT_PLAYER_LOSES, "Tough luck kid\nBetter luck next time, Eh…?\n"
 
 _000S: // Trainer 504
-    trainertextentry 504, TEXT_LAST_MON_SENT_OUT, "Like bedrock beneath the surface…\nMy strongest doesn’t crumble easy.\n"
-    trainertextentry 504, TEXT_DOUBLE_DEFEATED_IN_BATTLE_2, "You held steady.\nI see strength beneath the surface.\n"
+    trainertextentry 504, TEXT_LAST_MON_SENT_OUT, "Like bedrock beneath the surface… My\nstrongest doesn’t crumble easy.\n"
+    trainertextentry 504, TEXT_DOUBLE_DEFEATED_IN_BATTLE_2, "You held steady. I see strength beneath\nthe surface.\n"
     trainertextentry 504, TEXT_PLAYER_LOSES, "Even granite cracks under pressure.\nCome back when your resolve’s reforged.\n"
 
 _000W: // Trainer 105
@@ -252,6 +250,16 @@ _00J4: // Trainer 88
     trainertextentry 88, TEXT_DEFEATED_IN_BATTLE, "Nooo! Not the toxic fish again…\n"
     trainertextentry 88, TEXT_DEFEATED_IN_OVERWORLD, "Steel might win battles…\nBut fairies win hearts!\n"
     trainertextentry 88, TEXT_PLAYER_LOSES, "See Robert? Told you spores over screws!\n"
+
+_00K4: // Trainer 508
+    trainertextentry 508, TEXT_LAST_MON_SENT_OUT, "Last unit on deck! Hope your fusebox’s\nup to code!\n"
+    trainertextentry 508, TEXT_DEFEATED_IN_BATTLE, "No way… scrambled by a static backup? That’s not regulation!\n"
+    trainertextentry 508, TEXT_PLAYER_LOSES, "That's what you get for under\nestimating high voltage tactics!\n"
+
+_00L4: // Trainer 506
+    trainertextentry 506, TEXT_LAST_MON_SENT_OUT, "Don’t just float there… drown their\nchances!\n"
+    trainertextentry 506, TEXT_DEFEATED_IN_BATTLE, "What?! That wasn’t luck… that was a\ntotal tidal disaster!\n"
+    trainertextentry 506, TEXT_PLAYER_LOSES, "Ha! You really thought you could wash\nout a storm like me?\n"
 
 _0104: // Trainer 287
     trainertextentry 287, TEXT_LAST_MON_CRITICAL, "I see. You weren’t coming to Kanto just\nto show off...\n"
@@ -1348,13 +1356,13 @@ _0B60: // Trainer 388
 
 _0B70: // Trainer 7
     trainertextentry   7, TEXT_NOTICE_IN_OVERWORLD, "Behold my dexterity and grace!\r"
-    trainertextentry   7, TEXT_DEFEATED_IN_BATTLE, "Whew! That was a jolt!\n"
+    trainertextentry   7, TEXT_DOUBLE_DEFEATED_IN_BATTLE_2, "Whew! That was a jolt!\n"
     trainertextentry   7, TEXT_DEFEATED_IN_OVERWORLD, "I was going to dazzle you with my prize\nPokémon. But your prowess\felectrified me!\n"
     trainertextentry   7, TEXT_REMATCH_IN_OVERWORLD, "Yo! I’ve been waiting!\r"
 
 _0B80: // Trainer 78
     trainertextentry  78, TEXT_NOTICE_IN_OVERWORLD, "I’ll go anywhere if bug Pokémon\nappear there.\r"
-    trainertextentry  78, TEXT_DEFEATED_IN_BATTLE, "I see. So you can battle that way.\n"
+    trainertextentry  78, TEXT_DOUBLE_DEFEATED_IN_BATTLE_2, "I see. So you can battle that way.\n"
     trainertextentry  78, TEXT_DEFEATED_IN_OVERWORLD, "My VENONAT won me the Bug-Catching\nContest at the National Park.\n"
     trainertextentry  78, TEXT_REMATCH_IN_OVERWORLD, "As long as I’ve got bug Pokémon, it\ndoesn’t matter how long I have to wait.\fI know I won’t get bored!\r"
 
@@ -1375,7 +1383,7 @@ _0BA8: // Trainer 80
 
 _0BB4: // Trainer 395
     trainertextentry 395, TEXT_NOTICE_IN_OVERWORLD, "Let me guess what you’re thinking!\r"
-    trainertextentry 395, TEXT_DEFEATED_IN_BATTLE, "I was wrong.\n"
+    trainertextentry 395, TEXT_DOUBLE_DEFEATED_IN_BATTLE_2, "I was wrong.\n"
     trainertextentry 395, TEXT_DEFEATED_IN_OVERWORLD, "If you read your opponent’s mind, then\nyou can attack more efficiently!\n"
 
 _0BC0: // Trainer 24
@@ -3655,9 +3663,9 @@ _1AD0: // Trainer 630
 /* Trainer 503 */ .halfword _1950
 /* Trainer 504 */ .halfword _000S
 /* Trainer 505 */ .halfword _1A40
-/* Trainer 506 */ .halfword _0000
+/* Trainer 506 */ .halfword _00L4
 /* Trainer 507 */ .halfword _1920
-/* Trainer 508 */ .halfword _0000
+/* Trainer 508 */ .halfword _00K4
 /* Trainer 509 */ .halfword _192C
 /* Trainer 510 */ .halfword _1944
 /* Trainer 511 */ .halfword _0000
