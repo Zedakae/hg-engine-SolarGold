@@ -118,15 +118,15 @@ _000K: // Trainer 11
     trainertextentry 11, TEXT_PLAYER_LOSES, "Looks like my spark outshone your flame\n"
 
 _000O: // Trainer 19
-    trainertextentry 19, TEXT_NOTICE_IN_OVERWORLD, "You want to pass me?\nWell come and get some!\n"
+    trainertextentry 19, TEXT_NOTICE_IN_OVERWORLD, "You want to pass me?\nWell come and get some!\r"
     trainertextentry 19, TEXT_DEFEATED_IN_BATTLE, "Wow\nYou really showed me up kid…\n"
-    trainertextentry 19, TEXT_DEFEATED_IN_OVERWORLD, "You shall now pass…\nKiddo…\n"
+    trainertextentry 19, TEXT_DEFEATED_IN_OVERWORLD, "You shall now pass…\nKiddo…\r"
     trainertextentry 19, TEXT_LAST_MON_SENT_OUT, "It's now or never!\n"
     trainertextentry 19, TEXT_PLAYER_LOSES, "Tough luck kid\nBetter luck next time, Eh…?\n"
 
 _000S: // Trainer 504
-    trainertextentry 504, TEXT_LAST_MON_SENT_OUT, "Like bedrock beneath the surface… My\nstrongest doesn’t crumble easy.\n"
-    trainertextentry 504, TEXT_DOUBLE_DEFEATED_IN_BATTLE_1, "You held steady. I see strength beneath\nthe surface.\n"
+    trainertextentry 504, TEXT_LAST_MON_SENT_OUT, "Like bedrock beneath the surface… My\nstrongest doesn’t crumble easy.\r"
+    trainertextentry 504, TEXT_DOUBLE_DEFEATED_IN_BATTLE_1, "You held steady. I see strength\nbeneath the surface.\r"
     trainertextentry 504, TEXT_PLAYER_LOSES, "Even granite cracks under pressure.\nCome back when your resolve’s reforged.\n"
 
 _000W: // Trainer 105

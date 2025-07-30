@@ -5913,8 +5913,8 @@ levelup SPECIES_GROVYLE
     learnset MOVE_ABSORB, 1
     learnset MOVE_ABSORB, 5
     learnset MOVE_QUICK_ATTACK, 9
-    learnset MOVE_MEGA_DRAIN, 10
-    learnset MOVE_PURSUIT, 18
+    learnset MOVE_MEGA_DRAIN, 12
+    learnset MOVE_DRAGON_BREATH, 17
     learnset MOVE_ASSURANCE, 20
     learnset MOVE_DETECT, 24
     learnset MOVE_GIGA_DRAIN, 25

@@ -3132,7 +3132,7 @@ trainerdata 57, "Ralph"
         pokemon SPECIES_AZUMARILL
         item ITEM_MUSCLE_BAND
         move MOVE_AQUA_JET
-        move MOVE_FLIP_TURN
+        move MOVE_COVET
         move MOVE_CHARM
         move MOVE_BOUNCE
         ability ABILITY_HUGE_POWER
