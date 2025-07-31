@@ -1964,9 +1964,9 @@ pokemon SPECIES_CHINGLING
 // surf encounters
 encounterwithform SPECIES_SLOWPOKE, 0, 15, 20
 encounterwithform SPECIES_SLOWPOKE, 0, 15, 20
-encounter SPECIES_GOLDEEN, 7, 15
-encounter SPECIES_TYMPOLE, 7, 15
-encounter SPECIES_MAREANIE, 7, 15
+encounter SPECIES_GOLDEEN, 10, 15
+encounter SPECIES_TYMPOLE, 10, 15
+encounter SPECIES_MAREANIE, 10, 15
 
 // rock smash encounters
 encounter SPECIES_NONE, 0, 0
@@ -2025,7 +2025,7 @@ pokemon SPECIES_MORELULL
 pokemon SPECIES_SHELLOS
 pokemon SPECIES_SHROODLE
 pokemon SPECIES_BRONZOR
-monwithform SPECIES_MUK, 1
+monwithform SPECIES_MUK, 0
 pokemon SPECIES_GOLBAT
 monwithform SPECIES_SLOWPOKE, 0
 
@@ -2039,7 +2039,7 @@ pokemon SPECIES_MORELULL
 pokemon SPECIES_SHELLOS
 pokemon SPECIES_SHROODLE
 pokemon SPECIES_BRONZOR
-monwithform SPECIES_MUK, 1
+monwithform SPECIES_MUK, 0
 pokemon SPECIES_GOLBAT
 monwithform SPECIES_SLOWPOKE, 0
 
@@ -2068,9 +2068,9 @@ pokemon SPECIES_CHINGLING
 // surf encounters
 encounterwithform SPECIES_SLOWPOKE, 0, 15, 20
 encounterwithform SPECIES_SLOWPOKE, 0, 15, 20
-encounter SPECIES_GOLDEEN, 7, 15
-encounter SPECIES_TYMPOLE, 7, 15
-encounter SPECIES_MAREANIE, 7, 15
+encounter SPECIES_GOLDEEN, 10, 15
+encounter SPECIES_TYMPOLE, 10, 15
+encounter SPECIES_MAREANIE, 10, 15
 
 // rock smash encounters
 encounter SPECIES_NONE, 0, 0
@@ -2170,9 +2170,9 @@ pokemon SPECIES_BUDEW
 pokemon SPECIES_CARNIVINE
 
 // surf encounters
-encounter SPECIES_PSYDUCK, 5, 15
+encounter SPECIES_PSYDUCK, 10, 20
 encounter SPECIES_CHEWTLE, 10, 20
-encounter SPECIES_LOMBRE, 10, 20
+encounter SPECIES_LOMBRE, 15, 20
 encounter SPECIES_POLIWHIRL, 25, 30
 encounter SPECIES_GOLDUCK, 35, 40
 
@@ -2181,25 +2181,25 @@ encounter SPECIES_NONE, 0, 0
 encounter SPECIES_NONE, 0, 0
 
 // old rod encounters
-encounter SPECIES_POLIWAG, 13, 15
-encounter SPECIES_LOTAD, 13, 15
-encounter SPECIES_MARILL, 13, 15
-encounter SPECIES_TYMPOLE, 13, 15
-encounter SPECIES_SURSKIT, 13, 15
+encounter SPECIES_POLIWAG, 10, 10
+encounter SPECIES_LOTAD, 10, 10
+encounter SPECIES_MARILL, 10, 10
+encounter SPECIES_TYMPOLE, 10, 10
+encounter SPECIES_SURSKIT, 10, 10
 
 // good rod encounters
-encounter SPECIES_POLIWAG, 22, 24
-encounter SPECIES_LOMBRE, 22, 24
-encounter SPECIES_AZUMARILL, 22, 24
-encounter SPECIES_TYMPOLE, 22, 24
-encounter SPECIES_MASQUERAIN, 22, 24
+encounter SPECIES_POLIWAG, 20, 20
+encounter SPECIES_LOMBRE, 20, 20
+encounter SPECIES_AZUMARILL, 20, 20
+encounter SPECIES_TYMPOLE, 20, 20
+encounter SPECIES_SURSKIT, 20, 20
 
 // super rod encounters
-encounter SPECIES_POLIWHIRL, 38, 40
-encounter SPECIES_LOMBRE, 38, 40
-encounter SPECIES_AZUMARILL, 38, 40
-encounter SPECIES_SEISMITOAD, 38, 40
-encounter SPECIES_MASQUERAIN, 38, 40
+encounter SPECIES_POLIWHIRL, 40, 40
+encounter SPECIES_LOMBRE, 40, 40
+encounter SPECIES_AZUMARILL, 40, 40
+encounter SPECIES_SEISMITOAD, 40, 40
+encounter SPECIES_MASQUERAIN, 40, 40
 
 // swarm grass
 pokemon SPECIES_METAPOD
@@ -2247,7 +2247,7 @@ pokemon SPECIES_ESPURR
 pokemon SPECIES_MUNNA
 pokemon SPECIES_BLIPBUG
 pokemon SPECIES_TIMBURR
-pokemon SPECIES_WOOPER
+pokemon SPECIES_MEDITITE
 pokemon SPECIES_RALTS
 pokemon SPECIES_ABRA
 
@@ -2336,7 +2336,7 @@ pokemon SPECIES_EKANS
 pokemon SPECIES_GULPIN
 pokemon SPECIES_TIMBURR
 pokemon SPECIES_ABRA
-pokemon SPECIES_ABRA
+pokemon SPECIES_NIDORAN_F
 pokemon SPECIES_NIDORAN_M
 pokemon SPECIES_NIDORAN_F
 pokemon SPECIES_YANMA
@@ -2365,8 +2365,8 @@ pokemon SPECIES_GULPIN
 pokemon SPECIES_TIMBURR
 pokemon SPECIES_DROWZEE
 pokemon SPECIES_NIDORAN_M
-pokemon SPECIES_NIDORAN_M
 pokemon SPECIES_NIDORAN_F
+pokemon SPECIES_NIDORAN_M
 pokemon SPECIES_YANMA
 
 // hoenn encounter slots
