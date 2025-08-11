@@ -3818,7 +3818,7 @@ mondata SPECIES_FLAAFFY, "Flaaffy"
 
 mondata SPECIES_AMPHAROS, "Ampharos"
     basestats 90, 75, 85, 55, 115, 90
-    types TYPE_ELECTRIC, TYPE_ELECTRIC
+    types TYPE_ELECTRIC, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
