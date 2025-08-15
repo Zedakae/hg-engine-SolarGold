@@ -4166,7 +4166,7 @@ trainerdata 74, "Ivan"
         move MOVE_SUCKER_PUNCH
         move MOVE_ROCK_TOMB
         move MOVE_BULLDOZE
-        move MOVE_FINAL_GAMBIT
+        move MOVE_SLASH
         ability ABILITY_ARENA_TRAP
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
@@ -4198,7 +4198,7 @@ trainerdata 74, "Ivan"
         pokemon SPECIES_KINGLER
         item ITEM_LUM_BERRY
         move MOVE_CRABHAMMER
-        move MOVE_SWORDS_DANCE
+        move MOVE_STOMP
         move MOVE_IRON_HEAD
         move MOVE_HIGH_HORSEPOWER
         ability ABILITY_SHELL_ARMOR
@@ -4248,7 +4248,7 @@ trainerdata 75, "Elliot"
         move MOVE_PLAY_ROUGH
         move MOVE_BOUNCE
         move MOVE_AQUA_JET
-        move MOVE_BELLY_DRUM
+        move MOVE_ICE_PUNCH
         ability ABILITY_HUGE_POWER
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0

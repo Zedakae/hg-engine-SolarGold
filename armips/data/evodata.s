@@ -3912,7 +3912,7 @@ evodata SPECIES_TORKOAL
     terminateevodata
 
 evodata SPECIES_SPOINK
-    evolution EVO_LEVEL, 32, SPECIES_GRUMPIG
+    evolution EVO_LEVEL, 30, SPECIES_GRUMPIG
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
