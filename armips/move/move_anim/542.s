@@ -28,7 +28,7 @@ a010_542:
     playsepan 2107, 117
     addparticle 2, 1, 4
     shadetargetmon 0, 0, 0 //make the target black
-    shaketargetmon 5, 3 //shake 'em a bit
+    shaketargetmon 5, 3 //shake em a bit
     waitparticle
 
     unloadparticle 0

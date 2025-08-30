@@ -14,6 +14,8 @@ SUCCESSFULLY PUT A CAMPER NPC ON GOLDENROD MAP WHICH IS KNOWN AS A "ALIAS"
 
 FIXED GIRLS DIALOGUE BLOCKING RADIO TOWER DOOR.
 
+BEGUN WORKING ON POST WHITNEY SPLIT.
+
 \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 
 ADDED HARD LEVEL CAPS
@@ -34,7 +36,13 @@ ADDED HARD LEVEL CAPS
 
 8) Level 30 @ Trigger Tile Upon Entering Goldenrod City
 
-\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+WHEN TRYING TO "GIVE POKEMON" IN DSPRE REMEMBER TO ADD 51 ON TOP OF ARCEUS (493) TO GET VICTINI'S DEX NUMBER (544)
+
+THEN WORK OUT THE DIFFERENCE FROM THE ORIGINAL DEX NUMBER TO THE NEW ONE TO GET THE HG-ENGINE ONE
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 ADDED INFINITE CANDY
 
@@ -1307,6 +1315,103 @@ Script 29:
 	ReleaseAll 
 End
 
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+🧠 initspriteresource
+This initializes the sprite resource system for the current animation. Think of it as clearing the stage and prepping the actors before the scene begins.
+
+Purpose: Sets up memory and internal structures so that loadspritresource and loadspritmaybe can function properly.
+
+Required: Always call this before loading any sprite layers.
+
+📦 loadspritresource X
+This loads a sprite resource from the battle system’s internal pool.
+
+X: The resource index (0–3 typically). Each index corresponds to a layer or a sprite group.
+
+Example: loadspritresource 0 loads the first sprite layer (usually the attacker or defender).
+
+🎭 loadspritmaybe A, B, C, D
+This is where things get interesting—it maps sprite resources to specific roles in the animation.
+
+Let’s decode loadspritmaybe 4, 0, 0, 0:
+
+Param	Meaning
+4	Sprite slot ID (used in resetsprite later)
+0	Resource index (from loadspritresource)
+0	Battle slot (0 = attacker, 1 = target, 2 = partner, etc.)
+0	Layer index (used for rendering order)
+So this line says: ➡️ “Load sprite slot 4 using resource 0, mapped to the attacker, and render it on layer 0.”
+
+🔁 Typical Usage Pattern
+ruby
+initspriteresource
+loadspritresource 0
+loadspritresource 1
+loadspritresource 2
+loadspritresource 3
+
+loadspritmaybe 4, 0, 0, 0   // Attacker
+loadspritmaybe 5, 0, 1, 1   // Target
+loadspritmaybe 6, 0, 2, 2   // Partner
+loadspritmaybe 7, 0, 3, 3   // Foe
+This sets up four sprite slots (4–7), each tied to a battle participant and a rendering layer. These slots are then used by the particle system to anchor effects, mask sprites, or overlay visuals.
+
+🧼 resetsprite X
+At the end of the script, this cleans up sprite slot X. It’s like striking the set after the scene ends.
+
+🧩 How This Connects to .spa Files
+Your .spa emitters often reference anchors like 0, 1, 10, 25, etc.
+
+These anchors are mapped to sprite slots and screen positions.
+
+If the sprite slots aren’t initialized correctly, the emitter might spawn off-screen or fail to attach.
+
+✅ Are These Commands Always Used?
+Short answer: Yes—for most battle animation scripts. But let’s break it down by purpose and context:
+
+🧱 Core Commands You’ll Almost Always Use
+Command	Purpose
+initspriteresource	Initializes sprite system for the animation. Required before anything.
+loadspritresource X	Loads sprite layers (usually attacker, target, etc.). Needed for visuals.
+loadspritmaybe A,B,C,D	Maps loaded resources to battle roles and rendering layers. Essential for anchoring particles.
+These are foundational—they set the stage for your .spa particles to attach to something meaningful (like Quilava’s sprite or the center of the screen).
+
+🧠 Why They Matter
+Without initspriteresource: The engine won’t allocate memory for sprite layers, and loadspritresource will fail silently.
+
+Without loadspritresource: You won’t have any visual layers to attach particles to.
+
+Without loadspritmaybe: Your particles won’t know where to spawn—so they’ll either default to anchor 25 (center screen) or not show at all.
+
+🧪 Exceptions & Edge Cases
+Some scripts (like sound-only effects or screen flashes) might skip sprite loading entirely.
+
+Field effects or weather animations sometimes use global anchors and don’t need battle sprites.
+
+Cutscene-style scripts may use custom anchors or preloaded assets.
+
+But for move animations, especially ones tied to .spa emitters, these commands are practically mandatory.
+
+🧰 Pro Tip for Custom Scripts
+If you're building a new animation from scratch, start with this safe template:
+
+ruby
+initspriteresource
+loadspritresource 0
+loadspritresource 1
+loadspritresource 2
+loadspritresource 3
+
+loadspritmaybe 4, 0, 0, 0   // Attacker
+loadspritmaybe 5, 0, 1, 1   // Target
+loadspritmaybe 6, 0, 2, 2   // Partner
+loadspritmaybe 7, 0, 3, 3   // Foe
+This gives you full coverage for all battle participants and lets you anchor particles to any of them.
+
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+
 _000G: // Trainer 40
 	trainertextentry 40, TEXT_NOTICE_IN_OVERWORLD, "I ran the battle sim... Let's go!\n"
 	trainertextentry 40, TEXT_DEFEATED_IN_BATTLE, "Algorithm... failed me...\n"
@@ -1339,3 +1444,56 @@ _000W: // Trainer 105
     trainertextentry 105, TEXT_DEFEATED_IN_OVERWORLD, "The silence after the battle…\nEven louder than my guitar.\n"
     trainertextentry 105, TEXT_PLAYER_LOSES, "Haha! The crowd goes wild!\nEncore? Not until you rehearse!\n"
     trainertextentry 105, TEXT_PLAYER_LOSES, "Haha! The crowd goes wild!\nEncore? Not until you rehearse!\n"
+
+	// Tail Glow Effect?
+	addparticle 0, 5, 3		     // Emitter 5: Tail Glow Surging Effect In Foreground
+	wait 10
+
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\\/\/\/\/
+
+// 🔊 SFX Command Reference (HGSS Animation Scripts)
+
+// playse id
+// → Plays SFX centered. Use for neutral/global effects.
+playse 2120
+
+// playsepan id, pan
+// → Plays SFX with stereo pan (-127 = left, 127 = right).
+playsepan 1847, 117
+
+// repeatse id, pan, count, interval
+// → Repeats SFX 'count' times, spaced by 'interval' frames.
+repeatse 1979, 117, 8, 4
+
+// waitse id, pan, wait
+// → Plays SFX, then pauses script for 'wait' frames.
+waitse 1905, 117, 3
+
+// playsepanmod id, panStart, panEnd, panStep, interval
+// → Sweeps SFX across stereo field over time.
+playsepanmod 1993, -117, 117, 4, 2
+
+// 🧪 Usage Guidelines:
+// Attacker-only moves → playse / playsepan (bias left)
+// Target-only hits → playsepan / waitse (bias right)
+// Projectiles → playsepanmod (traveling sound)
+// Status ticks → repeatse (rhythmic)
+// Area-wide → playse / repeatse / playsepanmod
+
+// 🎯 Pair with:
+// addparticle slot, emitter, origin
+// callfunction 36 → shake target
+// shadeattackingmon / shadetargetmon → color flash
+// slideattackingmon x, y → motion sync
+
+// ✅ Tip: Use waitstate after motion or particle unloads
+
+/\/\/\/\/\/\/\/\/\/\/\
+
+NOTABLE MOVE SOUND EFFECTS
+
+//Embargo Sound Effect playsepan 2074, 117
+//Nightmare Sound Effect repeatse 2009, 117, 2, 4
+//Shadow Ball Sound Effect playsepan 1903, 117
+//End Of Night Daze Sound Effect playsepan 2107, 117
+//Start Of Night Daze Sound Effect playsepan 1989, 0 

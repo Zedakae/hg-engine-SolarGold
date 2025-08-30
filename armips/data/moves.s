@@ -14601,7 +14601,7 @@ movedata MOVE_BURNING_BULWARK, "Burning Bulwark"
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_BURNING_BULWARK, "The user’s intensely hot\nfur protects it from\nattacks and also burns\nany attacker that makes\ndirect contact with it."
+    movedescription MOVE_BURNING_BULWARK, "The user’s intensely\nhot fur protects it\nfrom attacks and also\nburns any attacker that\nmakes contact with it."
 
 movedata MOVE_THUNDERCLAP, "Thunderclap"
     battleeffect MOVE_EFFECT_HIT_FIRST_IF_TARGET_ATTACKING
@@ -14778,6 +14778,22 @@ movedata MOVE_MALIGNANT_CHAIN, "Malignant Chain"
     contesttype CONTEST_COOL
     terminatedata
     movedescription MOVE_MALIGNANT_CHAIN, "---"
+
+movedata MOVE_VILE_ENERGY, "Vile Energy"
+    battleeffect MOVE_EFFECT_LOWER_SP_DEF_HIT
+    pss SPLIT_SPECIAL
+    basepower 50
+    type TYPE_DARK
+    accuracy 100
+    pp 25
+    effectchance 30
+    target RANGE_SINGLE_TARGET
+    priority 0
+    flags FLAG_KEEP_HP_BAR | FLAG_PROTECT | FLAG_MIRROR_MOVE | FLAG_KINGS_ROCK
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+    movedescription MOVE_VILE_ENERGY, "Conjures a sinister\nenergy. This may drop\nthe foe's Special\nDefense."
 
 movedatanoname NUM_OF_MOVES
     battleeffect MOVE_EFFECT_HIT
