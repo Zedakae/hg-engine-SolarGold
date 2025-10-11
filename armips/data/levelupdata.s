@@ -21601,20 +21601,23 @@ levelup SPECIES_TOEDSCOOL
     learnset MOVE_MUD_SLAP, 1
     learnset MOVE_WRAP, 1
     learnset MOVE_ABSORB, 4
-    learnset MOVE_POISON_POWDER, 8
-    learnset MOVE_STUN_SPORE, 8
+    learnset MOVE_POISON_POWDER, 7
+    learnset MOVE_STUN_SPORE, 9
     learnset MOVE_SUPERSONIC, 12
-    learnset MOVE_TACKLE, 15
-    learnset MOVE_MEGA_DRAIN, 16
-    learnset MOVE_SCREECH, 20
+    learnset MOVE_LEECH_SEED, 15
+    learnset MOVE_MEGA_DRAIN, 18
+    learnset MOVE_SCREECH, 21
     learnset MOVE_MUD_SHOT, 24
     learnset MOVE_HEX, 28
-    learnset MOVE_SEED_BOMB, 32
-    learnset MOVE_SPORE, 36
-    learnset MOVE_GROWTH, 40
-    learnset MOVE_GIGA_DRAIN, 44
-    learnset MOVE_EARTH_POWER, 48
-    learnset MOVE_POWER_WHIP, 52
+    learnset MOVE_GIGA_DRAIN, 32
+    learnset MOVE_RAGE_POWDER, 36
+    learnset MOVE_SPORE, 40
+    learnset MOVE_MUD_BOMB, 44
+    learnset MOVE_SEED_BOMB, 48
+    learnset MOVE_EARTH_POWER, 52
+    learnset MOVE_GRASSY_GLIDE, 56
+    learnset MOVE_LEAF_STORM, 60
+    learnset MOVE_POWER_WHIP, 64
     terminatelearnset
 
 levelup SPECIES_TOEDSCRUEL
@@ -21622,20 +21625,23 @@ levelup SPECIES_TOEDSCRUEL
     learnset MOVE_REFLECT_TYPE, 1
     learnset MOVE_WRAP, 1
     learnset MOVE_ABSORB, 4
-    learnset MOVE_POISON_POWDER, 8
-    learnset MOVE_STUN_SPORE, 8
+    learnset MOVE_POISON_POWDER, 7
+    learnset MOVE_STUN_SPORE, 9
     learnset MOVE_SUPERSONIC, 12
-    learnset MOVE_TACKLE, 15
-    learnset MOVE_MEGA_DRAIN, 16
-    learnset MOVE_SCREECH, 20
+    learnset MOVE_LEECH_SEED, 15
+    learnset MOVE_MEGA_DRAIN, 18
+    learnset MOVE_SCREECH, 21
     learnset MOVE_MUD_SHOT, 24
     learnset MOVE_HEX, 28
-    learnset MOVE_SEED_BOMB, 34
-    learnset MOVE_SPORE, 40
-    learnset MOVE_GROWTH, 44
-    learnset MOVE_GIGA_DRAIN, 48
+    learnset MOVE_GIGA_DRAIN, 34
+    learnset MOVE_RAGE_POWDER, 38
+    learnset MOVE_SPORE, 42
+    learnset MOVE_MUD_BOMB, 46
+    learnset MOVE_SEED_BOMB, 50
     learnset MOVE_EARTH_POWER, 54
-    learnset MOVE_POWER_WHIP, 58
+    learnset MOVE_GRASSY_GLIDE, 58
+    learnset MOVE_LEAF_STORM, 62
+    learnset MOVE_POWER_WHIP, 66
     terminatelearnset
 
 levelup SPECIES_KLAWF

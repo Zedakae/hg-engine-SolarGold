@@ -20974,9 +20974,9 @@ mondata SPECIES_BRAMBLEGHAST, "Bramblgast"
 
 
 mondata SPECIES_TOEDSCOOL, "Toedscool"
-    basestats 40, 40, 35, 70, 50, 100
+    basestats 50, 40, 35, 70, 50, 100
     types TYPE_GROUND, TYPE_GRASS
-    catchrate 190
+    catchrate 200
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
@@ -20995,9 +20995,9 @@ mondata SPECIES_TOEDSCOOL, "Toedscool"
 
 
 mondata SPECIES_TOEDSCRUEL, "Toedscruel"
-    basestats 80, 70, 65, 100, 80, 120
+    basestats 90, 70, 65, 100, 80, 120
     types TYPE_GROUND, TYPE_GRASS
-    catchrate 90
+    catchrate 100
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE

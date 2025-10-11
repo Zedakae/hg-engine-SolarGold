@@ -8,13 +8,19 @@
 
 CURRENTLY WORKING ON:
 
-ALL FIGHTS UP TO WHITNEY = COMPLETED
-
 SUCCESSFULLY PUT A CAMPER NPC ON GOLDENROD MAP WHICH IS KNOWN AS A "ALIAS"
 
 FIXED GIRLS DIALOGUE BLOCKING RADIO TOWER DOOR.
 
-BEGUN WORKING ON POST WHITNEY SPLIT.
+BEGUN WORKING ON POST WHITNEY SPLIT. BURNED TOWER FIGHTS COMPLETED. ENCOUNTERS UP TO R39 DONE. FIGHTS ON R38 DONE.
+
+FIGHTS COMPLETED UP TO MORTY INCLUDING R38 AND R39.
+
+ ERIKA/MORTY FIGHTS NEEDS PLAYTESTING. PLAYTESTING ON TRIGGER TILES ON R38 AND ECRUTEAK ALSO REQUIRED.
+
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+FLAGS USED FROM "2550" TO "2559" SO FAR!
 
 \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 
@@ -41,6 +47,13 @@ ADDED HARD LEVEL CAPS
 WHEN TRYING TO "GIVE POKEMON" IN DSPRE REMEMBER TO ADD 51 ON TOP OF ARCEUS (493) TO GET VICTINI'S DEX NUMBER (544)
 
 THEN WORK OUT THE DIFFERENCE FROM THE ORIGINAL DEX NUMBER TO THE NEW ONE TO GET THE HG-ENGINE ONE
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+ITEMS IMPLEMENTED IN GAME UP TO "GOLDENROD CITY":
+
+MUSCLE BAND // SHARP BEAK // SHELL BELL // HARD STONE // TM03 - WATER PULSE // MYSTIC WATER //
+U-TURN // CHARCOAL // CUT HM // SILVER POWDER // QUICK CLAW // EVIOLITE
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
@@ -1496,4 +1509,4 @@ NOTABLE MOVE SOUND EFFECTS
 //Nightmare Sound Effect repeatse 2009, 117, 2, 4
 //Shadow Ball Sound Effect playsepan 1903, 117
 //End Of Night Daze Sound Effect playsepan 2107, 117
-//Start Of Night Daze Sound Effect playsepan 1989, 0 
+//Start Of Night Daze Sound Effect playsepan 1989, 0
