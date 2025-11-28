@@ -10,8 +10,8 @@
 .include "asm/include/species.inc"
 
 
-// all the mon personal data. tm learnsets are specifically in tmlearnset.txt
-// basestats and evyields fields are formatted as such: hp atk def speed spatk spdef
+// all the mon personal data.  learnsets are specifically in data/mon/learnsets.json
+// basestats and evyields fields are formatted as such:  hp atk def speed spatk spdef
 // all evyields are set to zero gain also.
 
 
