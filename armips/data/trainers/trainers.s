@@ -1770,7 +1770,7 @@ trainerdata 30, "Whitney"
     item ITEM_NONE
     item ITEM_NONE
     aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_PRIORITIZE_DAMAGE | F_EXPERT_ATTACKS | F_EVALUATE_ATTACKS | 0
-    battletype DOUBLE_BATTLE
+    battletype NO_PARTNER_DOUBLE_BATTLE
     endentry
 
     party 30
@@ -1894,16 +1894,16 @@ trainerdata 31, "Morty"
         ivs 186
         abilityslot 0
         level 35
-        pokemon SPECIES_MISMAGIUS
-        item ITEM_KASIB_BERRY
-        move MOVE_MYSTICAL_FIRE
+        pokemon SPECIES_SPIRITOMB
+        item ITEM_LEFTOVERS
+        move MOVE_TRICK_ROOM
         move MOVE_SHADOW_BALL
-        move MOVE_POWER_GEM
-        move MOVE_DAZZLING_GLEAM
-        ability ABILITY_LEVITATE
+        move MOVE_DARK_PULSE
+        move MOVE_WILL_O_WISP
+        ability ABILITY_INFILTRATOR
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_BOLD
+        nature NATURE_SASSY
         additionalflags 0
         ballseal 0
 
@@ -1945,6 +1945,40 @@ trainerdata 31, "Morty"
         ivs 186
         abilityslot 0
         level 36
+        pokemon SPECIES_AEGISLASH
+        item ITEM_AIR_BALLOON
+        move MOVE_KINGS_SHIELD
+        move MOVE_SHADOW_CLAW
+        move MOVE_SHADOW_SNEAK
+        move MOVE_IRON_HEAD
+        ability ABILITY_STANCE_CHANGE
+        setivs 31, 31, 31, 31, 31, 31
+        setevs 0, 0, 0, 0, 0, 0
+        nature NATURE_CAREFUL
+        additionalflags 0
+        ballseal 0
+
+        // mon 4
+        ivs 186
+        abilityslot 0
+        level 36
+        pokemon SPECIES_MISMAGIUS
+        item ITEM_KASIB_BERRY
+        move MOVE_MYSTICAL_FIRE
+        move MOVE_SHADOW_BALL
+        move MOVE_TRICK_ROOM
+        move MOVE_DAZZLING_GLEAM
+        ability ABILITY_LEVITATE
+        setivs 31, 31, 31, 31, 31, 31
+        setevs 0, 0, 0, 0, 0, 0
+        nature NATURE_BOLD
+        additionalflags 0
+        ballseal 0
+
+        // mon 5
+        ivs 186
+        abilityslot 0
+        level 36
         pokemon SPECIES_BASCULEGION
         item ITEM_ASSAULT_VEST
         move MOVE_LAST_RESPECTS
@@ -1955,40 +1989,6 @@ trainerdata 31, "Morty"
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_IMPISH
-        additionalflags 0
-        ballseal 0
-
-        // mon 4
-        ivs 186
-        abilityslot 0
-        level 36
-        pokemon SPECIES_GHOLDENGO
-        item ITEM_AIR_BALLOON
-        move MOVE_MAKE_IT_RAIN
-        move MOVE_NASTY_PLOT
-        move MOVE_SHADOW_BALL
-        move MOVE_CONFUSE_RAY
-        ability ABILITY_GOOD_AS_GOLD
-        setivs 31, 31, 31, 31, 31, 31
-        setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_CALM
-        additionalflags 0
-        ballseal 0
-
-        // mon 5
-        ivs 186
-        abilityslot 0
-        level 36
-        pokemon SPECIES_ANNIHILAPE
-        item ITEM_PUNCHING_GLOVE
-        move MOVE_RAGE_FIST
-        move MOVE_THUNDER_PUNCH
-        move MOVE_DRAIN_PUNCH
-        move MOVE_ICE_PUNCH
-        ability ABILITY_DEFIANT
-        setivs 31, 31, 31, 31, 31, 31
-        setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_NAIVE
         additionalflags 0
         ballseal 0
     endparty
