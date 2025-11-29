@@ -202,7 +202,7 @@ const u16 *_0210FA3C[] = {
 .halfword ITEM_GUARD_SPEC
 .halfword ITEM_DIRE_HIT
 .halfword ITEM_X_ACCURACY
-.halfword ITEM_X_SPECIAL
+.halfword ITEM_X_SP_ATK
 .halfword ITEM_X_SP_DEF
 .halfword 0xFFFF
 
