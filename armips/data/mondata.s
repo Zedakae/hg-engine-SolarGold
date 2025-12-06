@@ -12,6 +12,7 @@
 
 // all the mon personal data.  learnsets are specifically in data/mon/learnsets.json
 // basestats and evyields fields are formatted as such:  hp atk def speed spatk spdef
+// all evyields are set to zero gain also.
 
 
 mondata SPECIES_NONE, "-----"
@@ -40,7 +41,7 @@ mondata SPECIES_BULBASAUR, "Bulbasaur"
     types TYPE_GRASS, TYPE_POISON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -61,7 +62,7 @@ mondata SPECIES_IVYSAUR, "Ivysaur"
     types TYPE_GRASS, TYPE_POISON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -82,7 +83,7 @@ mondata SPECIES_VENUSAUR, "Venusaur"
     types TYPE_GRASS, TYPE_POISON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -103,7 +104,7 @@ mondata SPECIES_CHARMANDER, "Charmander"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -124,7 +125,7 @@ mondata SPECIES_CHARMELEON, "Charmeleon"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -145,7 +146,7 @@ mondata SPECIES_CHARIZARD, "Charizard"
     types TYPE_FIRE, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -166,7 +167,7 @@ mondata SPECIES_SQUIRTLE, "Squirtle"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -187,7 +188,7 @@ mondata SPECIES_WARTORTLE, "Wartortle"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -208,7 +209,7 @@ mondata SPECIES_BLASTOISE, "Blastoise"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -229,7 +230,7 @@ mondata SPECIES_CATERPIE, "Caterpie"
     types TYPE_BUG, TYPE_BUG
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -250,7 +251,7 @@ mondata SPECIES_METAPOD, "Metapod"
     types TYPE_BUG, TYPE_BUG
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -271,7 +272,7 @@ mondata SPECIES_BUTTERFREE, "Butterfree"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SILVER_POWDER
     genderratio 127
     eggcycles 15
@@ -292,14 +293,14 @@ mondata SPECIES_WEEDLE, "Weedle"
     types TYPE_BUG, TYPE_POISON
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_PECHA_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_BUG, EGG_GROUP_BUG
-    abilities ABILITY_SHIELD_DUST, ABILITY_NONE
+    abilities ABILITY_SHIELD_DUST, ABILITY_SNIPER
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_WEEDLE, "Its poison stinger is very powerful.\nIts bright-colored body is intended\nto warn off its enemies."
@@ -313,14 +314,14 @@ mondata SPECIES_KAKUNA, "Kakuna"
     types TYPE_BUG, TYPE_POISON
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_PECHA_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_BUG, EGG_GROUP_BUG
-    abilities ABILITY_SHED_SKIN, ABILITY_NONE
+    abilities ABILITY_SHED_SKIN, ABILITY_SNIPER
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_KAKUNA, "Although it is a cocoon, it can\nmove a little. It can extend its\npoison barb if it is attacked."
@@ -329,19 +330,19 @@ mondata SPECIES_KAKUNA, "Kakuna"
     mondexweight SPECIES_KAKUNA, "22.0 lbs."
 
 
-mondata SPECIES_BEEDRILL, "Beedrill"
-    basestats 65, 90, 40, 75, 45, 80
+mondata SPECIES_BEEDRILL, "Beedrill" // Buffed Hp, Def, SpDef and Spe
+    basestats 75, 100, 50, 95, 45, 85
     types TYPE_BUG, TYPE_POISON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 1
-    items ITEM_NONE, ITEM_POISON_BARB
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_PECHA_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_BUG, EGG_GROUP_BUG
-    abilities ABILITY_SWARM, ABILITY_NONE
+    abilities ABILITY_SWARM, ABILITY_SNIPER
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_BEEDRILL, "It can take down any opponent with\nits powerful poison stingers.\nIt sometimes attacks in swarms."
@@ -351,18 +352,18 @@ mondata SPECIES_BEEDRILL, "Beedrill"
 
 
 mondata SPECIES_PIDGEY, "Pidgey"
-    basestats 40, 45, 40, 56, 35, 35
+    basestats 40, 40, 45, 60, 60, 45
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_CHARTI_BERRY
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FLYING, EGG_GROUP_FLYING
-    abilities ABILITY_KEEN_EYE, ABILITY_TANGLED_FEET
+    abilities ABILITY_WIND_RIDER, ABILITY_TANGLED_FEET
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_PIDGEY, "It usually hides in tall grass.\nBecause it dislikes fighting,\nit protects itself by kicking up sand."
@@ -372,18 +373,18 @@ mondata SPECIES_PIDGEY, "Pidgey"
 
 
 mondata SPECIES_PIDGEOTTO, "Pidgeotto"
-    basestats 63, 60, 55, 71, 50, 50
+    basestats 70, 50, 65, 75, 75, 65
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_CHARTI_BERRY
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FLYING, EGG_GROUP_FLYING
-    abilities ABILITY_KEEN_EYE, ABILITY_TANGLED_FEET
+    abilities ABILITY_WIND_RIDER, ABILITY_TANGLED_FEET
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_PIDGEOTTO, "It has outstanding vision. However\nhigh it flies, it is able to distinguish\nthe movements of its prey."
@@ -393,18 +394,18 @@ mondata SPECIES_PIDGEOTTO, "Pidgeotto"
 
 
 mondata SPECIES_PIDGEOT, "Pidgeot"
-    basestats 83, 80, 75, 101, 70, 70
+    basestats 90, 75, 85, 105, 100, 85
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_CHARTI_BERRY
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FLYING, EGG_GROUP_FLYING
-    abilities ABILITY_KEEN_EYE, ABILITY_TANGLED_FEET
+    abilities ABILITY_WIND_RIDER, ABILITY_TANGLED_FEET
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_PIDGEOT, "Its well-developed chest muscles make\nit strong enough to whip up a gusty\nwindstorm with just a few flaps."
@@ -418,7 +419,7 @@ mondata SPECIES_RATTATA, "Rattata"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CHILAN_BERRY
     genderratio 127
     eggcycles 15
@@ -439,7 +440,7 @@ mondata SPECIES_RATICATE, "Raticate"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 127
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_SITRUS_BERRY
     genderratio 127
     eggcycles 15
@@ -456,18 +457,18 @@ mondata SPECIES_RATICATE, "Raticate"
 
 
 mondata SPECIES_SPEAROW, "Spearow"
-    basestats 40, 60, 30, 70, 31, 31
-    types TYPE_NORMAL, TYPE_FLYING
+    basestats 45, 65, 35, 75, 30, 30
+    types TYPE_DARK, TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SHARP_BEAK
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FLYING, EGG_GROUP_FLYING
-    abilities ABILITY_KEEN_EYE, ABILITY_NONE
+    abilities ABILITY_INTIMIDATE, ABILITY_KEEN_EYE
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_SPEAROW, "It flaps its short wings to flush out\ninsects from tall grass. It then\nplucks them with its stubby beak."
@@ -477,18 +478,18 @@ mondata SPECIES_SPEAROW, "Spearow"
 
 
 mondata SPECIES_FEAROW, "Fearow"
-    basestats 65, 90, 65, 100, 61, 61
-    types TYPE_NORMAL, TYPE_FLYING
+    basestats 70, 100, 70, 110, 60, 60
+    types TYPE_DARK, TYPE_FLYING
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SHARP_BEAK
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FLYING, EGG_GROUP_FLYING
-    abilities ABILITY_KEEN_EYE, ABILITY_NONE
+    abilities ABILITY_INTIMIDATE, ABILITY_KEEN_EYE
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_FEAROW, "It shoots itself suddenly high into\nthe sky, then plummets down in\none fell swoop to strike its prey."
@@ -502,7 +503,7 @@ mondata SPECIES_EKANS, "Ekans"
     types TYPE_POISON, TYPE_POISON
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -520,10 +521,10 @@ mondata SPECIES_EKANS, "Ekans"
 
 mondata SPECIES_ARBOK, "Arbok"
     basestats 60, 95, 69, 80, 65, 79
-    types TYPE_POISON, TYPE_POISON
+    types TYPE_POISON, TYPE_DARK
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_POISON_BARB
     genderratio 127
     eggcycles 20
@@ -544,7 +545,7 @@ mondata SPECIES_PIKACHU, "Pikachu"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_LIGHT_BALL
     genderratio 127
     eggcycles 10
@@ -565,7 +566,7 @@ mondata SPECIES_RAICHU, "Raichu"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_ORAN_BERRY
     genderratio 127
     eggcycles 10
@@ -582,18 +583,18 @@ mondata SPECIES_RAICHU, "Raichu"
 
 
 mondata SPECIES_SANDSHREW, "Sandshrew"
-    basestats 50, 75, 85, 40, 20, 30
-    types TYPE_GROUND, TYPE_GROUND
+    basestats 50, 75, 90, 50, 10, 40
+    types TYPE_GROUND, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
-    items ITEM_GRIP_CLAW, ITEM_QUICK_CLAW
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_SOFT_SAND
     genderratio 127
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_SAND_VEIL, ABILITY_NONE
+    abilities ABILITY_SAND_VEIL, ABILITY_TOUGH_CLAWS
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_SANDSHREW, "If it fell from a great height, this\nPokémon could save itself by rolling\ninto a ball and bouncing."
@@ -603,18 +604,18 @@ mondata SPECIES_SANDSHREW, "Sandshrew"
 
 
 mondata SPECIES_SANDSLASH, "Sandslash"
-    basestats 75, 100, 110, 65, 45, 55
-    types TYPE_GROUND, TYPE_GROUND
+    basestats 75, 100, 120, 75, 25, 65
+    types TYPE_GROUND, TYPE_NORMAL
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
-    items ITEM_SOFT_SAND, ITEM_QUICK_CLAW
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_SOFT_SAND
     genderratio 127
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_SAND_VEIL, ABILITY_NONE
+    abilities ABILITY_SAND_VEIL, ABILITY_TOUGH_CLAWS
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_SANDSLASH, "In an attempt to hide itself,\nit will run around at top speed to\nkick up a blinding dust storm."
@@ -628,7 +629,7 @@ mondata SPECIES_NIDORAN_F, "Nidoran♀"
     types TYPE_POISON, TYPE_POISON
     catchrate 235
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -649,7 +650,7 @@ mondata SPECIES_NIDORINA, "Nidorina"
     types TYPE_POISON, TYPE_POISON
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -670,7 +671,7 @@ mondata SPECIES_NIDOQUEEN, "Nidoqueen"
     types TYPE_POISON, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -691,7 +692,7 @@ mondata SPECIES_NIDORAN_M, "Nidoran♂"
     types TYPE_POISON, TYPE_POISON
     catchrate 235
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -712,7 +713,7 @@ mondata SPECIES_NIDORINO, "Nidorino"
     types TYPE_POISON, TYPE_POISON
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -733,7 +734,7 @@ mondata SPECIES_NIDOKING, "Nidoking"
     types TYPE_POISON, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -754,7 +755,7 @@ mondata SPECIES_CLEFAIRY, "Clefairy"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 150
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_LEPPA_BERRY, ITEM_MOON_STONE
     genderratio 190
     eggcycles 10
@@ -775,7 +776,7 @@ mondata SPECIES_CLEFABLE, "Clefable"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_LEPPA_BERRY, ITEM_MOON_STONE
     genderratio 190
     eggcycles 10
@@ -796,7 +797,7 @@ mondata SPECIES_VULPIX, "Vulpix"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_RAWST_BERRY, ITEM_CHARCOAL
     genderratio 190
     eggcycles 20
@@ -817,7 +818,7 @@ mondata SPECIES_NINETALES, "Ninetales"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_RAWST_BERRY, ITEM_CHARCOAL
     genderratio 190
     eggcycles 20
@@ -838,7 +839,7 @@ mondata SPECIES_JIGGLYPUFF, "Jigglypuff"
     types TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 170
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_MOON_STONE
     genderratio 190
     eggcycles 10
@@ -859,7 +860,7 @@ mondata SPECIES_WIGGLYTUFF, "Wigglytuff"
     types TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 50
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_MOON_STONE
     genderratio 190
     eggcycles 10
@@ -880,7 +881,7 @@ mondata SPECIES_ZUBAT, "Zubat"
     types TYPE_POISON, TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -901,7 +902,7 @@ mondata SPECIES_GOLBAT, "Golbat"
     types TYPE_POISON, TYPE_FLYING
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -922,7 +923,7 @@ mondata SPECIES_ODDISH, "Oddish"
     types TYPE_GRASS, TYPE_POISON
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_ABSORB_BULB
     genderratio 127
     eggcycles 20
@@ -943,7 +944,7 @@ mondata SPECIES_GLOOM, "Gloom"
     types TYPE_GRASS, TYPE_POISON
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_ABSORB_BULB
     genderratio 127
     eggcycles 20
@@ -964,7 +965,7 @@ mondata SPECIES_VILEPLUME, "Vileplume"
     types TYPE_GRASS, TYPE_POISON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_ABSORB_BULB
     genderratio 127
     eggcycles 20
@@ -981,11 +982,11 @@ mondata SPECIES_VILEPLUME, "Vileplume"
 
 
 mondata SPECIES_PARAS, "Paras"
-    basestats 35, 70, 55, 25, 45, 55
+    basestats 40, 75, 65, 25, 45, 65 // Buffed Hp, Def, SpDef
     types TYPE_BUG, TYPE_GRASS
-    catchrate 190
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_TINY_MUSHROOM, ITEM_BIG_MUSHROOM
     genderratio 127
     eggcycles 20
@@ -1001,19 +1002,19 @@ mondata SPECIES_PARAS, "Paras"
     mondexweight SPECIES_PARAS, "11.9 lbs."
 
 
-mondata SPECIES_PARASECT, "Parasect"
-    basestats 60, 95, 80, 30, 60, 80
-    types TYPE_BUG, TYPE_GRASS
-    catchrate 75
+mondata SPECIES_PARASECT, "Parasect" // Buffed All Stats Except Speed
+    basestats 75, 110, 80, 30, 70, 85
+    types TYPE_BUG, TYPE_GHOST
+    catchrate 85
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_TINY_MUSHROOM, ITEM_BIG_MUSHROOM
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_BUG, EGG_GROUP_GRASS
-    abilities ABILITY_EFFECT_SPORE, ABILITY_DRY_SKIN
+    abilities ABILITY_EFFECT_SPORE, ABILITY_THICK_FAT
     runchance 0
     colorflip BODY_COLOR_RED, 0
     mondexentry SPECIES_PARASECT, "It stays mostly in dark, damp places,\nthe preference not of the bug, but\nof the big mushroom on its back."
@@ -1027,7 +1028,7 @@ mondata SPECIES_VENONAT, "Venonat"
     types TYPE_BUG, TYPE_POISON
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -1048,7 +1049,7 @@ mondata SPECIES_VENOMOTH, "Venomoth"
     types TYPE_BUG, TYPE_POISON
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_SHED_SHELL, ITEM_SILVER_POWDER
     genderratio 127
     eggcycles 20
@@ -1069,7 +1070,7 @@ mondata SPECIES_DIGLETT, "Diglett"
     types TYPE_GROUND, TYPE_GROUND
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SOFT_SAND
     genderratio 127
     eggcycles 20
@@ -1090,7 +1091,7 @@ mondata SPECIES_DUGTRIO, "Dugtrio"
     types TYPE_GROUND, TYPE_GROUND
     catchrate 50
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SOFT_SAND
     genderratio 127
     eggcycles 20
@@ -1111,7 +1112,7 @@ mondata SPECIES_MEOWTH, "Meowth"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_QUICK_CLAW, ITEM_NUGGET
     genderratio 127
     eggcycles 20
@@ -1132,7 +1133,7 @@ mondata SPECIES_PERSIAN, "Persian"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_QUICK_CLAW
     genderratio 127
     eggcycles 20
@@ -1153,7 +1154,7 @@ mondata SPECIES_PSYDUCK, "Psyduck"
     types TYPE_WATER, TYPE_WATER
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -1174,7 +1175,7 @@ mondata SPECIES_GOLDUCK, "Golduck"
     types TYPE_WATER, TYPE_WATER
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -1195,7 +1196,7 @@ mondata SPECIES_MANKEY, "Mankey"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PAYAPA_BERRY
     genderratio 127
     eggcycles 20
@@ -1216,7 +1217,7 @@ mondata SPECIES_PRIMEAPE, "Primeape"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PAYAPA_BERRY
     genderratio 127
     eggcycles 20
@@ -1237,7 +1238,7 @@ mondata SPECIES_GROWLITHE, "Growlithe"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_RAWST_BERRY, ITEM_NONE
     genderratio 63
     eggcycles 20
@@ -1258,7 +1259,7 @@ mondata SPECIES_ARCANINE, "Arcanine"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_RAWST_BERRY, ITEM_NONE
     genderratio 63
     eggcycles 20
@@ -1279,7 +1280,7 @@ mondata SPECIES_POLIWAG, "Poliwag"
     types TYPE_WATER, TYPE_WATER
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -1300,7 +1301,7 @@ mondata SPECIES_POLIWHIRL, "Poliwhirl"
     types TYPE_WATER, TYPE_WATER
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_KINGS_ROCK
     genderratio 127
     eggcycles 20
@@ -1321,7 +1322,7 @@ mondata SPECIES_POLIWRATH, "Poliwrath"
     types TYPE_WATER, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_KINGS_ROCK
     genderratio 127
     eggcycles 20
@@ -1342,7 +1343,7 @@ mondata SPECIES_ABRA, "Abra"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_TWISTED_SPOON
     genderratio 63
     eggcycles 20
@@ -1363,7 +1364,7 @@ mondata SPECIES_KADABRA, "Kadabra"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 100
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_TWISTED_SPOON
     genderratio 63
     eggcycles 20
@@ -1384,7 +1385,7 @@ mondata SPECIES_ALAKAZAM, "Alakazam"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 50
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_TWISTED_SPOON
     genderratio 63
     eggcycles 20
@@ -1405,7 +1406,7 @@ mondata SPECIES_MACHOP, "Machop"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 180
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_FOCUS_BAND
     genderratio 63
     eggcycles 20
@@ -1426,7 +1427,7 @@ mondata SPECIES_MACHOKE, "Machoke"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_FOCUS_BAND
     genderratio 63
     eggcycles 20
@@ -1447,7 +1448,7 @@ mondata SPECIES_MACHAMP, "Machamp"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_FOCUS_BAND
     genderratio 63
     eggcycles 20
@@ -1464,18 +1465,18 @@ mondata SPECIES_MACHAMP, "Machamp"
 
 
 mondata SPECIES_BELLSPROUT, "Bellsprout"
-    basestats 50, 75, 35, 40, 70, 30
+    basestats 65, 85, 40, 40, 50, 35
     types TYPE_GRASS, TYPE_POISON
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_PECHA_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_GRASS, EGG_GROUP_GRASS
-    abilities ABILITY_CHLOROPHYLL, ABILITY_NONE
+    abilities ABILITY_CHLOROPHYLL, ABILITY_MERCILESS
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_BELLSPROUT, "Even though its body is extremely\nskinny, it is blindingly fast\nwhen catching its prey."
@@ -1485,18 +1486,18 @@ mondata SPECIES_BELLSPROUT, "Bellsprout"
 
 
 mondata SPECIES_WEEPINBELL, "Weepinbell"
-    basestats 65, 90, 50, 55, 85, 45
+    basestats 80, 100, 55, 55, 60, 50
     types TYPE_GRASS, TYPE_POISON
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_PECHA_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_GRASS, EGG_GROUP_GRASS
-    abilities ABILITY_CHLOROPHYLL, ABILITY_NONE
+    abilities ABILITY_CHLOROPHYLL, ABILITY_MERCILESS
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_WEEPINBELL, "Even though it is filled with acid,\nit does not melt because it also\noozes a protective fluid."
@@ -1506,18 +1507,18 @@ mondata SPECIES_WEEPINBELL, "Weepinbell"
 
 
 mondata SPECIES_VICTREEBEL, "Victreebel"
-    basestats 80, 105, 65, 70, 100, 70
+    basestats 95, 115, 75, 70, 80, 75
     types TYPE_GRASS, TYPE_POISON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_PECHA_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_GRASS, EGG_GROUP_GRASS
-    abilities ABILITY_CHLOROPHYLL, ABILITY_NONE
+    abilities ABILITY_CHLOROPHYLL, ABILITY_MERCILESS
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_VICTREEBEL, "Acid that has dissolved many prey\nbecomes sweeter, making it even\nmore effective at attracting prey."
@@ -1531,7 +1532,7 @@ mondata SPECIES_TENTACOOL, "Tentacool"
     types TYPE_WATER, TYPE_POISON
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_POISON_BARB
     genderratio 127
     eggcycles 20
@@ -1552,7 +1553,7 @@ mondata SPECIES_TENTACRUEL, "Tentacruel"
     types TYPE_WATER, TYPE_POISON
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_POISON_BARB
     genderratio 127
     eggcycles 20
@@ -1573,7 +1574,7 @@ mondata SPECIES_GEODUDE, "Geodude"
     types TYPE_ROCK, TYPE_GROUND
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_EVERSTONE
     genderratio 127
     eggcycles 15
@@ -1594,7 +1595,7 @@ mondata SPECIES_GRAVELER, "Graveler"
     types TYPE_ROCK, TYPE_GROUND
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_HARD_STONE, ITEM_EVERSTONE
     genderratio 127
     eggcycles 15
@@ -1615,7 +1616,7 @@ mondata SPECIES_GOLEM, "Golem"
     types TYPE_ROCK, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_HARD_STONE, ITEM_EVERSTONE
     genderratio 127
     eggcycles 15
@@ -1636,8 +1637,8 @@ mondata SPECIES_PONYTA, "Ponyta"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
-    items ITEM_NONE, ITEM_SHUCA_BERRY
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_RAWST_BERRY
     genderratio 127
     eggcycles 20
     basefriendship 50
@@ -1657,8 +1658,8 @@ mondata SPECIES_RAPIDASH, "Rapidash"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
-    items ITEM_NONE, ITEM_SHUCA_BERRY
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_RAWST_BERRY
     genderratio 127
     eggcycles 20
     basefriendship 50
@@ -1678,7 +1679,7 @@ mondata SPECIES_SLOWPOKE, "Slowpoke"
     types TYPE_WATER, TYPE_PSYCHIC
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_LAGGING_TAIL, ITEM_KINGS_ROCK
     genderratio 127
     eggcycles 20
@@ -1699,7 +1700,7 @@ mondata SPECIES_SLOWBRO, "Slowbro"
     types TYPE_WATER, TYPE_PSYCHIC
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_KINGS_ROCK
     genderratio 127
     eggcycles 20
@@ -1720,7 +1721,7 @@ mondata SPECIES_MAGNEMITE, "Magnemite"
     types TYPE_ELECTRIC, TYPE_STEEL
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_METAL_COAT
     genderratio 255
     eggcycles 20
@@ -1741,7 +1742,7 @@ mondata SPECIES_MAGNETON, "Magneton"
     types TYPE_ELECTRIC, TYPE_STEEL
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_MAGNET, ITEM_METAL_COAT
     genderratio 255
     eggcycles 20
@@ -1758,18 +1759,18 @@ mondata SPECIES_MAGNETON, "Magneton"
 
 
 mondata SPECIES_FARFETCHD, "Farfetch’d"
-    basestats 52, 90, 55, 60, 58, 62
+    basestats 60, 90, 60, 80, 50, 70
     types TYPE_NORMAL, TYPE_FLYING
-    catchrate 45
+    catchrate 235
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LEEK
     genderratio 127
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FLYING, EGG_GROUP_FIELD
-    abilities ABILITY_KEEN_EYE, ABILITY_INNER_FOCUS
+    abilities ABILITY_TECHNICIAN, ABILITY_INNER_FOCUS
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_FARFETCHD, "If anyone tries to disturb where the\nessential plant stalks grow, it uses its\nown stalk to thwart them."
@@ -1783,7 +1784,7 @@ mondata SPECIES_DODUO, "Doduo"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SHARP_BEAK
     genderratio 127
     eggcycles 20
@@ -1804,7 +1805,7 @@ mondata SPECIES_DODRIO, "Dodrio"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SHARP_BEAK
     genderratio 127
     eggcycles 20
@@ -1825,7 +1826,7 @@ mondata SPECIES_SEEL, "Seel"
     types TYPE_WATER, TYPE_WATER
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ASPEAR_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -1846,7 +1847,7 @@ mondata SPECIES_DEWGONG, "Dewgong"
     types TYPE_WATER, TYPE_ICE
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ASPEAR_BERRY, ITEM_NEVER_MELT_ICE
     genderratio 127
     eggcycles 20
@@ -1867,7 +1868,7 @@ mondata SPECIES_GRIMER, "Grimer"
     types TYPE_POISON, TYPE_POISON
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_BLACK_SLUDGE, ITEM_NUGGET
     genderratio 127
     eggcycles 20
@@ -1888,7 +1889,7 @@ mondata SPECIES_MUK, "Muk"
     types TYPE_POISON, TYPE_POISON
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 1, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_TOXIC_ORB, ITEM_NUGGET
     genderratio 127
     eggcycles 20
@@ -1909,7 +1910,7 @@ mondata SPECIES_SHELLDER, "Shellder"
     types TYPE_WATER, TYPE_WATER
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PEARL, ITEM_BIG_PEARL
     genderratio 127
     eggcycles 20
@@ -1930,7 +1931,7 @@ mondata SPECIES_CLOYSTER, "Cloyster"
     types TYPE_WATER, TYPE_ICE
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PEARL, ITEM_BIG_PEARL
     genderratio 127
     eggcycles 20
@@ -1951,7 +1952,7 @@ mondata SPECIES_GASTLY, "Gastly"
     types TYPE_GHOST, TYPE_POISON
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -1972,7 +1973,7 @@ mondata SPECIES_HAUNTER, "Haunter"
     types TYPE_GHOST, TYPE_POISON
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SPELL_TAG
     genderratio 127
     eggcycles 20
@@ -1993,7 +1994,7 @@ mondata SPECIES_GENGAR, "Gengar"
     types TYPE_GHOST, TYPE_POISON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SPELL_TAG
     genderratio 127
     eggcycles 20
@@ -2012,9 +2013,9 @@ mondata SPECIES_GENGAR, "Gengar"
 mondata SPECIES_ONIX, "Onix"
     basestats 35, 45, 160, 70, 30, 45
     types TYPE_ROCK, TYPE_GROUND
-    catchrate 45
+    catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_HARD_STONE
     genderratio 127
     eggcycles 25
@@ -2031,18 +2032,18 @@ mondata SPECIES_ONIX, "Onix"
 
 
 mondata SPECIES_DROWZEE, "Drowzee"
-    basestats 60, 48, 45, 42, 43, 90
-    types TYPE_PSYCHIC, TYPE_PSYCHIC
-    catchrate 190
+    basestats 60, 45, 45, 45, 45, 90
+    types TYPE_PSYCHIC, TYPE_DARK
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_TWISTED_SPOON
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE
-    abilities ABILITY_INSOMNIA, ABILITY_FOREWARN
+    abilities ABILITY_INSOMNIA, ABILITY_PRANKSTER
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_DROWZEE, "If you think that you had a good dream\nbut you can’t remember it,\na DROWZEE has probably eaten it."
@@ -2052,18 +2053,18 @@ mondata SPECIES_DROWZEE, "Drowzee"
 
 
 mondata SPECIES_HYPNO, "Hypno"
-    basestats 85, 73, 70, 67, 73, 115
-    types TYPE_PSYCHIC, TYPE_PSYCHIC
+    basestats 85, 65, 85, 55, 85, 115
+    types TYPE_PSYCHIC, TYPE_DARK
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_TWISTED_SPOON
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE
-    abilities ABILITY_INSOMNIA, ABILITY_FOREWARN
+    abilities ABILITY_INSOMNIA, ABILITY_PRANKSTER
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_HYPNO, "When it is very hungry, it puts\nhumans it meets to sleep,\nthen it feasts on their dreams."
@@ -2073,11 +2074,11 @@ mondata SPECIES_HYPNO, "Hypno"
 
 
 mondata SPECIES_KRABBY, "Krabby"
-    basestats 30, 105, 90, 50, 25, 25
+    basestats 45, 110, 90, 60, 25, 25
     types TYPE_WATER, TYPE_WATER
     catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -2094,11 +2095,11 @@ mondata SPECIES_KRABBY, "Krabby"
 
 
 mondata SPECIES_KINGLER, "Kingler"
-    basestats 55, 130, 115, 75, 50, 50
-    types TYPE_WATER, TYPE_WATER
+    basestats 65, 135, 115, 85, 50, 50
+    types TYPE_WATER, TYPE_STEEL
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -2119,7 +2120,7 @@ mondata SPECIES_VOLTORB, "Voltorb"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -2140,7 +2141,7 @@ mondata SPECIES_ELECTRODE, "Electrode"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -2161,7 +2162,7 @@ mondata SPECIES_EXEGGCUTE, "Exeggcute"
     types TYPE_GRASS, TYPE_PSYCHIC
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PSYCHIC_SEED
     genderratio 127
     eggcycles 20
@@ -2182,7 +2183,7 @@ mondata SPECIES_EXEGGUTOR, "Exeggutor"
     types TYPE_GRASS, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -2203,7 +2204,7 @@ mondata SPECIES_CUBONE, "Cubone"
     types TYPE_GROUND, TYPE_GROUND
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_THICK_CLUB
     genderratio 127
     eggcycles 20
@@ -2224,7 +2225,7 @@ mondata SPECIES_MAROWAK, "Marowak"
     types TYPE_GROUND, TYPE_GROUND
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_THICK_CLUB
     genderratio 127
     eggcycles 20
@@ -2245,7 +2246,7 @@ mondata SPECIES_HITMONLEE, "Hitmonlee"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 25
@@ -2266,7 +2267,7 @@ mondata SPECIES_HITMONCHAN, "Hitmonchan"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 25
@@ -2287,7 +2288,7 @@ mondata SPECIES_LICKITUNG, "Lickitung"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LAGGING_TAIL
     genderratio 127
     eggcycles 20
@@ -2308,7 +2309,7 @@ mondata SPECIES_KOFFING, "Koffing"
     types TYPE_POISON, TYPE_POISON
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SMOKE_BALL
     genderratio 127
     eggcycles 20
@@ -2329,7 +2330,7 @@ mondata SPECIES_WEEZING, "Weezing"
     types TYPE_POISON, TYPE_POISON
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SMOKE_BALL
     genderratio 127
     eggcycles 20
@@ -2348,9 +2349,9 @@ mondata SPECIES_WEEZING, "Weezing"
 mondata SPECIES_RHYHORN, "Rhyhorn"
     basestats 80, 85, 95, 25, 30, 30
     types TYPE_GROUND, TYPE_ROCK
-    catchrate 120
+    catchrate 215
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -2371,7 +2372,7 @@ mondata SPECIES_RHYDON, "Rhydon"
     types TYPE_GROUND, TYPE_ROCK
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -2392,7 +2393,7 @@ mondata SPECIES_CHANSEY, "Chansey"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_OVAL_STONE, ITEM_LUCKY_EGG
     genderratio 254
     eggcycles 40
@@ -2413,7 +2414,7 @@ mondata SPECIES_TANGELA, "Tangela"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -2434,7 +2435,7 @@ mondata SPECIES_KANGASKHAN, "Kangaskhan"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -2455,7 +2456,7 @@ mondata SPECIES_HORSEA, "Horsea"
     types TYPE_WATER, TYPE_WATER
     catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_DRAGON_SCALE
     genderratio 127
     eggcycles 20
@@ -2473,10 +2474,10 @@ mondata SPECIES_HORSEA, "Horsea"
 
 mondata SPECIES_SEADRA, "Seadra"
     basestats 55, 65, 95, 85, 95, 45
-    types TYPE_WATER, TYPE_WATER
+    types TYPE_WATER, TYPE_DRAGON
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_DRAGON_SCALE
     genderratio 127
     eggcycles 20
@@ -2497,7 +2498,7 @@ mondata SPECIES_GOLDEEN, "Goldeen"
     types TYPE_WATER, TYPE_WATER
     catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MYSTIC_WATER
     genderratio 127
     eggcycles 20
@@ -2518,7 +2519,7 @@ mondata SPECIES_SEAKING, "Seaking"
     types TYPE_WATER, TYPE_WATER
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MYSTIC_WATER
     genderratio 127
     eggcycles 20
@@ -2539,7 +2540,7 @@ mondata SPECIES_STARYU, "Staryu"
     types TYPE_WATER, TYPE_WATER
     catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_STARDUST, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 20
@@ -2560,7 +2561,7 @@ mondata SPECIES_STARMIE, "Starmie"
     types TYPE_WATER, TYPE_PSYCHIC
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_STARDUST, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 20
@@ -2581,7 +2582,7 @@ mondata SPECIES_MR_MIME, "Mr. Mime"
     types TYPE_PSYCHIC, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LEPPA_BERRY
     genderratio 127
     eggcycles 25
@@ -2602,7 +2603,7 @@ mondata SPECIES_SCYTHER, "Scyther"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -2623,7 +2624,7 @@ mondata SPECIES_JYNX, "Jynx"
     types TYPE_ICE, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ASPEAR_BERRY, ITEM_NONE
     genderratio 254
     eggcycles 25
@@ -2644,7 +2645,7 @@ mondata SPECIES_ELECTABUZZ, "Electabuzz"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ELECTIRIZER, ITEM_NONE
     genderratio 63
     eggcycles 25
@@ -2665,7 +2666,7 @@ mondata SPECIES_MAGMAR, "Magmar"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_RAWST_BERRY, ITEM_MAGMARIZER
     genderratio 63
     eggcycles 25
@@ -2686,7 +2687,7 @@ mondata SPECIES_PINSIR, "Pinsir"
     types TYPE_BUG, TYPE_BUG
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -2707,7 +2708,7 @@ mondata SPECIES_TAUROS, "Tauros"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -2728,7 +2729,7 @@ mondata SPECIES_MAGIKARP, "Magikarp"
     types TYPE_WATER, TYPE_WATER
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 5
@@ -2749,7 +2750,7 @@ mondata SPECIES_GYARADOS, "Gyarados"
     types TYPE_WATER, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 5
@@ -2770,7 +2771,7 @@ mondata SPECIES_LAPRAS, "Lapras"
     types TYPE_WATER, TYPE_ICE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_MYSTIC_WATER, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -2791,7 +2792,7 @@ mondata SPECIES_DITTO, "Ditto"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 35
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_QUICK_POWDER, ITEM_METAL_POWDER
     genderratio 255
     eggcycles 20
@@ -2812,7 +2813,7 @@ mondata SPECIES_EEVEE, "Eevee"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 35
@@ -2833,7 +2834,7 @@ mondata SPECIES_VAPOREON, "Vaporeon"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 35
@@ -2854,7 +2855,7 @@ mondata SPECIES_JOLTEON, "Jolteon"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 35
@@ -2875,7 +2876,7 @@ mondata SPECIES_FLAREON, "Flareon"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 35
@@ -2896,7 +2897,7 @@ mondata SPECIES_PORYGON, "Porygon"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -2917,7 +2918,7 @@ mondata SPECIES_OMANYTE, "Omanyte"
     types TYPE_ROCK, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -2938,7 +2939,7 @@ mondata SPECIES_OMASTAR, "Omastar"
     types TYPE_ROCK, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -2959,7 +2960,7 @@ mondata SPECIES_KABUTO, "Kabuto"
     types TYPE_ROCK, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -2980,7 +2981,7 @@ mondata SPECIES_KABUTOPS, "Kabutops"
     types TYPE_ROCK, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -3001,7 +3002,7 @@ mondata SPECIES_AERODACTYL, "Aerodactyl"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 35
@@ -3022,7 +3023,7 @@ mondata SPECIES_SNORLAX, "Snorlax"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_CHESTO_BERRY, ITEM_LEFTOVERS
     genderratio 31
     eggcycles 40
@@ -3043,7 +3044,7 @@ mondata SPECIES_ARTICUNO, "Articuno"
     types TYPE_ICE, TYPE_FLYING
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -3064,7 +3065,7 @@ mondata SPECIES_ZAPDOS, "Zapdos"
     types TYPE_ELECTRIC, TYPE_FLYING
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -3085,7 +3086,7 @@ mondata SPECIES_MOLTRES, "Moltres"
     types TYPE_FIRE, TYPE_FLYING
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -3106,7 +3107,7 @@ mondata SPECIES_DRATINI, "Dratini"
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_DRAGON_SCALE
     genderratio 127
     eggcycles 40
@@ -3127,7 +3128,7 @@ mondata SPECIES_DRAGONAIR, "Dragonair"
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_DRAGON_FANG, ITEM_DRAGON_SCALE
     genderratio 127
     eggcycles 40
@@ -3148,7 +3149,7 @@ mondata SPECIES_DRAGONITE, "Dragonite"
     types TYPE_DRAGON, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_DRAGON_FANG, ITEM_DRAGON_SCALE
     genderratio 127
     eggcycles 40
@@ -3169,7 +3170,7 @@ mondata SPECIES_MEWTWO, "Mewtwo"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -3190,7 +3191,7 @@ mondata SPECIES_MEW, "Mew"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_LUM_BERRY, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -3209,16 +3210,16 @@ mondata SPECIES_MEW, "Mew"
 mondata SPECIES_CHIKORITA, "Chikorita"
     basestats 45, 49, 65, 45, 49, 65
     types TYPE_GRASS, TYPE_GRASS
-    catchrate 45
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_LUM_BERRY, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_GRASS
-    abilities ABILITY_OVERGROW, ABILITY_NONE
+    abilities ABILITY_OVERGROW, ABILITY_GRASSY_SURGE
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_CHIKORITA, "A sweet aroma gently wafts from\nthe leaf on its head. It is docile\nand loves to soak up sunrays."
@@ -3229,17 +3230,17 @@ mondata SPECIES_CHIKORITA, "Chikorita"
 
 mondata SPECIES_BAYLEEF, "Bayleef"
     basestats 60, 62, 80, 60, 63, 80
-    types TYPE_GRASS, TYPE_GRASS
-    catchrate 45
+    types TYPE_GRASS, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_GRASS
+    catchrate 125
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_GRASS
-    abilities ABILITY_OVERGROW, ABILITY_NONE
+    abilities ABILITY_OVERGROW, ABILITY_GRASSY_SURGE
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_BAYLEEF, "The scent of spices comes from\naround its neck. Somehow,\nsniffing it makes you want to fight."
@@ -3250,17 +3251,17 @@ mondata SPECIES_BAYLEEF, "Bayleef"
 
 mondata SPECIES_MEGANIUM, "Meganium"
     basestats 80, 82, 100, 80, 83, 100
-    types TYPE_GRASS, TYPE_GRASS
+    types TYPE_GRASS, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_GRASS
-    abilities ABILITY_OVERGROW, ABILITY_NONE
+    abilities ABILITY_OVERGROW, ABILITY_GRASSY_SURGE
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_MEGANIUM, "The aroma that rises from its\npetals contains a substance that\ncalms aggressive feelings."
@@ -3270,18 +3271,18 @@ mondata SPECIES_MEGANIUM, "Meganium"
 
 
 mondata SPECIES_CYNDAQUIL, "Cyndaquil"
-    basestats 39, 52, 43, 65, 60, 50
+    basestats 40, 50, 45, 65, 65, 50
     types TYPE_FIRE, TYPE_FIRE
-    catchrate 45
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_BLAZE, ABILITY_NONE
+    abilities ABILITY_BLAZE, ABILITY_FLASH_FIRE
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_CYNDAQUIL, "It is timid, and always curls itself\nup in a ball. If attacked, it\nflares up its back for protection."
@@ -3291,18 +3292,18 @@ mondata SPECIES_CYNDAQUIL, "Cyndaquil"
 
 
 mondata SPECIES_QUILAVA, "Quilava"
-    basestats 58, 64, 58, 80, 80, 65
-    types TYPE_FIRE, TYPE_FIRE
-    catchrate 45
+    basestats 60, 60, 60, 85, 80, 70
+    types TYPE_FIRE, TYPE_GROUND
+    catchrate 125
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_BLAZE, ABILITY_NONE
+    abilities ABILITY_BLAZE, ABILITY_FLASH_FIRE
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_QUILAVA, "Be careful if it turns its back\nduring battle. It means that it will\nattack with the fire on its back."
@@ -3312,18 +3313,18 @@ mondata SPECIES_QUILAVA, "Quilava"
 
 
 mondata SPECIES_TYPHLOSION, "Typhlosion"
-    basestats 78, 84, 78, 100, 109, 85
-    types TYPE_FIRE, TYPE_FIRE
+    basestats 85, 70, 80, 110, 115, 90
+    types TYPE_FIRE, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_BLAZE, ABILITY_NONE
+    abilities ABILITY_BLAZE, ABILITY_FLASH_FIRE
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_TYPHLOSION, "If its rage peaks, it becomes so\nhot that anything that touches it\nwill instantly go up in flames."
@@ -3335,16 +3336,16 @@ mondata SPECIES_TYPHLOSION, "Typhlosion"
 mondata SPECIES_TOTODILE, "Totodile"
     basestats 50, 65, 64, 43, 44, 48
     types TYPE_WATER, TYPE_WATER
-    catchrate 45
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_WATER_1
-    abilities ABILITY_TORRENT, ABILITY_NONE
+    abilities ABILITY_TORRENT, ABILITY_INTIMIDATE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_TOTODILE, "Its powerful, well-developed jaws\nare capable of crushing anything.\nEven its Trainer must be careful."
@@ -3355,17 +3356,17 @@ mondata SPECIES_TOTODILE, "Totodile"
 
 mondata SPECIES_CROCONAW, "Croconaw"
     basestats 65, 80, 80, 58, 59, 63
-    types TYPE_WATER, TYPE_WATER
-    catchrate 45
+    types TYPE_WATER, TYPE_DARK
+    catchrate 125
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_WATER_1
-    abilities ABILITY_TORRENT, ABILITY_NONE
+    abilities ABILITY_TORRENT, ABILITY_INTIMIDATE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_CROCONAW, "If it loses a fang, a new one\ngrows back in its place. There are\nalways 48 fangs lining its mouth."
@@ -3376,17 +3377,17 @@ mondata SPECIES_CROCONAW, "Croconaw"
 
 mondata SPECIES_FERALIGATR, "Feraligatr"
     basestats 85, 105, 100, 78, 79, 83
-    types TYPE_WATER, TYPE_WATER
+    types TYPE_WATER, TYPE_DARK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_WATER_1
-    abilities ABILITY_TORRENT, ABILITY_NONE
+    abilities ABILITY_TORRENT, ABILITY_INTIMIDATE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_FERALIGATR, "When it bites with its massive and\npowerful jaws, it shakes its head\nand savagely tears its victim up."
@@ -3396,18 +3397,18 @@ mondata SPECIES_FERALIGATR, "Feraligatr"
 
 
 mondata SPECIES_SENTRET, "Sentret"
-    basestats 35, 46, 34, 20, 35, 45
-    types TYPE_NORMAL, TYPE_NORMAL
+    basestats 40, 60, 50, 40, 35, 35
+    types TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
-    items ITEM_NONE, ITEM_ORAN_BERRY
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_ORAN_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_RUN_AWAY, ABILITY_KEEN_EYE
+    abilities ABILITY_ADAPTABILITY, ABILITY_KEEN_EYE
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_SENTRET, "A very cautious Pokémon, it raises\nitself up using its tail to get a\nbetter view of its surroundings."
@@ -3417,18 +3418,18 @@ mondata SPECIES_SENTRET, "Sentret"
 
 
 mondata SPECIES_FURRET, "Furret"
-    basestats 85, 76, 64, 90, 45, 55
-    types TYPE_NORMAL, TYPE_NORMAL
-    catchrate 90
+    basestats 85, 85, 70, 90, 45, 55
+    types TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
+    catchrate 130
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
-    items ITEM_ORAN_BERRY, ITEM_SITRUS_BERRY
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_ORAN_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_RUN_AWAY, ABILITY_KEEN_EYE
+    abilities ABILITY_ADAPTABILITY, ABILITY_KEEN_EYE
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_FURRET, "It makes a nest to suit its long and\nskinny body. The nest is impossible\nfor other Pokémon to enter."
@@ -3438,18 +3439,18 @@ mondata SPECIES_FURRET, "Furret"
 
 
 mondata SPECIES_HOOTHOOT, "Hoothoot"
-    basestats 60, 30, 30, 50, 36, 56
-    types TYPE_NORMAL, TYPE_FLYING
+    basestats 60, 30, 30, 55, 50, 60
+    types TYPE_GHOST, TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_COLBUR_BERRY
     genderratio 127
     eggcycles 15
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FLYING, EGG_GROUP_FLYING
-    abilities ABILITY_INSOMNIA, ABILITY_KEEN_EYE
+    abilities ABILITY_INSOMNIA, ABILITY_PRANKSTER
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_HOOTHOOT, "It always stands on one foot.\nIt changes feet so fast,\nthe movement can rarely be seen."
@@ -3459,18 +3460,18 @@ mondata SPECIES_HOOTHOOT, "Hoothoot"
 
 
 mondata SPECIES_NOCTOWL, "Noctowl"
-    basestats 100, 50, 50, 70, 86, 96
-    types TYPE_NORMAL, TYPE_FLYING
-    catchrate 90
+    basestats 100, 50, 50, 80, 95, 95
+    types TYPE_GHOST, TYPE_FLYING
+    catchrate 100
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_COLBUR_BERRY
     genderratio 127
     eggcycles 15
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FLYING, EGG_GROUP_FLYING
-    abilities ABILITY_INSOMNIA, ABILITY_KEEN_EYE
+    abilities ABILITY_INSOMNIA, ABILITY_PRANKSTER
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_NOCTOWL, "Its eyes are specially adapted.\nThey concentrate even faint light\nand enable it to see in the dark."
@@ -3484,14 +3485,14 @@ mondata SPECIES_LEDYBA, "Ledyba"
     types TYPE_BUG, TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_ORAN_BERRY
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_FAST
     egggroups EGG_GROUP_BUG, EGG_GROUP_BUG
-    abilities ABILITY_SWARM, ABILITY_EARLY_BIRD
+    abilities ABILITY_RATTLED, ABILITY_SWARM
     runchance 0
     colorflip BODY_COLOR_RED, 0
     mondexentry SPECIES_LEDYBA, "It is very timid. It will be afraid\nto move if it is alone. But it will\nbe active if it is in a group."
@@ -3501,18 +3502,18 @@ mondata SPECIES_LEDYBA, "Ledyba"
 
 
 mondata SPECIES_LEDIAN, "Ledian"
-    basestats 55, 35, 50, 85, 55, 110
-    types TYPE_BUG, TYPE_FLYING
+    basestats 60, 90, 55, 90, 50, 110
+    types TYPE_BUG, TYPE_FIGHTING
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_ORAN_BERRY
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_FAST
     egggroups EGG_GROUP_BUG, EGG_GROUP_BUG
-    abilities ABILITY_SWARM, ABILITY_EARLY_BIRD
+    abilities ABILITY_IRON_FIST, ABILITY_SWARM
     runchance 0
     colorflip BODY_COLOR_RED, 0
     mondexentry SPECIES_LEDIAN, "When the stars flicker in the\nnight sky, it flutters about,\nscattering a glowing powder."
@@ -3526,7 +3527,7 @@ mondata SPECIES_SPINARAK, "Spinarak"
     types TYPE_BUG, TYPE_POISON
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -3547,7 +3548,7 @@ mondata SPECIES_ARIADOS, "Ariados"
     types TYPE_BUG, TYPE_POISON
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -3568,7 +3569,7 @@ mondata SPECIES_CROBAT, "Crobat"
     types TYPE_POISON, TYPE_FLYING
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -3585,18 +3586,18 @@ mondata SPECIES_CROBAT, "Crobat"
 
 
 mondata SPECIES_CHINCHOU, "Chinchou"
-    basestats 75, 38, 38, 67, 56, 56
+    basestats 75, 35, 35, 65, 70, 60
     types TYPE_WATER, TYPE_ELECTRIC
-    catchrate 190
+    catchrate 210
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
-    items ITEM_DEEP_SEA_SCALE, ITEM_YELLOW_SHARD
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_DEEP_SEA_SCALE
     genderratio 127
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_WATER_2, EGG_GROUP_WATER_2
-    abilities ABILITY_VOLT_ABSORB, ABILITY_ILLUMINATE
+    abilities ABILITY_VOLT_ABSORB, ABILITY_WATER_ABSORB
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_CHINCHOU, "It shoots positive and negative\nelectricity between the tips of its\ntwo antennae and zaps its enemies."
@@ -3606,18 +3607,18 @@ mondata SPECIES_CHINCHOU, "Chinchou"
 
 
 mondata SPECIES_LANTURN, "Lanturn"
-    basestats 125, 58, 58, 67, 76, 76
+    basestats 125, 55, 55, 65, 90, 85
     types TYPE_WATER, TYPE_ELECTRIC
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
-    items ITEM_DEEP_SEA_SCALE, ITEM_YELLOW_SHARD
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_DEEP_SEA_SCALE
     genderratio 127
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_WATER_2, EGG_GROUP_WATER_2
-    abilities ABILITY_VOLT_ABSORB, ABILITY_ILLUMINATE
+    abilities ABILITY_VOLT_ABSORB, ABILITY_WATER_ABSORB
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_LANTURN, "The light it emits is so bright that\nit can illuminate the sea’s surface\nfrom a depth of over three miles."
@@ -3631,7 +3632,7 @@ mondata SPECIES_PICHU, "Pichu"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_ORAN_BERRY
     genderratio 127
     eggcycles 10
@@ -3652,7 +3653,7 @@ mondata SPECIES_CLEFFA, "Cleffa"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 150
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_LEPPA_BERRY, ITEM_MOON_STONE
     genderratio 190
     eggcycles 10
@@ -3673,7 +3674,7 @@ mondata SPECIES_IGGLYBUFF, "Igglybuff"
     types TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 170
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_NONE
     genderratio 190
     eggcycles 10
@@ -3694,7 +3695,7 @@ mondata SPECIES_TOGEPI, "Togepi"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 10
@@ -3715,7 +3716,7 @@ mondata SPECIES_TOGETIC, "Togetic"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, TYPE_FLYING
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 10
@@ -3736,7 +3737,7 @@ mondata SPECIES_NATU, "Natu"
     types TYPE_PSYCHIC, TYPE_FLYING
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -3757,7 +3758,7 @@ mondata SPECIES_XATU, "Xatu"
     types TYPE_PSYCHIC, TYPE_FLYING
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -3778,7 +3779,7 @@ mondata SPECIES_MAREEP, "Mareep"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 235
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -3799,7 +3800,7 @@ mondata SPECIES_FLAAFFY, "Flaaffy"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -3817,10 +3818,10 @@ mondata SPECIES_FLAAFFY, "Flaaffy"
 
 mondata SPECIES_AMPHAROS, "Ampharos"
     basestats 90, 75, 85, 55, 115, 90
-    types TYPE_ELECTRIC, TYPE_ELECTRIC
+    types TYPE_ELECTRIC, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -3838,10 +3839,10 @@ mondata SPECIES_AMPHAROS, "Ampharos"
 
 mondata SPECIES_BELLOSSOM, "Bellossom"
     basestats 75, 80, 95, 50, 90, 100
-    types TYPE_GRASS, TYPE_GRASS
+    types TYPE_GRASS, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_ABSORB_BULB
     genderratio 127
     eggcycles 20
@@ -3862,7 +3863,7 @@ mondata SPECIES_MARILL, "Marill"
     types TYPE_WATER, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_WATER
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 10
@@ -3883,7 +3884,7 @@ mondata SPECIES_AZUMARILL, "Azumarill"
     types TYPE_WATER, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_WATER
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 10
@@ -3901,10 +3902,10 @@ mondata SPECIES_AZUMARILL, "Azumarill"
 
 mondata SPECIES_SUDOWOODO, "Sudowoodo"
     basestats 70, 100, 115, 30, 30, 65
-    types TYPE_ROCK, TYPE_ROCK
+    types TYPE_ROCK, TYPE_GRASS
     catchrate 65
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -3925,7 +3926,7 @@ mondata SPECIES_POLITOED, "Politoed"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_KINGS_ROCK
     genderratio 127
     eggcycles 20
@@ -3942,18 +3943,18 @@ mondata SPECIES_POLITOED, "Politoed"
 
 
 mondata SPECIES_HOPPIP, "Hoppip"
-    basestats 35, 35, 40, 50, 35, 55
+    basestats 40, 50, 40, 55, 30, 55
     types TYPE_GRASS, TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FAIRY, EGG_GROUP_GRASS
-    abilities ABILITY_CHLOROPHYLL, ABILITY_LEAF_GUARD
+    abilities ABILITY_AERILATE, ABILITY_CHLOROPHYLL
     runchance 0
     colorflip BODY_COLOR_PINK, 0
     mondexentry SPECIES_HOPPIP, "To keep from being blown away by\nthe wind, they gather in clusters.\nBut they do enjoy gentle breezes."
@@ -3963,18 +3964,18 @@ mondata SPECIES_HOPPIP, "Hoppip"
 
 
 mondata SPECIES_SKIPLOOM, "Skiploom"
-    basestats 55, 45, 50, 80, 45, 65
+    basestats 60, 60, 50, 80, 40, 70
     types TYPE_GRASS, TYPE_FLYING
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FAIRY, EGG_GROUP_GRASS
-    abilities ABILITY_CHLOROPHYLL, ABILITY_LEAF_GUARD
+    abilities ABILITY_AERILATE, ABILITY_CHLOROPHYLL
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_SKIPLOOM, "The bloom on top of its head opens\nand closes as the temperature\nfluctuates up and down."
@@ -3984,18 +3985,18 @@ mondata SPECIES_SKIPLOOM, "Skiploom"
 
 
 mondata SPECIES_JUMPLUFF, "Jumpluff"
-    basestats 75, 55, 70, 110, 55, 95
+    basestats 80, 70, 70, 110, 50, 100
     types TYPE_GRASS, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FAIRY, EGG_GROUP_GRASS
-    abilities ABILITY_CHLOROPHYLL, ABILITY_LEAF_GUARD
+    abilities ABILITY_AERILATE, ABILITY_CHLOROPHYLL
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_JUMPLUFF, "Once it catches the wind, it deftly\ncontrols its cotton-puff spores--\nit can even float around the world."
@@ -4009,7 +4010,7 @@ mondata SPECIES_AIPOM, "Aipom"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -4025,12 +4026,12 @@ mondata SPECIES_AIPOM, "Aipom"
     mondexweight SPECIES_AIPOM, "25.4 lbs."
 
 
-mondata SPECIES_SUNKERN, "Sunkern"
-    basestats 30, 30, 30, 30, 30, 30
+mondata SPECIES_SUNKERN, "Sunkern" // Changed Hp, Def, Spa, Spd
+    basestats 50, 20, 40, 25, 65, 60
     types TYPE_GRASS, TYPE_GRASS
     catchrate 235
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_COBA_BERRY
     genderratio 127
     eggcycles 20
@@ -4046,13 +4047,13 @@ mondata SPECIES_SUNKERN, "Sunkern"
     mondexweight SPECIES_SUNKERN, "4.0 lbs."
 
 
-mondata SPECIES_SUNFLORA, "Sunflora"
-    basestats 75, 75, 55, 30, 105, 85
-    types TYPE_GRASS, TYPE_GRASS
+mondata SPECIES_SUNFLORA, "Sunflora" // Changed Hp, Def, Spa, Spd
+    basestats 90, 50, 65, 40, 110, 95
+    types TYPE_GRASS, TYPE_FIRE
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_COBA_BERRY
     genderratio 127
     eggcycles 20
     basefriendship 70
@@ -4072,7 +4073,7 @@ mondata SPECIES_YANMA, "Yanma"
     types TYPE_BUG, TYPE_FLYING
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_WIDE_LENS
     genderratio 127
     eggcycles 20
@@ -4093,7 +4094,7 @@ mondata SPECIES_WOOPER, "Wooper"
     types TYPE_WATER, TYPE_GROUND
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -4114,7 +4115,7 @@ mondata SPECIES_QUAGSIRE, "Quagsire"
     types TYPE_WATER, TYPE_GROUND
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -4135,7 +4136,7 @@ mondata SPECIES_ESPEON, "Espeon"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 35
@@ -4156,7 +4157,7 @@ mondata SPECIES_UMBREON, "Umbreon"
     types TYPE_DARK, TYPE_DARK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 35
@@ -4175,9 +4176,9 @@ mondata SPECIES_UMBREON, "Umbreon"
 mondata SPECIES_MURKROW, "Murkrow"
     basestats 60, 85, 42, 91, 85, 42
     types TYPE_DARK, TYPE_FLYING
-    catchrate 30
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -4198,7 +4199,7 @@ mondata SPECIES_SLOWKING, "Slowking"
     types TYPE_WATER, TYPE_PSYCHIC
     catchrate 70
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_KINGS_ROCK
     genderratio 127
     eggcycles 20
@@ -4216,10 +4217,10 @@ mondata SPECIES_SLOWKING, "Slowking"
 
 mondata SPECIES_MISDREAVUS, "Misdreavus"
     basestats 60, 60, 60, 85, 85, 85
-    types TYPE_GHOST, TYPE_GHOST
+    types TYPE_GHOST, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SPELL_TAG
     genderratio 127
     eggcycles 25
@@ -4240,7 +4241,7 @@ mondata SPECIES_UNOWN, "Unown"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 40
@@ -4261,7 +4262,7 @@ mondata SPECIES_WOBBUFFET, "Wobbuffet"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -4282,7 +4283,7 @@ mondata SPECIES_GIRAFARIG, "Girafarig"
     types TYPE_NORMAL, TYPE_PSYCHIC
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PERSIM_BERRY
     genderratio 127
     eggcycles 20
@@ -4303,7 +4304,7 @@ mondata SPECIES_PINECO, "Pineco"
     types TYPE_BUG, TYPE_BUG
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -4324,7 +4325,7 @@ mondata SPECIES_FORRETRESS, "Forretress"
     types TYPE_BUG, TYPE_STEEL
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -4342,10 +4343,10 @@ mondata SPECIES_FORRETRESS, "Forretress"
 
 mondata SPECIES_DUNSPARCE, "Dunsparce"
     basestats 100, 70, 70, 45, 65, 65
-    types TYPE_NORMAL, TYPE_NORMAL
+    types TYPE_NORMAL, TYPE_GROUND
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -4366,7 +4367,7 @@ mondata SPECIES_GLIGAR, "Gligar"
     types TYPE_GROUND, TYPE_FLYING
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -4385,9 +4386,9 @@ mondata SPECIES_GLIGAR, "Gligar"
 mondata SPECIES_STEELIX, "Steelix"
     basestats 75, 85, 200, 30, 55, 65
     types TYPE_STEEL, TYPE_GROUND
-    catchrate 25
+    catchrate 50
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_METAL_COAT
     genderratio 127
     eggcycles 25
@@ -4404,11 +4405,11 @@ mondata SPECIES_STEELIX, "Steelix"
 
 
 mondata SPECIES_SNUBBULL, "Snubbull"
-    basestats 60, 80, 50, 30, 40, 40
-    types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
-    catchrate 190
+    basestats 60, 80, 55, 30, 40, 45
+    types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, TYPE_FIGHTING
+    catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 190
     eggcycles 20
@@ -4425,11 +4426,11 @@ mondata SPECIES_SNUBBULL, "Snubbull"
 
 
 mondata SPECIES_GRANBULL, "Granbull"
-    basestats 90, 120, 75, 45, 60, 60
-    types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
+    basestats 90, 120, 80, 45, 60, 65
+    types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, TYPE_FIGHTING
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 190
     eggcycles 20
@@ -4450,7 +4451,7 @@ mondata SPECIES_QWILFISH, "Qwilfish"
     types TYPE_WATER, TYPE_POISON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_POISON_BARB
     genderratio 127
     eggcycles 20
@@ -4471,7 +4472,7 @@ mondata SPECIES_SCIZOR, "Scizor"
     types TYPE_BUG, TYPE_STEEL
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -4492,7 +4493,7 @@ mondata SPECIES_SHUCKLE, "Shuckle"
     types TYPE_BUG, TYPE_ROCK
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_BERRY_JUICE, ITEM_ORAN_BERRY
     genderratio 127
     eggcycles 20
@@ -4513,7 +4514,7 @@ mondata SPECIES_HERACROSS, "Heracross"
     types TYPE_BUG, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -4534,7 +4535,7 @@ mondata SPECIES_SNEASEL, "Sneasel"
     types TYPE_DARK, TYPE_ICE
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_GRIP_CLAW, ITEM_QUICK_CLAW
     genderratio 127
     eggcycles 20
@@ -4555,7 +4556,7 @@ mondata SPECIES_TEDDIURSA, "Teddiursa"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_SITRUS_BERRY
     genderratio 127
     eggcycles 20
@@ -4576,7 +4577,7 @@ mondata SPECIES_URSARING, "Ursaring"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_SITRUS_BERRY
     genderratio 127
     eggcycles 20
@@ -4593,18 +4594,18 @@ mondata SPECIES_URSARING, "Ursaring"
 
 
 mondata SPECIES_SLUGMA, "Slugma"
-    basestats 40, 40, 40, 20, 70, 40
-    types TYPE_FIRE, TYPE_FIRE
-    catchrate 190
+    basestats 50, 40, 40, 20, 75, 55
+    types TYPE_FIRE, TYPE_ROCK
+    catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_RAWST_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS
-    abilities ABILITY_MAGMA_ARMOR, ABILITY_FLAME_BODY
+    abilities ABILITY_WEAK_ARMOR, ABILITY_FLAME_BODY
     runchance 0
     colorflip BODY_COLOR_RED, 0
     mondexentry SPECIES_SLUGMA, "It never sleeps. It has to keep\nmoving because if it stopped, its\nmagma body would cool and harden."
@@ -4614,18 +4615,18 @@ mondata SPECIES_SLUGMA, "Slugma"
 
 
 mondata SPECIES_MAGCARGO, "Magcargo"
-    basestats 60, 50, 120, 30, 90, 80
-    types TYPE_FIRE, TYPE_ROCK
+    basestats 70, 50, 110, 30, 100, 90
+    types TYPE_FIRE, TYPE_WATER
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_RAWST_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS
-    abilities ABILITY_MAGMA_ARMOR, ABILITY_FLAME_BODY
+    abilities ABILITY_WATER_ABSORB, ABILITY_FLAME_BODY
     runchance 0
     colorflip BODY_COLOR_RED, 0
     mondexentry SPECIES_MAGCARGO, "The shell on its back is just skin\nthat has cooled and hardened. It\nbreaks easily with a slight touch."
@@ -4639,7 +4640,7 @@ mondata SPECIES_SWINUB, "Swinub"
     types TYPE_ICE, TYPE_GROUND
     catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ASPEAR_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -4660,7 +4661,7 @@ mondata SPECIES_PILOSWINE, "Piloswine"
     types TYPE_ICE, TYPE_GROUND
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 1, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ASPEAR_BERRY, ITEM_NEVER_MELT_ICE
     genderratio 127
     eggcycles 20
@@ -4681,7 +4682,7 @@ mondata SPECIES_CORSOLA, "Corsola"
     types TYPE_WATER, TYPE_ROCK
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_HARD_STONE, ITEM_RED_SHARD
     genderratio 190
     eggcycles 20
@@ -4702,7 +4703,7 @@ mondata SPECIES_REMORAID, "Remoraid"
     types TYPE_WATER, TYPE_WATER
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -4720,10 +4721,10 @@ mondata SPECIES_REMORAID, "Remoraid"
 
 mondata SPECIES_OCTILLERY, "Octillery"
     basestats 75, 105, 75, 45, 105, 75
-    types TYPE_WATER, TYPE_WATER
+    types TYPE_WATER, TYPE_FIRE
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -4744,7 +4745,7 @@ mondata SPECIES_DELIBIRD, "Delibird"
     types TYPE_ICE, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -4765,7 +4766,7 @@ mondata SPECIES_MANTINE, "Mantine"
     types TYPE_WATER, TYPE_FLYING
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -4786,7 +4787,7 @@ mondata SPECIES_SKARMORY, "Skarmory"
     types TYPE_STEEL, TYPE_FLYING
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_SHARP_BEAK, ITEM_METAL_COAT
     genderratio 127
     eggcycles 25
@@ -4803,18 +4804,18 @@ mondata SPECIES_SKARMORY, "Skarmory"
 
 
 mondata SPECIES_HOUNDOUR, "Houndour"
-    basestats 45, 60, 30, 65, 80, 50
+    basestats 50, 60, 40, 70, 80, 50
     types TYPE_DARK, TYPE_FIRE
-    catchrate 120
+    catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 35
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_EARLY_BIRD, ABILITY_FLASH_FIRE
+    abilities ABILITY_INTIMIDATE, ABILITY_UNNERVE
     runchance 0
     colorflip BODY_COLOR_BLACK, 0
     mondexentry SPECIES_HOUNDOUR, "It uses different kinds of cries for\ncommunicating with others of its\nkind and for pursuing its prey."
@@ -4824,18 +4825,18 @@ mondata SPECIES_HOUNDOUR, "Houndour"
 
 
 mondata SPECIES_HOUNDOOM, "Houndoom"
-    basestats 75, 90, 50, 95, 110, 80
+    basestats 80, 90, 60, 100, 110, 80
     types TYPE_DARK, TYPE_FIRE
-    catchrate 45
+    catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 35
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_EARLY_BIRD, ABILITY_FLASH_FIRE
+    abilities ABILITY_INTIMIDATE, ABILITY_UNNERVE
     runchance 0
     colorflip BODY_COLOR_BLACK, 0
     mondexentry SPECIES_HOUNDOOM, "If you are burned by the flames\nit shoots from its mouth,\nthe pain will never go away."
@@ -4849,7 +4850,7 @@ mondata SPECIES_KINGDRA, "Kingdra"
     types TYPE_WATER, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 1, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_DRAGON_SCALE
     genderratio 127
     eggcycles 20
@@ -4866,18 +4867,18 @@ mondata SPECIES_KINGDRA, "Kingdra"
 
 
 mondata SPECIES_PHANPY, "Phanpy"
-    basestats 90, 60, 60, 40, 40, 40
+    basestats 90, 60, 60, 60, 40, 40
     types TYPE_GROUND, TYPE_GROUND
-    catchrate 120
+    catchrate 180
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PASSHO_BERRY
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_PICKUP, ABILITY_NONE
+    abilities ABILITY_PICKUP, ABILITY_SHELL_ARMOR
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_PHANPY, "It swings its long snout around\nplayfully, but because it is so\nstrong, that can be dangerous."
@@ -4887,18 +4888,18 @@ mondata SPECIES_PHANPY, "Phanpy"
 
 
 mondata SPECIES_DONPHAN, "Donphan"
-    basestats 90, 120, 120, 50, 60, 60
-    types TYPE_GROUND, TYPE_GROUND
-    catchrate 60
+    basestats 90, 120, 120, 70, 60, 60
+    types TYPE_GROUND, TYPE_FIGHTING
+    catchrate 80
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PASSHO_BERRY
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_STURDY, ABILITY_NONE
+    abilities ABILITY_STURDY, ABILITY_SHELL_ARMOR
     runchance 0
     colorflip BODY_COLOR_GRAY, 0
     mondexentry SPECIES_DONPHAN, "It has sharp, hard tusks and a\nrugged hide. Its tackle is strong\nenough to knock down a house."
@@ -4912,7 +4913,7 @@ mondata SPECIES_PORYGON2, "Porygon2"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_UP_GRADE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -4930,10 +4931,10 @@ mondata SPECIES_PORYGON2, "Porygon2"
 
 mondata SPECIES_STANTLER, "Stantler"
     basestats 73, 95, 62, 85, 85, 65
-    types TYPE_NORMAL, TYPE_NORMAL
-    catchrate 45
+    types TYPE_NORMAL, TYPE_PSYCHIC
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -4954,7 +4955,7 @@ mondata SPECIES_SMEARGLE, "Smeargle"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -4975,7 +4976,7 @@ mondata SPECIES_TYROGUE, "Tyrogue"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 25
@@ -4996,7 +4997,7 @@ mondata SPECIES_HITMONTOP, "Hitmontop"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 25
@@ -5017,7 +5018,7 @@ mondata SPECIES_SMOOCHUM, "Smoochum"
     types TYPE_ICE, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ASPEAR_BERRY, ITEM_NONE
     genderratio 254
     eggcycles 25
@@ -5038,7 +5039,7 @@ mondata SPECIES_ELEKID, "Elekid"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ELECTIRIZER, ITEM_NONE
     genderratio 63
     eggcycles 25
@@ -5059,7 +5060,7 @@ mondata SPECIES_MAGBY, "Magby"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_RAWST_BERRY, ITEM_MAGMARIZER
     genderratio 63
     eggcycles 25
@@ -5080,7 +5081,7 @@ mondata SPECIES_MILTANK, "Miltank"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_MOOMOO_MILK, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -5101,7 +5102,7 @@ mondata SPECIES_BLISSEY, "Blissey"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_OVAL_STONE, ITEM_LUCKY_EGG
     genderratio 254
     eggcycles 40
@@ -5122,7 +5123,7 @@ mondata SPECIES_RAIKOU, "Raikou"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -5143,7 +5144,7 @@ mondata SPECIES_ENTEI, "Entei"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 1, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -5164,7 +5165,7 @@ mondata SPECIES_SUICUNE, "Suicune"
     types TYPE_WATER, TYPE_WATER
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -5185,7 +5186,7 @@ mondata SPECIES_LARVITAR, "Larvitar"
     types TYPE_ROCK, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -5206,7 +5207,7 @@ mondata SPECIES_PUPITAR, "Pupitar"
     types TYPE_ROCK, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -5227,7 +5228,7 @@ mondata SPECIES_TYRANITAR, "Tyranitar"
     types TYPE_ROCK, TYPE_DARK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -5248,7 +5249,7 @@ mondata SPECIES_LUGIA, "Lugia"
     types TYPE_PSYCHIC, TYPE_FLYING
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -5269,7 +5270,7 @@ mondata SPECIES_HO_OH, "Ho-oh"
     types TYPE_FIRE, TYPE_FLYING
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_SACRED_ASH, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -5290,7 +5291,7 @@ mondata SPECIES_CELEBI, "Celebi"
     types TYPE_PSYCHIC, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_LUM_BERRY, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -5309,16 +5310,16 @@ mondata SPECIES_CELEBI, "Celebi"
 mondata SPECIES_TREECKO, "Treecko"
     basestats 40, 45, 35, 70, 65, 55
     types TYPE_GRASS, TYPE_GRASS
-    catchrate 45
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_DRAGON
-    abilities ABILITY_OVERGROW, ABILITY_NONE
+    abilities ABILITY_OVERGROW, ABILITY_SHARPNESS
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_TREECKO, "Small hooks on the bottom of its\nfeet catch on walls and ceilings.\nThat is how it can hang from above."
@@ -5329,17 +5330,17 @@ mondata SPECIES_TREECKO, "Treecko"
 
 mondata SPECIES_GROVYLE, "Grovyle"
     basestats 50, 65, 45, 95, 85, 65
-    types TYPE_GRASS, TYPE_GRASS
-    catchrate 45
+    types TYPE_GRASS, TYPE_DRAGON
+    catchrate 125
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_DRAGON
-    abilities ABILITY_OVERGROW, ABILITY_NONE
+    abilities ABILITY_OVERGROW, ABILITY_SHARPNESS
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_GROVYLE, "It leaps from tree branch to tree\nbranch quite swiftly. It shows\nastounding agility."
@@ -5350,17 +5351,17 @@ mondata SPECIES_GROVYLE, "Grovyle"
 
 mondata SPECIES_SCEPTILE, "Sceptile"
     basestats 70, 85, 65, 120, 105, 85
-    types TYPE_GRASS, TYPE_GRASS
+    types TYPE_GRASS, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_DRAGON
-    abilities ABILITY_OVERGROW, ABILITY_NONE
+    abilities ABILITY_OVERGROW, ABILITY_SHARPNESS
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_SCEPTILE, "It agilely leaps about the jungle\nand uses the sharp leaves on its\narms to strike its prey."
@@ -5372,16 +5373,16 @@ mondata SPECIES_SCEPTILE, "Sceptile"
 mondata SPECIES_TORCHIC, "Torchic"
     basestats 45, 60, 40, 45, 70, 50
     types TYPE_FIRE, TYPE_FIRE
-    catchrate 45
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_BLAZE, ABILITY_NONE
+    abilities ABILITY_BLAZE, ABILITY_QUICK_FEET
     runchance 0
     colorflip BODY_COLOR_RED, 0
     mondexentry SPECIES_TORCHIC, "Inside its body is a place where it\nkeeps a small flame. Hug it! It will\nbe as warm as a hot-water bottle."
@@ -5393,16 +5394,16 @@ mondata SPECIES_TORCHIC, "Torchic"
 mondata SPECIES_COMBUSKEN, "Combusken"
     basestats 60, 85, 60, 55, 85, 60
     types TYPE_FIRE, TYPE_FIGHTING
-    catchrate 45
+    catchrate 125
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_BLAZE, ABILITY_NONE
+    abilities ABILITY_BLAZE, ABILITY_QUICK_FEET
     runchance 0
     colorflip BODY_COLOR_RED, 0
     mondexentry SPECIES_COMBUSKEN, "During a battle, the hot flame in\nits body increases. Its kicks have\noutstanding destructive power."
@@ -5416,14 +5417,14 @@ mondata SPECIES_BLAZIKEN, "Blaziken"
     types TYPE_FIRE, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_BLAZE, ABILITY_NONE
+    abilities ABILITY_BLAZE, ABILITY_QUICK_FEET
     runchance 0
     colorflip BODY_COLOR_RED, 0
     mondexentry SPECIES_BLAZIKEN, "It can clear a 30-story building\nin a leap. Its fiery punches scorch\nits foes."
@@ -5435,16 +5436,16 @@ mondata SPECIES_BLAZIKEN, "Blaziken"
 mondata SPECIES_MUDKIP, "Mudkip"
     basestats 50, 70, 50, 40, 50, 50
     types TYPE_WATER, TYPE_WATER
-    catchrate 45
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_WATER_1
-    abilities ABILITY_TORRENT, ABILITY_NONE
+    abilities ABILITY_TORRENT, ABILITY_SWIFT_SWIM
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_MUDKIP, "Its power can crush boulders.\nIt rests by covering itself with mud\nat the bottom of a river."
@@ -5456,16 +5457,16 @@ mondata SPECIES_MUDKIP, "Mudkip"
 mondata SPECIES_MARSHTOMP, "Marshtomp"
     basestats 70, 85, 70, 50, 60, 70
     types TYPE_WATER, TYPE_GROUND
-    catchrate 45
+    catchrate 125
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_WATER_1
-    abilities ABILITY_TORRENT, ABILITY_NONE
+    abilities ABILITY_TORRENT, ABILITY_SWIFT_SWIM
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_MARSHTOMP, "Living on muddy ground that\nprovides poor footing has made\nits legs sturdy."
@@ -5479,14 +5480,14 @@ mondata SPECIES_SWAMPERT, "Swampert"
     types TYPE_WATER, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_WATER_1
-    abilities ABILITY_TORRENT, ABILITY_NONE
+    abilities ABILITY_TORRENT, ABILITY_SWIFT_SWIM
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_SWAMPERT, "Its arms are hard as rock.\nWith one swing, it can\nbreak a boulder into pieces."
@@ -5500,7 +5501,7 @@ mondata SPECIES_POOCHYENA, "Poochyena"
     types TYPE_DARK, TYPE_DARK
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PECHA_BERRY
     genderratio 127
     eggcycles 15
@@ -5521,7 +5522,7 @@ mondata SPECIES_MIGHTYENA, "Mightyena"
     types TYPE_DARK, TYPE_DARK
     catchrate 127
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PECHA_BERRY
     genderratio 127
     eggcycles 15
@@ -5538,18 +5539,18 @@ mondata SPECIES_MIGHTYENA, "Mightyena"
 
 
 mondata SPECIES_ZIGZAGOON, "Zigzagoon"
-    basestats 38, 30, 41, 60, 30, 41
+    basestats 50, 40, 40, 65, 20, 40
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_POTION, ITEM_REVIVE
     genderratio 127
     eggcycles 15
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_PICKUP, ABILITY_GLUTTONY
+    abilities ABILITY_QUICK_FEET, ABILITY_GLUTTONY
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_ZIGZAGOON, "It gets interested in everything,\nwhich is why it zigs and zags.\nIt is good at finding items."
@@ -5559,18 +5560,18 @@ mondata SPECIES_ZIGZAGOON, "Zigzagoon"
 
 
 mondata SPECIES_LINOONE, "Linoone"
-    basestats 78, 70, 61, 100, 50, 61
+    basestats 90, 80, 60, 105, 40, 60
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_POTION, ITEM_MAX_REVIVE
     genderratio 127
     eggcycles 15
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_PICKUP, ABILITY_GLUTTONY
+    abilities ABILITY_QUICK_FEET, ABILITY_GLUTTONY
     runchance 0
     colorflip BODY_COLOR_WHITE, 0
     mondexentry SPECIES_LINOONE, "When running in a straight line, it\ncan easily top 60 miles an hour. It\nhas a tough time with curved roads."
@@ -5584,7 +5585,7 @@ mondata SPECIES_WURMPLE, "Wurmple"
     types TYPE_BUG, TYPE_BUG
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PECHA_BERRY, ITEM_BRIGHT_POWDER
     genderratio 127
     eggcycles 15
@@ -5605,7 +5606,7 @@ mondata SPECIES_SILCOON, "Silcoon"
     types TYPE_BUG, TYPE_BUG
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -5626,7 +5627,7 @@ mondata SPECIES_BEAUTIFLY, "Beautifly"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_SHED_SHELL, ITEM_SILVER_POWDER
     genderratio 127
     eggcycles 15
@@ -5647,7 +5648,7 @@ mondata SPECIES_CASCOON, "Cascoon"
     types TYPE_BUG, TYPE_BUG
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -5668,7 +5669,7 @@ mondata SPECIES_DUSTOX, "Dustox"
     types TYPE_BUG, TYPE_POISON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_SHED_SHELL, ITEM_SILVER_POWDER
     genderratio 127
     eggcycles 15
@@ -5689,7 +5690,7 @@ mondata SPECIES_LOTAD, "Lotad"
     types TYPE_WATER, TYPE_GRASS
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MENTAL_HERB
     genderratio 127
     eggcycles 15
@@ -5710,7 +5711,7 @@ mondata SPECIES_LOMBRE, "Lombre"
     types TYPE_WATER, TYPE_GRASS
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MENTAL_HERB
     genderratio 127
     eggcycles 15
@@ -5731,7 +5732,7 @@ mondata SPECIES_LUDICOLO, "Ludicolo"
     types TYPE_WATER, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MENTAL_HERB
     genderratio 127
     eggcycles 15
@@ -5752,7 +5753,7 @@ mondata SPECIES_SEEDOT, "Seedot"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_POWER_HERB
     genderratio 127
     eggcycles 15
@@ -5773,7 +5774,7 @@ mondata SPECIES_NUZLEAF, "Nuzleaf"
     types TYPE_GRASS, TYPE_DARK
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_POWER_HERB
     genderratio 127
     eggcycles 15
@@ -5794,7 +5795,7 @@ mondata SPECIES_SHIFTRY, "Shiftry"
     types TYPE_GRASS, TYPE_DARK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_POWER_HERB
     genderratio 127
     eggcycles 15
@@ -5815,7 +5816,7 @@ mondata SPECIES_TAILLOW, "Taillow"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CHARTI_BERRY
     genderratio 127
     eggcycles 15
@@ -5836,7 +5837,7 @@ mondata SPECIES_SWELLOW, "Swellow"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CHARTI_BERRY
     genderratio 127
     eggcycles 15
@@ -5857,7 +5858,7 @@ mondata SPECIES_WINGULL, "Wingull"
     types TYPE_WATER, TYPE_FLYING
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PRETTY_FEATHER, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -5878,7 +5879,7 @@ mondata SPECIES_PELIPPER, "Pelipper"
     types TYPE_WATER, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PRETTY_FEATHER, ITEM_LUCKY_EGG
     genderratio 127
     eggcycles 20
@@ -5899,7 +5900,7 @@ mondata SPECIES_RALTS, "Ralts"
     types TYPE_PSYCHIC, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_PSYCHIC
     catchrate 235
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -5920,7 +5921,7 @@ mondata SPECIES_KIRLIA, "Kirlia"
     types TYPE_PSYCHIC, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_PSYCHIC
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -5941,7 +5942,7 @@ mondata SPECIES_GARDEVOIR, "Gardevoir"
     types TYPE_PSYCHIC, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -5962,7 +5963,7 @@ mondata SPECIES_SURSKIT, "Surskit"
     types TYPE_BUG, TYPE_WATER
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_HONEY, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -5980,10 +5981,10 @@ mondata SPECIES_SURSKIT, "Surskit"
 
 mondata SPECIES_MASQUERAIN, "Masquerain"
     basestats 70, 60, 62, 80, 100, 82
-    types TYPE_BUG, TYPE_FLYING
+    types TYPE_BUG, TYPE_WATER
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SILVER_POWDER
     genderratio 127
     eggcycles 15
@@ -6004,7 +6005,7 @@ mondata SPECIES_SHROOMISH, "Shroomish"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_TINY_MUSHROOM, ITEM_BIG_MUSHROOM
     genderratio 127
     eggcycles 15
@@ -6025,7 +6026,7 @@ mondata SPECIES_BRELOOM, "Breloom"
     types TYPE_GRASS, TYPE_FIGHTING
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_TINY_MUSHROOM, ITEM_BIG_MUSHROOM
     genderratio 127
     eggcycles 15
@@ -6046,14 +6047,14 @@ mondata SPECIES_SLAKOTH, "Slakoth"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_TRUANT, ABILITY_NONE
+    abilities ABILITY_GLUTTONY, ABILITY_OWN_TEMPO
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_SLAKOTH, "The way SLAKOTH lolls around makes\nanyone who watches it feel like\ndoing the same."
@@ -6067,14 +6068,14 @@ mondata SPECIES_VIGOROTH, "Vigoroth"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_VITAL_SPIRIT, ABILITY_NONE
+    abilities ABILITY_GLUTTONY, ABILITY_OWN_TEMPO
     runchance 0
     colorflip BODY_COLOR_WHITE, 0
     mondexentry SPECIES_VIGOROTH, "Its stress level rises if it\ncannot keep moving constantly.\nToo much stress makes it feel sick."
@@ -6088,14 +6089,14 @@ mondata SPECIES_SLAKING, "Slaking"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_TRUANT, ABILITY_NONE
+    abilities ABILITY_GLUTTONY, ABILITY_OWN_TEMPO
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_SLAKING, "The world’s laziest Pokémon.\nIt moves to another spot when there’s\nno food left within its reach."
@@ -6109,7 +6110,7 @@ mondata SPECIES_NINCADA, "Nincada"
     types TYPE_BUG, TYPE_GROUND
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SOFT_SAND
     genderratio 127
     eggcycles 15
@@ -6130,7 +6131,7 @@ mondata SPECIES_NINJASK, "Ninjask"
     types TYPE_BUG, TYPE_FLYING
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -6151,7 +6152,7 @@ mondata SPECIES_SHEDINJA, "Shedinja"
     types TYPE_BUG, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 15
@@ -6172,7 +6173,7 @@ mondata SPECIES_WHISMUR, "Whismur"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CHESTO_BERRY
     genderratio 127
     eggcycles 20
@@ -6193,7 +6194,7 @@ mondata SPECIES_LOUDRED, "Loudred"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CHESTO_BERRY
     genderratio 127
     eggcycles 20
@@ -6214,7 +6215,7 @@ mondata SPECIES_EXPLOUD, "Exploud"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CHESTO_BERRY
     genderratio 127
     eggcycles 20
@@ -6235,7 +6236,7 @@ mondata SPECIES_MAKUHITA, "Makuhita"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 180
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_BLACK_BELT
     genderratio 63
     eggcycles 20
@@ -6256,7 +6257,7 @@ mondata SPECIES_HARIYAMA, "Hariyama"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_KINGS_ROCK
     genderratio 63
     eggcycles 20
@@ -6277,7 +6278,7 @@ mondata SPECIES_AZURILL, "Azurill"
     types TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 150
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 190
     eggcycles 10
@@ -6298,7 +6299,7 @@ mondata SPECIES_NOSEPASS, "Nosepass"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_MAGNET, ITEM_HARD_STONE
     genderratio 127
     eggcycles 20
@@ -6315,18 +6316,18 @@ mondata SPECIES_NOSEPASS, "Nosepass"
 
 
 mondata SPECIES_SKITTY, "Skitty"
-    basestats 50, 45, 45, 50, 35, 35
-    types TYPE_NORMAL, TYPE_NORMAL
+    basestats 55, 55, 50, 60, 35, 45
+    types TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PECHA_BERRY, ITEM_LEPPA_BERRY
     genderratio 190
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FAIRY
-    abilities ABILITY_CUTE_CHARM, ABILITY_NORMALIZE
+    abilities ABILITY_DAZZLING, ABILITY_WONDER_SKIN
     runchance 0
     colorflip BODY_COLOR_PINK, 0
     mondexentry SPECIES_SKITTY, "It’s adorable when it chases its own\ntail. It’s difficult to earn its trust."
@@ -6336,18 +6337,18 @@ mondata SPECIES_SKITTY, "Skitty"
 
 
 mondata SPECIES_DELCATTY, "Delcatty"
-    basestats 70, 65, 65, 90, 55, 55
-    types TYPE_NORMAL, TYPE_NORMAL
+    basestats 70, 80, 75, 115, 70, 70
+    types TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PECHA_BERRY, ITEM_LEPPA_BERRY
     genderratio 190
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FAIRY
-    abilities ABILITY_CUTE_CHARM, ABILITY_NORMALIZE
+    abilities ABILITY_DAZZLING, ABILITY_WONDER_SKIN
     runchance 0
     colorflip BODY_COLOR_PURPLE, 0
     mondexentry SPECIES_DELCATTY, "It dislikes dirty places. It often\nsearches for a comfortable place\nin which to groom itself."
@@ -6361,7 +6362,7 @@ mondata SPECIES_SABLEYE, "Sableye"
     types TYPE_DARK, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_WIDE_LENS
     genderratio 127
     eggcycles 25
@@ -6382,7 +6383,7 @@ mondata SPECIES_MAWILE, "Mawile"
     types TYPE_STEEL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_STEEL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_IRON_BALL, ITEM_OCCA_BERRY
     genderratio 127
     eggcycles 20
@@ -6403,7 +6404,7 @@ mondata SPECIES_ARON, "Aron"
     types TYPE_STEEL, TYPE_ROCK
     catchrate 180
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_HARD_STONE
     genderratio 127
     eggcycles 35
@@ -6424,7 +6425,7 @@ mondata SPECIES_LAIRON, "Lairon"
     types TYPE_STEEL, TYPE_ROCK
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_HARD_STONE
     genderratio 127
     eggcycles 35
@@ -6445,7 +6446,7 @@ mondata SPECIES_AGGRON, "Aggron"
     types TYPE_STEEL, TYPE_ROCK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_HARD_STONE
     genderratio 127
     eggcycles 35
@@ -6466,7 +6467,7 @@ mondata SPECIES_MEDITITE, "Meditite"
     types TYPE_FIGHTING, TYPE_PSYCHIC
     catchrate 180
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -6487,7 +6488,7 @@ mondata SPECIES_MEDICHAM, "Medicham"
     types TYPE_FIGHTING, TYPE_PSYCHIC
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -6508,7 +6509,7 @@ mondata SPECIES_ELECTRIKE, "Electrike"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -6529,7 +6530,7 @@ mondata SPECIES_MANECTRIC, "Manectric"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -6546,18 +6547,18 @@ mondata SPECIES_MANECTRIC, "Manectric"
 
 
 mondata SPECIES_PLUSLE, "Plusle"
-    basestats 60, 50, 40, 95, 85, 75
-    types TYPE_ELECTRIC, TYPE_ELECTRIC
+    basestats 60, 85, 40, 100, 50, 75
+    types TYPE_ELECTRIC, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_ELECTRIC
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
-    items ITEM_NONE, ITEM_CELL_BATTERY
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_CHERI_BERRY
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FAIRY, EGG_GROUP_FAIRY
-    abilities ABILITY_PLUS, ABILITY_NONE
+    abilities ABILITY_STATIC, ABILITY_LIGHTNING_ROD
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_PLUSLE, "It absorbs electricity from\ntelephone poles. It shorts out its\nbody to create crackling noises."
@@ -6567,18 +6568,18 @@ mondata SPECIES_PLUSLE, "Plusle"
 
 
 mondata SPECIES_MINUN, "Minun"
-    basestats 60, 40, 50, 95, 75, 85
-    types TYPE_ELECTRIC, TYPE_ELECTRIC
+    basestats 60, 50, 40, 100, 85, 75
+    types TYPE_ELECTRIC, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_ELECTRIC
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
-    items ITEM_NONE, ITEM_CELL_BATTERY
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_CHERI_BERRY
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FAIRY, EGG_GROUP_FAIRY
-    abilities ABILITY_MINUS, ABILITY_NONE
+    abilities ABILITY_STATIC, ABILITY_VOLT_ABSORB
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_MINUN, "Exposure to electricity from MINUN\nand PLUSLE promotes blood\ncirculation and relaxes muscles."
@@ -6589,10 +6590,10 @@ mondata SPECIES_MINUN, "Minun"
 
 mondata SPECIES_VOLBEAT, "Volbeat"
     basestats 65, 73, 75, 85, 47, 85
-    types TYPE_BUG, TYPE_BUG
+    types TYPE_BUG, TYPE_ELECTRIC
     catchrate 150
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_BRIGHT_POWDER
     genderratio 0
     eggcycles 15
@@ -6610,10 +6611,10 @@ mondata SPECIES_VOLBEAT, "Volbeat"
 
 mondata SPECIES_ILLUMISE, "Illumise"
     basestats 65, 47, 75, 85, 73, 85
-    types TYPE_BUG, TYPE_BUG
+    types TYPE_BUG, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_BUG
     catchrate 150
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_BRIGHT_POWDER
     genderratio 254
     eggcycles 15
@@ -6634,7 +6635,7 @@ mondata SPECIES_ROSELIA, "Roselia"
     types TYPE_GRASS, TYPE_POISON
     catchrate 150
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ABSORB_BULB, ITEM_POISON_BARB
     genderratio 127
     eggcycles 20
@@ -6655,7 +6656,7 @@ mondata SPECIES_GULPIN, "Gulpin"
     types TYPE_POISON, TYPE_POISON
     catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_BIG_PEARL
     genderratio 127
     eggcycles 20
@@ -6676,7 +6677,7 @@ mondata SPECIES_SWALOT, "Swalot"
     types TYPE_POISON, TYPE_POISON
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_BIG_PEARL
     genderratio 127
     eggcycles 20
@@ -6697,7 +6698,7 @@ mondata SPECIES_CARVANHA, "Carvanha"
     types TYPE_WATER, TYPE_DARK
     catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_DEEP_SEA_TOOTH
     genderratio 127
     eggcycles 20
@@ -6718,7 +6719,7 @@ mondata SPECIES_SHARPEDO, "Sharpedo"
     types TYPE_WATER, TYPE_DARK
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_DEEP_SEA_TOOTH
     genderratio 127
     eggcycles 20
@@ -6739,7 +6740,7 @@ mondata SPECIES_WAILMER, "Wailmer"
     types TYPE_WATER, TYPE_WATER
     catchrate 125
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -6760,7 +6761,7 @@ mondata SPECIES_WAILORD, "Wailord"
     types TYPE_WATER, TYPE_WATER
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -6777,18 +6778,18 @@ mondata SPECIES_WAILORD, "Wailord"
 
 
 mondata SPECIES_NUMEL, "Numel"
-    basestats 60, 60, 40, 35, 65, 45
+    basestats 60, 60, 50, 35, 65, 55
     types TYPE_FIRE, TYPE_GROUND
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_RAWST_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_OBLIVIOUS, ABILITY_SIMPLE
+    abilities ABILITY_SHEER_FORCE, ABILITY_SIMPLE
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_NUMEL, "The flaming magma it stores in the\nhump on its back is the source of\nits tremendous power."
@@ -6798,18 +6799,18 @@ mondata SPECIES_NUMEL, "Numel"
 
 
 mondata SPECIES_CAMERUPT, "Camerupt"
-    basestats 70, 100, 70, 40, 105, 75
+    basestats 70, 100, 80, 40, 105, 85
     types TYPE_FIRE, TYPE_GROUND
     catchrate 150
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_RAWST_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_MAGMA_ARMOR, ABILITY_SOLID_ROCK
+    abilities ABILITY_SHEER_FORCE, ABILITY_SOLID_ROCK
     runchance 0
     colorflip BODY_COLOR_RED, 0
     mondexentry SPECIES_CAMERUPT, "It lives in the crater of a volcano.\nIt is well known that the humps on\nits back erupt every 10 years."
@@ -6823,7 +6824,7 @@ mondata SPECIES_TORKOAL, "Torkoal"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CHARCOAL
     genderratio 127
     eggcycles 20
@@ -6840,11 +6841,11 @@ mondata SPECIES_TORKOAL, "Torkoal"
 
 
 mondata SPECIES_SPOINK, "Spoink"
-    basestats 60, 25, 35, 60, 70, 80
-    types TYPE_PSYCHIC, TYPE_PSYCHIC
+    basestats 70, 25, 40, 60, 75, 80
+    types TYPE_PSYCHIC, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_PSYCHIC
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PERSIM_BERRY, ITEM_TANGA_BERRY
     genderratio 127
     eggcycles 20
@@ -6861,11 +6862,11 @@ mondata SPECIES_SPOINK, "Spoink"
 
 
 mondata SPECIES_GRUMPIG, "Grumpig"
-    basestats 80, 45, 65, 80, 90, 110
-    types TYPE_PSYCHIC, TYPE_PSYCHIC
+    basestats 90, 45, 70, 80, 95, 110
+    types TYPE_PSYCHIC, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_PSYCHIC
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PERSIM_BERRY, ITEM_TANGA_BERRY
     genderratio 127
     eggcycles 20
@@ -6886,7 +6887,7 @@ mondata SPECIES_SPINDA, "Spinda"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CHESTO_BERRY
     genderratio 127
     eggcycles 15
@@ -6907,7 +6908,7 @@ mondata SPECIES_TRAPINCH, "Trapinch"
     types TYPE_GROUND, TYPE_GROUND
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SOFT_SAND
     genderratio 127
     eggcycles 20
@@ -6928,7 +6929,7 @@ mondata SPECIES_VIBRAVA, "Vibrava"
     types TYPE_GROUND, TYPE_DRAGON
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -6949,7 +6950,7 @@ mondata SPECIES_FLYGON, "Flygon"
     types TYPE_GROUND, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -6970,7 +6971,7 @@ mondata SPECIES_CACNEA, "Cacnea"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_STICKY_BARB, ITEM_POISON_BARB
     genderratio 127
     eggcycles 20
@@ -6991,7 +6992,7 @@ mondata SPECIES_CACTURNE, "Cacturne"
     types TYPE_GRASS, TYPE_DARK
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_STICKY_BARB, ITEM_POISON_BARB
     genderratio 127
     eggcycles 20
@@ -7012,7 +7013,7 @@ mondata SPECIES_SWABLU, "Swablu"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -7033,7 +7034,7 @@ mondata SPECIES_ALTARIA, "Altaria"
     types TYPE_DRAGON, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -7054,7 +7055,7 @@ mondata SPECIES_ZANGOOSE, "Zangoose"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_QUICK_CLAW
     genderratio 127
     eggcycles 20
@@ -7075,7 +7076,7 @@ mondata SPECIES_SEVIPER, "Seviper"
     types TYPE_POISON, TYPE_POISON
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PERSIM_BERRY, ITEM_SHED_SHELL
     genderratio 127
     eggcycles 20
@@ -7096,7 +7097,7 @@ mondata SPECIES_LUNATONE, "Lunatone"
     types TYPE_ROCK, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_STARDUST, ITEM_MOON_STONE
     genderratio 255
     eggcycles 25
@@ -7117,7 +7118,7 @@ mondata SPECIES_SOLROCK, "Solrock"
     types TYPE_ROCK, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_STARDUST, ITEM_SUN_STONE
     genderratio 255
     eggcycles 25
@@ -7138,7 +7139,7 @@ mondata SPECIES_BARBOACH, "Barboach"
     types TYPE_WATER, TYPE_GROUND
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -7159,7 +7160,7 @@ mondata SPECIES_WHISCASH, "Whiscash"
     types TYPE_WATER, TYPE_GROUND
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -7180,7 +7181,7 @@ mondata SPECIES_CORPHISH, "Corphish"
     types TYPE_WATER, TYPE_WATER
     catchrate 205
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -7201,7 +7202,7 @@ mondata SPECIES_CRAWDAUNT, "Crawdaunt"
     types TYPE_WATER, TYPE_DARK
     catchrate 155
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -7222,7 +7223,7 @@ mondata SPECIES_BALTOY, "Baltoy"
     types TYPE_GROUND, TYPE_PSYCHIC
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_CLAY
     genderratio 255
     eggcycles 20
@@ -7243,7 +7244,7 @@ mondata SPECIES_CLAYDOL, "Claydol"
     types TYPE_GROUND, TYPE_PSYCHIC
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_CLAY
     genderratio 255
     eggcycles 20
@@ -7264,7 +7265,7 @@ mondata SPECIES_LILEEP, "Lileep"
     types TYPE_ROCK, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_BIG_ROOT
     genderratio 31
     eggcycles 30
@@ -7285,7 +7286,7 @@ mondata SPECIES_CRADILY, "Cradily"
     types TYPE_ROCK, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_BIG_ROOT
     genderratio 31
     eggcycles 30
@@ -7306,7 +7307,7 @@ mondata SPECIES_ANORITH, "Anorith"
     types TYPE_ROCK, TYPE_BUG
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -7327,7 +7328,7 @@ mondata SPECIES_ARMALDO, "Armaldo"
     types TYPE_ROCK, TYPE_BUG
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -7348,7 +7349,7 @@ mondata SPECIES_FEEBAS, "Feebas"
     types TYPE_WATER, TYPE_WATER
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -7369,7 +7370,7 @@ mondata SPECIES_MILOTIC, "Milotic"
     types TYPE_WATER, TYPE_WATER
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -7390,7 +7391,7 @@ mondata SPECIES_CASTFORM, "Castform"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_MYSTIC_WATER, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -7411,7 +7412,7 @@ mondata SPECIES_KECLEON, "Kecleon"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PERSIM_BERRY
     genderratio 127
     eggcycles 20
@@ -7432,7 +7433,7 @@ mondata SPECIES_SHUPPET, "Shuppet"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SPELL_TAG
     genderratio 127
     eggcycles 25
@@ -7453,7 +7454,7 @@ mondata SPECIES_BANETTE, "Banette"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SPELL_TAG
     genderratio 127
     eggcycles 25
@@ -7474,7 +7475,7 @@ mondata SPECIES_DUSKULL, "Duskull"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_SPELL_TAG, ITEM_KASIB_BERRY
     genderratio 127
     eggcycles 25
@@ -7495,7 +7496,7 @@ mondata SPECIES_DUSCLOPS, "Dusclops"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_SPELL_TAG, ITEM_KASIB_BERRY
     genderratio 127
     eggcycles 25
@@ -7512,18 +7513,18 @@ mondata SPECIES_DUSCLOPS, "Dusclops"
 
 
 mondata SPECIES_TROPIUS, "Tropius"
-    basestats 99, 68, 83, 51, 72, 87
-    types TYPE_GRASS, TYPE_FLYING
+    basestats 110, 60, 90, 60, 85, 95
+    types TYPE_GRASS, TYPE_DRAGON
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_MIRACLE_SEED
     genderratio 127
     eggcycles 25
     basefriendship 70
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_GRASS
-    abilities ABILITY_CHLOROPHYLL, ABILITY_SOLAR_POWER
+    abilities ABILITY_HARVEST, ABILITY_SOLAR_POWER
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_TROPIUS, "The bunch of fruit around its neck\nripens twice a year and is delicious.\nIt’s a highly favored tropical snack."
@@ -7537,7 +7538,7 @@ mondata SPECIES_CHIMECHO, "Chimecho"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_CLEANSE_TAG, ITEM_COLBUR_BERRY
     genderratio 127
     eggcycles 25
@@ -7558,7 +7559,7 @@ mondata SPECIES_ABSOL, "Absol"
     types TYPE_DARK, TYPE_DARK
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIFE_ORB
     genderratio 127
     eggcycles 25
@@ -7579,7 +7580,7 @@ mondata SPECIES_WYNAUT, "Wynaut"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 125
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -7600,7 +7601,7 @@ mondata SPECIES_SNORUNT, "Snorunt"
     types TYPE_ICE, TYPE_ICE
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_SNOWBALL, ITEM_BABIRI_BERRY
     genderratio 127
     eggcycles 20
@@ -7621,7 +7622,7 @@ mondata SPECIES_GLALIE, "Glalie"
     types TYPE_ICE, TYPE_ICE
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NEVER_MELT_ICE, ITEM_BABIRI_BERRY
     genderratio 127
     eggcycles 20
@@ -7642,7 +7643,7 @@ mondata SPECIES_SPHEAL, "Spheal"
     types TYPE_ICE, TYPE_WATER
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -7663,7 +7664,7 @@ mondata SPECIES_SEALEO, "Sealeo"
     types TYPE_ICE, TYPE_WATER
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -7684,7 +7685,7 @@ mondata SPECIES_WALREIN, "Walrein"
     types TYPE_ICE, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -7705,7 +7706,7 @@ mondata SPECIES_CLAMPERL, "Clamperl"
     types TYPE_WATER, TYPE_WATER
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PEARL, ITEM_BLUE_SHARD
     genderratio 127
     eggcycles 20
@@ -7726,7 +7727,7 @@ mondata SPECIES_HUNTAIL, "Huntail"
     types TYPE_WATER, TYPE_WATER
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_DEEP_SEA_TOOTH
     genderratio 127
     eggcycles 20
@@ -7747,7 +7748,7 @@ mondata SPECIES_GOREBYSS, "Gorebyss"
     types TYPE_WATER, TYPE_WATER
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_DEEP_SEA_SCALE
     genderratio 127
     eggcycles 20
@@ -7768,7 +7769,7 @@ mondata SPECIES_RELICANTH, "Relicanth"
     types TYPE_WATER, TYPE_ROCK
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_DEEP_SEA_SCALE, ITEM_GREEN_SHARD
     genderratio 31
     eggcycles 40
@@ -7789,7 +7790,7 @@ mondata SPECIES_LUVDISC, "Luvdisc"
     types TYPE_WATER, TYPE_WATER
     catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_HEART_SCALE, ITEM_NONE
     genderratio 190
     eggcycles 20
@@ -7810,7 +7811,7 @@ mondata SPECIES_BAGON, "Bagon"
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_DRAGON_FANG, ITEM_DRAGON_SCALE
     genderratio 127
     eggcycles 40
@@ -7831,7 +7832,7 @@ mondata SPECIES_SHELGON, "Shelgon"
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_DRAGON_FANG, ITEM_DRAGON_SCALE
     genderratio 127
     eggcycles 40
@@ -7852,7 +7853,7 @@ mondata SPECIES_SALAMENCE, "Salamence"
     types TYPE_DRAGON, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_DRAGON_FANG, ITEM_DRAGON_SCALE
     genderratio 127
     eggcycles 40
@@ -7873,7 +7874,7 @@ mondata SPECIES_BELDUM, "Beldum"
     types TYPE_STEEL, TYPE_PSYCHIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_METAL_COAT
     genderratio 255
     eggcycles 40
@@ -7894,7 +7895,7 @@ mondata SPECIES_METANG, "Metang"
     types TYPE_STEEL, TYPE_PSYCHIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_METAL_COAT
     genderratio 255
     eggcycles 40
@@ -7915,7 +7916,7 @@ mondata SPECIES_METAGROSS, "Metagross"
     types TYPE_STEEL, TYPE_PSYCHIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_METAL_COAT
     genderratio 255
     eggcycles 40
@@ -7936,7 +7937,7 @@ mondata SPECIES_REGIROCK, "Regirock"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -7957,7 +7958,7 @@ mondata SPECIES_REGICE, "Regice"
     types TYPE_ICE, TYPE_ICE
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -7978,7 +7979,7 @@ mondata SPECIES_REGISTEEL, "Registeel"
     types TYPE_STEEL, TYPE_STEEL
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -7999,7 +8000,7 @@ mondata SPECIES_LATIAS, "Latias"
     types TYPE_DRAGON, TYPE_PSYCHIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 120
@@ -8020,7 +8021,7 @@ mondata SPECIES_LATIOS, "Latios"
     types TYPE_DRAGON, TYPE_PSYCHIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 120
@@ -8041,7 +8042,7 @@ mondata SPECIES_KYOGRE, "Kyogre"
     types TYPE_WATER, TYPE_WATER
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -8062,7 +8063,7 @@ mondata SPECIES_GROUDON, "Groudon"
     types TYPE_GROUND, TYPE_GROUND
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -8083,7 +8084,7 @@ mondata SPECIES_RAYQUAZA, "Rayquaza"
     types TYPE_DRAGON, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -8104,7 +8105,7 @@ mondata SPECIES_JIRACHI, "Jirachi"
     types TYPE_STEEL, TYPE_PSYCHIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_STAR_PIECE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -8125,7 +8126,7 @@ mondata SPECIES_DEOXYS, "Deoxys"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -8144,9 +8145,9 @@ mondata SPECIES_DEOXYS, "Deoxys"
 mondata SPECIES_TURTWIG, "Turtwig"
     basestats 55, 68, 64, 31, 45, 55
     types TYPE_GRASS, TYPE_GRASS
-    catchrate 45
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -8164,10 +8165,10 @@ mondata SPECIES_TURTWIG, "Turtwig"
 
 mondata SPECIES_GROTLE, "Grotle"
     basestats 75, 89, 85, 36, 55, 65
-    types TYPE_GRASS, TYPE_GRASS
-    catchrate 45
+    types TYPE_GRASS, TYPE_GROUND
+    catchrate 125
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -8188,7 +8189,7 @@ mondata SPECIES_TORTERRA, "Torterra"
     types TYPE_GRASS, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -8207,9 +8208,9 @@ mondata SPECIES_TORTERRA, "Torterra"
 mondata SPECIES_CHIMCHAR, "Chimchar"
     basestats 44, 58, 44, 61, 58, 44
     types TYPE_FIRE, TYPE_FIRE
-    catchrate 45
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -8228,9 +8229,9 @@ mondata SPECIES_CHIMCHAR, "Chimchar"
 mondata SPECIES_MONFERNO, "Monferno"
     basestats 64, 78, 52, 81, 78, 52
     types TYPE_FIRE, TYPE_FIGHTING
-    catchrate 45
+    catchrate 125
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -8251,7 +8252,7 @@ mondata SPECIES_INFERNAPE, "Infernape"
     types TYPE_FIRE, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -8270,9 +8271,9 @@ mondata SPECIES_INFERNAPE, "Infernape"
 mondata SPECIES_PIPLUP, "Piplup"
     basestats 53, 51, 53, 40, 61, 56
     types TYPE_WATER, TYPE_WATER
-    catchrate 45
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -8290,10 +8291,10 @@ mondata SPECIES_PIPLUP, "Piplup"
 
 mondata SPECIES_PRINPLUP, "Prinplup"
     basestats 64, 66, 68, 50, 81, 76
-    types TYPE_WATER, TYPE_WATER
-    catchrate 45
+    types TYPE_WATER, TYPE_STEEL
+    catchrate 125
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -8314,7 +8315,7 @@ mondata SPECIES_EMPOLEON, "Empoleon"
     types TYPE_WATER, TYPE_STEEL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -8335,7 +8336,7 @@ mondata SPECIES_STARLY, "Starly"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_YACHE_BERRY
     genderratio 127
     eggcycles 15
@@ -8356,7 +8357,7 @@ mondata SPECIES_STARAVIA, "Staravia"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_YACHE_BERRY
     genderratio 127
     eggcycles 15
@@ -8374,10 +8375,10 @@ mondata SPECIES_STARAVIA, "Staravia"
 
 mondata SPECIES_STARAPTOR, "Staraptor"
     basestats 85, 120, 70, 100, 50, 60
-    types TYPE_NORMAL, TYPE_FLYING
+    types TYPE_FIGHTING, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_YACHE_BERRY
     genderratio 127
     eggcycles 15
@@ -8398,7 +8399,7 @@ mondata SPECIES_BIDOOF, "Bidoof"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -8419,7 +8420,7 @@ mondata SPECIES_BIBAREL, "Bibarel"
     types TYPE_NORMAL, TYPE_WATER
     catchrate 127
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_SITRUS_BERRY
     genderratio 127
     eggcycles 15
@@ -8436,18 +8437,18 @@ mondata SPECIES_BIBAREL, "Bibarel"
 
 
 mondata SPECIES_KRICKETOT, "Kricketot"
-    basestats 37, 25, 41, 25, 25, 41
-    types TYPE_BUG, TYPE_BUG
+    basestats 45, 40, 35, 55, 40, 35
+    types TYPE_BUG, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_METRONOME
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_BUG, EGG_GROUP_BUG
-    abilities ABILITY_SHED_SKIN, ABILITY_NONE
+    abilities ABILITY_SHED_SKIN, ABILITY_RUN_AWAY
     runchance 0
     colorflip BODY_COLOR_RED, 0
     mondexentry SPECIES_KRICKETOT, "When its antennae hit each other,\nit sounds like the music of\na xylophone."
@@ -8457,18 +8458,18 @@ mondata SPECIES_KRICKETOT, "Kricketot"
 
 
 mondata SPECIES_KRICKETUNE, "Kricketune"
-    basestats 77, 85, 51, 65, 55, 51
-    types TYPE_BUG, TYPE_BUG
+    basestats 80, 75, 55, 70, 75, 55
+    types TYPE_BUG, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_METRONOME
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_BUG, EGG_GROUP_BUG
-    abilities ABILITY_SWARM, ABILITY_NONE
+    abilities ABILITY_SWARM, ABILITY_TECHNICIAN
     runchance 0
     colorflip BODY_COLOR_RED, 0
     mondexentry SPECIES_KRICKETUNE, "By allowing its cry to resonate in\nthe hollow of its belly, it produces\na captivating sound."
@@ -8482,7 +8483,7 @@ mondata SPECIES_SHINX, "Shinx"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 235
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -8500,10 +8501,10 @@ mondata SPECIES_SHINX, "Shinx"
 
 mondata SPECIES_LUXIO, "Luxio"
     basestats 60, 85, 49, 60, 60, 49
-    types TYPE_ELECTRIC, TYPE_ELECTRIC
+    types TYPE_ELECTRIC, TYPE_DARK
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -8521,10 +8522,10 @@ mondata SPECIES_LUXIO, "Luxio"
 
 mondata SPECIES_LUXRAY, "Luxray"
     basestats 80, 120, 79, 70, 95, 79
-    types TYPE_ELECTRIC, TYPE_ELECTRIC
+    types TYPE_ELECTRIC, TYPE_DARK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -8545,7 +8546,7 @@ mondata SPECIES_BUDEW, "Budew"
     types TYPE_GRASS, TYPE_POISON
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_POISON_BARB
     genderratio 127
     eggcycles 20
@@ -8566,7 +8567,7 @@ mondata SPECIES_ROSERADE, "Roserade"
     types TYPE_GRASS, TYPE_POISON
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ABSORB_BULB, ITEM_POISON_BARB
     genderratio 127
     eggcycles 20
@@ -8587,7 +8588,7 @@ mondata SPECIES_CRANIDOS, "Cranidos"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -8608,7 +8609,7 @@ mondata SPECIES_RAMPARDOS, "Rampardos"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -8629,7 +8630,7 @@ mondata SPECIES_SHIELDON, "Shieldon"
     types TYPE_ROCK, TYPE_STEEL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -8650,7 +8651,7 @@ mondata SPECIES_BASTIODON, "Bastiodon"
     types TYPE_ROCK, TYPE_STEEL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -8671,7 +8672,7 @@ mondata SPECIES_BURMY, "Burmy"
     types TYPE_BUG, TYPE_BUG
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -8692,7 +8693,7 @@ mondata SPECIES_WORMADAM, "Wormadam"
     types TYPE_BUG, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SILVER_POWDER
     genderratio 254
     eggcycles 15
@@ -8713,7 +8714,7 @@ mondata SPECIES_MOTHIM, "Mothim"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SILVER_POWDER
     genderratio 0
     eggcycles 15
@@ -8730,18 +8731,18 @@ mondata SPECIES_MOTHIM, "Mothim"
 
 
 mondata SPECIES_COMBEE, "Combee"
-    basestats 30, 30, 42, 70, 30, 42
+    basestats 35, 40, 45, 70, 40, 45
     types TYPE_BUG, TYPE_FLYING
-    catchrate 120
+    catchrate 220
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_HONEY, ITEM_NONE
     genderratio 31
     eggcycles 15
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_BUG, EGG_GROUP_BUG
-    abilities ABILITY_HONEY_GATHER, ABILITY_NONE
+    abilities ABILITY_HUSTLE, ABILITY_SWARM
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_COMBEE, "At night, COMBEE sleep in a group of\nabout a thousand, packed closely\ntogether in a lump."
@@ -8751,18 +8752,18 @@ mondata SPECIES_COMBEE, "Combee"
 
 
 mondata SPECIES_VESPIQUEN, "Vespiquen"
-    basestats 70, 80, 102, 40, 80, 102
+    basestats 70, 80, 105, 40, 80, 105
     types TYPE_BUG, TYPE_FLYING
-    catchrate 45
+    catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_POISON_BARB
     genderratio 254
     eggcycles 15
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_BUG, EGG_GROUP_BUG
-    abilities ABILITY_PRESSURE, ABILITY_NONE
+    abilities ABILITY_INTIMIDATE, ABILITY_UNNERVE
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_VESPIQUEN, "It raises grubs in the holes in its\nbody. It secretes pheromones to\ncontrol COMBEE."
@@ -8776,7 +8777,7 @@ mondata SPECIES_PACHIRISU, "Pachirisu"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 10
@@ -8795,9 +8796,9 @@ mondata SPECIES_PACHIRISU, "Pachirisu"
 mondata SPECIES_BUIZEL, "Buizel"
     basestats 55, 65, 35, 85, 60, 30
     types TYPE_WATER, TYPE_WATER
-    catchrate 190
+    catchrate 210
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_WACAN_BERRY
     genderratio 127
     eggcycles 20
@@ -8818,7 +8819,7 @@ mondata SPECIES_FLOATZEL, "Floatzel"
     types TYPE_WATER, TYPE_WATER
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_WACAN_BERRY
     genderratio 127
     eggcycles 20
@@ -8839,7 +8840,7 @@ mondata SPECIES_CHERUBI, "Cherubi"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MIRACLE_SEED
     genderratio 127
     eggcycles 20
@@ -8860,7 +8861,7 @@ mondata SPECIES_CHERRIM, "Cherrim"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MIRACLE_SEED
     genderratio 127
     eggcycles 20
@@ -8881,7 +8882,7 @@ mondata SPECIES_SHELLOS, "Shellos"
     types TYPE_WATER, TYPE_WATER
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -8902,7 +8903,7 @@ mondata SPECIES_GASTRODON, "Gastrodon"
     types TYPE_WATER, TYPE_GROUND
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -8923,7 +8924,7 @@ mondata SPECIES_AMBIPOM, "Ambipom"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -8944,7 +8945,7 @@ mondata SPECIES_DRIFLOON, "Drifloon"
     types TYPE_GHOST, TYPE_FLYING
     catchrate 125
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 30
@@ -8965,7 +8966,7 @@ mondata SPECIES_DRIFBLIM, "Drifblim"
     types TYPE_GHOST, TYPE_FLYING
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_AIR_BALLOON
     genderratio 127
     eggcycles 30
@@ -8986,7 +8987,7 @@ mondata SPECIES_BUNEARY, "Buneary"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PECHA_BERRY, ITEM_CHOPLE_BERRY
     genderratio 127
     eggcycles 20
@@ -9004,10 +9005,10 @@ mondata SPECIES_BUNEARY, "Buneary"
 
 mondata SPECIES_LOPUNNY, "Lopunny"
     basestats 65, 76, 84, 105, 54, 96
-    types TYPE_NORMAL, TYPE_NORMAL
+    types TYPE_NORMAL, TYPE_FIGHTING
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PECHA_BERRY, ITEM_CHOPLE_BERRY
     genderratio 127
     eggcycles 20
@@ -9025,10 +9026,10 @@ mondata SPECIES_LOPUNNY, "Lopunny"
 
 mondata SPECIES_MISMAGIUS, "Mismagius"
     basestats 60, 60, 60, 105, 105, 105
-    types TYPE_GHOST, TYPE_GHOST
+    types TYPE_GHOST, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -9047,9 +9048,9 @@ mondata SPECIES_MISMAGIUS, "Mismagius"
 mondata SPECIES_HONCHKROW, "Honchkrow"
     basestats 100, 125, 52, 71, 105, 52
     types TYPE_DARK, TYPE_FLYING
-    catchrate 30
+    catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -9070,7 +9071,7 @@ mondata SPECIES_GLAMEOW, "Glameow"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CHERI_BERRY
     genderratio 190
     eggcycles 20
@@ -9091,7 +9092,7 @@ mondata SPECIES_PURUGLY, "Purugly"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CHERI_BERRY
     genderratio 190
     eggcycles 20
@@ -9112,7 +9113,7 @@ mondata SPECIES_CHINGLING, "Chingling"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_CLEANSE_TAG, ITEM_COLBUR_BERRY
     genderratio 127
     eggcycles 25
@@ -9133,7 +9134,7 @@ mondata SPECIES_STUNKY, "Stunky"
     types TYPE_POISON, TYPE_DARK
     catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PECHA_BERRY
     genderratio 127
     eggcycles 20
@@ -9154,7 +9155,7 @@ mondata SPECIES_SKUNTANK, "Skuntank"
     types TYPE_POISON, TYPE_DARK
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PECHA_BERRY
     genderratio 127
     eggcycles 20
@@ -9175,7 +9176,7 @@ mondata SPECIES_BRONZOR, "Bronzor"
     types TYPE_STEEL, TYPE_PSYCHIC
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_METAL_COAT
     genderratio 255
     eggcycles 20
@@ -9196,7 +9197,7 @@ mondata SPECIES_BRONZONG, "Bronzong"
     types TYPE_STEEL, TYPE_PSYCHIC
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_METAL_COAT
     genderratio 255
     eggcycles 20
@@ -9214,10 +9215,10 @@ mondata SPECIES_BRONZONG, "Bronzong"
 
 mondata SPECIES_BONSLY, "Bonsly"
     basestats 50, 80, 95, 10, 10, 45
-    types TYPE_ROCK, TYPE_ROCK
+    types TYPE_ROCK, TYPE_GRASS
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -9238,7 +9239,7 @@ mondata SPECIES_MIMEJR, "Mime Jr."
     types TYPE_PSYCHIC, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_PSYCHIC
     catchrate 145
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LEPPA_BERRY
     genderratio 127
     eggcycles 25
@@ -9259,7 +9260,7 @@ mondata SPECIES_HAPPINY, "Happiny"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 130
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_OVAL_STONE, ITEM_LUCKY_EGG
     genderratio 254
     eggcycles 40
@@ -9280,7 +9281,7 @@ mondata SPECIES_CHATOT, "Chatot"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_METRONOME
     genderratio 127
     eggcycles 20
@@ -9301,7 +9302,7 @@ mondata SPECIES_SPIRITOMB, "Spiritomb"
     types TYPE_GHOST, TYPE_DARK
     catchrate 100
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 30
@@ -9322,7 +9323,7 @@ mondata SPECIES_GIBLE, "Gible"
     types TYPE_DRAGON, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_HABAN_BERRY
     genderratio 127
     eggcycles 40
@@ -9343,7 +9344,7 @@ mondata SPECIES_GABITE, "Gabite"
     types TYPE_DRAGON, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_HABAN_BERRY
     genderratio 127
     eggcycles 40
@@ -9364,7 +9365,7 @@ mondata SPECIES_GARCHOMP, "Garchomp"
     types TYPE_DRAGON, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_HABAN_BERRY
     genderratio 127
     eggcycles 40
@@ -9385,7 +9386,7 @@ mondata SPECIES_MUNCHLAX, "Munchlax"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 50
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_LEFTOVERS, ITEM_NONE
     genderratio 31
     eggcycles 40
@@ -9406,7 +9407,7 @@ mondata SPECIES_RIOLU, "Riolu"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 25
@@ -9427,7 +9428,7 @@ mondata SPECIES_LUCARIO, "Lucario"
     types TYPE_FIGHTING, TYPE_STEEL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 25
@@ -9448,7 +9449,7 @@ mondata SPECIES_HIPPOPOTAS, "Hippopotas"
     types TYPE_GROUND, TYPE_GROUND
     catchrate 140
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 30
@@ -9469,7 +9470,7 @@ mondata SPECIES_HIPPOWDON, "Hippowdon"
     types TYPE_GROUND, TYPE_GROUND
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 30
@@ -9490,7 +9491,7 @@ mondata SPECIES_SKORUPI, "Skorupi"
     types TYPE_POISON, TYPE_BUG
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_POISON_BARB
     genderratio 127
     eggcycles 20
@@ -9511,7 +9512,7 @@ mondata SPECIES_DRAPION, "Drapion"
     types TYPE_POISON, TYPE_DARK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_POISON_BARB
     genderratio 127
     eggcycles 20
@@ -9532,7 +9533,7 @@ mondata SPECIES_CROAGUNK, "Croagunk"
     types TYPE_POISON, TYPE_FIGHTING
     catchrate 140
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_BLACK_SLUDGE
     genderratio 127
     eggcycles 10
@@ -9553,7 +9554,7 @@ mondata SPECIES_TOXICROAK, "Toxicroak"
     types TYPE_POISON, TYPE_FIGHTING
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_BLACK_SLUDGE
     genderratio 127
     eggcycles 20
@@ -9574,7 +9575,7 @@ mondata SPECIES_CARNIVINE, "Carnivine"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -9595,7 +9596,7 @@ mondata SPECIES_FINNEON, "Finneon"
     types TYPE_WATER, TYPE_WATER
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_RINDO_BERRY
     genderratio 127
     eggcycles 20
@@ -9616,7 +9617,7 @@ mondata SPECIES_LUMINEON, "Lumineon"
     types TYPE_WATER, TYPE_WATER
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_RINDO_BERRY
     genderratio 127
     eggcycles 20
@@ -9637,7 +9638,7 @@ mondata SPECIES_MANTYKE, "Mantyke"
     types TYPE_WATER, TYPE_FLYING
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -9658,7 +9659,7 @@ mondata SPECIES_SNOVER, "Snover"
     types TYPE_GRASS, TYPE_ICE
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NEVER_MELT_ICE
     genderratio 127
     eggcycles 20
@@ -9679,7 +9680,7 @@ mondata SPECIES_ABOMASNOW, "Abomasnow"
     types TYPE_GRASS, TYPE_ICE
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NEVER_MELT_ICE
     genderratio 127
     eggcycles 20
@@ -9700,7 +9701,7 @@ mondata SPECIES_WEAVILE, "Weavile"
     types TYPE_DARK, TYPE_ICE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_GRIP_CLAW, ITEM_QUICK_CLAW
     genderratio 127
     eggcycles 20
@@ -9721,7 +9722,7 @@ mondata SPECIES_MAGNEZONE, "Magnezone"
     types TYPE_ELECTRIC, TYPE_STEEL
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_METAL_COAT
     genderratio 255
     eggcycles 20
@@ -9742,7 +9743,7 @@ mondata SPECIES_LICKILICKY, "Lickilicky"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LAGGING_TAIL
     genderratio 127
     eggcycles 20
@@ -9763,7 +9764,7 @@ mondata SPECIES_RHYPERIOR, "Rhyperior"
     types TYPE_GROUND, TYPE_ROCK
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -9784,7 +9785,7 @@ mondata SPECIES_TANGROWTH, "Tangrowth"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -9805,7 +9806,7 @@ mondata SPECIES_ELECTIVIRE, "Electivire"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ELECTIRIZER, ITEM_NONE
     genderratio 63
     eggcycles 25
@@ -9826,7 +9827,7 @@ mondata SPECIES_MAGMORTAR, "Magmortar"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MAGMARIZER
     genderratio 63
     eggcycles 25
@@ -9847,7 +9848,7 @@ mondata SPECIES_TOGEKISS, "Togekiss"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, TYPE_FLYING
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 10
@@ -9868,7 +9869,7 @@ mondata SPECIES_YANMEGA, "Yanmega"
     types TYPE_BUG, TYPE_FLYING
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_WIDE_LENS
     genderratio 127
     eggcycles 20
@@ -9889,7 +9890,7 @@ mondata SPECIES_LEAFEON, "Leafeon"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 35
@@ -9910,7 +9911,7 @@ mondata SPECIES_GLACEON, "Glaceon"
     types TYPE_ICE, TYPE_ICE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 35
@@ -9931,7 +9932,7 @@ mondata SPECIES_GLISCOR, "Gliscor"
     types TYPE_GROUND, TYPE_FLYING
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -9952,7 +9953,7 @@ mondata SPECIES_MAMOSWINE, "Mamoswine"
     types TYPE_ICE, TYPE_GROUND
     catchrate 50
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -9973,7 +9974,7 @@ mondata SPECIES_PORYGON_Z, "Porygon-Z"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -9994,7 +9995,7 @@ mondata SPECIES_GALLADE, "Gallade"
     types TYPE_PSYCHIC, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -10015,7 +10016,7 @@ mondata SPECIES_PROBOPASS, "Probopass"
     types TYPE_ROCK, TYPE_STEEL
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_MAGNET, ITEM_HARD_STONE
     genderratio 127
     eggcycles 20
@@ -10036,7 +10037,7 @@ mondata SPECIES_DUSKNOIR, "Dusknoir"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_SPELL_TAG, ITEM_KASIB_BERRY
     genderratio 127
     eggcycles 25
@@ -10057,7 +10058,7 @@ mondata SPECIES_FROSLASS, "Froslass"
     types TYPE_ICE, TYPE_GHOST
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_BABIRI_BERRY
     genderratio 254
     eggcycles 20
@@ -10078,7 +10079,7 @@ mondata SPECIES_ROTOM, "Rotom"
     types TYPE_ELECTRIC, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -10099,7 +10100,7 @@ mondata SPECIES_UXIE, "Uxie"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -10120,7 +10121,7 @@ mondata SPECIES_MESPRIT, "Mesprit"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 1, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -10141,7 +10142,7 @@ mondata SPECIES_AZELF, "Azelf"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -10162,7 +10163,7 @@ mondata SPECIES_DIALGA, "Dialga"
     types TYPE_STEEL, TYPE_DRAGON
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -10183,7 +10184,7 @@ mondata SPECIES_PALKIA, "Palkia"
     types TYPE_WATER, TYPE_DRAGON
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -10204,7 +10205,7 @@ mondata SPECIES_HEATRAN, "Heatran"
     types TYPE_FIRE, TYPE_STEEL
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 10
@@ -10225,7 +10226,7 @@ mondata SPECIES_REGIGIGAS, "Regigigas"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -10246,7 +10247,7 @@ mondata SPECIES_GIRATINA, "Giratina"
     types TYPE_GHOST, TYPE_DRAGON
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -10267,7 +10268,7 @@ mondata SPECIES_CRESSELIA, "Cresselia"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 120
@@ -10288,7 +10289,7 @@ mondata SPECIES_PHIONE, "Phione"
     types TYPE_WATER, TYPE_WATER
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 40
@@ -10309,7 +10310,7 @@ mondata SPECIES_MANAPHY, "Manaphy"
     types TYPE_WATER, TYPE_WATER
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 10
@@ -10330,7 +10331,7 @@ mondata SPECIES_DARKRAI, "Darkrai"
     types TYPE_DARK, TYPE_DARK
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -10351,7 +10352,7 @@ mondata SPECIES_SHAYMIN, "Shaymin"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_LUM_BERRY, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -10372,7 +10373,7 @@ mondata SPECIES_ARCEUS, "Arceus"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -10435,7 +10436,7 @@ mondata SPECIES_DEOXYS_ATTACK, "-----"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 3
     baseexp 215
-    evyields 0, 2, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -10456,7 +10457,7 @@ mondata SPECIES_DEOXYS_DEFENSE, "-----"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 3
     baseexp 215
-    evyields 0, 0, 2, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -10477,7 +10478,7 @@ mondata SPECIES_DEOXYS_SPEED, "-----"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 3
     baseexp 215
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -10498,7 +10499,7 @@ mondata SPECIES_WORMADAM_SANDY, "-----"
     types TYPE_BUG, TYPE_GROUND
     catchrate 45
     baseexp 159
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SILVER_POWDER
     genderratio 254
     eggcycles 15
@@ -10519,7 +10520,7 @@ mondata SPECIES_WORMADAM_TRASHY, "-----"
     types TYPE_BUG, TYPE_STEEL
     catchrate 45
     baseexp 159
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SILVER_POWDER
     genderratio 254
     eggcycles 15
@@ -10540,7 +10541,7 @@ mondata SPECIES_GIRATINA_ORIGIN, "-----"
     types TYPE_GHOST, TYPE_DRAGON
     catchrate 3
     baseexp 220
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -10561,7 +10562,7 @@ mondata SPECIES_SHAYMIN_SKY, "-----"
     types TYPE_GRASS, TYPE_FLYING
     catchrate 45
     baseexp 64
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_LUM_BERRY, ITEM_LUM_BERRY
     genderratio 255
     eggcycles 120
@@ -10582,7 +10583,7 @@ mondata SPECIES_ROTOM_HEAT, "-----"
     types TYPE_ELECTRIC, TYPE_FIRE
     catchrate 45
     baseexp 132
-    evyields 0, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -10603,7 +10604,7 @@ mondata SPECIES_ROTOM_WASH, "-----"
     types TYPE_ELECTRIC, TYPE_WATER
     catchrate 45
     baseexp 132
-    evyields 0, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -10624,7 +10625,7 @@ mondata SPECIES_ROTOM_FROST, "-----"
     types TYPE_ELECTRIC, TYPE_ICE
     catchrate 45
     baseexp 132
-    evyields 0, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -10645,7 +10646,7 @@ mondata SPECIES_ROTOM_FAN, "-----"
     types TYPE_ELECTRIC, TYPE_FLYING
     catchrate 45
     baseexp 132
-    evyields 0, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -10666,7 +10667,7 @@ mondata SPECIES_ROTOM_MOW, "-----"
     types TYPE_ELECTRIC, TYPE_GRASS
     catchrate 45
     baseexp 132
-    evyields 0, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -11443,7 +11444,7 @@ mondata SPECIES_VICTINI, "Victini"
     types TYPE_PSYCHIC, TYPE_FIRE
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -11464,7 +11465,7 @@ mondata SPECIES_SNIVY, "Snivy"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -11485,7 +11486,7 @@ mondata SPECIES_SERVINE, "Servine"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -11506,7 +11507,7 @@ mondata SPECIES_SERPERIOR, "Serperior"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -11527,7 +11528,7 @@ mondata SPECIES_TEPIG, "Tepig"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -11548,7 +11549,7 @@ mondata SPECIES_PIGNITE, "Pignite"
     types TYPE_FIRE, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -11569,7 +11570,7 @@ mondata SPECIES_EMBOAR, "Emboar"
     types TYPE_FIRE, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -11590,7 +11591,7 @@ mondata SPECIES_OSHAWOTT, "Oshawott"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -11611,7 +11612,7 @@ mondata SPECIES_DEWOTT, "Dewott"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -11632,7 +11633,7 @@ mondata SPECIES_SAMUROTT, "Samurott"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -11653,7 +11654,7 @@ mondata SPECIES_PATRAT, "Patrat"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -11674,7 +11675,7 @@ mondata SPECIES_WATCHOG, "Watchog"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -11695,7 +11696,7 @@ mondata SPECIES_LILLIPUP, "Lillipup"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -11716,7 +11717,7 @@ mondata SPECIES_HERDIER, "Herdier"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -11737,7 +11738,7 @@ mondata SPECIES_STOUTLAND, "Stoutland"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -11754,12 +11755,12 @@ mondata SPECIES_STOUTLAND, "Stoutland"
 
 
 mondata SPECIES_PURRLOIN, "Purrloin"
-    basestats 41, 50, 37, 66, 50, 37
+    basestats 45, 55, 35, 70, 55, 35
     types TYPE_DARK, TYPE_DARK
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_CHILAN_BERRY
     genderratio 127
     eggcycles 20
     basefriendship 50
@@ -11775,12 +11776,12 @@ mondata SPECIES_PURRLOIN, "Purrloin"
 
 
 mondata SPECIES_LIEPARD, "Liepard"
-    basestats 64, 88, 50, 106, 88, 50
+    basestats 70, 95, 50, 110, 95, 50
     types TYPE_DARK, TYPE_DARK
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_CHILAN_BERRY
     genderratio 127
     eggcycles 20
     basefriendship 50
@@ -11800,7 +11801,7 @@ mondata SPECIES_PANSAGE, "Pansage"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_OCCA_BERRY
     genderratio 31
     eggcycles 20
@@ -11821,7 +11822,7 @@ mondata SPECIES_SIMISAGE, "Simisage"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_OCCA_BERRY
     genderratio 31
     eggcycles 20
@@ -11842,7 +11843,7 @@ mondata SPECIES_PANSEAR, "Pansear"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_PASSHO_BERRY
     genderratio 31
     eggcycles 20
@@ -11863,7 +11864,7 @@ mondata SPECIES_SIMISEAR, "Simisear"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_PASSHO_BERRY
     genderratio 31
     eggcycles 20
@@ -11884,7 +11885,7 @@ mondata SPECIES_PANPOUR, "Panpour"
     types TYPE_WATER, TYPE_WATER
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_RINDO_BERRY
     genderratio 31
     eggcycles 20
@@ -11905,7 +11906,7 @@ mondata SPECIES_SIMIPOUR, "Simipour"
     types TYPE_WATER, TYPE_WATER
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_RINDO_BERRY
     genderratio 31
     eggcycles 20
@@ -11926,7 +11927,7 @@ mondata SPECIES_MUNNA, "Munna"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 10
@@ -11947,7 +11948,7 @@ mondata SPECIES_MUSHARNA, "Musharna"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 10
@@ -11964,63 +11965,63 @@ mondata SPECIES_MUSHARNA, "Musharna"
 
 
 mondata SPECIES_PIDOVE, "Pidove"
-    basestats 50, 55, 50, 43, 36, 30
-    types TYPE_NORMAL, TYPE_FLYING
+    basestats 50, 35, 50, 50, 65, 35
+    types TYPE_FLYING, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FLYING, EGG_GROUP_FLYING
-    abilities ABILITY_BIG_PECKS, ABILITY_SUPER_LUCK
+    abilities ABILITY_UNAWARE, ABILITY_SUPER_LUCK
     runchance 0
     colorflip BODY_COLOR_GRAY, 0
-    mondexentry SPECIES_PIDOVE, "This very forgetful Pokémon will\nwait for a new order from its Trainer\neven though it already has one."
+    mondexentry SPECIES_PIDOVE, "These Pokémon live in cities. They are\naccustomed to people. Flocks often\ngather in parks and plazas."
     mondexclassification SPECIES_PIDOVE, "Tiny Pigeon Pokémon"
     mondexheight SPECIES_PIDOVE, "1’00”"
     mondexweight SPECIES_PIDOVE, "4.6 lbs."
 
 
 mondata SPECIES_TRANQUILL, "Tranquill"
-    basestats 62, 77, 62, 65, 50, 42
-    types TYPE_NORMAL, TYPE_FLYING
+    basestats 65, 50, 65, 65, 85, 45
+    types TYPE_FLYING, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_FLYING
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FLYING, EGG_GROUP_FLYING
-    abilities ABILITY_BIG_PECKS, ABILITY_SUPER_LUCK
+    abilities ABILITY_UNAWARE, ABILITY_SUPER_LUCK
     runchance 0
     colorflip BODY_COLOR_GRAY, 0
-    mondexentry SPECIES_TRANQUILL, "No matter where in the world it goes,\nit knows where its nest is, so it never\ngets separated from its Trainer."
+    mondexentry SPECIES_TRANQUILL, "It can return to its Trainer’s location\nregardless of the distance separating\nthem."
     mondexclassification SPECIES_TRANQUILL, "Wild Pigeon Pokémon"
     mondexheight SPECIES_TRANQUILL, "2’00”"
     mondexweight SPECIES_TRANQUILL, "33.1 lbs."
 
 
 mondata SPECIES_UNFEZANT, "Unfezant"
-    basestats 80, 115, 80, 93, 65, 55
-    types TYPE_NORMAL, TYPE_FLYING
+    basestats 85, 65, 80, 100, 115, 60
+    types TYPE_FLYING, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 15
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FLYING, EGG_GROUP_FLYING
-    abilities ABILITY_BIG_PECKS, ABILITY_SUPER_LUCK
+    abilities ABILITY_UNAWARE, ABILITY_SUPER_LUCK
     runchance 0
     colorflip BODY_COLOR_GRAY, 0
-    mondexentry SPECIES_UNFEZANT, "Males swing the plumage on\ntheir heads to threaten others,\nbut females are better at flying."
+    mondexentry SPECIES_UNFEZANT, "Males swing the plumage on their heads\nto threaten others, but females are\nbetter at flying."
     mondexclassification SPECIES_UNFEZANT, "Proud Pokémon"
     mondexheight SPECIES_UNFEZANT, "3’11”"
     mondexweight SPECIES_UNFEZANT, "63.9 lbs."
@@ -12031,7 +12032,7 @@ mondata SPECIES_BLITZLE, "Blitzle"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_CHERI_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -12052,7 +12053,7 @@ mondata SPECIES_ZEBSTRIKA, "Zebstrika"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_CHERI_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -12073,7 +12074,7 @@ mondata SPECIES_ROGGENROLA, "Roggenrola"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_EVERSTONE, ITEM_HARD_STONE
     genderratio 127
     eggcycles 15
@@ -12094,7 +12095,7 @@ mondata SPECIES_BOLDORE, "Boldore"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_EVERSTONE, ITEM_HARD_STONE
     genderratio 127
     eggcycles 15
@@ -12115,7 +12116,7 @@ mondata SPECIES_GIGALITH, "Gigalith"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_EVERSTONE, ITEM_HARD_STONE
     genderratio 127
     eggcycles 15
@@ -12136,7 +12137,7 @@ mondata SPECIES_WOOBAT, "Woobat"
     types TYPE_PSYCHIC, TYPE_FLYING
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -12157,7 +12158,7 @@ mondata SPECIES_SWOOBAT, "Swoobat"
     types TYPE_PSYCHIC, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -12178,7 +12179,7 @@ mondata SPECIES_DRILBUR, "Drilbur"
     types TYPE_GROUND, TYPE_GROUND
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -12199,7 +12200,7 @@ mondata SPECIES_EXCADRILL, "Excadrill"
     types TYPE_GROUND, TYPE_STEEL
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -12220,7 +12221,7 @@ mondata SPECIES_AUDINO, "Audino"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_SITRUS_BERRY
     genderratio 127
     eggcycles 20
@@ -12241,7 +12242,7 @@ mondata SPECIES_TIMBURR, "Timburr"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 180
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 63
     eggcycles 20
@@ -12262,7 +12263,7 @@ mondata SPECIES_GURDURR, "Gurdurr"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 63
     eggcycles 20
@@ -12283,7 +12284,7 @@ mondata SPECIES_CONKELDURR, "Conkeldurr"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 63
     eggcycles 20
@@ -12304,7 +12305,7 @@ mondata SPECIES_TYMPOLE, "Tympole"
     types TYPE_WATER, TYPE_WATER
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PECHA_BERRY, ITEM_PERSIM_BERRY
     genderratio 127
     eggcycles 20
@@ -12325,7 +12326,7 @@ mondata SPECIES_PALPITOAD, "Palpitoad"
     types TYPE_WATER, TYPE_GROUND
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PECHA_BERRY, ITEM_PERSIM_BERRY
     genderratio 127
     eggcycles 20
@@ -12346,7 +12347,7 @@ mondata SPECIES_SEISMITOAD, "Seismitoad"
     types TYPE_WATER, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PECHA_BERRY, ITEM_PERSIM_BERRY
     genderratio 127
     eggcycles 20
@@ -12367,7 +12368,7 @@ mondata SPECIES_THROH, "Throh"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_EXPERT_BELT, ITEM_BLACK_BELT
     genderratio 0
     eggcycles 20
@@ -12388,7 +12389,7 @@ mondata SPECIES_SAWK, "Sawk"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_EXPERT_BELT, ITEM_BLACK_BELT
     genderratio 0
     eggcycles 20
@@ -12406,10 +12407,10 @@ mondata SPECIES_SAWK, "Sawk"
 
 mondata SPECIES_SEWADDLE, "Sewaddle"
     basestats 45, 53, 70, 42, 40, 60
-    types TYPE_BUG, TYPE_GRASS
+    types TYPE_BUG, TYPE_ELECTRIC
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MENTAL_HERB
     genderratio 127
     eggcycles 15
@@ -12427,10 +12428,10 @@ mondata SPECIES_SEWADDLE, "Sewaddle"
 
 mondata SPECIES_SWADLOON, "Swadloon"
     basestats 55, 63, 90, 42, 50, 80
-    types TYPE_BUG, TYPE_GRASS
+    types TYPE_BUG, TYPE_ELECTRIC
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MENTAL_HERB
     genderratio 127
     eggcycles 15
@@ -12448,10 +12449,10 @@ mondata SPECIES_SWADLOON, "Swadloon"
 
 mondata SPECIES_LEAVANNY, "Leavanny"
     basestats 75, 103, 80, 92, 70, 80
-    types TYPE_BUG, TYPE_GRASS
+    types TYPE_BUG, TYPE_ELECTRIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MENTAL_HERB
     genderratio 127
     eggcycles 15
@@ -12472,7 +12473,7 @@ mondata SPECIES_VENIPEDE, "Venipede"
     types TYPE_BUG, TYPE_POISON
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PECHA_BERRY, ITEM_POISON_BARB
     genderratio 127
     eggcycles 15
@@ -12493,7 +12494,7 @@ mondata SPECIES_WHIRLIPEDE, "Whirlipede"
     types TYPE_BUG, TYPE_POISON
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PECHA_BERRY, ITEM_POISON_BARB
     genderratio 127
     eggcycles 15
@@ -12514,7 +12515,7 @@ mondata SPECIES_SCOLIPEDE, "Scolipede"
     types TYPE_BUG, TYPE_POISON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PECHA_BERRY, ITEM_POISON_BARB
     genderratio 127
     eggcycles 20
@@ -12535,7 +12536,7 @@ mondata SPECIES_COTTONEE, "Cottonee"
     types TYPE_GRASS, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_GRASS
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_ABSORB_BULB
     genderratio 127
     eggcycles 20
@@ -12556,7 +12557,7 @@ mondata SPECIES_WHIMSICOTT, "Whimsicott"
     types TYPE_GRASS, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_GRASS
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_ABSORB_BULB
     genderratio 127
     eggcycles 20
@@ -12577,7 +12578,7 @@ mondata SPECIES_PETILIL, "Petilil"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_ABSORB_BULB
     genderratio 254
     eggcycles 20
@@ -12598,7 +12599,7 @@ mondata SPECIES_LILLIGANT, "Lilligant"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_ABSORB_BULB
     genderratio 254
     eggcycles 20
@@ -12619,7 +12620,7 @@ mondata SPECIES_BASCULIN, "Basculin"
     types TYPE_WATER, TYPE_WATER
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_DEEP_SEA_TOOTH
     genderratio 127
     eggcycles 40
@@ -12640,7 +12641,7 @@ mondata SPECIES_SANDILE, "Sandile"
     types TYPE_GROUND, TYPE_DARK
     catchrate 180
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_BLACK_GLASSES
     genderratio 127
     eggcycles 20
@@ -12661,7 +12662,7 @@ mondata SPECIES_KROKOROK, "Krokorok"
     types TYPE_GROUND, TYPE_DARK
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_BLACK_GLASSES
     genderratio 127
     eggcycles 20
@@ -12682,7 +12683,7 @@ mondata SPECIES_KROOKODILE, "Krookodile"
     types TYPE_GROUND, TYPE_DARK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_BLACK_GLASSES, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -12703,7 +12704,7 @@ mondata SPECIES_DARUMAKA, "Darumaka"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_RAWST_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -12724,7 +12725,7 @@ mondata SPECIES_DARMANITAN, "Darmanitan"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_RAWST_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -12745,7 +12746,7 @@ mondata SPECIES_MARACTUS, "Maractus"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MIRACLE_SEED
     genderratio 127
     eggcycles 20
@@ -12766,7 +12767,7 @@ mondata SPECIES_DWEBBLE, "Dwebble"
     types TYPE_BUG, TYPE_ROCK
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_HARD_STONE, ITEM_RARE_BONE
     genderratio 127
     eggcycles 20
@@ -12787,7 +12788,7 @@ mondata SPECIES_CRUSTLE, "Crustle"
     types TYPE_BUG, TYPE_ROCK
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_HARD_STONE, ITEM_RARE_BONE
     genderratio 127
     eggcycles 20
@@ -12808,7 +12809,7 @@ mondata SPECIES_SCRAGGY, "Scraggy"
     types TYPE_DARK, TYPE_FIGHTING
     catchrate 180
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SHED_SHELL
     genderratio 127
     eggcycles 15
@@ -12829,7 +12830,7 @@ mondata SPECIES_SCRAFTY, "Scrafty"
     types TYPE_DARK, TYPE_FIGHTING
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SHED_SHELL
     genderratio 127
     eggcycles 15
@@ -12850,7 +12851,7 @@ mondata SPECIES_SIGILYPH, "Sigilyph"
     types TYPE_PSYCHIC, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -12869,9 +12870,9 @@ mondata SPECIES_SIGILYPH, "Sigilyph"
 mondata SPECIES_YAMASK, "Yamask"
     basestats 38, 30, 85, 30, 55, 65
     types TYPE_GHOST, TYPE_GHOST
-    catchrate 190
+    catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SPELL_TAG
     genderratio 127
     eggcycles 25
@@ -12892,7 +12893,7 @@ mondata SPECIES_COFAGRIGUS, "Cofagrigus"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SPELL_TAG
     genderratio 127
     eggcycles 25
@@ -12913,7 +12914,7 @@ mondata SPECIES_TIRTOUGA, "Tirtouga"
     types TYPE_WATER, TYPE_ROCK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -12934,7 +12935,7 @@ mondata SPECIES_CARRACOSTA, "Carracosta"
     types TYPE_WATER, TYPE_ROCK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -12955,7 +12956,7 @@ mondata SPECIES_ARCHEN, "Archen"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -12976,7 +12977,7 @@ mondata SPECIES_ARCHEOPS, "Archeops"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -12997,7 +12998,7 @@ mondata SPECIES_TRUBBISH, "Trubbish"
     types TYPE_POISON, TYPE_POISON
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_SILK_SCARF, ITEM_NUGGET
     genderratio 127
     eggcycles 20
@@ -13018,7 +13019,7 @@ mondata SPECIES_GARBODOR, "Garbodor"
     types TYPE_POISON, TYPE_POISON
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_SILK_SCARF, ITEM_NUGGET
     genderratio 127
     eggcycles 20
@@ -13039,7 +13040,7 @@ mondata SPECIES_ZORUA, "Zorua"
     types TYPE_DARK, TYPE_DARK
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 25
@@ -13060,7 +13061,7 @@ mondata SPECIES_ZOROARK, "Zoroark"
     types TYPE_DARK, TYPE_DARK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -13081,7 +13082,7 @@ mondata SPECIES_MINCCINO, "Minccino"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_CHESTO_BERRY, ITEM_NONE
     genderratio 190
     eggcycles 15
@@ -13102,7 +13103,7 @@ mondata SPECIES_CINCCINO, "Cinccino"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_CHESTO_BERRY, ITEM_NONE
     genderratio 190
     eggcycles 15
@@ -13119,18 +13120,18 @@ mondata SPECIES_CINCCINO, "Cinccino"
 
 
 mondata SPECIES_GOTHITA, "Gothita"
-    basestats 45, 30, 50, 45, 55, 65
-    types TYPE_PSYCHIC, TYPE_PSYCHIC
-    catchrate 200
+    basestats 55, 30, 50, 45, 55, 65
+    types TYPE_PSYCHIC, TYPE_DARK
+    catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PERSIM_BERRY, ITEM_NONE
     genderratio 190
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE
-    abilities ABILITY_FRISK, ABILITY_COMPETITIVE
+    abilities ABILITY_MAGIC_BOUNCE, ABILITY_COMPETITIVE
     runchance 0
     colorflip BODY_COLOR_PURPLE, 0
     mondexentry SPECIES_GOTHITA, "It stares intently at everything.\nIt can become so obsessed with watching\nthat it doesn't notice attacks."
@@ -13140,18 +13141,18 @@ mondata SPECIES_GOTHITA, "Gothita"
 
 
 mondata SPECIES_GOTHORITA, "Gothorita"
-    basestats 60, 45, 70, 55, 75, 85
-    types TYPE_PSYCHIC, TYPE_PSYCHIC
-    catchrate 100
+    basestats 70, 45, 70, 55, 75, 85
+    types TYPE_PSYCHIC, TYPE_DARK
+    catchrate 150
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PERSIM_BERRY, ITEM_NONE
     genderratio 190
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE
-    abilities ABILITY_FRISK, ABILITY_COMPETITIVE
+    abilities ABILITY_MAGIC_BOUNCE, ABILITY_COMPETITIVE
     runchance 0
     colorflip BODY_COLOR_PURPLE, 0
     mondexentry SPECIES_GOTHORITA, "According to many old tales, it creates\nfriends for itself by controlling sleeping\nchildren on starry nights."
@@ -13161,18 +13162,18 @@ mondata SPECIES_GOTHORITA, "Gothorita"
 
 
 mondata SPECIES_GOTHITELLE, "Gothitelle"
-    basestats 70, 55, 95, 65, 95, 110
-    types TYPE_PSYCHIC, TYPE_PSYCHIC
-    catchrate 50
+    basestats 80, 55, 95, 65, 95, 110
+    types TYPE_PSYCHIC, TYPE_DARK
+    catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PERSIM_BERRY, ITEM_NONE
     genderratio 190
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE
-    abilities ABILITY_FRISK, ABILITY_COMPETITIVE
+    abilities ABILITY_MAGIC_BOUNCE, ABILITY_COMPETITIVE
     runchance 0
     colorflip BODY_COLOR_PURPLE, 0
     mondexentry SPECIES_GOTHITELLE, "It can see the future from the movement\nof the stars. When it learns its Trainer's\nlife span, it cries in sadness."
@@ -13186,7 +13187,7 @@ mondata SPECIES_SOLOSIS, "Solosis"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PERSIM_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13207,7 +13208,7 @@ mondata SPECIES_DUOSION, "Duosion"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 100
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PERSIM_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13228,7 +13229,7 @@ mondata SPECIES_REUNICLUS, "Reuniclus"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 50
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_PERSIM_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13249,7 +13250,7 @@ mondata SPECIES_DUCKLETT, "Ducklett"
     types TYPE_WATER, TYPE_FLYING
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13270,7 +13271,7 @@ mondata SPECIES_SWANNA, "Swanna"
     types TYPE_WATER, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13291,7 +13292,7 @@ mondata SPECIES_VANILLITE, "Vanillite"
     types TYPE_ICE, TYPE_ICE
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NEVER_MELT_ICE
     genderratio 127
     eggcycles 20
@@ -13312,7 +13313,7 @@ mondata SPECIES_VANILLISH, "Vanillish"
     types TYPE_ICE, TYPE_ICE
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NEVER_MELT_ICE
     genderratio 127
     eggcycles 20
@@ -13333,7 +13334,7 @@ mondata SPECIES_VANILLUXE, "Vanilluxe"
     types TYPE_ICE, TYPE_ICE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NEVER_MELT_ICE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13354,7 +13355,7 @@ mondata SPECIES_DEERLING, "Deerling"
     types TYPE_NORMAL, TYPE_GRASS
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13375,7 +13376,7 @@ mondata SPECIES_SAWSBUCK, "Sawsbuck"
     types TYPE_NORMAL, TYPE_GRASS
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13396,7 +13397,7 @@ mondata SPECIES_EMOLGA, "Emolga"
     types TYPE_ELECTRIC, TYPE_FLYING
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_CHERI_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13417,7 +13418,7 @@ mondata SPECIES_KARRABLAST, "Karrablast"
     types TYPE_BUG, TYPE_BUG
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -13438,7 +13439,7 @@ mondata SPECIES_ESCAVALIER, "Escavalier"
     types TYPE_BUG, TYPE_STEEL
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -13459,7 +13460,7 @@ mondata SPECIES_FOONGUS, "Foongus"
     types TYPE_GRASS, TYPE_POISON
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_TINY_MUSHROOM, ITEM_BIG_MUSHROOM
     genderratio 127
     eggcycles 20
@@ -13480,7 +13481,7 @@ mondata SPECIES_AMOONGUSS, "Amoonguss"
     types TYPE_GRASS, TYPE_POISON
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_TINY_MUSHROOM, ITEM_BIG_MUSHROOM
     genderratio 127
     eggcycles 20
@@ -13501,7 +13502,7 @@ mondata SPECIES_FRILLISH, "Frillish"
     types TYPE_WATER, TYPE_GHOST
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -13522,7 +13523,7 @@ mondata SPECIES_JELLICENT, "Jellicent"
     types TYPE_WATER, TYPE_GHOST
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -13543,7 +13544,7 @@ mondata SPECIES_ALOMOMOLA, "Alomomola"
     types TYPE_WATER, TYPE_WATER
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -13564,7 +13565,7 @@ mondata SPECIES_JOLTIK, "Joltik"
     types TYPE_BUG, TYPE_ELECTRIC
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13585,7 +13586,7 @@ mondata SPECIES_GALVANTULA, "Galvantula"
     types TYPE_BUG, TYPE_ELECTRIC
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13606,7 +13607,7 @@ mondata SPECIES_FERROSEED, "Ferroseed"
     types TYPE_GRASS, TYPE_STEEL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_STICKY_BARB
     genderratio 127
     eggcycles 20
@@ -13627,7 +13628,7 @@ mondata SPECIES_FERROTHORN, "Ferrothorn"
     types TYPE_GRASS, TYPE_STEEL
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_STICKY_BARB
     genderratio 127
     eggcycles 20
@@ -13648,7 +13649,7 @@ mondata SPECIES_KLINK, "Klink"
     types TYPE_STEEL, TYPE_STEEL
     catchrate 130
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -13669,7 +13670,7 @@ mondata SPECIES_KLANG, "Klang"
     types TYPE_STEEL, TYPE_STEEL
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -13690,7 +13691,7 @@ mondata SPECIES_KLINKLANG, "Klinklang"
     types TYPE_STEEL, TYPE_STEEL
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -13711,7 +13712,7 @@ mondata SPECIES_TYNAMO, "Tynamo"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13732,7 +13733,7 @@ mondata SPECIES_EELEKTRIK, "Eelektrik"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13753,7 +13754,7 @@ mondata SPECIES_EELEKTROSS, "Eelektross"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13774,7 +13775,7 @@ mondata SPECIES_ELGYEM, "Elgyem"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13795,7 +13796,7 @@ mondata SPECIES_BEHEEYEM, "Beheeyem"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13816,7 +13817,7 @@ mondata SPECIES_LITWICK, "Litwick"
     types TYPE_GHOST, TYPE_FIRE
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13837,7 +13838,7 @@ mondata SPECIES_LAMPENT, "Lampent"
     types TYPE_GHOST, TYPE_FIRE
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13858,7 +13859,7 @@ mondata SPECIES_CHANDELURE, "Chandelure"
     types TYPE_GHOST, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13879,7 +13880,7 @@ mondata SPECIES_AXEW, "Axew"
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -13900,7 +13901,7 @@ mondata SPECIES_FRAXURE, "Fraxure"
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -13921,7 +13922,7 @@ mondata SPECIES_HAXORUS, "Haxorus"
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -13942,7 +13943,7 @@ mondata SPECIES_CUBCHOO, "Cubchoo"
     types TYPE_ICE, TYPE_ICE
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ASPEAR_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13963,7 +13964,7 @@ mondata SPECIES_BEARTIC, "Beartic"
     types TYPE_ICE, TYPE_ICE
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ASPEAR_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -13984,7 +13985,7 @@ mondata SPECIES_CRYOGONAL, "Cryogonal"
     types TYPE_ICE, TYPE_ICE
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NEVER_MELT_ICE
     genderratio 255
     eggcycles 25
@@ -14005,7 +14006,7 @@ mondata SPECIES_SHELMET, "Shelmet"
     types TYPE_BUG, TYPE_BUG
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -14026,7 +14027,7 @@ mondata SPECIES_ACCELGOR, "Accelgor"
     types TYPE_BUG, TYPE_BUG
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -14047,7 +14048,7 @@ mondata SPECIES_STUNFISK, "Stunfisk"
     types TYPE_GROUND, TYPE_ELECTRIC
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SOFT_SAND
     genderratio 127
     eggcycles 20
@@ -14068,7 +14069,7 @@ mondata SPECIES_MIENFOO, "Mienfoo"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 180
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -14089,7 +14090,7 @@ mondata SPECIES_MIENSHAO, "Mienshao"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -14110,7 +14111,7 @@ mondata SPECIES_DRUDDIGON, "Druddigon"
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_DRAGON_FANG
     genderratio 127
     eggcycles 30
@@ -14131,7 +14132,7 @@ mondata SPECIES_GOLETT, "Golett"
     types TYPE_GROUND, TYPE_GHOST
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_CLAY
     genderratio 255
     eggcycles 25
@@ -14152,7 +14153,7 @@ mondata SPECIES_GOLURK, "Golurk"
     types TYPE_GROUND, TYPE_GHOST
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_CLAY
     genderratio 255
     eggcycles 25
@@ -14173,7 +14174,7 @@ mondata SPECIES_PAWNIARD, "Pawniard"
     types TYPE_DARK, TYPE_STEEL
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -14194,7 +14195,7 @@ mondata SPECIES_BISHARP, "Bisharp"
     types TYPE_DARK, TYPE_STEEL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -14215,7 +14216,7 @@ mondata SPECIES_BOUFFALANT, "Bouffalant"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -14236,7 +14237,7 @@ mondata SPECIES_RUFFLET, "Rufflet"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -14257,7 +14258,7 @@ mondata SPECIES_BRAVIARY, "Braviary"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -14278,7 +14279,7 @@ mondata SPECIES_VULLABY, "Vullaby"
     types TYPE_DARK, TYPE_FLYING
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -14299,7 +14300,7 @@ mondata SPECIES_MANDIBUZZ, "Mandibuzz"
     types TYPE_DARK, TYPE_FLYING
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -14320,7 +14321,7 @@ mondata SPECIES_HEATMOR, "Heatmor"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_FLAME_ORB
     genderratio 127
     eggcycles 20
@@ -14341,7 +14342,7 @@ mondata SPECIES_DURANT, "Durant"
     types TYPE_BUG, TYPE_STEEL
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -14362,7 +14363,7 @@ mondata SPECIES_DEINO, "Deino"
     types TYPE_DARK, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -14383,7 +14384,7 @@ mondata SPECIES_ZWEILOUS, "Zweilous"
     types TYPE_DARK, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -14404,7 +14405,7 @@ mondata SPECIES_HYDREIGON, "Hydreigon"
     types TYPE_DARK, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -14425,7 +14426,7 @@ mondata SPECIES_LARVESTA, "Larvesta"
     types TYPE_BUG, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -14446,7 +14447,7 @@ mondata SPECIES_VOLCARONA, "Volcarona"
     types TYPE_BUG, TYPE_FIRE
     catchrate 15
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_SILVER_POWDER, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -14467,7 +14468,7 @@ mondata SPECIES_COBALION, "Cobalion"
     types TYPE_STEEL, TYPE_FIGHTING
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -14488,7 +14489,7 @@ mondata SPECIES_TERRAKION, "Terrakion"
     types TYPE_ROCK, TYPE_FIGHTING
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -14509,7 +14510,7 @@ mondata SPECIES_VIRIZION, "Virizion"
     types TYPE_GRASS, TYPE_FIGHTING
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -14530,7 +14531,7 @@ mondata SPECIES_TORNADUS, "Tornadus"
     types TYPE_FLYING, TYPE_FLYING
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 120
@@ -14551,7 +14552,7 @@ mondata SPECIES_THUNDURUS, "Thundurus"
     types TYPE_ELECTRIC, TYPE_FLYING
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 120
@@ -14572,7 +14573,7 @@ mondata SPECIES_RESHIRAM, "Reshiram"
     types TYPE_DRAGON, TYPE_FIRE
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -14593,7 +14594,7 @@ mondata SPECIES_ZEKROM, "Zekrom"
     types TYPE_DRAGON, TYPE_ELECTRIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -14614,7 +14615,7 @@ mondata SPECIES_LANDORUS, "Landorus"
     types TYPE_GROUND, TYPE_FLYING
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 120
@@ -14635,7 +14636,7 @@ mondata SPECIES_KYUREM, "Kyurem"
     types TYPE_DRAGON, TYPE_ICE
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 1, 1, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -14656,7 +14657,7 @@ mondata SPECIES_KELDEO, "Keldeo"
     types TYPE_WATER, TYPE_FIGHTING
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -14677,7 +14678,7 @@ mondata SPECIES_MELOETTA, "Meloetta"
     types TYPE_NORMAL, TYPE_PSYCHIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 1, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_STAR_PIECE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -14698,7 +14699,7 @@ mondata SPECIES_GENESECT, "Genesect"
     types TYPE_BUG, TYPE_STEEL
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -14719,7 +14720,7 @@ mondata SPECIES_CHESPIN, "Chespin"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -14740,7 +14741,7 @@ mondata SPECIES_QUILLADIN, "Quilladin"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -14761,7 +14762,7 @@ mondata SPECIES_CHESNAUGHT, "Chesnaught"
     types TYPE_GRASS, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -14782,7 +14783,7 @@ mondata SPECIES_FENNEKIN, "Fennekin"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -14803,7 +14804,7 @@ mondata SPECIES_BRAIXEN, "Braixen"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -14824,7 +14825,7 @@ mondata SPECIES_DELPHOX, "Delphox"
     types TYPE_FIRE, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -14845,7 +14846,7 @@ mondata SPECIES_FROAKIE, "Froakie"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -14866,7 +14867,7 @@ mondata SPECIES_FROGADIER, "Frogadier"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -14887,7 +14888,7 @@ mondata SPECIES_GRENINJA, "Greninja"
     types TYPE_WATER, TYPE_DARK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -14908,7 +14909,7 @@ mondata SPECIES_BUNNELBY, "Bunnelby"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -14929,7 +14930,7 @@ mondata SPECIES_DIGGERSBY, "Diggersby"
     types TYPE_NORMAL, TYPE_GROUND
     catchrate 127
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -14950,7 +14951,7 @@ mondata SPECIES_FLETCHLING, "Fletchling"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -14971,7 +14972,7 @@ mondata SPECIES_FLETCHINDER, "Flechinder"
     types TYPE_FIRE, TYPE_FLYING
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -14992,7 +14993,7 @@ mondata SPECIES_TALONFLAME, "Talonflame"
     types TYPE_FIRE, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -15013,7 +15014,7 @@ mondata SPECIES_SCATTERBUG, "Scatterbug"
     types TYPE_BUG, TYPE_BUG
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -15034,7 +15035,7 @@ mondata SPECIES_SPEWPA, "Spewpa"
     types TYPE_BUG, TYPE_BUG
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -15055,7 +15056,7 @@ mondata SPECIES_VIVILLON, "Vivillon"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -15076,7 +15077,7 @@ mondata SPECIES_LITLEO, "Litleo"
     types TYPE_FIRE, TYPE_NORMAL
     catchrate 220
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 222
     eggcycles 20
@@ -15097,7 +15098,7 @@ mondata SPECIES_PYROAR, "Pyroar"
     types TYPE_FIRE, TYPE_NORMAL
     catchrate 65
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -15118,7 +15119,7 @@ mondata SPECIES_FLABEBE, "Flabébé"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -15139,7 +15140,7 @@ mondata SPECIES_FLOETTE, "Floette"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -15160,7 +15161,7 @@ mondata SPECIES_FLORGES, "Florges"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -15181,7 +15182,7 @@ mondata SPECIES_SKIDDO, "Skiddo"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15202,7 +15203,7 @@ mondata SPECIES_GOGOAT, "Gogoat"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15223,7 +15224,7 @@ mondata SPECIES_PANCHAM, "Pancham"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 220
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MENTAL_HERB
     genderratio 127
     eggcycles 25
@@ -15244,7 +15245,7 @@ mondata SPECIES_PANGORO, "Pangoro"
     types TYPE_FIGHTING, TYPE_DARK
     catchrate 65
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MENTAL_HERB
     genderratio 127
     eggcycles 25
@@ -15265,7 +15266,7 @@ mondata SPECIES_FURFROU, "Furfrou"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 160
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15286,7 +15287,7 @@ mondata SPECIES_ESPURR, "Espurr"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15307,7 +15308,7 @@ mondata SPECIES_MEOWSTIC, "Meowstic"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -15328,7 +15329,7 @@ mondata SPECIES_HONEDGE, "Honedge"
     types TYPE_STEEL, TYPE_GHOST
     catchrate 180
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15349,7 +15350,7 @@ mondata SPECIES_DOUBLADE, "Doublade"
     types TYPE_STEEL, TYPE_GHOST
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15370,7 +15371,7 @@ mondata SPECIES_AEGISLASH, "Aegislash"
     types TYPE_STEEL, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15391,7 +15392,7 @@ mondata SPECIES_SPRITZEE, "Spritzee"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15412,7 +15413,7 @@ mondata SPECIES_AROMATISSE, "Aromatisse"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 140
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15433,7 +15434,7 @@ mondata SPECIES_SWIRLIX, "Swirlix"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15454,7 +15455,7 @@ mondata SPECIES_SLURPUFF, "Slurpuff"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 140
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15475,7 +15476,7 @@ mondata SPECIES_INKAY, "Inkay"
     types TYPE_DARK, TYPE_PSYCHIC
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15496,7 +15497,7 @@ mondata SPECIES_MALAMAR, "Malamar"
     types TYPE_DARK, TYPE_PSYCHIC
     catchrate 80
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15517,7 +15518,7 @@ mondata SPECIES_BINACLE, "Binacle"
     types TYPE_ROCK, TYPE_WATER
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15538,7 +15539,7 @@ mondata SPECIES_BARBARACLE, "Barbaracle"
     types TYPE_ROCK, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15559,7 +15560,7 @@ mondata SPECIES_SKRELP, "Skrelp"
     types TYPE_POISON, TYPE_WATER
     catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15580,7 +15581,7 @@ mondata SPECIES_DRAGALGE, "Dragalge"
     types TYPE_POISON, TYPE_DRAGON
     catchrate 55
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15601,7 +15602,7 @@ mondata SPECIES_CLAUNCHER, "Clauncher"
     types TYPE_WATER, TYPE_WATER
     catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -15622,7 +15623,7 @@ mondata SPECIES_CLAWITZER, "Clawitzer"
     types TYPE_WATER, TYPE_WATER
     catchrate 55
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -15643,7 +15644,7 @@ mondata SPECIES_HELIOPTILE, "Helioptile"
     types TYPE_ELECTRIC, TYPE_NORMAL
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15664,7 +15665,7 @@ mondata SPECIES_HELIOLISK, "Heliolisk"
     types TYPE_ELECTRIC, TYPE_NORMAL
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15685,7 +15686,7 @@ mondata SPECIES_TYRUNT, "Tyrunt"
     types TYPE_ROCK, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -15706,7 +15707,7 @@ mondata SPECIES_TYRANTRUM, "Tyrantrum"
     types TYPE_ROCK, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -15727,7 +15728,7 @@ mondata SPECIES_AMAURA, "Amaura"
     types TYPE_ROCK, TYPE_ICE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -15748,7 +15749,7 @@ mondata SPECIES_AURORUS, "Aurorus"
     types TYPE_ROCK, TYPE_ICE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 30
@@ -15769,7 +15770,7 @@ mondata SPECIES_SYLVEON, "Sylveon"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 35
@@ -15790,7 +15791,7 @@ mondata SPECIES_HAWLUCHA, "Hawlucha"
     types TYPE_FIGHTING, TYPE_FLYING
     catchrate 100
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_KINGS_ROCK
     genderratio 127
     eggcycles 20
@@ -15809,9 +15810,9 @@ mondata SPECIES_HAWLUCHA, "Hawlucha"
 mondata SPECIES_DEDENNE, "Dedenne"
     basestats 67, 58, 57, 101, 81, 67
     types TYPE_ELECTRIC, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_ELECTRIC
-    catchrate 180
+    catchrate 215
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15832,7 +15833,7 @@ mondata SPECIES_CARBINK, "Carbink"
     types TYPE_ROCK, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_ROCK
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 25
@@ -15853,7 +15854,7 @@ mondata SPECIES_GOOMY, "Goomy"
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SHED_SHELL
     genderratio 127
     eggcycles 40
@@ -15874,7 +15875,7 @@ mondata SPECIES_SLIGGOO, "Sliggoo"
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SHED_SHELL
     genderratio 127
     eggcycles 40
@@ -15895,7 +15896,7 @@ mondata SPECIES_GOODRA, "Goodra"
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -15916,7 +15917,7 @@ mondata SPECIES_KLEFKI, "Klefki"
     types TYPE_STEEL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_STEEL
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -15935,16 +15936,16 @@ mondata SPECIES_KLEFKI, "Klefki"
 mondata SPECIES_PHANTUMP, "Phantump"
     basestats 43, 70, 48, 38, 50, 60
     types TYPE_GHOST, TYPE_GRASS
-    catchrate 120
+    catchrate 210
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_GRASS, EGG_GROUP_AMORPHOUS
-    abilities ABILITY_NATURAL_CURE, ABILITY_FRISK
+    abilities ABILITY_HARVEST, ABILITY_FRISK
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_PHANTUMP, "It is created when a spirit possesses\nrotten tree stumps. It prefers to live\nin abandoned forests."
@@ -15958,14 +15959,14 @@ mondata SPECIES_TREVENANT, "Trevenant"
     types TYPE_GHOST, TYPE_GRASS
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_GRASS, EGG_GROUP_AMORPHOUS
-    abilities ABILITY_NATURAL_CURE, ABILITY_FRISK
+    abilities ABILITY_HARVEST, ABILITY_FRISK
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_TREVENANT, "It can control trees at will. It will\ntrap people who harm the forest, so they\ncan never leave."
@@ -15979,7 +15980,7 @@ mondata SPECIES_PUMPKABOO, "Pumpkaboo"
     types TYPE_GHOST, TYPE_GRASS
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -16000,7 +16001,7 @@ mondata SPECIES_GOURGEIST, "Gourgeist"
     types TYPE_GHOST, TYPE_GRASS
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -16021,7 +16022,7 @@ mondata SPECIES_BERGMITE, "Bergmite"
     types TYPE_ICE, TYPE_ICE
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -16042,7 +16043,7 @@ mondata SPECIES_AVALUGG, "Avalugg"
     types TYPE_ICE, TYPE_ICE
     catchrate 55
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -16063,7 +16064,7 @@ mondata SPECIES_NOIBAT, "Noibat"
     types TYPE_FLYING, TYPE_DRAGON
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -16084,7 +16085,7 @@ mondata SPECIES_NOIVERN, "Noivern"
     types TYPE_FLYING, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -16105,7 +16106,7 @@ mondata SPECIES_XERNEAS, "Xerneas"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -16126,7 +16127,7 @@ mondata SPECIES_YVELTAL, "Yveltal"
     types TYPE_DARK, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -16147,7 +16148,7 @@ mondata SPECIES_ZYGARDE, "Zygarde"
     types TYPE_DRAGON, TYPE_GROUND
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -16168,7 +16169,7 @@ mondata SPECIES_DIANCIE, "Diancie"
     types TYPE_ROCK, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_ROCK
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 25
@@ -16189,7 +16190,7 @@ mondata SPECIES_HOOPA, "Hoopa"
     types TYPE_PSYCHIC, TYPE_GHOST
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -16210,7 +16211,7 @@ mondata SPECIES_VOLCANION, "Volcanion"
     types TYPE_FIRE, TYPE_WATER
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -16229,9 +16230,9 @@ mondata SPECIES_VOLCANION, "Volcanion"
 mondata SPECIES_ROWLET, "Rowlet"
     basestats 68, 55, 55, 42, 50, 50
     types TYPE_GRASS, TYPE_FLYING
-    catchrate 45
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 15
@@ -16250,9 +16251,9 @@ mondata SPECIES_ROWLET, "Rowlet"
 mondata SPECIES_DARTRIX, "Dartrix"
     basestats 78, 75, 75, 52, 70, 70
     types TYPE_GRASS, TYPE_FLYING
-    catchrate 45
+    catchrate 125
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 15
@@ -16273,7 +16274,7 @@ mondata SPECIES_DECIDUEYE, "Decidueye"
     types TYPE_GRASS, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 15
@@ -16292,9 +16293,9 @@ mondata SPECIES_DECIDUEYE, "Decidueye"
 mondata SPECIES_LITTEN, "Litten"
     basestats 45, 65, 40, 70, 60, 40
     types TYPE_FIRE, TYPE_FIRE
-    catchrate 45
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 15
@@ -16312,10 +16313,10 @@ mondata SPECIES_LITTEN, "Litten"
 
 mondata SPECIES_TORRACAT, "Torracat"
     basestats 65, 85, 50, 90, 80, 50
-    types TYPE_FIRE, TYPE_FIRE
-    catchrate 45
+    types TYPE_FIRE, TYPE_DARK
+    catchrate 125
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 15
@@ -16336,7 +16337,7 @@ mondata SPECIES_INCINEROAR, "Incineroar"
     types TYPE_FIRE, TYPE_DARK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 15
@@ -16355,9 +16356,9 @@ mondata SPECIES_INCINEROAR, "Incineroar"
 mondata SPECIES_POPPLIO, "Popplio"
     basestats 50, 54, 54, 40, 66, 56
     types TYPE_WATER, TYPE_WATER
-    catchrate 45
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 15
@@ -16375,10 +16376,10 @@ mondata SPECIES_POPPLIO, "Popplio"
 
 mondata SPECIES_BRIONNE, "Brionne"
     basestats 60, 69, 69, 50, 91, 81
-    types TYPE_WATER, TYPE_WATER
-    catchrate 45
+    types TYPE_WATER, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_WATER
+    catchrate 125
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 15
@@ -16399,7 +16400,7 @@ mondata SPECIES_PRIMARINA, "Primarina"
     types TYPE_WATER, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 15
@@ -16420,7 +16421,7 @@ mondata SPECIES_PIKIPEK, "Pikipek"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_ORAN_BERRY
     genderratio 127
     eggcycles 15
@@ -16441,7 +16442,7 @@ mondata SPECIES_TRUMBEAK, "Trumbeak"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SITRUS_BERRY
     genderratio 127
     eggcycles 15
@@ -16462,7 +16463,7 @@ mondata SPECIES_TOUCANNON, "Toucannon"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_RAWST_BERRY
     genderratio 127
     eggcycles 15
@@ -16483,7 +16484,7 @@ mondata SPECIES_YUNGOOS, "Yungoos"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PECHA_BERRY
     genderratio 127
     eggcycles 15
@@ -16504,7 +16505,7 @@ mondata SPECIES_GUMSHOOS, "Gumshoos"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 127
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PECHA_BERRY
     genderratio 127
     eggcycles 15
@@ -16525,14 +16526,14 @@ mondata SPECIES_GRUBBIN, "Grubbin"
     types TYPE_BUG, TYPE_BUG
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_BUG, EGG_GROUP_BUG
-    abilities ABILITY_SWARM, ABILITY_NONE
+    abilities ABILITY_SWARM, ABILITY_LIGHTNING_ROD
     runchance 0
     colorflip BODY_COLOR_GRAY, 0
     mondexentry SPECIES_GRUBBIN, "Its strong jaw enables it to scrape\ntrees and slurp out the sap. It normally\nlives underground."
@@ -16546,14 +16547,14 @@ mondata SPECIES_CHARJABUG, "Charjabug"
     types TYPE_BUG, TYPE_ELECTRIC
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CELL_BATTERY
     genderratio 127
     eggcycles 15
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_BUG, EGG_GROUP_BUG
-    abilities ABILITY_BATTERY, ABILITY_NONE
+    abilities ABILITY_BATTERY, ABILITY_LIGHTNING_ROD
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_CHARJABUG, "From the food it digests, it generates\nelectricity, and it stores this energy\nin its electric sac."
@@ -16567,14 +16568,14 @@ mondata SPECIES_VIKAVOLT, "Vikavolt"
     types TYPE_BUG, TYPE_ELECTRIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_BUG, EGG_GROUP_BUG
-    abilities ABILITY_LEVITATE, ABILITY_NONE
+    abilities ABILITY_LEVITATE, ABILITY_LIGHTNING_ROD
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_VIKAVOLT, "It flusters opponents with acrobatic\nflying maneuvers. This creates an\nopening for it to attack."
@@ -16588,7 +16589,7 @@ mondata SPECIES_CRABRAWLER, "Crabrawler"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 225
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_ASPEAR_BERRY
     genderratio 127
     eggcycles 20
@@ -16609,7 +16610,7 @@ mondata SPECIES_CRABOMINABLE, "Crabomnabl"
     types TYPE_FIGHTING, TYPE_ICE
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CHERI_BERRY
     genderratio 127
     eggcycles 20
@@ -16630,7 +16631,7 @@ mondata SPECIES_ORICORIO, "Oricorio"
     types TYPE_FIRE, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_HONEY
     genderratio 190
     eggcycles 20
@@ -16651,7 +16652,7 @@ mondata SPECIES_CUTIEFLY, "Cutiefly"
     types TYPE_BUG, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_BUG
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_HONEY
     genderratio 127
     eggcycles 20
@@ -16672,7 +16673,7 @@ mondata SPECIES_RIBOMBEE, "Ribombee"
     types TYPE_BUG, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_BUG
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_HONEY
     genderratio 127
     eggcycles 20
@@ -16693,14 +16694,14 @@ mondata SPECIES_ROCKRUFF, "Rockruff"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_KEEN_EYE, ABILITY_VITAL_SPIRIT
+    abilities ABILITY_TOUGH_CLAWS, ABILITY_KEEN_EYE
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_ROCKRUFF, "When it rubs the rocks on its neck\nagainst you, that’s proof of its love\nfor you."
@@ -16714,14 +16715,14 @@ mondata SPECIES_LYCANROC, "Lycanroc"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_KEEN_EYE, ABILITY_SAND_RUSH
+    abilities ABILITY_TOUGH_CLAWS, ABILITY_SAND_RUSH
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_LYCANROC, "Well equipped with claws and fangs, it\nuses the sharp rocks in its mane as\nweapons."
@@ -16735,7 +16736,7 @@ mondata SPECIES_WISHIWASHI, "Wishiwashi"
     types TYPE_WATER, TYPE_WATER
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -16756,7 +16757,7 @@ mondata SPECIES_MAREANIE, "Mareanie"
     types TYPE_POISON, TYPE_WATER
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_POISON_BARB
     genderratio 127
     eggcycles 20
@@ -16777,7 +16778,7 @@ mondata SPECIES_TOXAPEX, "Toxapex"
     types TYPE_POISON, TYPE_WATER
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_POISON_BARB
     genderratio 127
     eggcycles 20
@@ -16798,7 +16799,7 @@ mondata SPECIES_MUDBRAY, "Mudbray"
     types TYPE_GROUND, TYPE_GROUND
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_CLAY
     genderratio 127
     eggcycles 20
@@ -16819,7 +16820,7 @@ mondata SPECIES_MUDSDALE, "Mudsdale"
     types TYPE_GROUND, TYPE_GROUND
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_CLAY
     genderratio 127
     eggcycles 20
@@ -16840,7 +16841,7 @@ mondata SPECIES_DEWPIDER, "Dewpider"
     types TYPE_WATER, TYPE_BUG
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MYSTIC_WATER
     genderratio 127
     eggcycles 15
@@ -16861,7 +16862,7 @@ mondata SPECIES_ARAQUANID, "Araquanid"
     types TYPE_WATER, TYPE_BUG
     catchrate 100
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MYSTIC_WATER
     genderratio 127
     eggcycles 15
@@ -16882,7 +16883,7 @@ mondata SPECIES_FOMANTIS, "Fomantis"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MIRACLE_SEED
     genderratio 127
     eggcycles 20
@@ -16903,7 +16904,7 @@ mondata SPECIES_LURANTIS, "Lurantis"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MIRACLE_SEED
     genderratio 127
     eggcycles 20
@@ -16920,18 +16921,18 @@ mondata SPECIES_LURANTIS, "Lurantis"
 
 
 mondata SPECIES_MORELULL, "Morelull"
-    basestats 40, 35, 55, 15, 65, 75
+    basestats 55, 35, 55, 15, 65, 75
     types TYPE_GRASS, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_GRASS
-    catchrate 190
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_TINY_MUSHROOM, ITEM_BIG_MUSHROOM
     genderratio 127
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_GRASS, EGG_GROUP_GRASS
-    abilities ABILITY_ILLUMINATE, ABILITY_EFFECT_SPORE
+    abilities ABILITY_WATER_ABSORB, ABILITY_EFFECT_SPORE
     runchance 0
     colorflip BODY_COLOR_PURPLE, 0
     mondexentry SPECIES_MORELULL, "It scatters spores that flicker and\nglow. Anyone seeing these lights falls\ninto a deep slumber."
@@ -16941,18 +16942,18 @@ mondata SPECIES_MORELULL, "Morelull"
 
 
 mondata SPECIES_SHIINOTIC, "Shiinotic"
-    basestats 60, 45, 80, 30, 90, 100
+    basestats 80, 45, 90, 30, 90, 105
     types TYPE_GRASS, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_GRASS
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_TINY_MUSHROOM, ITEM_BIG_MUSHROOM
     genderratio 127
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_GRASS, EGG_GROUP_GRASS
-    abilities ABILITY_ILLUMINATE, ABILITY_EFFECT_SPORE
+    abilities ABILITY_WATER_ABSORB, ABILITY_EFFECT_SPORE
     runchance 0
     colorflip BODY_COLOR_PURPLE, 0
     mondexentry SPECIES_SHIINOTIC, "When it starts fighting for territory\nwith Parasect, the entire area gets\ncompletely coated in spores!"
@@ -16966,7 +16967,7 @@ mondata SPECIES_SALANDIT, "Salandit"
     types TYPE_POISON, TYPE_FIRE
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SMOKE_BALL
     genderratio 31
     eggcycles 20
@@ -16987,7 +16988,7 @@ mondata SPECIES_SALAZZLE, "Salazzle"
     types TYPE_POISON, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SMOKE_BALL
     genderratio 254
     eggcycles 20
@@ -17008,7 +17009,7 @@ mondata SPECIES_STUFFUL, "Stufful"
     types TYPE_NORMAL, TYPE_FIGHTING
     catchrate 140
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -17029,7 +17030,7 @@ mondata SPECIES_BEWEAR, "Bewear"
     types TYPE_NORMAL, TYPE_FIGHTING
     catchrate 70
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -17050,7 +17051,7 @@ mondata SPECIES_BOUNSWEET, "Bounsweet"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 235
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_GRASSY_SEED
     genderratio 254
     eggcycles 20
@@ -17071,7 +17072,7 @@ mondata SPECIES_STEENEE, "Steenee"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_GRASSY_SEED
     genderratio 254
     eggcycles 20
@@ -17092,7 +17093,7 @@ mondata SPECIES_TSAREENA, "Tsareena"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_GRASSY_SEED, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -17113,7 +17114,7 @@ mondata SPECIES_COMFEY, "Comfey"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MISTY_SEED
     genderratio 190
     eggcycles 20
@@ -17134,7 +17135,7 @@ mondata SPECIES_ORANGURU, "Oranguru"
     types TYPE_NORMAL, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -17155,7 +17156,7 @@ mondata SPECIES_PASSIMIAN, "Passimian"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -17176,7 +17177,7 @@ mondata SPECIES_WIMPOD, "Wimpod"
     types TYPE_BUG, TYPE_WATER
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -17197,7 +17198,7 @@ mondata SPECIES_GOLISOPOD, "Golisopod"
     types TYPE_BUG, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -17218,7 +17219,7 @@ mondata SPECIES_SANDYGAST, "Sandygast"
     types TYPE_GHOST, TYPE_GROUND
     catchrate 140
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SPELL_TAG
     genderratio 127
     eggcycles 15
@@ -17239,7 +17240,7 @@ mondata SPECIES_PALOSSAND, "Palossand"
     types TYPE_GHOST, TYPE_GROUND
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SPELL_TAG
     genderratio 127
     eggcycles 15
@@ -17260,7 +17261,7 @@ mondata SPECIES_PYUKUMUKU, "Pyukumuku"
     types TYPE_WATER, TYPE_WATER
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -17281,7 +17282,7 @@ mondata SPECIES_TYPE_NULL, "Type: Null"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17302,7 +17303,7 @@ mondata SPECIES_SILVALLY, "Silvally"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17323,7 +17324,7 @@ mondata SPECIES_MINIOR, "Minior"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 25
@@ -17344,7 +17345,7 @@ mondata SPECIES_KOMALA, "Komala"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -17365,7 +17366,7 @@ mondata SPECIES_TURTONATOR, "Turtonator"
     types TYPE_FIRE, TYPE_DRAGON
     catchrate 70
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CHARCOAL
     genderratio 127
     eggcycles 20
@@ -17386,7 +17387,7 @@ mondata SPECIES_TOGEDEMARU, "Togedemaru"
     types TYPE_ELECTRIC, TYPE_STEEL
     catchrate 180
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_ELECTRIC_SEED
     genderratio 127
     eggcycles 10
@@ -17407,7 +17408,7 @@ mondata SPECIES_MIMIKYU, "Mimikyu"
     types TYPE_GHOST, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CHESTO_BERRY
     genderratio 127
     eggcycles 20
@@ -17428,7 +17429,7 @@ mondata SPECIES_BRUXISH, "Bruxish"
     types TYPE_WATER, TYPE_PSYCHIC
     catchrate 80
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_RAZOR_FANG
     genderratio 127
     eggcycles 15
@@ -17449,7 +17450,7 @@ mondata SPECIES_DRAMPA, "Drampa"
     types TYPE_NORMAL, TYPE_DRAGON
     catchrate 70
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PERSIM_BERRY
     genderratio 127
     eggcycles 20
@@ -17470,7 +17471,7 @@ mondata SPECIES_DHELMISE, "Dhelmise"
     types TYPE_GHOST, TYPE_GRASS
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 25
@@ -17491,7 +17492,7 @@ mondata SPECIES_JANGMO_O, "Jangmo-o"
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_RAZOR_CLAW
     genderratio 127
     eggcycles 40
@@ -17512,7 +17513,7 @@ mondata SPECIES_HAKAMO_O, "Hakamo-o"
     types TYPE_DRAGON, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_RAZOR_CLAW
     genderratio 127
     eggcycles 40
@@ -17533,7 +17534,7 @@ mondata SPECIES_KOMMO_O, "Kommo-o"
     types TYPE_DRAGON, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_RAZOR_CLAW, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -17554,7 +17555,7 @@ mondata SPECIES_TAPU_KOKO, "Tapu Koko"
     types TYPE_ELECTRIC, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_ELECTRIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 15
@@ -17575,7 +17576,7 @@ mondata SPECIES_TAPU_LELE, "Tapu Lele"
     types TYPE_PSYCHIC, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_PSYCHIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 15
@@ -17596,7 +17597,7 @@ mondata SPECIES_TAPU_BULU, "Tapu Bulu"
     types TYPE_GRASS, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_GRASS
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 15
@@ -17617,7 +17618,7 @@ mondata SPECIES_TAPU_FINI, "Tapu Fini"
     types TYPE_WATER, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_WATER
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 15
@@ -17638,7 +17639,7 @@ mondata SPECIES_COSMOG, "Cosmog"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17659,7 +17660,7 @@ mondata SPECIES_COSMOEM, "Cosmoem"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17680,7 +17681,7 @@ mondata SPECIES_SOLGALEO, "Solgaleo"
     types TYPE_PSYCHIC, TYPE_STEEL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17701,7 +17702,7 @@ mondata SPECIES_LUNALA, "Lunala"
     types TYPE_PSYCHIC, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17722,7 +17723,7 @@ mondata SPECIES_NIHILEGO, "Nihilego"
     types TYPE_ROCK, TYPE_POISON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17743,7 +17744,7 @@ mondata SPECIES_BUZZWOLE, "Buzzwole"
     types TYPE_BUG, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17764,7 +17765,7 @@ mondata SPECIES_PHEROMOSA, "Pheromosa"
     types TYPE_BUG, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17785,7 +17786,7 @@ mondata SPECIES_XURKITREE, "Xurkitree"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17806,7 +17807,7 @@ mondata SPECIES_CELESTEELA, "Celesteela"
     types TYPE_STEEL, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 1, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17827,7 +17828,7 @@ mondata SPECIES_KARTANA, "Kartana"
     types TYPE_GRASS, TYPE_STEEL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17848,7 +17849,7 @@ mondata SPECIES_GUZZLORD, "Guzzlord"
     types TYPE_DARK, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17869,7 +17870,7 @@ mondata SPECIES_NECROZMA, "Necrozma"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17890,7 +17891,7 @@ mondata SPECIES_MAGEARNA, "Magearna"
     types TYPE_STEEL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_STEEL
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17911,7 +17912,7 @@ mondata SPECIES_MARSHADOW, "Marshadow"
     types TYPE_FIGHTING, TYPE_GHOST
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17932,7 +17933,7 @@ mondata SPECIES_POIPOLE, "Poipole"
     types TYPE_POISON, TYPE_POISON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17953,7 +17954,7 @@ mondata SPECIES_NAGANADEL, "Naganadel"
     types TYPE_POISON, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17974,7 +17975,7 @@ mondata SPECIES_STAKATAKA, "Stakataka"
     types TYPE_ROCK, TYPE_STEEL
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -17995,7 +17996,7 @@ mondata SPECIES_BLACEPHALON, "Blacefalon"
     types TYPE_FIRE, TYPE_GHOST
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -18016,7 +18017,7 @@ mondata SPECIES_ZERAORA, "Zeraora"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -18037,7 +18038,7 @@ mondata SPECIES_MELTAN, "Meltan"
     types TYPE_STEEL, TYPE_STEEL
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -18058,7 +18059,7 @@ mondata SPECIES_MELMETAL, "Melmetal"
     types TYPE_STEEL, TYPE_STEEL
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -18079,7 +18080,7 @@ mondata SPECIES_GROOKEY, "Grookey"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -18100,7 +18101,7 @@ mondata SPECIES_THWACKEY, "Thwackey"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -18121,7 +18122,7 @@ mondata SPECIES_RILLABOOM, "Rillaboom"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -18142,7 +18143,7 @@ mondata SPECIES_SCORBUNNY, "Scorbunny"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -18163,7 +18164,7 @@ mondata SPECIES_RABOOT, "Raboot"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -18184,7 +18185,7 @@ mondata SPECIES_CINDERACE, "Cinderace"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -18205,7 +18206,7 @@ mondata SPECIES_SOBBLE, "Sobble"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -18226,7 +18227,7 @@ mondata SPECIES_DRIZZILE, "Drizzile"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -18247,7 +18248,7 @@ mondata SPECIES_INTELEON, "Inteleon"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -18268,7 +18269,7 @@ mondata SPECIES_SKWOVET, "Skwovet"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18289,7 +18290,7 @@ mondata SPECIES_GREEDENT, "Greedent"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18306,18 +18307,18 @@ mondata SPECIES_GREEDENT, "Greedent"
 
 
 mondata SPECIES_ROOKIDEE, "Rookidee"
-    basestats 38, 47, 35, 57, 33, 35
+    basestats 40, 45, 50, 60, 30, 40
     types TYPE_FLYING, TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FLYING, EGG_GROUP_FLYING
-    abilities ABILITY_KEEN_EYE, ABILITY_UNNERVE
+    abilities ABILITY_BIG_PECKS, ABILITY_UNNERVE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_ROOKIDEE, "It will bravely challenge any foe, no\nmatter how powerful. Even suffering\na defeat increases its strength a bit."
@@ -18327,18 +18328,18 @@ mondata SPECIES_ROOKIDEE, "Rookidee"
 
 
 mondata SPECIES_CORVISQUIRE, "Corvsquire"
-    basestats 68, 67, 55, 77, 43, 55
-    types TYPE_FLYING, TYPE_FLYING
+    basestats 70, 65, 75, 85, 40, 60
+    types TYPE_FLYING, TYPE_STEEL
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FLYING, EGG_GROUP_FLYING
-    abilities ABILITY_KEEN_EYE, ABILITY_UNNERVE
+    abilities ABILITY_BIG_PECKS, ABILITY_UNNERVE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_CORVISQUIRE, "The lessons of many harsh battles\nhave taught it how to accurately judge\nan opponent’s strength."
@@ -18348,11 +18349,11 @@ mondata SPECIES_CORVISQUIRE, "Corvsquire"
 
 
 mondata SPECIES_CORVIKNIGHT, "Corviknite"
-    basestats 98, 87, 105, 67, 53, 85
+    basestats 105, 85, 110, 75, 50, 85
     types TYPE_FLYING, TYPE_STEEL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -18373,7 +18374,7 @@ mondata SPECIES_BLIPBUG, "Blipbug"
     types TYPE_BUG, TYPE_BUG
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -18394,7 +18395,7 @@ mondata SPECIES_DOTTLER, "Dottler"
     types TYPE_BUG, TYPE_PSYCHIC
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -18415,7 +18416,7 @@ mondata SPECIES_ORBEETLE, "Orbeetle"
     types TYPE_BUG, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -18436,7 +18437,7 @@ mondata SPECIES_NICKIT, "Nickit"
     types TYPE_DARK, TYPE_DARK
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -18457,7 +18458,7 @@ mondata SPECIES_THIEVUL, "Thievul"
     types TYPE_DARK, TYPE_DARK
     catchrate 127
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -18478,7 +18479,7 @@ mondata SPECIES_GOSSIFLEUR, "Gossifleur"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18499,7 +18500,7 @@ mondata SPECIES_ELDEGOSS, "Eldegoss"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18520,7 +18521,7 @@ mondata SPECIES_WOOLOO, "Wooloo"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -18541,7 +18542,7 @@ mondata SPECIES_DUBWOOL, "Dubwool"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 127
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -18562,7 +18563,7 @@ mondata SPECIES_CHEWTLE, "Chewtle"
     types TYPE_WATER, TYPE_WATER
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18583,7 +18584,7 @@ mondata SPECIES_DREDNAW, "Drednaw"
     types TYPE_WATER, TYPE_ROCK
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18604,7 +18605,7 @@ mondata SPECIES_YAMPER, "Yamper"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18625,7 +18626,7 @@ mondata SPECIES_BOLTUND, "Boltund"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18646,7 +18647,7 @@ mondata SPECIES_ROLYCOLY, "Rolycoly"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -18667,7 +18668,7 @@ mondata SPECIES_CARKOL, "Carkol"
     types TYPE_ROCK, TYPE_FIRE
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -18688,7 +18689,7 @@ mondata SPECIES_COALOSSAL, "Coalossal"
     types TYPE_ROCK, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -18709,7 +18710,7 @@ mondata SPECIES_APPLIN, "Applin"
     types TYPE_GRASS, TYPE_DRAGON
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18730,7 +18731,7 @@ mondata SPECIES_FLAPPLE, "Flapple"
     types TYPE_GRASS, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18751,7 +18752,7 @@ mondata SPECIES_APPLETUN, "Appletun"
     types TYPE_GRASS, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18768,11 +18769,11 @@ mondata SPECIES_APPLETUN, "Appletun"
 
 
 mondata SPECIES_SILICOBRA, "Silicobra"
-    basestats 52, 57, 75, 46, 35, 50
+    basestats 60, 35, 50, 45, 60, 75
     types TYPE_GROUND, TYPE_GROUND
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18789,11 +18790,11 @@ mondata SPECIES_SILICOBRA, "Silicobra"
 
 
 mondata SPECIES_SANDACONDA, "Sandaconda"
-    basestats 72, 107, 125, 71, 65, 70
+    basestats 80, 65, 70, 70, 110, 125
     types TYPE_GROUND, TYPE_GROUND
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18814,7 +18815,7 @@ mondata SPECIES_CRAMORANT, "Cramorant"
     types TYPE_FLYING, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18835,7 +18836,7 @@ mondata SPECIES_ARROKUDA, "Arrokuda"
     types TYPE_WATER, TYPE_WATER
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18856,7 +18857,7 @@ mondata SPECIES_BARRASKEWDA, "Baraskewda"
     types TYPE_WATER, TYPE_WATER
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18877,7 +18878,7 @@ mondata SPECIES_TOXEL, "Toxel"
     types TYPE_ELECTRIC, TYPE_POISON
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -18898,7 +18899,7 @@ mondata SPECIES_TOXTRICITY, "Toxtricity"
     types TYPE_ELECTRIC, TYPE_POISON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -18919,7 +18920,7 @@ mondata SPECIES_SIZZLIPEDE, "Sizzlipede"
     types TYPE_FIRE, TYPE_BUG
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18940,7 +18941,7 @@ mondata SPECIES_CENTISKORCH, "Centskorch"
     types TYPE_FIRE, TYPE_BUG
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -18961,7 +18962,7 @@ mondata SPECIES_CLOBBOPUS, "Clobbopus"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 180
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -18982,7 +18983,7 @@ mondata SPECIES_GRAPPLOCT, "Grapploct"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -19003,7 +19004,7 @@ mondata SPECIES_SINISTEA, "Sinistea"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -19024,7 +19025,7 @@ mondata SPECIES_POLTEAGEIST, "Poltegeist"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -19045,7 +19046,7 @@ mondata SPECIES_HATENNA, "Hatenna"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 235
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -19066,7 +19067,7 @@ mondata SPECIES_HATTREM, "Hattrem"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -19087,7 +19088,7 @@ mondata SPECIES_HATTERENE, "Hatterene"
     types TYPE_PSYCHIC, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -19108,7 +19109,7 @@ mondata SPECIES_IMPIDIMP, "Impidimp"
     types TYPE_DARK, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_DARK
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -19129,7 +19130,7 @@ mondata SPECIES_MORGREM, "Morgrem"
     types TYPE_DARK, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_DARK
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -19150,7 +19151,7 @@ mondata SPECIES_GRIMMSNARL, "Grimmsnarl"
     types TYPE_DARK, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_DARK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -19171,7 +19172,7 @@ mondata SPECIES_OBSTAGOON, "Obstagoon"
     types TYPE_DARK, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -19192,7 +19193,7 @@ mondata SPECIES_PERRSERKER, "Perrserker"
     types TYPE_STEEL, TYPE_STEEL
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -19213,7 +19214,7 @@ mondata SPECIES_CURSOLA, "Cursola"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 190
     eggcycles 20
@@ -19230,18 +19231,18 @@ mondata SPECIES_CURSOLA, "Cursola"
 
 
 mondata SPECIES_SIRFETCHD, "Sirfetch’d"
-    basestats 62, 135, 95, 65, 68, 82
-    types TYPE_FIGHTING, TYPE_FIGHTING
+    basestats 75, 125, 95, 75, 55, 90
+    types TYPE_FIGHTING, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_LEEK, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FLYING, EGG_GROUP_FIELD
-    abilities ABILITY_STEADFAST, ABILITY_NONE
+    abilities ABILITY_STEADFAST, ABILITY_SHARPNESS
     runchance 0
     colorflip BODY_COLOR_WHITE, 0
     mondexentry SPECIES_SIRFETCHD, "After deflecting attacks with its hard\nleaf shield, it strikes back with its sharp\nleek stalk. "
@@ -19255,7 +19256,7 @@ mondata SPECIES_MR_RIME, "Mr. Rime"
     types TYPE_ICE, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -19276,7 +19277,7 @@ mondata SPECIES_RUNERIGUS, "Runerigus"
     types TYPE_GROUND, TYPE_GHOST
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -19297,7 +19298,7 @@ mondata SPECIES_MILCERY, "Milcery"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -19318,7 +19319,7 @@ mondata SPECIES_ALCREMIE, "Alcremie"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 100
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -19339,7 +19340,7 @@ mondata SPECIES_FALINKS, "Falinks"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 25
@@ -19357,10 +19358,10 @@ mondata SPECIES_FALINKS, "Falinks"
 
 mondata SPECIES_PINCURCHIN, "Pincurchin"
     basestats 48, 101, 95, 15, 91, 85
-    types TYPE_ELECTRIC, TYPE_ELECTRIC
+    types TYPE_ELECTRIC, TYPE_WATER
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -19381,7 +19382,7 @@ mondata SPECIES_SNOM, "Snom"
     types TYPE_ICE, TYPE_BUG
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -19402,7 +19403,7 @@ mondata SPECIES_FROSMOTH, "Frosmoth"
     types TYPE_ICE, TYPE_BUG
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -19423,7 +19424,7 @@ mondata SPECIES_STONJOURNER, "Stonjorner"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -19444,7 +19445,7 @@ mondata SPECIES_EISCUE, "Eiscue"
     types TYPE_ICE, TYPE_ICE
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -19465,7 +19466,7 @@ mondata SPECIES_INDEEDEE, "Indeedee"
     types TYPE_PSYCHIC, TYPE_NORMAL
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 40
@@ -19486,7 +19487,7 @@ mondata SPECIES_MORPEKO, "Morpeko"
     types TYPE_ELECTRIC, TYPE_DARK
     catchrate 180
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 10
@@ -19507,7 +19508,7 @@ mondata SPECIES_CUFANT, "Cufant"
     types TYPE_STEEL, TYPE_STEEL
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -19528,7 +19529,7 @@ mondata SPECIES_COPPERAJAH, "Copperajah"
     types TYPE_STEEL, TYPE_STEEL
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -19549,7 +19550,7 @@ mondata SPECIES_DRACOZOLT, "Dracozolt"
     types TYPE_ELECTRIC, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 35
@@ -19570,7 +19571,7 @@ mondata SPECIES_ARCTOZOLT, "Arctozolt"
     types TYPE_ELECTRIC, TYPE_ICE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 35
@@ -19591,7 +19592,7 @@ mondata SPECIES_DRACOVISH, "Dracovish"
     types TYPE_WATER, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 35
@@ -19612,7 +19613,7 @@ mondata SPECIES_ARCTOVISH, "Arctovish"
     types TYPE_WATER, TYPE_ICE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 35
@@ -19633,7 +19634,7 @@ mondata SPECIES_DURALUDON, "Duraludon"
     types TYPE_STEEL, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 30
@@ -19654,7 +19655,7 @@ mondata SPECIES_DREEPY, "Dreepy"
     types TYPE_DRAGON, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -19675,7 +19676,7 @@ mondata SPECIES_DRAKLOAK, "Drakloak"
     types TYPE_DRAGON, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -19696,7 +19697,7 @@ mondata SPECIES_DRAGAPULT, "Dragapult"
     types TYPE_DRAGON, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -19717,7 +19718,7 @@ mondata SPECIES_ZACIAN, "Zacian"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 10
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -19738,7 +19739,7 @@ mondata SPECIES_ZAMAZENTA, "Zamazenta"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 10
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -19759,7 +19760,7 @@ mondata SPECIES_ETERNATUS, "Eternatus"
     types TYPE_POISON, TYPE_DRAGON
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -19780,7 +19781,7 @@ mondata SPECIES_KUBFU, "Kubfu"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 120
@@ -19801,7 +19802,7 @@ mondata SPECIES_URSHIFU, "Urshifu"
     types TYPE_FIGHTING, TYPE_DARK
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 120
@@ -19822,7 +19823,7 @@ mondata SPECIES_ZARUDE, "Zarude"
     types TYPE_DARK, TYPE_GRASS
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -19843,7 +19844,7 @@ mondata SPECIES_REGIELEKI, "Regieleki"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -19864,7 +19865,7 @@ mondata SPECIES_REGIDRAGO, "Regidrago"
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -19885,7 +19886,7 @@ mondata SPECIES_GLASTRIER, "Glastrier"
     types TYPE_ICE, TYPE_ICE
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -19906,7 +19907,7 @@ mondata SPECIES_SPECTRIER, "Spectrier"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -19927,7 +19928,7 @@ mondata SPECIES_CALYREX, "Calyrex"
     types TYPE_PSYCHIC, TYPE_GRASS
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -19948,7 +19949,7 @@ mondata SPECIES_WYRDEER, "Wyrdeer"
     types TYPE_NORMAL, TYPE_PSYCHIC
     catchrate 135
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 0
@@ -19969,7 +19970,7 @@ mondata SPECIES_KLEAVOR, "Kleavor"
     types TYPE_BUG, TYPE_ROCK
     catchrate 115
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 0
@@ -19990,7 +19991,7 @@ mondata SPECIES_URSALUNA, "Ursaluna"
     types TYPE_GROUND, TYPE_NORMAL
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 0
@@ -20011,7 +20012,7 @@ mondata SPECIES_BASCULEGION, "Basclegion"
     types TYPE_WATER, TYPE_GHOST
     catchrate 135
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 0
@@ -20032,7 +20033,7 @@ mondata SPECIES_SNEASLER, "Sneasler"
     types TYPE_FIGHTING, TYPE_POISON
     catchrate 135
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 0
@@ -20053,7 +20054,7 @@ mondata SPECIES_OVERQWIL, "Overqwil"
     types TYPE_DARK, TYPE_POISON
     catchrate 135
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 0
@@ -20074,7 +20075,7 @@ mondata SPECIES_ENAMORUS, "Enamorus"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, TYPE_FLYING
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 0
@@ -20095,7 +20096,7 @@ mondata SPECIES_SPRIGATITO, "Sprigatito"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -20116,7 +20117,7 @@ mondata SPECIES_FLORAGATO, "Floragato"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -20137,7 +20138,7 @@ mondata SPECIES_MEOWSCARADA, "Mewscarada"
     types TYPE_GRASS, TYPE_DARK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -20158,7 +20159,7 @@ mondata SPECIES_FUECOCO, "Fuecoco"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -20179,7 +20180,7 @@ mondata SPECIES_CROCALOR, "Crocalor"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -20200,7 +20201,7 @@ mondata SPECIES_SKELEDIRGE, "Skeledirge"
     types TYPE_FIRE, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -20221,7 +20222,7 @@ mondata SPECIES_QUAXLY, "Quaxly"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -20242,7 +20243,7 @@ mondata SPECIES_QUAXWELL, "Quaxwell"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -20263,7 +20264,7 @@ mondata SPECIES_QUAQUAVAL, "Quaquaval"
     types TYPE_WATER, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -20284,7 +20285,7 @@ mondata SPECIES_LECHONK, "Lechonk"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -20305,7 +20306,7 @@ mondata SPECIES_OINKOLOGNE, "Oinkologne"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 100
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 15
@@ -20326,7 +20327,7 @@ mondata SPECIES_TAROUNTULA, "Tarountula"
     types TYPE_BUG, TYPE_BUG
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -20347,7 +20348,7 @@ mondata SPECIES_SPIDOPS, "Spidops"
     types TYPE_BUG, TYPE_BUG
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -20368,7 +20369,7 @@ mondata SPECIES_NYMBLE, "Nymble"
     types TYPE_BUG, TYPE_BUG
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20389,7 +20390,7 @@ mondata SPECIES_LOKIX, "Lokix"
     types TYPE_BUG, TYPE_DARK
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20410,7 +20411,7 @@ mondata SPECIES_PAWMI, "Pawmi"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -20431,7 +20432,7 @@ mondata SPECIES_PAWMO, "Pawmo"
     types TYPE_ELECTRIC, TYPE_FIGHTING
     catchrate 80
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -20452,7 +20453,7 @@ mondata SPECIES_PAWMOT, "Pawmot"
     types TYPE_ELECTRIC, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -20473,7 +20474,7 @@ mondata SPECIES_TANDEMAUS, "Tandemaus"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 150
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 10
@@ -20494,7 +20495,7 @@ mondata SPECIES_MAUSHOLD, "Maushold"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 10
@@ -20515,7 +20516,7 @@ mondata SPECIES_FIDOUGH, "Fidough"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20536,7 +20537,7 @@ mondata SPECIES_DACHSBUN, "Dachsbun"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20557,7 +20558,7 @@ mondata SPECIES_SMOLIV, "Smoliv"
     types TYPE_GRASS, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20578,7 +20579,7 @@ mondata SPECIES_DOLLIV, "Dolliv"
     types TYPE_GRASS, TYPE_NORMAL
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20599,7 +20600,7 @@ mondata SPECIES_ARBOLIVA, "Arboliva"
     types TYPE_GRASS, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20620,7 +20621,7 @@ mondata SPECIES_SQUAWKABILLY, "Squawkbily"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -20641,7 +20642,7 @@ mondata SPECIES_NACLI, "Nacli"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20662,7 +20663,7 @@ mondata SPECIES_NACLSTACK, "Naclstack"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20683,7 +20684,7 @@ mondata SPECIES_GARGANACL, "Garganacl"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20704,7 +20705,7 @@ mondata SPECIES_CHARCADET, "Charcadet"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 35
@@ -20725,7 +20726,7 @@ mondata SPECIES_ARMAROUGE, "Armarouge"
     types TYPE_FIRE, TYPE_PSYCHIC
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 35
@@ -20746,7 +20747,7 @@ mondata SPECIES_CERULEDGE, "Ceruledge"
     types TYPE_FIRE, TYPE_GHOST
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 35
@@ -20767,7 +20768,7 @@ mondata SPECIES_TADBULB, "Tadbulb"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20788,7 +20789,7 @@ mondata SPECIES_BELLIBOLT, "Bellibolt"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 50
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20809,7 +20810,7 @@ mondata SPECIES_WATTREL, "Wattrel"
     types TYPE_ELECTRIC, TYPE_FLYING
     catchrate 180
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20830,7 +20831,7 @@ mondata SPECIES_KILOWATTREL, "Kilowatrel"
     types TYPE_ELECTRIC, TYPE_FLYING
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20851,7 +20852,7 @@ mondata SPECIES_MASCHIFF, "Maschiff"
     types TYPE_DARK, TYPE_DARK
     catchrate 150
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20872,7 +20873,7 @@ mondata SPECIES_MABOSSTIFF, "Mabosstiff"
     types TYPE_DARK, TYPE_DARK
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20893,7 +20894,7 @@ mondata SPECIES_SHROODLE, "Shroodle"
     types TYPE_POISON, TYPE_NORMAL
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20914,7 +20915,7 @@ mondata SPECIES_GRAFAIAI, "Grafaiai"
     types TYPE_POISON, TYPE_NORMAL
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20935,7 +20936,7 @@ mondata SPECIES_BRAMBLIN, "Bramblin"
     types TYPE_GRASS, TYPE_GHOST
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20956,7 +20957,7 @@ mondata SPECIES_BRAMBLEGHAST, "Bramblgast"
     types TYPE_GRASS, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20973,11 +20974,11 @@ mondata SPECIES_BRAMBLEGHAST, "Bramblgast"
 
 
 mondata SPECIES_TOEDSCOOL, "Toedscool"
-    basestats 40, 40, 35, 70, 50, 100
+    basestats 50, 40, 35, 70, 50, 100
     types TYPE_GROUND, TYPE_GRASS
-    catchrate 190
+    catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -20994,11 +20995,11 @@ mondata SPECIES_TOEDSCOOL, "Toedscool"
 
 
 mondata SPECIES_TOEDSCRUEL, "Toedscruel"
-    basestats 80, 70, 65, 100, 80, 120
+    basestats 90, 70, 65, 100, 80, 120
     types TYPE_GROUND, TYPE_GRASS
-    catchrate 90
+    catchrate 100
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21019,7 +21020,7 @@ mondata SPECIES_KLAWF, "Klawf"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 35
@@ -21040,7 +21041,7 @@ mondata SPECIES_CAPSAKID, "Capsakid"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21061,7 +21062,7 @@ mondata SPECIES_SCOVILLAIN, "Scovillain"
     types TYPE_GRASS, TYPE_FIRE
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21082,7 +21083,7 @@ mondata SPECIES_RELLOR, "Rellor"
     types TYPE_BUG, TYPE_BUG
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21103,7 +21104,7 @@ mondata SPECIES_RABSCA, "Rabsca"
     types TYPE_BUG, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21124,7 +21125,7 @@ mondata SPECIES_FLITTLE, "Flittle"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21145,7 +21146,7 @@ mondata SPECIES_ESPATHRA, "Espathra"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21166,7 +21167,7 @@ mondata SPECIES_TINKATINK, "Tinkatink"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, TYPE_STEEL
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -21187,7 +21188,7 @@ mondata SPECIES_TINKATUFF, "Tinkatuff"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, TYPE_STEEL
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -21208,7 +21209,7 @@ mondata SPECIES_TINKATON, "Tinkaton"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, TYPE_STEEL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -21229,7 +21230,7 @@ mondata SPECIES_WIGLETT, "Wiglett"
     types TYPE_WATER, TYPE_WATER
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21250,7 +21251,7 @@ mondata SPECIES_WUGTRIO, "Wugtrio"
     types TYPE_WATER, TYPE_WATER
     catchrate 50
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21271,7 +21272,7 @@ mondata SPECIES_BOMBIRDIER, "Bombirdier"
     types TYPE_FLYING, TYPE_DARK
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 35
@@ -21292,7 +21293,7 @@ mondata SPECIES_FINIZEN, "Finizen"
     types TYPE_WATER, TYPE_WATER
     catchrate 200
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -21313,7 +21314,7 @@ mondata SPECIES_PALAFIN, "Palafin"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -21334,7 +21335,7 @@ mondata SPECIES_VAROOM, "Varoom"
     types TYPE_STEEL, TYPE_POISON
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21355,7 +21356,7 @@ mondata SPECIES_REVAVROOM, "Revavroom"
     types TYPE_STEEL, TYPE_POISON
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21376,7 +21377,7 @@ mondata SPECIES_CYCLIZAR, "Cyclizar"
     types TYPE_DRAGON, TYPE_NORMAL
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 30
@@ -21397,7 +21398,7 @@ mondata SPECIES_ORTHWORM, "Orthworm"
     types TYPE_STEEL, TYPE_STEEL
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 35
@@ -21418,7 +21419,7 @@ mondata SPECIES_GLIMMET, "Glimmet"
     types TYPE_ROCK, TYPE_POISON
     catchrate 70
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 30
@@ -21439,7 +21440,7 @@ mondata SPECIES_GLIMMORA, "Glimmora"
     types TYPE_ROCK, TYPE_POISON
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 30
@@ -21460,7 +21461,7 @@ mondata SPECIES_GREAVARD, "Greavard"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21481,7 +21482,7 @@ mondata SPECIES_HOUNDSTONE, "Houndstone"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21502,7 +21503,7 @@ mondata SPECIES_FLAMIGO, "Flamigo"
     types TYPE_FLYING, TYPE_FIGHTING
     catchrate 100
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21523,7 +21524,7 @@ mondata SPECIES_CETODDLE, "Cetoddle"
     types TYPE_ICE, TYPE_ICE
     catchrate 150
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -21544,7 +21545,7 @@ mondata SPECIES_CETITAN, "Cetitan"
     types TYPE_ICE, TYPE_ICE
     catchrate 50
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -21565,7 +21566,7 @@ mondata SPECIES_VELUZA, "Veluza"
     types TYPE_WATER, TYPE_PSYCHIC
     catchrate 100
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21586,7 +21587,7 @@ mondata SPECIES_DONDOZO, "Dondozo"
     types TYPE_WATER, TYPE_WATER
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -21607,7 +21608,7 @@ mondata SPECIES_TATSUGIRI, "Tatsugiri"
     types TYPE_DRAGON, TYPE_WATER
     catchrate 100
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 35
@@ -21628,7 +21629,7 @@ mondata SPECIES_ANNIHILAPE, "Annihilape"
     types TYPE_FIGHTING, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21649,7 +21650,7 @@ mondata SPECIES_CLODSIRE, "Clodsire"
     types TYPE_POISON, TYPE_GROUND
     catchrate 90
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21670,7 +21671,7 @@ mondata SPECIES_FARIGIRAF, "Farigiraf"
     types TYPE_NORMAL, TYPE_PSYCHIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21691,7 +21692,7 @@ mondata SPECIES_DUDUNSPARCE, "Dudunspars"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21712,7 +21713,7 @@ mondata SPECIES_KINGAMBIT, "Kingambit"
     types TYPE_DARK, TYPE_STEEL
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -21733,7 +21734,7 @@ mondata SPECIES_GREAT_TUSK, "Great Tusk"
     types TYPE_GROUND, TYPE_FIGHTING
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -21754,7 +21755,7 @@ mondata SPECIES_SCREAM_TAIL, "ScreamTail"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, TYPE_PSYCHIC
     catchrate 50
     baseexp 0 // defined in baseexp.s
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -21775,7 +21776,7 @@ mondata SPECIES_BRUTE_BONNET, "BruteBonet"
     types TYPE_GRASS, TYPE_DARK
     catchrate 50
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -21796,7 +21797,7 @@ mondata SPECIES_FLUTTER_MANE, "FluttrMane"
     types TYPE_GHOST, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_GHOST
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 1, 1, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -21817,7 +21818,7 @@ mondata SPECIES_SLITHER_WING, "SlithrWing"
     types TYPE_BUG, TYPE_FIGHTING
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -21838,7 +21839,7 @@ mondata SPECIES_SANDY_SHOCKS, "SandyShock"
     types TYPE_ELECTRIC, TYPE_GROUND
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -21859,7 +21860,7 @@ mondata SPECIES_IRON_TREADS, "IronTreads"
     types TYPE_GROUND, TYPE_STEEL
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -21880,7 +21881,7 @@ mondata SPECIES_IRON_BUNDLE, "IronBundle"
     types TYPE_ICE, TYPE_WATER
     catchrate 50
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -21901,7 +21902,7 @@ mondata SPECIES_IRON_HANDS, "Iron Hands"
     types TYPE_FIGHTING, TYPE_ELECTRIC
     catchrate 50
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -21922,7 +21923,7 @@ mondata SPECIES_IRON_JUGULIS, "Iron Neck"
     types TYPE_DARK, TYPE_FLYING
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -21943,7 +21944,7 @@ mondata SPECIES_IRON_MOTH, "Iron Moth"
     types TYPE_FIRE, TYPE_POISON
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -21964,7 +21965,7 @@ mondata SPECIES_IRON_THORNS, "IronThorns"
     types TYPE_ROCK, TYPE_ELECTRIC
     catchrate 30
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -21985,7 +21986,7 @@ mondata SPECIES_FRIGIBAX, "Frigibax"
     types TYPE_DRAGON, TYPE_ICE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -22006,7 +22007,7 @@ mondata SPECIES_ARCTIBAX, "Arctibax"
     types TYPE_DRAGON, TYPE_ICE
     catchrate 25
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -22027,7 +22028,7 @@ mondata SPECIES_BAXCALIBUR, "Baxcalibur"
     types TYPE_DRAGON, TYPE_ICE
     catchrate 10
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -22048,7 +22049,7 @@ mondata SPECIES_GIMMIGHOUL, "Gimmighoul"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -22069,7 +22070,7 @@ mondata SPECIES_GHOLDENGO, "Gholdengo"
     types TYPE_STEEL, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -22090,7 +22091,7 @@ mondata SPECIES_WO_CHIEN, "Wo-Chien"
     types TYPE_DARK, TYPE_GRASS
     catchrate 6
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -22111,7 +22112,7 @@ mondata SPECIES_CHIEN_PAO, "Chien-Pao"
     types TYPE_DARK, TYPE_ICE
     catchrate 6
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -22132,7 +22133,7 @@ mondata SPECIES_TING_LU, "Ting-Lu"
     types TYPE_DARK, TYPE_GROUND
     catchrate 6
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -22153,7 +22154,7 @@ mondata SPECIES_CHI_YU, "Chi-Yu"
     types TYPE_DARK, TYPE_FIRE
     catchrate 6
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -22174,7 +22175,7 @@ mondata SPECIES_ROARING_MOON, "RoarinMoon"
     types TYPE_DRAGON, TYPE_DARK
     catchrate 10
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -22195,7 +22196,7 @@ mondata SPECIES_IRON_VALIANT, "Iron Valor"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, TYPE_FIGHTING
     catchrate 10
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -22216,7 +22217,7 @@ mondata SPECIES_KORAIDON, "Koraidon"
     types TYPE_FIGHTING, TYPE_DRAGON
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -22237,7 +22238,7 @@ mondata SPECIES_MIRAIDON, "Miraidon"
     types TYPE_ELECTRIC, TYPE_DRAGON
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -22258,7 +22259,7 @@ mondata SPECIES_WALKING_WAKE, "WalkngWake"
     types TYPE_WATER, TYPE_DRAGON
     catchrate 5
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -22279,7 +22280,7 @@ mondata SPECIES_IRON_LEAVES, "IronLeaves"
     types TYPE_GRASS, TYPE_PSYCHIC
     catchrate 5
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -22300,7 +22301,7 @@ mondata SPECIES_DIPPLIN, "Dipplin"
     types TYPE_GRASS, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -22321,7 +22322,7 @@ mondata SPECIES_POLTCHAGEIST, "Polchgeist"
     types TYPE_GRASS, TYPE_GHOST
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -22342,7 +22343,7 @@ mondata SPECIES_SINISTCHA, "Sinistcha"
     types TYPE_GRASS, TYPE_GHOST
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -22363,7 +22364,7 @@ mondata SPECIES_OKIDOGI, "Okidogi"
     types TYPE_POISON, TYPE_FIGHTING
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 120
@@ -22384,7 +22385,7 @@ mondata SPECIES_MUNKIDORI, "Munkidori"
     types TYPE_POISON, TYPE_PSYCHIC
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 120
@@ -22405,7 +22406,7 @@ mondata SPECIES_FEZANDIPITI, "Fezanditi"
     types TYPE_POISON, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_POISON
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 120
@@ -22426,7 +22427,7 @@ mondata SPECIES_OGERPON, "Ogerpon"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 5
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 10
@@ -22447,7 +22448,7 @@ mondata SPECIES_ARCHALUDON, "Archaludon"
     types TYPE_STEEL, TYPE_DRAGON
     catchrate 10
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 30
@@ -22468,7 +22469,7 @@ mondata SPECIES_HYDRAPPLE, "Hydrapple"
     types TYPE_GRASS, TYPE_DRAGON
     catchrate 10
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -22489,7 +22490,7 @@ mondata SPECIES_GOUGING_FIRE, "GouginFire"
     types TYPE_FIRE, TYPE_DRAGON
     catchrate 10
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -22510,7 +22511,7 @@ mondata SPECIES_RAGING_BOLT, "RagingBolt"
     types TYPE_ELECTRIC, TYPE_DRAGON
     catchrate 10
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -22531,7 +22532,7 @@ mondata SPECIES_IRON_BOULDER, "IronBolder"
     types TYPE_ROCK, TYPE_PSYCHIC
     catchrate 10
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -22552,7 +22553,7 @@ mondata SPECIES_IRON_CROWN, "Iron Crown"
     types TYPE_STEEL, TYPE_PSYCHIC
     catchrate 10
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -22573,7 +22574,7 @@ mondata SPECIES_TERAPAGOS, "Terapagos"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 5
@@ -22594,7 +22595,7 @@ mondata SPECIES_PECHARUNT, "Pecharunt"
     types TYPE_POISON, TYPE_GHOST
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -22615,7 +22616,7 @@ mondata SPECIES_MEGA_VENUSAUR, "-----"
     types TYPE_GRASS, TYPE_POISON
     catchrate 45
     baseexp 208
-    evyields 0, 0, 0, 0, 2, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -22631,7 +22632,7 @@ mondata SPECIES_MEGA_CHARIZARD_X, "-----"
     types TYPE_FIRE, TYPE_DRAGON
     catchrate 45
     baseexp 209
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -22647,7 +22648,7 @@ mondata SPECIES_MEGA_CHARIZARD_Y, "-----"
     types TYPE_FIRE, TYPE_FLYING
     catchrate 45
     baseexp 209
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -22663,7 +22664,7 @@ mondata SPECIES_MEGA_BLASTOISE, "-----"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 210
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -22679,7 +22680,7 @@ mondata SPECIES_MEGA_BEEDRILL, "-----"
     types TYPE_BUG, TYPE_POISON
     catchrate 45
     baseexp 159
-    evyields 0, 2, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_POISON_BARB
     genderratio 127
     eggcycles 15
@@ -22695,7 +22696,7 @@ mondata SPECIES_MEGA_PIDGEOT, "-----"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 45
     baseexp 172
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -22711,7 +22712,7 @@ mondata SPECIES_MEGA_ALAKAZAM, "-----"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 50
     baseexp 186
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_TWISTED_SPOON
     genderratio 63
     eggcycles 20
@@ -22727,7 +22728,7 @@ mondata SPECIES_MEGA_SLOWBRO, "-----"
     types TYPE_WATER, TYPE_PSYCHIC
     catchrate 75
     baseexp 164
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -22743,7 +22744,7 @@ mondata SPECIES_MEGA_GENGAR, "-----"
     types TYPE_GHOST, TYPE_POISON
     catchrate 45
     baseexp 190
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SPELL_TAG
     genderratio 127
     eggcycles 20
@@ -22759,7 +22760,7 @@ mondata SPECIES_MEGA_KANGASKHAN, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 175
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -22775,7 +22776,7 @@ mondata SPECIES_MEGA_PINSIR, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 200
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -22791,7 +22792,7 @@ mondata SPECIES_MEGA_GYARADOS, "-----"
     types TYPE_WATER, TYPE_DARK
     catchrate 45
     baseexp 214
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 5
@@ -22807,7 +22808,7 @@ mondata SPECIES_MEGA_AERODACTYL, "-----"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 45
     baseexp 202
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 35
@@ -22823,7 +22824,7 @@ mondata SPECIES_MEGA_MEWTWO_X, "-----"
     types TYPE_PSYCHIC, TYPE_FIGHTING
     catchrate 3
     baseexp 220
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -22839,7 +22840,7 @@ mondata SPECIES_MEGA_MEWTWO_Y, "-----"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 3
     baseexp 220
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -22855,7 +22856,7 @@ mondata SPECIES_MEGA_AMPHAROS, "-----"
     types TYPE_ELECTRIC, TYPE_DRAGON
     catchrate 45
     baseexp 194
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -22871,7 +22872,7 @@ mondata SPECIES_MEGA_STEELIX, "-----"
     types TYPE_STEEL, TYPE_GROUND
     catchrate 25
     baseexp 196
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_METAL_COAT
     genderratio 127
     eggcycles 25
@@ -22887,7 +22888,7 @@ mondata SPECIES_MEGA_SCIZOR, "-----"
     types TYPE_BUG, TYPE_STEEL
     catchrate 25
     baseexp 200
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -22903,7 +22904,7 @@ mondata SPECIES_MEGA_HERACROSS, "-----"
     types TYPE_BUG, TYPE_FIGHTING
     catchrate 45
     baseexp 200
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -22919,7 +22920,7 @@ mondata SPECIES_MEGA_HOUNDOOM, "-----"
     types TYPE_DARK, TYPE_FIRE
     catchrate 45
     baseexp 204
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -22935,7 +22936,7 @@ mondata SPECIES_MEGA_TYRANITAR, "-----"
     types TYPE_ROCK, TYPE_DARK
     catchrate 45
     baseexp 218
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -22951,7 +22952,7 @@ mondata SPECIES_MEGA_SCEPTILE, "-----"
     types TYPE_GRASS, TYPE_DRAGON
     catchrate 45
     baseexp 208
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -22967,7 +22968,7 @@ mondata SPECIES_MEGA_BLAZIKEN, "-----"
     types TYPE_FIRE, TYPE_FIGHTING
     catchrate 45
     baseexp 209
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -22983,7 +22984,7 @@ mondata SPECIES_MEGA_SWAMPERT, "-----"
     types TYPE_WATER, TYPE_GROUND
     catchrate 45
     baseexp 210
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -22999,7 +23000,7 @@ mondata SPECIES_MEGA_GARDEVOIR, "-----"
     types TYPE_PSYCHIC, FAIRY_TYPE_IMPLEMENTED ? TYPE_FAIRY : TYPE_PSYCHIC
     catchrate 45
     baseexp 208
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23015,7 +23016,7 @@ mondata SPECIES_MEGA_SABLEYE, "-----"
     types TYPE_DARK, TYPE_GHOST
     catchrate 45
     baseexp 98
-    evyields 0, 1, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -23031,7 +23032,7 @@ mondata SPECIES_MEGA_MAWILE, "-----"
     types TYPE_STEEL, FAIRY_TYPE_IMPLEMENTED ? TYPE_FAIRY : TYPE_STEEL
     catchrate 45
     baseexp 98
-    evyields 0, 1, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23047,7 +23048,7 @@ mondata SPECIES_MEGA_AGGRON, "-----"
     types TYPE_STEEL, TYPE_STEEL
     catchrate 45
     baseexp 205
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_HARD_STONE
     genderratio 127
     eggcycles 35
@@ -23063,7 +23064,7 @@ mondata SPECIES_MEGA_MEDICHAM, "-----"
     types TYPE_FIGHTING, TYPE_PSYCHIC
     catchrate 90
     baseexp 153
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23079,7 +23080,7 @@ mondata SPECIES_MEGA_MANECTRIC, "-----"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 45
     baseexp 168
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23095,7 +23096,7 @@ mondata SPECIES_MEGA_SHARPEDO, "-----"
     types TYPE_WATER, TYPE_DARK
     catchrate 60
     baseexp 175
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23111,7 +23112,7 @@ mondata SPECIES_MEGA_CAMERUPT, "-----"
     types TYPE_FIRE, TYPE_GROUND
     catchrate 150
     baseexp 175
-    evyields 0, 1, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_RAWST_BERRY, ITEM_RAWST_BERRY
     genderratio 127
     eggcycles 20
@@ -23127,7 +23128,7 @@ mondata SPECIES_MEGA_ALTARIA, "-----"
     types TYPE_DRAGON, FAIRY_TYPE_IMPLEMENTED ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 45
     baseexp 188
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23143,7 +23144,7 @@ mondata SPECIES_MEGA_BANETTE, "-----"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 45
     baseexp 179
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SPELL_TAG
     genderratio 127
     eggcycles 25
@@ -23159,7 +23160,7 @@ mondata SPECIES_MEGA_ABSOL, "-----"
     types TYPE_DARK, TYPE_DARK
     catchrate 30
     baseexp 174
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -23175,7 +23176,7 @@ mondata SPECIES_MEGA_GLALIE, "-----"
     types TYPE_ICE, TYPE_ICE
     catchrate 75
     baseexp 187
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NEVER_MELT_ICE
     genderratio 127
     eggcycles 20
@@ -23191,7 +23192,7 @@ mondata SPECIES_MEGA_SALAMENCE, "-----"
     types TYPE_DRAGON, TYPE_FLYING
     catchrate 45
     baseexp 218
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -23207,7 +23208,7 @@ mondata SPECIES_MEGA_METAGROSS, "-----"
     types TYPE_STEEL, TYPE_PSYCHIC
     catchrate 3
     baseexp 210
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_METAL_COAT
     genderratio 255
     eggcycles 40
@@ -23223,7 +23224,7 @@ mondata SPECIES_MEGA_LATIAS, "-----"
     types TYPE_DRAGON, TYPE_PSYCHIC
     catchrate 3
     baseexp 211
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 120
@@ -23239,7 +23240,7 @@ mondata SPECIES_MEGA_LATIOS, "-----"
     types TYPE_DRAGON, TYPE_PSYCHIC
     catchrate 3
     baseexp 211
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 120
@@ -23255,7 +23256,7 @@ mondata SPECIES_MEGA_RAYQUAZA, "-----"
     types TYPE_DRAGON, TYPE_FLYING
     catchrate 3
     baseexp 230
-    evyields 0, 2, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -23271,7 +23272,7 @@ mondata SPECIES_MEGA_LOPUNNY, "-----"
     types TYPE_NORMAL, TYPE_FIGHTING
     catchrate 60
     baseexp 168
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23287,7 +23288,7 @@ mondata SPECIES_MEGA_GARCHOMP, "-----"
     types TYPE_DRAGON, TYPE_GROUND
     catchrate 45
     baseexp 218
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -23303,7 +23304,7 @@ mondata SPECIES_MEGA_LUCARIO, "-----"
     types TYPE_FIGHTING, TYPE_STEEL
     catchrate 45
     baseexp 204
-    evyields 0, 1, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 25
@@ -23319,7 +23320,7 @@ mondata SPECIES_MEGA_ABOMASNOW, "-----"
     types TYPE_GRASS, TYPE_ICE
     catchrate 60
     baseexp 214
-    evyields 0, 1, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23335,7 +23336,7 @@ mondata SPECIES_MEGA_GALLADE, "-----"
     types TYPE_PSYCHIC, TYPE_FIGHTING
     catchrate 45
     baseexp 233
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -23351,7 +23352,7 @@ mondata SPECIES_MEGA_AUDINO, "-----"
     types TYPE_NORMAL, FAIRY_TYPE_IMPLEMENTED ? TYPE_FAIRY : TYPE_NORMAL
     catchrate 255
     baseexp 245
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23367,7 +23368,7 @@ mondata SPECIES_MEGA_DIANCIE, "-----"
     types TYPE_ROCK, FAIRY_TYPE_IMPLEMENTED ? TYPE_FAIRY : TYPE_PSYCHIC
     catchrate 3
     baseexp 255
-    evyields 0, 0, 1, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 25
@@ -23383,7 +23384,7 @@ mondata SPECIES_GROUDON_PRIMAL, "-----"
     types TYPE_GROUND, TYPE_FIRE
     catchrate 5
     baseexp 230
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -23399,7 +23400,7 @@ mondata SPECIES_KYOGRE_PRIMAL, "-----"
     types TYPE_WATER, TYPE_WATER
     catchrate 5
     baseexp 230
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -23415,7 +23416,7 @@ mondata SPECIES_RATTATA_ALOLAN, "-----"
     types TYPE_DARK, TYPE_NORMAL
     catchrate 255
     baseexp 51
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PECHA_BERRY
     genderratio 127
     eggcycles 15
@@ -23431,7 +23432,7 @@ mondata SPECIES_RATICATE_ALOLAN, "-----"
     types TYPE_DARK, TYPE_NORMAL
     catchrate 127
     baseexp 145
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PECHA_BERRY
     genderratio 127
     eggcycles 15
@@ -23447,7 +23448,7 @@ mondata SPECIES_RAICHU_ALOLAN, "-----"
     types TYPE_ELECTRIC, TYPE_PSYCHIC
     catchrate 75
     baseexp 218
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 10
@@ -23463,14 +23464,14 @@ mondata SPECIES_SANDSHREW_ALOLAN, "-----"
     types TYPE_ICE, TYPE_STEEL
     catchrate 255
     baseexp 60
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_GRIP_CLAW
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_SNOW_CLOAK,  ABILITY_NONE
+    abilities ABILITY_SNOW_CLOAK,  ABILITY_TOUGH_CLAWS
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
 
@@ -23479,14 +23480,14 @@ mondata SPECIES_SANDSLASH_ALOLAN, "-----"
     types TYPE_ICE, TYPE_STEEL
     catchrate 90
     baseexp 158
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_SNOW_CLOAK,  ABILITY_NONE
+    abilities ABILITY_SNOW_CLOAK,  ABILITY_TOUGH_CLAWS
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
 
@@ -23495,7 +23496,7 @@ mondata SPECIES_VULPIX_ALOLAN, "-----"
     types TYPE_ICE, TYPE_ICE
     catchrate 190
     baseexp 60
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SNOWBALL
     genderratio 191
     eggcycles 20
@@ -23511,7 +23512,7 @@ mondata SPECIES_NINETALES_ALOLAN, "-----"
     types TYPE_ICE, TYPE_FAIRY
     catchrate 75
     baseexp 177
-    evyields 0, 0, 0, 1, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 191
     eggcycles 20
@@ -23527,7 +23528,7 @@ mondata SPECIES_DIGLETT_ALOLAN, "-----"
     types TYPE_GROUND, TYPE_STEEL
     catchrate 255
     baseexp 53
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SOFT_SAND
     genderratio 127
     eggcycles 20
@@ -23543,7 +23544,7 @@ mondata SPECIES_DUGTRIO_ALOLAN, "-----"
     types TYPE_GROUND, TYPE_STEEL
     catchrate 50
     baseexp 149
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SOFT_SAND
     genderratio 127
     eggcycles 20
@@ -23559,7 +23560,7 @@ mondata SPECIES_MEOWTH_ALOLAN, "-----"
     types TYPE_DARK, TYPE_DARK
     catchrate 255
     baseexp 58
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_QUICK_CLAW
     genderratio 127
     eggcycles 20
@@ -23575,7 +23576,7 @@ mondata SPECIES_PERSIAN_ALOLAN, "-----"
     types TYPE_DARK, TYPE_DARK
     catchrate 90
     baseexp 154
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_QUICK_CLAW
     genderratio 127
     eggcycles 20
@@ -23591,7 +23592,7 @@ mondata SPECIES_GEODUDE_ALOLAN, "-----"
     types TYPE_ROCK, TYPE_ELECTRIC
     catchrate 255
     baseexp 60
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CELL_BATTERY
     genderratio 127
     eggcycles 15
@@ -23607,7 +23608,7 @@ mondata SPECIES_GRAVELER_ALOLAN, "-----"
     types TYPE_ROCK, TYPE_ELECTRIC
     catchrate 120
     baseexp 137
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CELL_BATTERY
     genderratio 127
     eggcycles 15
@@ -23623,7 +23624,7 @@ mondata SPECIES_GOLEM_ALOLAN, "-----"
     types TYPE_ROCK, TYPE_ELECTRIC
     catchrate 45
     baseexp 223
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -23639,7 +23640,7 @@ mondata SPECIES_GRIMER_ALOLAN, "-----"
     types TYPE_POISON, TYPE_DARK
     catchrate 190
     baseexp 65
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_BLACK_SLUDGE
     genderratio 127
     eggcycles 20
@@ -23655,7 +23656,7 @@ mondata SPECIES_MUK_ALOLAN, "-----"
     types TYPE_POISON, TYPE_DARK
     catchrate 75
     baseexp 175
-    evyields 1, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23671,7 +23672,7 @@ mondata SPECIES_EXEGGUTOR_ALOLAN, "-----"
     types TYPE_GRASS, TYPE_DRAGON
     catchrate 45
     baseexp 186
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23687,7 +23688,7 @@ mondata SPECIES_MAROWAK_ALOLAN, "-----"
     types TYPE_FIRE, TYPE_GHOST
     catchrate 75
     baseexp 149
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23703,7 +23704,7 @@ mondata SPECIES_RATICATE_ALOLAN_LARGE, "-----"
     types TYPE_DARK, TYPE_NORMAL
     catchrate 127
     baseexp 145
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PECHA_BERRY
     genderratio 127
     eggcycles 15
@@ -23719,7 +23720,7 @@ mondata SPECIES_MAROWAK_ALOLAN_LARGE, "-----"
     types TYPE_FIRE, TYPE_GHOST
     catchrate 75
     baseexp 149
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23735,7 +23736,7 @@ mondata SPECIES_GUMSHOOS_LARGE, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 127
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_PECHA_BERRY
     genderratio 127
     eggcycles 15
@@ -23751,7 +23752,7 @@ mondata SPECIES_VIKAVOLT_LARGE, "-----"
     types TYPE_BUG, TYPE_ELECTRIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -23767,7 +23768,7 @@ mondata SPECIES_RIBOMBEE_LARGE, "-----"
     types TYPE_BUG, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_BUG
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_HONEY
     genderratio 127
     eggcycles 20
@@ -23783,7 +23784,7 @@ mondata SPECIES_ARAQUANID_LARGE, "-----"
     types TYPE_WATER, TYPE_BUG
     catchrate 100
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MYSTIC_WATER
     genderratio 127
     eggcycles 15
@@ -23799,7 +23800,7 @@ mondata SPECIES_LURANTIS_LARGE, "-----"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MIRACLE_SEED
     genderratio 127
     eggcycles 20
@@ -23815,7 +23816,7 @@ mondata SPECIES_SALAZZLE_LARGE, "-----"
     types TYPE_POISON, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_SMOKE_BALL
     genderratio 254
     eggcycles 20
@@ -23831,7 +23832,7 @@ mondata SPECIES_TOGEDEMARU_LARGE, "-----"
     types TYPE_ELECTRIC, TYPE_STEEL
     catchrate 180
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_ELECTRIC_SEED
     genderratio 127
     eggcycles 10
@@ -23847,7 +23848,7 @@ mondata SPECIES_MIMIKYU_LARGE, "-----"
     types TYPE_GHOST, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_CHESTO_BERRY
     genderratio 127
     eggcycles 20
@@ -23863,7 +23864,7 @@ mondata SPECIES_MIMIKYU_BUSTED_LARGE, "-----"
     types TYPE_GHOST, TYPE_FAIRY
     catchrate 45
     baseexp 167
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23879,7 +23880,7 @@ mondata SPECIES_KOMMO_O_LARGE, "-----"
     types TYPE_DRAGON, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 3, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_RAZOR_CLAW, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -23895,7 +23896,7 @@ mondata SPECIES_MEOWTH_GALARIAN, "-----"
     types TYPE_STEEL, TYPE_STEEL
     catchrate 255
     baseexp 58
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23911,7 +23912,7 @@ mondata SPECIES_PONYTA_GALARIAN, "-----"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 190
     baseexp 82
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23927,7 +23928,7 @@ mondata SPECIES_RAPIDASH_GALARIAN, "-----"
     types TYPE_PSYCHIC, TYPE_FAIRY
     catchrate 60
     baseexp 175
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23943,7 +23944,7 @@ mondata SPECIES_SLOWPOKE_GALARIAN, "-----"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 190
     baseexp 63
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23959,7 +23960,7 @@ mondata SPECIES_SLOWBRO_GALARIAN, "-----"
     types TYPE_POISON, TYPE_PSYCHIC
     catchrate 75
     baseexp 172
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -23971,18 +23972,18 @@ mondata SPECIES_SLOWBRO_GALARIAN, "-----"
     colorflip BODY_COLOR_PINK, 0
 
 mondata SPECIES_FARFETCHD_GALARIAN, "-----"
-    basestats 52, 95, 55, 55, 58, 62
-    types TYPE_FIGHTING, TYPE_FIGHTING
-    catchrate 45
+    basestats 65, 95, 60, 60, 50, 65
+    types TYPE_FIGHTING, TYPE_FLYING
+    catchrate 235
     baseexp 132
-    evyields 0, 1, 0, 0, 0, 0
-    items ITEM_NONE, ITEM_LEEK
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_LEEK, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FLYING, EGG_GROUP_FIELD
-    abilities ABILITY_STEADFAST,  ABILITY_NONE
+    abilities ABILITY_STEADFAST, ABILITY_SHARPNESS
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
 
@@ -23991,7 +23992,7 @@ mondata SPECIES_WEEZING_GALARIAN, "-----"
     types TYPE_POISON, TYPE_FAIRY
     catchrate 60
     baseexp 172
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MISTY_SEED
     genderratio 127
     eggcycles 20
@@ -24007,7 +24008,7 @@ mondata SPECIES_MR_MIME_GALARIAN, "-----"
     types TYPE_ICE, TYPE_PSYCHIC
     catchrate 45
     baseexp 161
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -24023,7 +24024,7 @@ mondata SPECIES_ARTICUNO_GALARIAN, "-----"
     types TYPE_PSYCHIC, TYPE_FLYING
     catchrate 3
     baseexp 290
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -24039,7 +24040,7 @@ mondata SPECIES_ZAPDOS_GALARIAN, "-----"
     types TYPE_FIGHTING, TYPE_FLYING
     catchrate 3
     baseexp 290
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -24055,7 +24056,7 @@ mondata SPECIES_MOLTRES_GALARIAN, "-----"
     types TYPE_DARK, TYPE_FLYING
     catchrate 3
     baseexp 290
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -24071,7 +24072,7 @@ mondata SPECIES_SLOWKING_GALARIAN, "-----"
     types TYPE_POISON, TYPE_PSYCHIC
     catchrate 70
     baseexp 172
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -24087,7 +24088,7 @@ mondata SPECIES_CORSOLA_GALARIAN, "-----"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 60
     baseexp 144
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 191
     eggcycles 20
@@ -24103,7 +24104,7 @@ mondata SPECIES_ZIGZAGOON_GALARIAN, "-----"
     types TYPE_DARK, TYPE_NORMAL
     catchrate 255
     baseexp 56
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -24119,7 +24120,7 @@ mondata SPECIES_LINOONE_GALARIAN, "-----"
     types TYPE_DARK, TYPE_NORMAL
     catchrate 90
     baseexp 147
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -24135,7 +24136,7 @@ mondata SPECIES_DARUMAKA_GALARIAN, "-----"
     types TYPE_ICE, TYPE_ICE
     catchrate 120
     baseexp 63
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -24151,7 +24152,7 @@ mondata SPECIES_DARMANITAN_GALARIAN, "-----"
     types TYPE_ICE, TYPE_ICE
     catchrate 60
     baseexp 168
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -24165,9 +24166,9 @@ mondata SPECIES_DARMANITAN_GALARIAN, "-----"
 mondata SPECIES_YAMASK_GALARIAN, "-----"
     basestats 38, 55, 85, 30, 30, 65
     types TYPE_GROUND, TYPE_GHOST
-    catchrate 190
+    catchrate 225
     baseexp 61
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -24183,7 +24184,7 @@ mondata SPECIES_STUNFISK_GALARIAN, "-----"
     types TYPE_GROUND, TYPE_STEEL
     catchrate 75
     baseexp 165
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -24199,7 +24200,7 @@ mondata SPECIES_PIKACHU_COSPLAY, "-----"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 112
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_BALL
     genderratio 127
     eggcycles 10
@@ -24215,7 +24216,7 @@ mondata SPECIES_PIKACHU_ROCK_STAR, "-----"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 112
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_BALL
     genderratio 127
     eggcycles 10
@@ -24231,7 +24232,7 @@ mondata SPECIES_PIKACHU_BELLE, "-----"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 112
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_BALL
     genderratio 127
     eggcycles 10
@@ -24247,7 +24248,7 @@ mondata SPECIES_PIKACHU_POP_STAR, "-----"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 112
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_BALL
     genderratio 127
     eggcycles 10
@@ -24263,7 +24264,7 @@ mondata SPECIES_PIKACHU_PH_D, "-----"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 112
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_BALL
     genderratio 127
     eggcycles 10
@@ -24279,7 +24280,7 @@ mondata SPECIES_PIKACHU_LIBRE, "-----"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 112
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_BALL
     genderratio 127
     eggcycles 10
@@ -24295,7 +24296,7 @@ mondata SPECIES_PIKACHU_ORIGINAL_CAP, "-----"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 112
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_BALL
     genderratio 0
     eggcycles 10
@@ -24311,7 +24312,7 @@ mondata SPECIES_PIKACHU_HOENN_CAP, "-----"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 112
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_BALL
     genderratio 0
     eggcycles 10
@@ -24327,7 +24328,7 @@ mondata SPECIES_PIKACHU_SINNOH_CAP, "-----"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 112
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_BALL
     genderratio 0
     eggcycles 10
@@ -24343,7 +24344,7 @@ mondata SPECIES_PIKACHU_UNOVA_CAP, "-----"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 112
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_BALL
     genderratio 0
     eggcycles 10
@@ -24359,7 +24360,7 @@ mondata SPECIES_PIKACHU_KALOS_CAP, "-----"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 112
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_BALL
     genderratio 0
     eggcycles 10
@@ -24375,7 +24376,7 @@ mondata SPECIES_PIKACHU_ALOLA_CAP, "-----"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 112
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_BALL
     genderratio 0
     eggcycles 10
@@ -24391,7 +24392,7 @@ mondata SPECIES_PIKACHU_PARTNER_CAP, "-----"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 112
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_BALL
     genderratio 0
     eggcycles 10
@@ -24407,7 +24408,7 @@ mondata SPECIES_PIKACHU_WORLD_CAP, "-----"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 112
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_LIGHT_BALL
     genderratio 0
     eggcycles 10
@@ -24423,7 +24424,7 @@ mondata SPECIES_CASTFORM_SUNNY, "-----"
     types TYPE_FIRE, TYPE_FIRE
     catchrate 45
     baseexp 147
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_MYSTIC_WATER, ITEM_MYSTIC_WATER
     genderratio 127
     eggcycles 25
@@ -24439,7 +24440,7 @@ mondata SPECIES_CASTFORM_RAINY, "-----"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 147
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_MYSTIC_WATER, ITEM_MYSTIC_WATER
     genderratio 127
     eggcycles 25
@@ -24455,7 +24456,7 @@ mondata SPECIES_CASTFORM_SNOWY, "-----"
     types TYPE_ICE, TYPE_ICE
     catchrate 45
     baseexp 147
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_MYSTIC_WATER, ITEM_MYSTIC_WATER
     genderratio 127
     eggcycles 25
@@ -24471,7 +24472,7 @@ mondata SPECIES_CHERRIM_SUNSHINE, "-----"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 75
     baseexp 158
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_MIRACLE_SEED
     genderratio 127
     eggcycles 20
@@ -24487,7 +24488,7 @@ mondata SPECIES_SHELLOS_EAST_SEA, "-----"
     types TYPE_WATER, TYPE_WATER
     catchrate 190
     baseexp 65
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -24503,7 +24504,7 @@ mondata SPECIES_GASTRODON_EAST_SEA, "-----"
     types TYPE_WATER, TYPE_GROUND
     catchrate 75
     baseexp 166
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -24519,7 +24520,7 @@ mondata SPECIES_DIALGA_ORIGIN, "-----"
     types TYPE_STEEL, TYPE_DRAGON
     catchrate 30
     baseexp 220
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -24535,7 +24536,7 @@ mondata SPECIES_PALKIA_ORIGIN, "-----"
     types TYPE_WATER, TYPE_DRAGON
     catchrate 45
     baseexp 220
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -24551,7 +24552,7 @@ mondata SPECIES_BASCULIN_BLUE_STRIPED, "-----"
     types TYPE_WATER, TYPE_WATER
     catchrate 25
     baseexp 161
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_DEEP_SEA_SCALE
     genderratio 127
     eggcycles 40
@@ -24567,7 +24568,7 @@ mondata SPECIES_BASCULIN_WHITE_STRIPED, "-----"
     types TYPE_WATER, TYPE_WATER
     catchrate 25
     baseexp 161
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_DEEP_SEA_SCALE
     genderratio 127
     eggcycles 40
@@ -24583,7 +24584,7 @@ mondata SPECIES_DARMANITAN_ZEN_MODE, "-----"
     types TYPE_FIRE, TYPE_PSYCHIC
     catchrate 60
     baseexp 189
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -24599,7 +24600,7 @@ mondata SPECIES_DARMANITAN_ZEN_MODE_GALARIAN, "-----"
     types TYPE_ICE, TYPE_FIRE
     catchrate 60
     baseexp 189
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -24615,7 +24616,7 @@ mondata SPECIES_DEERLING_SUMMER, "-----"
     types TYPE_NORMAL, TYPE_GRASS
     catchrate 190
     baseexp 67
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -24631,7 +24632,7 @@ mondata SPECIES_DEERLING_AUTUMN, "-----"
     types TYPE_NORMAL, TYPE_GRASS
     catchrate 190
     baseexp 67
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -24647,7 +24648,7 @@ mondata SPECIES_DEERLING_WINTER, "-----"
     types TYPE_NORMAL, TYPE_GRASS
     catchrate 190
     baseexp 67
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -24663,7 +24664,7 @@ mondata SPECIES_SAWSBUCK_SUMMER, "-----"
     types TYPE_NORMAL, TYPE_GRASS
     catchrate 75
     baseexp 166
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -24679,7 +24680,7 @@ mondata SPECIES_SAWSBUCK_AUTUMN, "-----"
     types TYPE_NORMAL, TYPE_GRASS
     catchrate 75
     baseexp 166
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -24695,7 +24696,7 @@ mondata SPECIES_SAWSBUCK_WINTER, "-----"
     types TYPE_NORMAL, TYPE_GRASS
     catchrate 75
     baseexp 166
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -24711,7 +24712,7 @@ mondata SPECIES_TORNADUS_THERIAN, "-----"
     types TYPE_FLYING, TYPE_FLYING
     catchrate 3
     baseexp 261
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 120
@@ -24727,7 +24728,7 @@ mondata SPECIES_THUNDURUS_THERIAN, "-----"
     types TYPE_ELECTRIC, TYPE_FLYING
     catchrate 3
     baseexp 261
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 120
@@ -24743,7 +24744,7 @@ mondata SPECIES_LANDORUS_THERIAN, "-----"
     types TYPE_GROUND, TYPE_FLYING
     catchrate 3
     baseexp 270
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 120
@@ -24759,7 +24760,7 @@ mondata SPECIES_KYUREM_WHITE, "-----"
     types TYPE_DRAGON, TYPE_ICE
     catchrate 3
     baseexp 315
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -24775,7 +24776,7 @@ mondata SPECIES_KYUREM_BLACK, "-----"
     types TYPE_DRAGON, TYPE_ICE
     catchrate 3
     baseexp 315
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -24791,7 +24792,7 @@ mondata SPECIES_KELDEO_RESOLUTE, "-----"
     types TYPE_WATER, TYPE_FIGHTING
     catchrate 3
     baseexp 261
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 80
@@ -24807,7 +24808,7 @@ mondata SPECIES_MELOETTA_PIROUETTE, "-----"
     types TYPE_NORMAL, TYPE_FIGHTING
     catchrate 3
     baseexp 270
-    evyields 0, 1, 1, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_STAR_PIECE, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 120
@@ -24823,7 +24824,7 @@ mondata SPECIES_GENESECT_DOUSE_DRIVE, "-----"
     types TYPE_BUG, TYPE_STEEL
     catchrate 3
     baseexp 270
-    evyields 0, 1, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -24839,7 +24840,7 @@ mondata SPECIES_GENESECT_SHOCK_DRIVE, "-----"
     types TYPE_BUG, TYPE_STEEL
     catchrate 3
     baseexp 270
-    evyields 0, 1, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -24855,7 +24856,7 @@ mondata SPECIES_GENESECT_BURN_DRIVE, "-----"
     types TYPE_BUG, TYPE_STEEL
     catchrate 3
     baseexp 270
-    evyields 0, 1, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -24871,7 +24872,7 @@ mondata SPECIES_GENESECT_CHILL_DRIVE, "-----"
     types TYPE_BUG, TYPE_STEEL
     catchrate 3
     baseexp 270
-    evyields 0, 1, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -24887,7 +24888,7 @@ mondata SPECIES_GRENINJA_BATTLE_BOND, "-----"
     types TYPE_WATER, TYPE_DARK
     catchrate 45
     baseexp 239
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -24903,7 +24904,7 @@ mondata SPECIES_GRENINJA_ASH, "-----"
     types TYPE_WATER, TYPE_DARK
     catchrate 45
     baseexp 288
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -24919,7 +24920,7 @@ mondata SPECIES_VIVILLON_POLAR, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -24935,7 +24936,7 @@ mondata SPECIES_VIVILLON_TUNDRA, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -24951,7 +24952,7 @@ mondata SPECIES_VIVILLON_CONTINENTAL, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -24967,7 +24968,7 @@ mondata SPECIES_VIVILLON_GARDEN, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -24983,7 +24984,7 @@ mondata SPECIES_VIVILLON_ELEGANT, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -24999,7 +25000,7 @@ mondata SPECIES_VIVILLON_MEADOW, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25015,7 +25016,7 @@ mondata SPECIES_VIVILLON_MODERN, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25031,7 +25032,7 @@ mondata SPECIES_VIVILLON_MARINE, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25047,7 +25048,7 @@ mondata SPECIES_VIVILLON_ARCHIPELAGO, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25063,7 +25064,7 @@ mondata SPECIES_VIVILLON_HIGH_PLAINS, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25079,7 +25080,7 @@ mondata SPECIES_VIVILLON_SANDSTORM, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25095,7 +25096,7 @@ mondata SPECIES_VIVILLON_RIVER, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25111,7 +25112,7 @@ mondata SPECIES_VIVILLON_MONSOON, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25127,7 +25128,7 @@ mondata SPECIES_VIVILLON_SAVANNA, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25143,7 +25144,7 @@ mondata SPECIES_VIVILLON_SUN, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25159,7 +25160,7 @@ mondata SPECIES_VIVILLON_OCEAN, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25175,7 +25176,7 @@ mondata SPECIES_VIVILLON_JUNGLE, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25191,7 +25192,7 @@ mondata SPECIES_VIVILLON_FANCY, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25207,7 +25208,7 @@ mondata SPECIES_VIVILLON_POKE_BALL, "-----"
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 185
-    evyields 1, 0, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25223,7 +25224,7 @@ mondata SPECIES_FLABEBE_YELLOW_FLOWER, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 225
     baseexp 61
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -25239,7 +25240,7 @@ mondata SPECIES_FLABEBE_ORANGE_FLOWER, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 225
     baseexp 61
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -25255,7 +25256,7 @@ mondata SPECIES_FLABEBE_BLUE_FLOWER, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 225
     baseexp 61
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -25271,7 +25272,7 @@ mondata SPECIES_FLABEBE_WHITE_FLOWER, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 225
     baseexp 61
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -25287,7 +25288,7 @@ mondata SPECIES_FLOETTE_YELLOW_FLOWER, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 120
     baseexp 130
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -25303,7 +25304,7 @@ mondata SPECIES_FLOETTE_ORANGE_FLOWER, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 120
     baseexp 130
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -25319,7 +25320,7 @@ mondata SPECIES_FLOETTE_BLUE_FLOWER, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 120
     baseexp 130
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -25335,7 +25336,7 @@ mondata SPECIES_FLOETTE_WHITE_FLOWER, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 120
     baseexp 130
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -25351,7 +25352,7 @@ mondata SPECIES_FLOETTE_ETERNAL_FLOWER, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 120
     baseexp 243
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -25367,7 +25368,7 @@ mondata SPECIES_FLORGES_YELLOW_FLOWER, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 45
     baseexp 248
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -25383,7 +25384,7 @@ mondata SPECIES_FLORGES_ORANGE_FLOWER, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 45
     baseexp 248
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -25399,7 +25400,7 @@ mondata SPECIES_FLORGES_BLUE_FLOWER, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 45
     baseexp 248
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -25415,7 +25416,7 @@ mondata SPECIES_FLORGES_WHITE_FLOWER, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 45
     baseexp 248
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -25431,7 +25432,7 @@ mondata SPECIES_FURFROU_HEART, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 160
     baseexp 165
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -25447,7 +25448,7 @@ mondata SPECIES_FURFROU_STAR, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 160
     baseexp 165
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -25463,7 +25464,7 @@ mondata SPECIES_FURFROU_DIAMOND, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 160
     baseexp 165
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -25479,7 +25480,7 @@ mondata SPECIES_FURFROU_DEBUTANTE, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 160
     baseexp 165
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -25495,7 +25496,7 @@ mondata SPECIES_FURFROU_MATRON, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 160
     baseexp 165
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -25511,7 +25512,7 @@ mondata SPECIES_FURFROU_DANDY, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 160
     baseexp 165
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -25527,7 +25528,7 @@ mondata SPECIES_FURFROU_LA_REINE, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 160
     baseexp 165
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -25543,7 +25544,7 @@ mondata SPECIES_FURFROU_KABUKI, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 160
     baseexp 165
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -25559,7 +25560,7 @@ mondata SPECIES_FURFROU_PHARAOH, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 160
     baseexp 165
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -25575,7 +25576,7 @@ mondata SPECIES_AEGISLASH_BLADE, "-----"
     types TYPE_STEEL, TYPE_GHOST
     catchrate 45
     baseexp 234
-    evyields 0, 0, 2, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -25591,7 +25592,7 @@ mondata SPECIES_PUMPKABOO_SMALL, "-----"
     types TYPE_GHOST, TYPE_GRASS
     catchrate 120
     baseexp 67
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -25607,7 +25608,7 @@ mondata SPECIES_PUMPKABOO_LARGE, "-----"
     types TYPE_GHOST, TYPE_GRASS
     catchrate 120
     baseexp 67
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -25623,7 +25624,7 @@ mondata SPECIES_PUMPKABOO_SUPER, "-----"
     types TYPE_GHOST, TYPE_GRASS
     catchrate 120
     baseexp 67
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_MIRACLE_SEED, ITEM_MIRACLE_SEED
     genderratio 127
     eggcycles 20
@@ -25639,7 +25640,7 @@ mondata SPECIES_GOURGEIST_SMALL, "-----"
     types TYPE_GHOST, TYPE_GRASS
     catchrate 60
     baseexp 173
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -25655,7 +25656,7 @@ mondata SPECIES_GOURGEIST_LARGE, "-----"
     types TYPE_GHOST, TYPE_GRASS
     catchrate 60
     baseexp 173
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -25671,7 +25672,7 @@ mondata SPECIES_GOURGEIST_SUPER, "-----"
     types TYPE_GHOST, TYPE_GRASS
     catchrate 60
     baseexp 173
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_MIRACLE_SEED, ITEM_MIRACLE_SEED
     genderratio 127
     eggcycles 20
@@ -25687,7 +25688,7 @@ mondata SPECIES_XERNEAS_ACTIVE, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 45
     baseexp 306
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -25703,7 +25704,7 @@ mondata SPECIES_ZYGARDE_10, "-----"
     types TYPE_DRAGON, TYPE_GROUND
     catchrate 3
     baseexp 219
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -25719,7 +25720,7 @@ mondata SPECIES_ZYGARDE_10_POWER_CONSTRUCT, "-----"
     types TYPE_DRAGON, TYPE_GROUND
     catchrate 3
     baseexp 219
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -25735,7 +25736,7 @@ mondata SPECIES_ZYGARDE_50_POWER_CONSTRUCT, "-----"
     types TYPE_DRAGON, TYPE_GROUND
     catchrate 3
     baseexp 270
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -25751,7 +25752,7 @@ mondata SPECIES_ZYGARDE_10_COMPLETE, "-----"
     types TYPE_DRAGON, TYPE_GROUND
     catchrate 3
     baseexp 319
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -25767,7 +25768,7 @@ mondata SPECIES_ZYGARDE_50_COMPLETE, "-----"
     types TYPE_DRAGON, TYPE_GROUND
     catchrate 3
     baseexp 319
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -25783,7 +25784,7 @@ mondata SPECIES_HOOPA_UNBOUND, "-----"
     types TYPE_PSYCHIC, TYPE_DARK
     catchrate 3
     baseexp 270
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -25799,7 +25800,7 @@ mondata SPECIES_ORICORIO_POM_POM, "-----"
     types TYPE_ELECTRIC, TYPE_FLYING
     catchrate 45
     baseexp 167
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_HONEY
     genderratio 191
     eggcycles 20
@@ -25815,7 +25816,7 @@ mondata SPECIES_ORICORIO_PAU, "-----"
     types TYPE_PSYCHIC, TYPE_FLYING
     catchrate 45
     baseexp 167
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_HONEY
     genderratio 191
     eggcycles 20
@@ -25831,7 +25832,7 @@ mondata SPECIES_ORICORIO_SENSU, "-----"
     types TYPE_GHOST, TYPE_FLYING
     catchrate 45
     baseexp 167
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_HONEY
     genderratio 191
     eggcycles 20
@@ -25847,7 +25848,7 @@ mondata SPECIES_ROCKRUFF_OWN_TEMPO, "-----"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 190
     baseexp 56
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25863,14 +25864,14 @@ mondata SPECIES_LYCANROC_MIDNIGHT, "-----"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 90
     baseexp 170
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_KEEN_EYE,  ABILITY_VITAL_SPIRIT
+    abilities ABILITY_TOUGH_CLAWS,  ABILITY_INTIMIDATE
     runchance 0
     colorflip BODY_COLOR_RED, 0
 
@@ -25879,7 +25880,7 @@ mondata SPECIES_LYCANROC_DUSK, "-----"
     types TYPE_ROCK, TYPE_ROCK
     catchrate 90
     baseexp 170
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25895,7 +25896,7 @@ mondata SPECIES_WISHIWASHI_SCHOOL, "-----"
     types TYPE_WATER, TYPE_WATER
     catchrate 60
     baseexp 61
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -25911,7 +25912,7 @@ mondata SPECIES_MINIOR_METEOR_ORANGE, "-----"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 30
     baseexp 154
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 25
@@ -25927,7 +25928,7 @@ mondata SPECIES_MINIOR_METEOR_YELLOW, "-----"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 30
     baseexp 154
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 25
@@ -25943,7 +25944,7 @@ mondata SPECIES_MINIOR_METEOR_GREEN, "-----"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 30
     baseexp 154
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 25
@@ -25959,7 +25960,7 @@ mondata SPECIES_MINIOR_METEOR_BLUE, "-----"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 30
     baseexp 154
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 25
@@ -25975,7 +25976,7 @@ mondata SPECIES_MINIOR_METEOR_INDIGO, "-----"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 30
     baseexp 154
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 25
@@ -25991,7 +25992,7 @@ mondata SPECIES_MINIOR_METEOR_VIOLET, "-----"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 30
     baseexp 154
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 25
@@ -26007,7 +26008,7 @@ mondata SPECIES_MINIOR_CORE_RED, "-----"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 30
     baseexp 154
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 25
@@ -26023,7 +26024,7 @@ mondata SPECIES_MINIOR_CORE_ORANGE, "-----"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 30
     baseexp 154
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 25
@@ -26039,7 +26040,7 @@ mondata SPECIES_MINIOR_CORE_YELLOW, "-----"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 30
     baseexp 154
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 25
@@ -26055,7 +26056,7 @@ mondata SPECIES_MINIOR_CORE_GREEN, "-----"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 30
     baseexp 154
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 25
@@ -26071,7 +26072,7 @@ mondata SPECIES_MINIOR_CORE_BLUE, "-----"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 30
     baseexp 154
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 25
@@ -26087,7 +26088,7 @@ mondata SPECIES_MINIOR_CORE_INDIGO, "-----"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 30
     baseexp 154
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 25
@@ -26103,7 +26104,7 @@ mondata SPECIES_MINIOR_CORE_VIOLET, "-----"
     types TYPE_ROCK, TYPE_FLYING
     catchrate 30
     baseexp 154
-    evyields 0, 0, 1, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_STAR_PIECE
     genderratio 255
     eggcycles 25
@@ -26119,7 +26120,7 @@ mondata SPECIES_MIMIKYU_BUSTED, "-----"
     types TYPE_GHOST, TYPE_FAIRY
     catchrate 45
     baseexp 167
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -26135,7 +26136,7 @@ mondata SPECIES_NECROZMA_DUSK_MANE, "-----"
     types TYPE_PSYCHIC, TYPE_STEEL
     catchrate 255
     baseexp 306
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -26151,7 +26152,7 @@ mondata SPECIES_NECROZMA_DAWN_WINGS, "-----"
     types TYPE_PSYCHIC, TYPE_GHOST
     catchrate 255
     baseexp 306
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -26167,7 +26168,7 @@ mondata SPECIES_NECROZMA_ULTRA_DUSK_MANE, "-----"
     types TYPE_PSYCHIC, TYPE_DRAGON
     catchrate 255
     baseexp 339
-    evyields 0, 1, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -26183,7 +26184,7 @@ mondata SPECIES_NECROZMA_ULTRA_DAWN_WINGS, "-----"
     types TYPE_PSYCHIC, TYPE_DRAGON
     catchrate 255
     baseexp 339
-    evyields 0, 1, 0, 1, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -26199,7 +26200,7 @@ mondata SPECIES_MAGEARNA_ORIGINAL, "-----"
     types TYPE_STEEL, TYPE_FAIRY
     catchrate 3
     baseexp 270
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -26215,7 +26216,7 @@ mondata SPECIES_PIKACHU_PARTNER, "-----"
     types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_ORAN_BERRY, ITEM_LIGHT_BALL
     genderratio 127
     eggcycles 10
@@ -26231,7 +26232,7 @@ mondata SPECIES_EEVEE_PARTNER, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 35
@@ -26247,7 +26248,7 @@ mondata SPECIES_CRAMORANT_GULPING, "-----"
     types TYPE_FLYING, TYPE_WATER
     catchrate 45
     baseexp 166
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -26263,7 +26264,7 @@ mondata SPECIES_CRAMORANT_GORGING, "-----"
     types TYPE_FLYING, TYPE_WATER
     catchrate 45
     baseexp 166
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -26279,7 +26280,7 @@ mondata SPECIES_TOXTRICITY_LOW_KEY, "-----"
     types TYPE_ELECTRIC, TYPE_POISON
     catchrate 45
     baseexp 176
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -26295,7 +26296,7 @@ mondata SPECIES_SINISTEA_ANTIQUE, "-----"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 120
     baseexp 62
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -26311,7 +26312,7 @@ mondata SPECIES_POLTEAGEIST_ANTIQUE, "-----"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 60
     baseexp 178
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -26327,7 +26328,7 @@ mondata SPECIES_ALCREMIE_BERRY_SWEET, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 100
     baseexp 173
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -26343,7 +26344,7 @@ mondata SPECIES_ALCREMIE_LOVE_SWEET, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 100
     baseexp 173
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -26359,7 +26360,7 @@ mondata SPECIES_ALCREMIE_STAR_SWEET, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 100
     baseexp 173
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -26375,7 +26376,7 @@ mondata SPECIES_ALCREMIE_CLOVER_SWEET, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 100
     baseexp 173
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -26391,7 +26392,7 @@ mondata SPECIES_ALCREMIE_FLOWER_SWEET, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 100
     baseexp 173
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -26407,7 +26408,7 @@ mondata SPECIES_ALCREMIE_RIBBON_SWEET, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 100
     baseexp 173
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -26423,7 +26424,7 @@ mondata SPECIES_ALCREMIE_FILLER_1, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 100
     baseexp 173
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -26439,7 +26440,7 @@ mondata SPECIES_ALCREMIE_FILLER_2, "-----"
     types TYPE_FAIRY, TYPE_FAIRY
     catchrate 100
     baseexp 173
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -26455,7 +26456,7 @@ mondata SPECIES_EISCUE_NOICE_FACE, "-----"
     types TYPE_ICE, TYPE_ICE
     catchrate 60
     baseexp 165
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 25
@@ -26471,7 +26472,7 @@ mondata SPECIES_MORPEKO_HANGRY, "-----"
     types TYPE_ELECTRIC, TYPE_DARK
     catchrate 180
     baseexp 153
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 10
@@ -26487,7 +26488,7 @@ mondata SPECIES_ZACIAN_CROWNED, "-----"
     types TYPE_FAIRY, TYPE_STEEL
     catchrate 10
     baseexp 360
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -26503,7 +26504,7 @@ mondata SPECIES_ZAMAZENTA_CROWNED, "-----"
     types TYPE_FIGHTING, TYPE_STEEL
     catchrate 10
     baseexp 360
-    evyields 0, 0, 0, 3, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -26519,7 +26520,7 @@ mondata SPECIES_ETERNATUS_ETERNAMAX, "-----"
     types TYPE_POISON, TYPE_DRAGON
     catchrate 255
     baseexp 563
-    evyields 3, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -26535,7 +26536,7 @@ mondata SPECIES_URSHIFU_RAPID_STRIKE, "-----"
     types TYPE_FIGHTING, TYPE_WATER
     catchrate 3
     baseexp 275
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 120
@@ -26551,7 +26552,7 @@ mondata SPECIES_ZARUDE_DADA, "-----"
     types TYPE_DARK, TYPE_GRASS
     catchrate 3
     baseexp 300
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -26567,7 +26568,7 @@ mondata SPECIES_CALYREX_ICE_RIDER, "-----"
     types TYPE_PSYCHIC, TYPE_ICE
     catchrate 3
     baseexp 340
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -26583,7 +26584,7 @@ mondata SPECIES_CALYREX_SHADOW_RIDER, "-----"
     types TYPE_PSYCHIC, TYPE_GHOST
     catchrate 3
     baseexp 340
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 120
@@ -26599,7 +26600,7 @@ mondata SPECIES_ENAMORUS_THERIAN, "-----"
     types (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL, TYPE_FLYING
     catchrate 3
     baseexp 0
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 0
@@ -26615,7 +26616,7 @@ mondata SPECIES_GROWLITHE_HISUIAN, "-----"
     types TYPE_FIRE, TYPE_ROCK
     catchrate 235
     baseexp 91
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 63
     eggcycles 20
@@ -26631,7 +26632,7 @@ mondata SPECIES_ARCANINE_HISUIAN, "-----"
     types TYPE_FIRE, TYPE_ROCK
     catchrate 0
     baseexp 213
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 63
     eggcycles 0
@@ -26647,7 +26648,7 @@ mondata SPECIES_VOLTORB_HISUIAN, "-----"
     types TYPE_ELECTRIC, TYPE_GRASS
     catchrate 235
     baseexp 103
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -26663,7 +26664,7 @@ mondata SPECIES_ELECTRODE_HISUIAN, "-----"
     types TYPE_ELECTRIC, TYPE_GRASS
     catchrate 135
     baseexp 150
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -26675,11 +26676,11 @@ mondata SPECIES_ELECTRODE_HISUIAN, "-----"
     colorflip BODY_COLOR_RED, 0
 
 mondata SPECIES_TYPHLOSION_HISUIAN, "-----"
-    basestats 73, 84, 78, 95, 119, 85
+    basestats 80, 70, 80, 105, 125, 90
     types TYPE_FIRE, TYPE_GHOST
     catchrate 45
     baseexp 209
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -26695,7 +26696,7 @@ mondata SPECIES_QWILFISH_HISUIAN, "-----"
     types TYPE_DARK, TYPE_POISON
     catchrate 235
     baseexp 100
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_POISON_BARB
     genderratio 127
     eggcycles 20
@@ -26711,7 +26712,7 @@ mondata SPECIES_SNEASEL_HISUIAN, "-----"
     types TYPE_FIGHTING, TYPE_POISON
     catchrate 235
     baseexp 132
-    evyields 0, 0, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_GRIP_CLAW, ITEM_QUICK_CLAW
     genderratio 127
     eggcycles 20
@@ -26727,7 +26728,7 @@ mondata SPECIES_SAMUROTT_HISUIAN, "-----"
     types TYPE_WATER, TYPE_DARK
     catchrate 55
     baseexp 155
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -26743,7 +26744,7 @@ mondata SPECIES_LILLIGANT_HISUIAN, "-----"
     types TYPE_GRASS, TYPE_FIGHTING
     catchrate 135
     baseexp 109
-    evyields 0, 1, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -26759,7 +26760,7 @@ mondata SPECIES_ZORUA_HISUIAN, "-----"
     types TYPE_NORMAL, TYPE_GHOST
     catchrate 215
     baseexp 43
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 25
@@ -26775,7 +26776,7 @@ mondata SPECIES_ZOROARK_HISUIAN, "-----"
     types TYPE_NORMAL, TYPE_GHOST
     catchrate 115
     baseexp 117
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 20
@@ -26791,7 +26792,7 @@ mondata SPECIES_BRAVIARY_HISUIAN, "-----"
     types TYPE_PSYCHIC, TYPE_FLYING
     catchrate 135
     baseexp 117
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -26807,7 +26808,7 @@ mondata SPECIES_SLIGGOO_HISUIAN, "-----"
     types TYPE_STEEL, TYPE_DRAGON
     catchrate 55
     baseexp 270
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -26823,7 +26824,7 @@ mondata SPECIES_GOODRA_HISUIAN, "-----"
     types TYPE_STEEL, TYPE_DRAGON
     catchrate 55
     baseexp 270
-    evyields 0, 0, 0, 0, 0, 3
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -26839,7 +26840,7 @@ mondata SPECIES_AVALUGG_HISUIAN, "-----"
     types TYPE_ICE, TYPE_ROCK
     catchrate 55
     baseexp 180
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -26855,7 +26856,7 @@ mondata SPECIES_DECIDUEYE_HISUIAN, "-----"
     types TYPE_GRASS, TYPE_FIGHTING
     catchrate 55
     baseexp 239
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 31
     eggcycles 15
@@ -26871,7 +26872,7 @@ mondata SPECIES_KLEAVOR_LORD, "-----"
     types TYPE_BUG, TYPE_ROCK
     catchrate 115
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 0
@@ -26887,7 +26888,7 @@ mondata SPECIES_LILLIGANT_LADY, "-----"
     types TYPE_GRASS, TYPE_FIGHTING
     catchrate 135
     baseexp 109
-    evyields 0, 1, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -26903,7 +26904,7 @@ mondata SPECIES_ARCANINE_LORD, "-----"
     types TYPE_FIRE, TYPE_ROCK
     catchrate 0
     baseexp 213
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 63
     eggcycles 0
@@ -26919,7 +26920,7 @@ mondata SPECIES_ELECTRODE_LORD, "-----"
     types TYPE_ELECTRIC, TYPE_GRASS
     catchrate 135
     baseexp 150
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -26935,7 +26936,7 @@ mondata SPECIES_AVALUGG_LORD, "-----"
     types TYPE_ICE, TYPE_ROCK
     catchrate 55
     baseexp 180
-    evyields 0, 0, 2, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -26951,7 +26952,7 @@ mondata SPECIES_UNFEZANT_FEMALE, "-----"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 45
     baseexp 140
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 15
@@ -26967,7 +26968,7 @@ mondata SPECIES_FRILLISH_FEMALE, "-----"
     types TYPE_WATER, TYPE_GHOST
     catchrate 190
     baseexp 43
-    evyields 0, 0, 0, 0, 0, 1
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -26983,7 +26984,7 @@ mondata SPECIES_JELLICENT_FEMALE, "-----"
     types TYPE_WATER, TYPE_GHOST
     catchrate 60
     baseexp 109
-    evyields 0, 0, 0, 0, 0, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -26999,7 +27000,7 @@ mondata SPECIES_PYROAR_FEMALE, "-----"
     types TYPE_FIRE, TYPE_NORMAL
     catchrate 65
     baseexp 177
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -27015,7 +27016,7 @@ mondata SPECIES_MEOWSTIC_FEMALE, "-----"
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 75
     baseexp 163
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 20
@@ -27031,7 +27032,7 @@ mondata SPECIES_INDEEDEE_FEMALE, "-----"
     types TYPE_PSYCHIC, TYPE_NORMAL
     catchrate 30
     baseexp 166
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 40
@@ -27047,7 +27048,7 @@ mondata SPECIES_BASCULEGION_FEMALE, "-----"
     types TYPE_WATER, TYPE_GHOST
     catchrate 135
     baseexp 208
-    evyields 2,0,0,0,0,0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 0
@@ -27063,7 +27064,7 @@ mondata SPECIES_MAUSHOLD_FAMILY_OF_THREE, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 2, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 10
@@ -27079,7 +27080,7 @@ mondata SPECIES_SQUAWKABILLY_BLUE_PLUMAGE, "-----"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -27095,7 +27096,7 @@ mondata SPECIES_SQUAWKABILLY_YELLOW_PLUMAGE, "-----"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -27111,7 +27112,7 @@ mondata SPECIES_SQUAWKABILLY_WHITE_PLUMAGE, "-----"
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 190
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 15
@@ -27127,7 +27128,7 @@ mondata SPECIES_PALAFIN_HERO, "-----"
     types TYPE_WATER, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 40
@@ -27143,7 +27144,7 @@ mondata SPECIES_TATSUGIRI_DROOPY, "-----"
     types TYPE_DRAGON, TYPE_WATER
     catchrate 100
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 35
@@ -27159,7 +27160,7 @@ mondata SPECIES_TATSUGIRI_STRETCHY, "-----"
     types TYPE_DRAGON, TYPE_WATER
     catchrate 100
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 35
@@ -27175,7 +27176,7 @@ mondata SPECIES_DUDUNSPARCE_THREE_SEGMENT, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -27191,7 +27192,7 @@ mondata SPECIES_GIMMIGHOUL_ROAMING, "-----"
     types TYPE_GHOST, TYPE_GHOST
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -27207,7 +27208,7 @@ mondata SPECIES_WOOPER_PALDEAN, "-----"
     types TYPE_POISON, TYPE_GROUND
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 1, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -27223,7 +27224,7 @@ mondata SPECIES_TAUROS_COMBAT, "-----"
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -27239,7 +27240,7 @@ mondata SPECIES_TAUROS_BLAZE, "-----"
     types TYPE_FIGHTING, TYPE_FIRE
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -27255,7 +27256,7 @@ mondata SPECIES_TAUROS_AQUA, "-----"
     types TYPE_FIGHTING, TYPE_WATER
     catchrate 45
     baseexp 0 // defined in baseexp.s
-    evyields 0, 1, 0, 1, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 20
@@ -27271,7 +27272,7 @@ mondata SPECIES_OINKOLOGNE_FEMALE, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 100
     baseexp 0 // defined in baseexp.s
-    evyields 2, 0, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 15
@@ -27287,7 +27288,7 @@ mondata SPECIES_REVAVROOM_SEGIN, "-----"
     types TYPE_STEEL, TYPE_POISON
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -27303,7 +27304,7 @@ mondata SPECIES_REVAVROOM_SCHEDAR, "-----"
     types TYPE_STEEL, TYPE_POISON
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -27319,7 +27320,7 @@ mondata SPECIES_REVAVROOM_NAVI, "-----"
     types TYPE_STEEL, TYPE_POISON
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -27335,7 +27336,7 @@ mondata SPECIES_REVAVROOM_RUCHBAH, "-----"
     types TYPE_STEEL, TYPE_POISON
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -27351,7 +27352,7 @@ mondata SPECIES_REVAVROOM_CAPH , "-----"
     types TYPE_STEEL, TYPE_POISON
     catchrate 75
     baseexp 0 // defined in baseexp.s
-    evyields 0, 2, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -27367,7 +27368,7 @@ mondata SPECIES_KORAIDON_LIMITED_BUILD, "-----"
     types TYPE_FIGHTING, TYPE_DRAGON
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -27383,7 +27384,7 @@ mondata SPECIES_KORAIDON_SPRINTING_BUILD, "-----"
     types TYPE_FIGHTING, TYPE_DRAGON
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -27399,7 +27400,7 @@ mondata SPECIES_KORAIDON_SWIMMING_BUILD, "-----"
     types TYPE_FIGHTING, TYPE_DRAGON
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -27415,7 +27416,7 @@ mondata SPECIES_KORAIDON_GLIDING_BUILD, "-----"
     types TYPE_FIGHTING, TYPE_DRAGON
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -27431,7 +27432,7 @@ mondata SPECIES_MIRAIDON_LOW_POWER_MODE, "-----"
     types TYPE_ELECTRIC, TYPE_DRAGON
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -27447,7 +27448,7 @@ mondata SPECIES_MIRAIDON_DRIVE_MODE, "-----"
     types TYPE_ELECTRIC, TYPE_DRAGON
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -27463,7 +27464,7 @@ mondata SPECIES_MIRAIDON_AQUATIC_MODE, "-----"
     types TYPE_ELECTRIC, TYPE_DRAGON
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -27479,7 +27480,7 @@ mondata SPECIES_MIRAIDON_GLIDE_MODE, "-----"
     types TYPE_ELECTRIC, TYPE_DRAGON
     catchrate 3
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 50
@@ -27495,7 +27496,7 @@ mondata SPECIES_POLTCHAGEIST_MASTERPIECE, "-----"
     types TYPE_GRASS, TYPE_GHOST
     catchrate 120
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 1, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -27511,7 +27512,7 @@ mondata SPECIES_SINISTCHA_MASTERPIECE, "-----"
     types TYPE_GRASS, TYPE_GHOST
     catchrate 60
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 2, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 255
     eggcycles 20
@@ -27527,7 +27528,7 @@ mondata SPECIES_OGERPON_WELLSPRING_MASK, "-----"
     types TYPE_GRASS, TYPE_WATER
     catchrate 5
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 10
@@ -27543,7 +27544,7 @@ mondata SPECIES_OGERPON_HEARTHFLAME_MASK, "-----"
     types TYPE_GRASS, TYPE_FIRE
     catchrate 5
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 10
@@ -27559,7 +27560,7 @@ mondata SPECIES_OGERPON_CORNERSTONE_MASK, "-----"
     types TYPE_GRASS, TYPE_ROCK
     catchrate 5
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 10
@@ -27575,7 +27576,7 @@ mondata SPECIES_OGERPON_TEAL_MASK_TERASTAL, "-----"
     types TYPE_GRASS, TYPE_GRASS
     catchrate 5
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 10
@@ -27591,7 +27592,7 @@ mondata SPECIES_OGERPON_WELLSPRING_MASK_TERASTAL, "-----"
     types TYPE_GRASS, TYPE_WATER
     catchrate 5
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 10
@@ -27607,7 +27608,7 @@ mondata SPECIES_OGERPON_HEARTHFLAME_MASK_TERASTAL, "-----"
     types TYPE_GRASS, TYPE_FIRE
     catchrate 5
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 10
@@ -27623,7 +27624,7 @@ mondata SPECIES_OGERPON_CORNERSTONE_MASK_TERASTAL, "-----"
     types TYPE_GRASS, TYPE_ROCK
     catchrate 5
     baseexp 0 // defined in baseexp.s
-    evyields 0, 3, 0, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 254
     eggcycles 10
@@ -27639,7 +27640,7 @@ mondata SPECIES_URSALUNA_BLOODMOON, "-----"
     types TYPE_GROUND, TYPE_NORMAL
     catchrate 20
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 0, 0, 3, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 20
@@ -27655,7 +27656,7 @@ mondata SPECIES_TERAPAGOS_TERASTAL, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 5
@@ -27671,7 +27672,7 @@ mondata SPECIES_TERAPAGOS_STELLAR, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
-    evyields 0, 0, 1, 0, 0, 0
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 127
     eggcycles 5
