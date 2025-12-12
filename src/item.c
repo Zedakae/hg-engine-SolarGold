@@ -627,3 +627,11 @@ void ItemMenuUseFunc_Nectar(struct ItemMenuUseData *data, const struct ItemCheck
     env->atexit_TaskEnv = sub_0203FAE8(fieldSystem, HEAPID_WORLD, data->itemId);
     sub_0203C8F0(env, 0x0203CA9C | 1);
 }
+
+void ItemMenuUseFunc_InfiniteCandy(struct ItemMenuUseData* data, const struct ItemCheckUseData* dat2 UNUSED)
+{
+    FieldSystem* fieldSystem = data->taskManager->fieldSystem; // TaskManager_GetFieldSystem(data->taskManager);
+    struct BagViewAppWork* env = data->taskManager->env; //TaskManager_GetEnvironment(data->taskManager);
+    env->atexit_TaskEnv = sub_0203FAE8(fieldSystem, HEAPID_WORLD, ITEM_INFINITE_CANDY);
+    sub_0203C8F0(env, 0x0203CA9C | 1);
+}

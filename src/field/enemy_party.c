@@ -302,7 +302,21 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
             rnd = gf_rand();
         }
         rnd = (rnd << 8) + rnd_tmp;
+                
+        // goal: create custom trainer's pokemon level's to scale depending on the player's party's pokemon level and/or hardcap level.
         pow = pow * 31 / 255;
+        #ifdef IMPLEMENT_LEVEL_CAP
+        u32 levelCap = 0;
+        if (bp->trainer_id[1] == 506 || bp->trainer_id[1] == 508 || bp->trainer_id[1] == 1 || bp->trainer_id[1] == 266 || bp->trainer_id[1] == 269) // trainer numbers and add "|| bp->trainer_id[1] == trainer#ID" and for doubles this example >> "bp->trainer[2] == lance#ID"
+        {
+            levelCap = GetScriptVar(LEVEL_CAP_VARIABLE); level = levelCap - 1;
+        } else if (bp->trainer_id[1] == 737) // trainer numbers and add "|| bp->trainer_id[1] == trainer#ID"
+        {
+            levelCap = GetScriptVar(LEVEL_CAP_VARIABLE);
+            level = levelCap;
+        }
+        debug_printf("level %d, num %d, var %d\n", level, num, GetScriptVar(LEVEL_CAP_VARIABLE));
+        #endif // IMPLEMENT_LEVEL_CAP
         PokeParaSet(mons[i], species, level, pow, 1, rnd, 2, 0);
         SetMonData(mons[i], MON_DATA_FORM, &form_no);
 
