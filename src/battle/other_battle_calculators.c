@@ -2966,6 +2966,47 @@ int LONG_CALL GetDynamicMoveType(struct BattleSystem *bsys, struct BattleStruct 
     return GetAdjustedMoveTypeBasics(ctx, moveNo, GetBattlerAbility(ctx, battlerId), type);
 }
 
+const u16 HealBlockUnusableMoves[] = {
+    MOVE_RECOVER,
+    MOVE_SOFT_BOILED,
+    MOVE_REST,
+    MOVE_MILK_DRINK,
+    MOVE_MORNING_SUN,
+    MOVE_SYNTHESIS,
+    MOVE_MOONLIGHT,
+    MOVE_SWALLOW,
+    MOVE_HEAL_ORDER,
+    MOVE_SLACK_OFF,
+    MOVE_ROOST,
+    MOVE_LUNAR_DANCE,
+    MOVE_HEALING_WISH,
+    MOVE_WISH,
+    MOVE_HEAL_PULSE,
+    MOVE_FLORAL_HEALING,
+    MOVE_LIFE_DEW,
+    MOVE_LUNAR_BLESSING,
+//  MOVE_POLLEN_PUFF, should be here but can also target enemies when heal blocked so
+};
+
+BOOL LONG_CALL BattleContext_CheckMoveHealBlocked(struct BattleSystem* bsys, struct BattleStruct* ctx, int battlerId, int moveNo) {
+    int i;
+    BOOL ret = FALSE;
+
+    if (ctx->battlemon[battlerId].moveeffect.healBlockTurns)
+    {
+        for (i = 0; i < NELEMS(HealBlockUnusableMoves); i++)
+        {
+            if (HealBlockUnusableMoves[i] == moveNo)
+            {
+                ret = TRUE;
+                break;
+            }
+        }
+    }
+
+    return ret;
+}
+
 u32 LONG_CALL StruggleCheck(struct BattleSystem *bsys, struct BattleStruct *ctx, int battlerId, u32 nonSelectableMoves, u32 struggleCheckFlags) {
     // u8 buf[64];
     // sprintf(buf, "In StruggleCheck\n");
@@ -3263,14 +3304,16 @@ const int typeToBerryMapping[] = {
 };
 
 BOOL LONG_CALL CanActivateDamageReductionBerry(struct BattleStruct *ctx, int defender) {
-    if ((ctx->moveStatusFlagForSpreadMoves[defender] & MOVE_STATUS_FLAG_SUPER_EFFECTIVE)
-    && !(ctx->moveStatusFlagForSpreadMoves[defender] & MOVE_STATUS_FLAG_OHKO_HIT)) {
+    if ((GetMoveSplit(ctx, ctx->current_move_index) != SPLIT_STATUS)
+        && (ctx->move_type == TYPE_NORMAL || (ctx->moveStatusFlagForSpreadMoves[defender] & MOVE_STATUS_FLAG_SUPER_EFFECTIVE))
+        && !(ctx->moveStatusFlagForSpreadMoves[defender] & MOVE_STATUS_FLAG_OHKO_HIT))
+    {
         return typeToBerryMapping[ctx->move_type] == GetBattleMonItem(ctx, defender);
     }
     return FALSE;
 }
 
-BOOL IsPureType(struct BattleStruct *ctx, int battlerId, int type) {
+BOOL LONG_CALL IsPureType(struct BattleStruct *ctx, int battlerId, int type) {
     GF_ASSERT(TYPE_NORMAL < type && type < TYPE_STELLAR);
     struct BattlePokemon client = ctx->battlemon[battlerId];
     return (client.is_currently_terastallized ? client.tera_type == type : (client.type1 == type && client.type2 == type && client.type3 == TYPE_TYPELESS));
@@ -3305,6 +3348,7 @@ BOOL LONG_CALL AbilityNoTransform(int ability) {
 
 // TODO: Just use this instead of the Mold Breaker one
 u32 LONG_CALL GetBattlerAbility(struct BattleStruct *ctx, int battlerId) {
+    u32 ability = ctx->battlemon[battlerId].ability;
     if ((ctx->battlemon[battlerId].effect_of_moves & MOVE_EFFECT_GASTRO_ACID) && ctx->battlemon[battlerId].ability != ABILITY_MULTITYPE) {
         return ABILITY_NONE;
     } else if ((ctx->field_condition & FIELD_STATUS_GRAVITY) && ctx->battlemon[battlerId].ability == ABILITY_LEVITATE) {
@@ -3314,7 +3358,7 @@ u32 LONG_CALL GetBattlerAbility(struct BattleStruct *ctx, int battlerId) {
     } else if (AbilityNoTransform(ctx->battlemon[battlerId].ability) && (ctx->battlemon[battlerId].condition2 & STATUS2_TRANSFORMED)) {
         return ABILITY_NONE;
     } else {
-        return ctx->battlemon[battlerId].ability;
+        return ability;
     }
 }
 
@@ -3501,7 +3545,7 @@ BOOL LONG_CALL IsAnyBattleMonHit(struct BattleStruct* ctx)
                 FALLTHROUGH;
             case SPREAD_MOVE_LOOP_OPPONENT_RIGHT:
                 i++;
-                if ((IS_TARGET_BOTH_MOVE(ctx) || IS_TARGET_FOES_AND_ALLY_MOVE(ctx))\
+                if ((IS_TARGET_BOTH_MOVE(ctx) || IS_TARGET_FOES_AND_ALLY_MOVE(ctx))
                     && IS_VALID_MOVE_TARGET(ctx, BATTLER_OPPONENT_SIDE_RIGHT(ctx->attack_client)))
                 {
                     return TRUE;
