@@ -2150,7 +2150,7 @@ BOOL Pokemon_TryLevelUp(struct PartyPokemon *mon) {
     }
     if (level > GetLevelCap())
         return FALSE;
-    if (exp >= GetExpByGrowthRateAndLevel((int)growthrate, level)) {
+    if ((int)exp >= GetExpByGrowthRateAndLevel((int)growthrate, level)) {
         SetMonData(mon, MON_DATA_LEVEL, &level);
         return TRUE;
     }
