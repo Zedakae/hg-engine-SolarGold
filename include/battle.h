@@ -58,6 +58,7 @@
 
 // Type effectiveness
 #define TYPE_MUL_NO_EFFECT              0
+// #define TYPE_MUL_QUADRUPLE_NOT_EFFECTIVE   2
 #define TYPE_MUL_TRIPLE_NOT_EFFECTIVE   3
 #define TYPE_MUL_DOUBLE_NOT_EFFECTIVE   4
 #define TYPE_MUL_NOT_EFFECTIVE          5
@@ -65,6 +66,17 @@
 #define TYPE_MUL_SUPER_EFFECTIVE        20
 #define TYPE_MUL_DOUBLE_SUPER_EFFECTIVE 30
 #define TYPE_MUL_TRIPLE_SUPER_EFFECTIVE 40
+// #define TYPE_MUL_QUADRUPLE_SUPER_EFFECTIVE 50
+
+// #define EFFECTIVENESS_MULT_QUADRUPLE_NOT_EFFECTIVE   625
+#define EFFECTIVENESS_MULT_TRIPLE_NOT_EFFECTIVE   125
+#define EFFECTIVENESS_MULT_DOUBLE_NOT_EFFECTIVE   250
+#define EFFECTIVENESS_MULT_NOT_EFFECTIVE          500
+#define EFFECTIVENESS_MULT_NORMAL                 1000
+#define EFFECTIVENESS_MULT_SUPER_EFFECTIVE        2000
+#define EFFECTIVENESS_MULT_DOUBLE_SUPER_EFFECTIVE 4000
+#define EFFECTIVENESS_MULT_TRIPLE_SUPER_EFFECTIVE 8000
+// #define EFFECTIVENESS_MULT_QUADRUPLE_SUPER_EFFECTIVE 160000
 
 // Special type table IDs
 #define TYPE_FORESIGHT 0xFE
@@ -179,6 +191,7 @@
 #define BATTLE_TYPE_ROAMER 0x100
 #define BATTLE_TYPE_PAL_PARK 0x200
 #define BATTLE_TYPE_CATCHING_DEMO 0x400
+#define BATTLE_TYPE_CAN_LOSE 0x800
 #define BATTLE_TYPE_BUG_CONTEST 0x1000
 
 #define BATTLE_TYPE_NO_EXPERIENCE (BATTLE_TYPE_WIRELESS | BATTLE_TYPE_SAFARI | BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_PAL_PARK)
@@ -414,6 +427,8 @@
 #define WEATHER_EXTREMELY_HARSH_SUNLIGHT    (0x01000000)                                                          // 0001 0000 0000 0000 0000 0000 0000
 #define WEATHER_HEAVY_RAIN                  (0x02000000)                                                          // 0010 0000 0000 0000 0000 0000 0000
 #define WEATHER_STRONG_WINDS                (0x04000000)                                                          // 0100 0000 0000 0000 0000 0000 0000
+// Ion Deluge is a strange case, as it is the only field effect that lasts for only a single turn.
+#define FIELD_STATUS_ION_DELUGE             (0x08000000)                                                          // 1000 0000 0000 0000 0000 0000 0000
 
 #define FIELD_CONDITION_WEATHER_NO_SUN      (WEATHER_RAIN_ANY | WEATHER_SANDSTORM_ANY | WEATHER_HAIL_ANY | FIELD_STATUS_FOG | WEATHER_SNOW_ANY \
                                             | WEATHER_SHADOWY_AURA_ANY | WEATHER_EXTREMELY_HARSH_SUNLIGHT | WEATHER_HEAVY_RAIN | WEATHER_STRONG_WINDS)
@@ -430,6 +445,8 @@
 #define FIELD_CONDITION_UPROAR_SHIFT         8
 #define FIELD_CONDITION_GRAVITY_SHIFT       12
 #define FIELD_CONDITION_TRICK_ROOM_SHIFT    16
+
+#define TERRAIN_TURNS_INFINITE 255
 
 /**
  *  @brief absolute battler position constants
@@ -3400,6 +3417,11 @@ typedef enum BattleBg {
     BATTLE_BG_PSYCHIC_TERRAIN,
 } BattleBg;
 
+typedef struct PACKED BattleBgProfile{
+    u8 header[0x28];
+    void (*callback)(void *unkPtr, int bgId, int flag); // 0x28
+    void *extraFn;                                      // 0x2C
+} BattleBgProfile;
 
 typedef enum Terrain {
     TERRAIN_PLAIN,
@@ -3883,6 +3905,8 @@ void LONG_CALL BattleMessage_BufferBoxName(struct BattleSystem *bsys, int buffer
 
 int LONG_CALL MoveCheckDamageNegatingAbilities(struct BattleStruct *sp, int attacker, int defender);
 
+u8 LONG_CALL UpdateTypeEffectiveness(u32 move_no, u32 held_effect, u8 defender_type, u8 defaultEffectiveness);
+
 int LONG_CALL GetTypeEffectiveness(struct BattleSystem *bw, struct BattleStruct *sp, int attack_client, int defence_client, int move_type, u32 *flag);
 
 BOOL LONG_CALL CanItemBeRemovedFromSpecies(u16 species, u16 item);
@@ -3948,5 +3972,15 @@ int GetSanitisedType(int type);
 
 BOOL StrongWindsShouldWeaken(struct BattleSystem *bw, struct BattleStruct *sp, int typeTableEntryNo, int defender_type);
 
+/**
+ * @brief Inject a custom callback function to allow
+ * loading new battle bgs at the start of a battle
+ */
+void LONG_CALL BattleBgExpansionLoader(struct BattleSystem *bsys);
+
+/**
+ * @brief Callback for loading custom battle backgrounds
+ */
+void LONG_CALL BattleBackgroundCallback(void *unkPtr, UNUSED int unk2, UNUSED int unk3);
 
 #endif // BATTLE_H
