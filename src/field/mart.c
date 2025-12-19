@@ -20,20 +20,20 @@ struct BadgeMartItems {
 // note: limited to 203 items (~34 pages)
 const struct BadgeMartItems sBadgeMart[] = {
     { ITEM_POKE_BALL,      0 },
-    { ITEM_GREAT_BALL,     3 },
-    { ITEM_ULTRA_BALL,     5 },
+    { ITEM_GREAT_BALL,     2 },
+    { ITEM_ULTRA_BALL,     4 },
     { ITEM_POTION,         0 },
     { ITEM_SUPER_POTION,   1 },
-    { ITEM_HYPER_POTION,   5 },
-    { ITEM_MAX_POTION,     7 },
-    { ITEM_FULL_RESTORE,   8 },
-    { ITEM_REVIVE,         3 },
+    { ITEM_HYPER_POTION,   4 },
+    { ITEM_MAX_POTION,     6 },
+    { ITEM_FULL_RESTORE,   7 },
+    { ITEM_REVIVE,         2 },
     { ITEM_ANTIDOTE,       0 },
     { ITEM_PARALYZE_HEAL,  0 },
     { ITEM_AWAKENING,      1 },
     { ITEM_BURN_HEAL,      1 },
     { ITEM_ICE_HEAL,       1 },
-    { ITEM_FULL_HEAL,      5 },
+    { ITEM_FULL_HEAL,      3 },
     { ITEM_ESCAPE_ROPE,    1 },
     { ITEM_REPEL,          1 },
     { ITEM_SUPER_REPEL,    3 },
@@ -43,15 +43,15 @@ const struct BadgeMartItems sBadgeMart[] = {
 void LONG_CALL InitMartUI(void *taskManager, FieldSystem *fieldSystem, const u16 *items, int kind, int buySell, int decoWhich, const struct MartItem *priceOverrides);
 
 u16 sCherrygroveCityMart[] = {
-    ITEM_AIR_MAIL, ITEM_HEAL_BALL, 0xFFFF
+    ITEM_NET_BALL, ITEM_HEAL_BALL, ITEM_MAX_REPEL, ITEM_MAX_ELIXIR, ITEM_ORAN_BERRY 0xFFFF
 };
 
 u16 sVioletCityMart[] = {
-    ITEM_TUNNEL_MAIL, ITEM_HEAL_BALL, ITEM_NET_BALL, 0xFFFF
+    ITEM_NET_BALL, ITEM_LEVEL_BALL, ITEM_MAX_REPEL, ITEM_MAX_ELIXIR, ITEM_ORAN_BERRY, ITEM_ESCAPE_ROPE 0xFFFF
 };
 
 u16 sAzaleaCityMart[] = {
-    ITEM_BLOOM_MAIL, ITEM_HEAL_BALL, ITEM_NET_BALL, 0xFFFF
+    ITEM_NET_BALL, ITEM_LEVEL_BALL, ITEM_MAX_REPEL, ITEM_MAX_ELIXIR, ITEM_ORAN_BERRY, ITEM_ESCAPE_ROPE, ITEM_CHESTO_BERRY, ITEM_PERSIM_BERRY, ITEM_CHERI_BERRY, ITEM_ASPEAR_BERRY, ITEM_RAWST_BERRY 0xFFFF
 };
 
 u16 sGoldenrodDepartmentUpper2F[] = {
