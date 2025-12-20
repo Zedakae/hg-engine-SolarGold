@@ -1,1 +1,16 @@
 a {COLOR 255}Infinite Candy{COLOR 0}
+1\r
+2\r
+3\r
+4\r
+5\r
+6\r
+7\r
+8\r
+9\r
+10\r
+You have hit a wall, huh?\nDark Caves no stroll, but its safer\fthan the chaos outside.
+Those wild Pokemon are clashing hard,\nhuh?\fAre you somewhat seeking my help?
+Fine... if you are gonna push forward\nshow me you are built to take a hit!
+Your inventory is full!\nPlease make space!
+Hmph...\nGuess even stone can shatter.\fTake the Muscle Band.\nNot like Im using it now.
