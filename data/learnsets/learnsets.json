@@ -9453,6 +9453,7 @@
       "MOVE_REST",
       "MOVE_RETURN",
       "MOVE_SAFEGUARD",
+      "MOVE_SCALD",
       "MOVE_SECRET_POWER",
       "MOVE_SLEEP_TALK",
       "MOVE_SLUDGE_BOMB",
@@ -9615,6 +9616,7 @@
       "MOVE_REST",
       "MOVE_RETURN",
       "MOVE_SAFEGUARD",
+      "MOVE_SCALD",
       "MOVE_SECRET_POWER",
       "MOVE_SLEEP_TALK",
       "MOVE_SLUDGE_BOMB",
@@ -24057,6 +24059,10 @@
       {
         "Level": 57,
         "Move": "MOVE_PSYCHO_BOOST"
+      },
+      {
+        "Level": 62,
+        "Move": "MOVE_ESPER_WING"
       }
     ],
     "MachineMoves": [
@@ -24217,6 +24223,10 @@
       {
         "Level": 57,
         "Move": "MOVE_PSYCHO_BOOST"
+      },
+      {
+        "Level": 62,
+        "Move": "MOVE_ESPER_WING"
       }
     ],
     "MachineMoves": [
@@ -30606,6 +30616,10 @@
         "Move": "MOVE_AURORA_BEAM"
       },
       {
+        "Level": 1,
+        "Move": "MOVE_INCINERATE"
+      },
+      {
         "Level": 6,
         "Move": "MOVE_CONSTRICT"
       },
@@ -30651,7 +30665,7 @@
       },
       {
         "Level": 55,
-        "Move": "MOVE_SOAK"
+        "Move": "MOVE_SCALD"
       },
       {
         "Level": 55,
@@ -30684,7 +30698,7 @@
       "MOVE_RAIN_DANCE",
       "MOVE_REST",
       "MOVE_RETURN",
-      "MOVE_SECRET_POWER",
+      "MOVE_SECRET_POWER",      
       "MOVE_SLEEP_TALK",
       "MOVE_SLUDGE_BOMB",
       "MOVE_SUBSTITUTE",
@@ -110689,7 +110703,9 @@
       "MOVE_CIRCLE_THROW",
       "MOVE_SEISMIC_TOSS"
     ],
-    "TutorMoves": []
+    "TutorMoves": [
+        "MOVE_JET_PUNCH"
+    ]
   },
   "SPECIES_GRAPPLOCT": {
     "LevelMoves": [
@@ -110779,7 +110795,9 @@
       "MOVE_WHIRLPOOL"
     ],
     "EggMoves": [],
-    "TutorMoves": []
+    "TutorMoves": [
+        "MOVE_JET_PUNCH"
+    ]
   },
   "SPECIES_SINISTEA": {
     "LevelMoves": [

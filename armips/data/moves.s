@@ -14801,7 +14801,7 @@ movedata MOVE_VILE_ENERGY, "Vile Energy"
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_VILE_ENERGY, "Conjures a sinister\nenergy. This may drop\nthe foe's Special\nDefense."
+    movedescription MOVE_VILE_ENERGY, "Conjures a sinister\nenergy. This may drop\nthe foes Special\nDefense."
 
 movedatanoname NUM_OF_MOVES
     battleeffect MOVE_EFFECT_HIT

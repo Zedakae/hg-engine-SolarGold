@@ -537,7 +537,7 @@ trainerdata 9, "Elaine"
         move MOVE_LIQUIDATION
         move MOVE_KNOCK_OFF
         move MOVE_CLOSE_COMBAT
-        ability ABILITY_EMERGENCY_EXIT
+        ability ABILITY_SWARM
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_ADAMANT
@@ -2198,7 +2198,7 @@ trainerdata 33, "Jasmine"
         move MOVE_THUNDERBOLT
         move MOVE_BODY_PRESS
         move MOVE_DRAGON_PULSE
-        ability ABILITY_
+        ability ABILITY_STALWART
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_BOLD
@@ -6176,7 +6176,7 @@ trainerdata 96, "George"
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_CAREFUL
         additionalflags 0
-        ballseal 0        
+        ballseal 0
     endparty
 
 trainerdata 97, "Berke"
@@ -6388,7 +6388,7 @@ trainerdata 99, "Matthew"
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_JOLLY
         additionalflags 0
-        ballseal 0 
+        ballseal 0
 
         // mon 2
         ivs 186
@@ -6405,7 +6405,7 @@ trainerdata 99, "Matthew"
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_CAREFUL
         additionalflags 0
-        ballseal 0 
+        ballseal 0
 
         // mon 3
         ivs 186
@@ -6422,7 +6422,7 @@ trainerdata 99, "Matthew"
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_CALM
         additionalflags 0
-        ballseal 0 
+        ballseal 0
     endparty
 
 trainerdata 100, "Anthony"
@@ -22420,7 +22420,7 @@ trainerdata 510, "Erika"
         ivs 120
         abilityslot 0
         level 33
-        monwithform SPECIES_ROTOM, 5
+        monwithform SPECIES_ROTOM, 4
         item ITEM_ELECTRIC_GEM
         move MOVE_THUNDER_WAVE
         move MOVE_SHOCK_WAVE
@@ -31061,4 +31061,4 @@ trainerdata 737, "Silver"
         move MOVE_SHADOW_BALL
         move MOVE_CONFUSE_RAY
         ballseal 0
-    endparty   
+    endparty
