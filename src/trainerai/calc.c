@@ -15,7 +15,7 @@
 #include "../../include/types.h"
 
 // this has been moved to src/battle/other_battle_calculators.c so it can be used
-extern u8 TypeEffectivenessTable[][3];
+
 
 int GetHiddenPowerType(u32 hp_iv, u32 atk_iv, u32 def_iv, u32 spe_iv, u32 spatk_iv, u32 spdef_iv)
 {
@@ -27,7 +27,7 @@ int GetHiddenPowerType(u32 hp_iv, u32 atk_iv, u32 def_iv, u32 spe_iv, u32 spatk_
     return type;
 }
 
-void LONG_CALL FillDamageStructFromPartyMon(void *bw UNUSED, struct BattleStruct *sp, struct AI_sDamageCalc *monStruct, struct PartyPokemon *pp)
+void LONG_CALL FillDamageStructFromPartyMon(void *bw UNUSED, struct BattleStruct *sp, struct AI_sDamageCalc *monStruct, struct PartyPokemon *pp, int attackerPos UNUSED, int partyPos UNUSED)
 {
     monStruct->species = GetMonData(pp, MON_DATA_SPECIES, 0);
     monStruct->hp = GetMonData(pp, MON_DATA_HP, 0);
@@ -45,16 +45,17 @@ void LONG_CALL FillDamageStructFromPartyMon(void *bw UNUSED, struct BattleStruct
 
 
     monStruct->condition = GetMonData(pp, MON_DATA_STATUS, 0);
-    monStruct->condition = 0;
+    monStruct->condition2 = 0;
     monStruct->isGrounded = IsPartyPokemonGrounded(sp, pp);
 
     monStruct->speed = GetMonData(pp, MON_DATA_SPEED, 0);
     monStruct->weight = 1;
+    // ArchiveDataLoadOfs(&monStruct->weight, ARC_DEX_LISTS, 1, PokeOtherFormMonsNoGet(monStruct->species, monStruct->form) * sizeof(s32), sizeof(s32));
 
-    monStruct->attack = GetMonData(pp, MON_DATA_SPECIAL_ATTACK, 0);
-    monStruct->defense = GetMonData(pp, MON_DATA_SPECIAL_ATTACK, 0);
+    monStruct->attack = GetMonData(pp, MON_DATA_ATTACK, 0);
+    monStruct->defense = GetMonData(pp, MON_DATA_DEFENSE, 0);
     monStruct->sp_attack = GetMonData(pp, MON_DATA_SPECIAL_ATTACK, 0);
-    monStruct->sp_defense = GetMonData(pp, MON_DATA_SPECIAL_ATTACK, 0);
+    monStruct->sp_defense = GetMonData(pp, MON_DATA_SPECIAL_DEFENSE, 0);
 
     for (int i = 0; i < 8; i++) {
         monStruct->states[i] = 0; // Reset all states to 0
@@ -62,7 +63,6 @@ void LONG_CALL FillDamageStructFromPartyMon(void *bw UNUSED, struct BattleStruct
 
     monStruct->level = GetMonData(pp, MON_DATA_LEVEL, 0);
     monStruct->form = GetMonData(pp, MON_DATA_FORM, 0);
-    // ArchiveDataLoadOfs(&monStruct->weight, ARC_DEX_LISTS, 1, PokeOtherFormMonsNoGet(monStruct->species, monStruct->form) * sizeof(s32), sizeof(s32));
 
     monStruct->hasMoldBreaker = FALSE;
     if (monStruct->ability == ABILITY_MOLD_BREAKER || monStruct->ability == ABILITY_TERAVOLT || monStruct->ability == ABILITY_TURBOBLAZE) {
@@ -85,6 +85,7 @@ void LONG_CALL FillDamageStructFromPartyMon(void *bw UNUSED, struct BattleStruct
     monStruct->metronomeTurns = 0;
     monStruct->lastResortCount = 0;
     monStruct->attackerHasMoveFailureLastTurn = 0;
+    monStruct->canBelch = 0; // sp->onceOnlyMoveConditionFlags[SanitizeClientForTeamAccess(bw, attackerPos)][partyPos].berryEatenAndCanBelch;
 }
 
 void LONG_CALL FillDamageStructFromBattleMon(void *bw, struct BattleStruct *sp, struct AI_sDamageCalc *monStruct, int numSlot)
@@ -153,6 +154,7 @@ void LONG_CALL FillDamageStructFromBattleMon(void *bw, struct BattleStruct *sp, 
     monStruct->metronomeTurns = sp->battlemon[numSlot].moveeffect.metronomeTurns;
     monStruct->lastResortCount = sp->battlemon[numSlot].moveeffect.lastResortCount;
     monStruct->attackerHasMoveFailureLastTurn = sp->moveConditionsFlags[numSlot].moveFailureLastTurn;
+    monStruct->canBelch = 0; // sp->onceOnlyMoveConditionFlags[SanitizeClientForTeamAccess(bw, numSlot)][sp->sel_mons_no[numSlot]].berryEatenAndCanBelch;
 }
 
 u8 LONG_CALL BattleAI_UpdateTypeEffectiveness(u32 move_no, u32 held_effect UNUSED, u8 defender_type, u8 defaultEffectiveness)
@@ -239,28 +241,6 @@ int LONG_CALL BattleAI_GetTypeEffectiveness(void *bw, struct BattleStruct *sp, i
     return TYPE_MUL_NO_EFFECT; // 0
 }
 
-
-
-BOOL LONG_CALL BattleAI_IsContactBeingMade(struct BattleStruct *sp, u32 ability, u32 itemHoldEffect, u32 moveno)
-{
-    if (ability == ABILITY_LONG_REACH) {
-        return FALSE;
-    }
-
-    if (itemHoldEffect == HOLD_EFFECT_PREVENT_CONTACT_EFFECTS || (itemHoldEffect == HOLD_EFFECT_INCREASE_PUNCHING_MOVE_DMG && IsMovePunchingMove(moveno))) {
-        return FALSE;
-    }
-
-    if (itemHoldEffect == HOLD_EFFECT_PREVENT_CONTACT_EFFECTS) {
-        return FALSE;
-    }
-
-    if (sp->moveTbl[moveno].flag & FLAG_CONTACT) {
-        return TRUE;
-    }
-
-    return FALSE;
-}
 
 BOOL IsMoveBoostedBySheerForce(u32 moveno, u32 moveeffect)
 {
@@ -380,33 +360,30 @@ BOOL IsMoveForceSwitching(u32 moveno)
     }
 }
 
-int LONG_CALL BattleAI_AdjustUnusualMoveDamage(u32 attackerLevel, u32 attackerHP, u32 defenderHP, u32 damage, u32 moveEffect, u32 attackerAbility, u32 attackerItem)
+int LONG_CALL BattleAI_AdjustUnusualMoveDamage(struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender, u32 damage, u32 moveEffect, u32 moveno)
 {
     // struct BattleStruct* ctx = bsys->sp;
     switch (moveEffect) {
     case MOVE_EFFECT_UP_TO_10_HITS:
-        if (attackerAbility == ABILITY_SKILL_LINK) {
+        if (attacker->ability == ABILITY_SKILL_LINK) {
             return damage * 10;
-        } else if (attackerItem == ITEM_LOADED_DICE) {
+        } else if (attacker->item == ITEM_LOADED_DICE) {
             return damage *= 5; // 4-10
         }
         return damage *= 3;
     case MOVE_EFFECT_HIT_THREE_TIMES_ALWAYS_CRITICAL: // surge Strikes
     case MOVE_EFFECT_HIT_THREE_TIMES: // triple dive
-    case MOVE_EFFECT_HIT_THREE_TIMES_INCREMENT_BASE_POWER_10: // triple kick
         return damage *= 3;
-    case MOVE_EFFECT_HIT_THREE_TIMES_INCREMENT_BASE_POWER_20: // triple axel
-        return damage *= 6;
     case MOVE_EFFECT_MULTI_HIT: // 2-5 hit moves
-        if (attackerAbility == ABILITY_SKILL_LINK) {
+        if (attacker->ability == ABILITY_SKILL_LINK) {
             return damage * 5;
-        } else if (attackerItem == ITEM_LOADED_DICE) {
+        } else if (attacker->item == ITEM_LOADED_DICE) {
             return damage *= 4; // 4-5
         }
         return damage *= 3;
     case MOVE_EFFECT_LEVEL_DAMAGE_FLAT: // night shade, seismic toss
     case MOVE_EFFECT_RANDOM_DAMAGE_1_TO_150_LEVEL: // psywave
-        return attackerLevel;
+        return attacker->level;
     case MOVE_EFFECT_10_DAMAGE_FLAT: // sonic boom
         return 20;
     case MOVE_EFFECT_40_DAMAGE_FLAT: // dragon rage
@@ -416,23 +393,43 @@ int LONG_CALL BattleAI_AdjustUnusualMoveDamage(u32 attackerLevel, u32 attackerHP
     case MOVE_EFFECT_HIT_TWICE: // double hit, dual wingbeat, etc...
         return damage *= 2;
     case MOVE_EFFECT_HALVE_HP: // super fang, nature's madness
-        return defenderHP / 2;
+        return defender->hp / 2;
     case MOVE_EFFECT_AVERAGE_HP: // pain split
     {
-        if (attackerHP < defenderHP) {
-            return defenderHP - ((attackerHP + defenderHP) / 2);
+        if (attacker->hp < defender->hp) {
+            return defender->hp - ((attacker->hp + defender->hp) / 2);
         } else {
             return 0;
         }
     }
     case MOVE_EFFECT_SET_HP_EQUAL_TO_USER: // endeavor
     {
-        if (attackerHP < defenderHP) {
-            return defenderHP - attackerHP;
+        if (attacker->hp < defender->hp) {
+            return defender->hp - attacker->hp;
         } else {
             return 0;
         }
     }
+    case MOVE_EFFECT_ONE_HIT_KO: // sheer cold, guillotine, horn drill, fissure
+    {
+        if (attacker->level <= defender->level) {
+            return 0;
+        }
+    }
+    default:
+        break;
+    }
+
+    switch (moveno) {
+    case MOVE_SHEER_COLD:
+        if (defender->type1 == TYPE_ICE || defender->type2 == TYPE_ICE || defender->type3 == TYPE_ICE) {
+            return 0;
+        } else {
+            return defender->hp;
+        }
+        break;
+    default:
+        break;
     }
     return damage;
 }
@@ -455,9 +452,9 @@ int LONG_CALL BattleAI_GetDynamicMoveType(struct BattleSystem *bsys, struct Batt
 
     switch (moveNo) {
     case MOVE_NATURAL_GIFT:
-        //https://github.com/pret/pokeheartgold/blob/29282f7bb45946dee63475022a8d506092bc3748/src/battle/overlay_12_0224E4FC.c#L4600
-        //type = GetNaturalGiftType(ctx, battlerId);
-        type = GetItemData(attacker->item, ITEM_PARAM_NATURAL_POWER_TYPE, 5); //TODO: check heap
+        // https://github.com/pret/pokeheartgold/blob/29282f7bb45946dee63475022a8d506092bc3748/src/battle/overlay_12_0224E4FC.c#L4600
+        // type = GetNaturalGiftType(ctx, battlerId);
+        type = GetItemData(attacker->item, ITEM_PARAM_NATURAL_GIFT_TYPE, 5); // TODO: check heap
         break;
     case MOVE_JUDGMENT:
         switch (attacker->item_held_effect) {
@@ -567,7 +564,7 @@ int LONG_CALL BattleAI_GetDynamicMoveType(struct BattleSystem *bsys, struct Batt
         }
         break;
     case MOVE_REVELATION_DANCE:
-        //TODO
+        // TODO
         break;
     case MOVE_MULTI_ATTACK:
         switch (attacker->item_held_effect) {
@@ -651,7 +648,7 @@ int LONG_CALL BattleAI_GetDynamicMoveType(struct BattleSystem *bsys, struct Batt
         break;
     case MOVE_TERRAIN_PULSE:
         type = TYPE_NORMAL;
-        if (ctx->terrainOverlay.numberOfTurnsLeft > 0) {
+        if (ctx->terrainOverlay.numberOfTurnsLeft > 0 && attacker->isGrounded) {
             switch (ctx->terrainOverlay.type) {
             case GRASSY_TERRAIN:
                 type = TYPE_GRASS;
@@ -672,7 +669,7 @@ int LONG_CALL BattleAI_GetDynamicMoveType(struct BattleSystem *bsys, struct Batt
         break;
     case MOVE_TERA_BLAST:
     case MOVE_TERA_STARSTORM:
-        //TODO
+        // TODO
         break;
     case MOVE_RAGING_BULL:
         if (attacker->species == SPECIES_TAUROS) {
@@ -754,8 +751,12 @@ int LONG_CALL BattleAI_GetDynamicMoveType(struct BattleSystem *bsys, struct Batt
         typeLocal = ctx->moveTbl[moveNo].type;
     }
 
-     if (attacker->ability == ABILITY_LIQUID_VOICE && IsMoveSoundBased(moveNo)) {
+    if (attacker->ability == ABILITY_LIQUID_VOICE && IsMoveSoundBased(moveNo)) {
         typeLocal = TYPE_WATER;
+    }
+    // Ion Deluge's effect is applied after all type-modifying abilities have activated.
+    if (typeLocal == TYPE_NORMAL && (ctx->field_condition & FIELD_STATUS_ION_DELUGE) == FIELD_STATUS_ION_DELUGE) {
+        typeLocal = TYPE_ELECTRIC;
     }
 
     return typeLocal;
@@ -823,6 +824,8 @@ BOOL LONG_CALL IsChoicedMoveConsidedUseless(u32 moveno, u8 split)
     switch (moveno) {
     case MOVE_FAKE_OUT:
     case MOVE_FIRST_IMPRESSION:
+        isUseless = TRUE;
+        break;
     default:
         break;
     }
@@ -934,10 +937,13 @@ void LONG_CALL SetupStateVariables(struct BattleSystem *bsys, u32 attacker, u32 
 
     BOOL isDefenderImmuneToAnyStatus = FALSE;
     if ((ai->defenderMon.condition & STATUS_ALL)
-        || (ai->defenderMon.ability == ABILITY_GOOD_AS_GOLD) || (ai->defenderMon.ability == ABILITY_COMATOSE) || (ai->defenderMon.ability == ABILITY_PURIFYING_SALT)
-        || (ai->defenderMon.ability == ABILITY_SHIELDS_DOWN && ai->defenderMon.percenthp > 50)
-        || (ai->defenderMon.ability == ABILITY_LEAF_GUARD && ctx->field_condition & WEATHER_SUNNY_ANY)
+        || (!ai->attackerMon.hasMoldBreaker
+            && (ai->defenderMon.ability == ABILITY_GOOD_AS_GOLD 
+                || ai->defenderMon.ability == ABILITY_PURIFYING_SALT
+                || (ai->defenderMon.ability == ABILITY_SHIELDS_DOWN && ai->defenderMon.percenthp > 50)
+                || (ai->defenderMon.ability == ABILITY_LEAF_GUARD && ctx->field_condition & WEATHER_SUNNY_ANY)))
         || (ai->defenderMon.ability == ABILITY_HYDRATION && ctx->field_condition & WEATHER_RAIN_ANY)
+        || (ai->defenderMon.ability == ABILITY_COMATOSE)
         || (ctx->side_condition[ai->defenderSide] & SIDE_STATUS_SAFEGUARD)) {
         isDefenderImmuneToAnyStatus = TRUE;
     }
@@ -969,6 +975,17 @@ void LONG_CALL SetupStateVariables(struct BattleSystem *bsys, u32 attacker, u32 
         || ai->defenderMon.ability == ABILITY_VITAL_SPIRIT || ai->defenderMon.ability == ABILITY_INSOMNIA
         || (ai->defenderMon.isGrounded && (ctx->terrainOverlay.type == MISTY_TERRAIN || ctx->terrainOverlay.type == ELECTRIC_TERRAIN))) {
         ai->defenderImmuneToSleep = TRUE;
+    }
+
+    ai->defenderImmuneToStatDrop = FALSE;
+    if (ai->defenderMon.ability == ABILITY_FULL_METAL_BODY 
+        || ai->defenderMon.item_held_effect == HOLD_EFFECT_PREVENT_STAT_DROPS
+        || (!ai->attackerMon.hasMoldBreaker
+            && (ai->defenderMon.ability == ABILITY_CLEAR_BODY
+            || ai->defenderMon.ability == ABILITY_CONTRARY
+            || ai->defenderMon.ability == ABILITY_WHITE_SMOKE)))
+    {
+        ai->defenderImmuneToStatDrop = TRUE;
     }
 
     ai->partySizeAttacker = Battle_GetClientPartySize(bsys, attacker);
@@ -1009,9 +1026,9 @@ void LONG_CALL SetupStateVariables(struct BattleSystem *bsys, u32 attacker, u32 
         if (defenderMove.split != SPLIT_STATUS && defenderMove.power && ctx->battlemon[defender].pp[k]) {
             damages.damageRoll = BattleAI_CalcDamage(bsys, ctx, defenderMoveno, ctx->side_condition[BATTLER_IS_ENEMY(defender)], ctx->field_condition, defenderMove.power, defenderMove.type, critical, defender, attacker, &damages, &ai->defenderMon, &ai->attackerMon);
 
-            damages.damageRoll = BattleAI_AdjustUnusualMoveDamage(ai->defenderMon.level, ai->defenderMon.hp, ai->attackerMon.hp, damages.damageRoll, defenderMove.effect, ai->defenderMon.ability, ai->defenderMon.item);
+            damages.damageRoll = BattleAI_AdjustUnusualMoveDamage(&ai->defenderMon, &ai->attackerMon, damages.damageRoll, defenderMove.effect, defenderMoveno);
             for (int u = 0; u < 16; u++) {
-                damages.damageRange[u] = BattleAI_AdjustUnusualMoveDamage(ai->defenderMon.level, ai->defenderMon.hp, ai->attackerMon.hp, damages.damageRange[u], defenderMove.effect, ai->defenderMon.ability, ai->defenderMon.item);
+                damages.damageRange[u] = BattleAI_AdjustUnusualMoveDamage(&ai->defenderMon, &ai->attackerMon, damages.damageRange[u], defenderMove.effect, defenderMoveno);
             }
 
             BOOL playerCanOneShotAiMon = CanAttackerOneShotDefender(damages.damageRoll, defenderMove.split, defenderMoveno, &ai->defenderMon, &ai->attackerMon);
@@ -1039,6 +1056,8 @@ void LONG_CALL SetupStateVariables(struct BattleSystem *bsys, u32 attacker, u32 
             }
 
             debug_printf("Receiving from move %d: %3d is [%4d-%4d], roll %4d > att.HP %d\n", k, defenderMoveno, damages.damageRange[0], damages.damageRange[15], damages.damageRoll, ai->attackerMon.hp);
+        } else {
+            ai->defenderHasAtleastOneStatusMove = TRUE;
         }
     }
 
@@ -1060,9 +1079,9 @@ void LONG_CALL SetupStateVariables(struct BattleSystem *bsys, u32 attacker, u32 
             damages.damageRoll = BattleAI_CalcDamage(bsys, ctx, attackerMoveno, ctx->side_condition[BATTLER_IS_ENEMY(attacker)], ctx->field_condition, attackerMove.power, attackerMove.type, critical, attacker, defender, &damages, &ai->attackerMon, &ai->defenderMon);
             ai->effectivenessOnPlayer[j] = damages.moveEffectiveness;
 
-            damages.damageRoll = BattleAI_AdjustUnusualMoveDamage(ai->attackerMon.level, ai->attackerMon.hp, ai->defenderMon.hp, damages.damageRoll, attackerMove.effect, ai->attackerMon.ability, ai->attackerMon.item);
+            damages.damageRoll = BattleAI_AdjustUnusualMoveDamage(&ai->attackerMon, &ai->defenderMon, damages.damageRoll, attackerMove.effect, attackerMoveno);
             for (int u = 0; u < 16; u++) {
-                damages.damageRange[u] = BattleAI_AdjustUnusualMoveDamage(ai->attackerMon.level, ai->attackerMon.hp, ai->defenderMon.hp, damages.damageRange[u], attackerMove.effect, ai->attackerMon.ability, ai->attackerMon.item);
+                damages.damageRange[u] = BattleAI_AdjustUnusualMoveDamage(&ai->attackerMon, &ai->defenderMon, damages.damageRange[u], attackerMove.effect, attackerMoveno);
             }
 
             BOOL aiMonCanOneshotPlayer = CanAttackerOneShotDefender(damages.damageRoll, attackerMove.split, attackerMoveno, &ai->attackerMon, &ai->defenderMon);
@@ -1088,7 +1107,6 @@ int LONG_CALL BattleAI_PostKOSwitchIn_Internal(struct BattleSystem *bsys, int at
 
     struct BattleStruct *ctx = bsys->sp;
     int battleType = BattleTypeGet(bsys);
-    struct PartyPokemon *mon;
 
     struct AI_sDamageCalc attackerMon = { 0 };
     struct AI_sDamageCalc defenderMon = { 0 };
@@ -1123,7 +1141,7 @@ int LONG_CALL BattleAI_PostKOSwitchIn_Internal(struct BattleSystem *bsys, int at
 
     partySize = Battle_GetClientPartySize(bsys, attacker);
     for (int i = 0; i < partySize; i++) {
-        mon = Battle_GetClientPartyMon(bsys, attacker, i);
+        struct PartyPokemon *mon = Battle_GetClientPartyMon(bsys, attacker, i);
         attackerMon.species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
         debug_printf("Slot %d:%d hp:%d,\n", i, attackerMon.species, GetMonData(mon, MON_DATA_HP, 0));
         debug_printf("sel_m1 %d, sel_m2 %d, switchSl1 %d, switchSl1 %d\n", ctx->sel_mons_no[slot1], ctx->sel_mons_no[slot2], ctx->aiSwitchedPartySlot[slot1], ctx->aiSwitchedPartySlot[slot2]);
@@ -1135,7 +1153,7 @@ int LONG_CALL BattleAI_PostKOSwitchIn_Internal(struct BattleSystem *bsys, int at
             && i != ctx->aiSwitchedPartySlot[slot2]) {
             switchInScore[i] = 100;
 
-            FillDamageStructFromPartyMon(bsys, ctx, &attackerMon, mon);
+            FillDamageStructFromPartyMon(bsys, ctx, &attackerMon, mon, attacker, i);
 
             speedCalc = BattleAI_CalcSpeed(bsys, ctx, defender, mon, CALCSPEED_FLAG_NO_PRIORITY); // checks actual turn order with field state considered
 
@@ -1148,10 +1166,11 @@ int LONG_CALL BattleAI_PostKOSwitchIn_Internal(struct BattleSystem *bsys, int at
 
                     if (attackerMove.split != SPLIT_STATUS && attackerMove.power) {
                         damages.damageRoll = BattleAI_CalcDamage(bsys, ctx, moveno, ctx->side_condition[BATTLER_IS_ENEMY(attacker)], ctx->field_condition, attackerMove.power, attackerMove.type, critical, attacker, defender, &damages, &attackerMon, &defenderMon);
+                        damages.damageRoll = damages.damageRange[15]; //max Damage
 
-                        damages.damageRoll = BattleAI_AdjustUnusualMoveDamage(attackerMon.level, attackerMon.hp, defenderMon.hp, damages.damageRoll, attackerMove.effect, attackerMon.ability, attackerMon.item);
+                        damages.damageRoll = BattleAI_AdjustUnusualMoveDamage(&attackerMon, &defenderMon, damages.damageRoll, attackerMove.effect, moveno);
                         for (int u = 0; u < 16; u++) {
-                            damages.damageRange[u] = BattleAI_AdjustUnusualMoveDamage(attackerMon.level, attackerMon.hp, defenderMon.hp, damages.damageRange[u], attackerMove.effect, attackerMon.ability, attackerMon.item);
+                            damages.damageRange[u] = BattleAI_AdjustUnusualMoveDamage(&attackerMon, &defenderMon, damages.damageRange[u], attackerMove.effect, moveno);
                         }
 
                         if (damages.damageRoll > monDealsRolledDamage[i]) {
@@ -1170,10 +1189,11 @@ int LONG_CALL BattleAI_PostKOSwitchIn_Internal(struct BattleSystem *bsys, int at
 
                 if (defenderMove.split != SPLIT_STATUS && defenderMove.power && ctx->battlemon[defender].pp[k]) {
                     damages.damageRoll = BattleAI_CalcDamage(bsys, ctx, defenderMoveno, ctx->side_condition[BATTLER_IS_ENEMY(defender)], ctx->field_condition, defenderMove.power, defenderMove.type, critical, defender, attacker, &damages, &defenderMon, &attackerMon);
+                    damages.damageRoll = damages.damageRange[15]; // max Damage
 
-                    damages.damageRoll = BattleAI_AdjustUnusualMoveDamage(defenderMon.level, defenderMon.hp, attackerMon.hp, damages.damageRoll, defenderMove.effect, defenderMon.ability, defenderMon.item);
+                    damages.damageRoll = BattleAI_AdjustUnusualMoveDamage(&defenderMon, &attackerMon, damages.damageRoll, defenderMove.effect, defenderMoveno);
                     for (int u = 0; u < 16; u++) {
-                        damages.damageRange[u] = BattleAI_AdjustUnusualMoveDamage(defenderMon.level, defenderMon.hp, attackerMon.hp, damages.damageRange[u], defenderMove.effect, defenderMon.ability, defenderMon.item);
+                        damages.damageRange[u] = BattleAI_AdjustUnusualMoveDamage(&defenderMon, &attackerMon, damages.damageRange[u], defenderMove.effect, defenderMoveno);
                     }
 
                     if (damages.damageRoll > monReceivesDamage[i]) {

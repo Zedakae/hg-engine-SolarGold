@@ -46,6 +46,7 @@ struct PACKED AI_sDamageCalc {
     u8 metronomeTurns;
     u8 lastResortCount;
     u8 attackerHasMoveFailureLastTurn;
+    u8 canBelch;
 };
 
 struct PACKED AIContext {
@@ -61,6 +62,7 @@ struct PACKED AIContext {
     BOOL defenderImmuneToParalysis;
     BOOL defenderImmuneToBurn;
     BOOL defenderImmuneToSleep;
+    BOOL defenderImmuneToStatDrop;
 
     u8 attackerMovesFirst;
     u8 defenderMovesFirst;
@@ -102,6 +104,7 @@ struct PACKED AIContext {
 
     BOOL defenderHasAtleastOnePhysicalMove;
     BOOL defenderHasAtleastOneSpecialMove;
+    BOOL defenderHasAtleastOneStatusMove;
     BOOL playerCanOneShotMonWithMove[4];
     BOOL playerCanOneShotMonWithAnyMove;
     BOOL monCanOneShotPlayerWithAnyMove;
@@ -128,16 +131,16 @@ u8 LONG_CALL BattleAI_CalcSpeed(void *bw, struct BattleStruct *sp, int client1, 
 int LONG_CALL BattleAI_CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond, u32 field_cond, u16 pow, u8 type, u8 critical, u8 attackerSlot, u8 defenderSlot, struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender);
 int LONG_CALL BattleAI_CalcDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond, u32 field_cond, u16 pow, u8 type, u8 critical, u8 attackerSlot, u8 defenderSlot, struct AI_damage *damages, struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender);
 
-void LONG_CALL FillDamageStructFromPartyMon(void *bw UNUSED, struct BattleStruct *sp, struct AI_sDamageCalc *monStruct, struct PartyPokemon *pp);
+void LONG_CALL FillDamageStructFromPartyMon(void *bw UNUSED, struct BattleStruct *sp, struct AI_sDamageCalc *monStruct, struct PartyPokemon *pp, int attackerPos UNUSED, int partyPos UNUSED);
+
 void LONG_CALL FillDamageStructFromBattleMon(void *bw, struct BattleStruct *sp, struct AI_sDamageCalc *monStruct, int numSlot);
 
 BOOL LONG_CALL IsMoveBoostedBySheerForce(u32 moveno, u32 moveeffect);
-BOOL LONG_CALL BattleAI_IsContactBeingMade(struct BattleStruct *sp, u32 ability, u32 itemHoldEffect, u32 moveno);
-int LONG_CALL BattleAI_GetTypeEffectiveness(void *bw, struct BattleStruct *sp, int moveno, int move_type, u32 *flag, struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender);
+int LONG_CALL BattleAI_GetTypeEffectiveness(void *bw, struct BattleStruct *sp, int moveno, int move_type, u32 *flag UNUSED, struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender);
 
 BOOL LONG_CALL BattleAI_AttackerHasOnlyIneffectiveMoves(struct BattleStruct *ctx, u32 attacker, int knownMoves, u32 effectiveness[4]);
 
-int LONG_CALL BattleAI_AdjustUnusualMoveDamage(u32 attackerLevel, u32 attackerHP, u32 defenderHP, u32 damage, u32 moveEffect, u32 attackerAbility, u32 attackerItem);
+int LONG_CALL BattleAI_AdjustUnusualMoveDamage(struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender, u32 damage, u32 moveEffect, u32 moveno);
 int LONG_CALL BattleAI_GetDynamicMoveType(struct BattleSystem *bsys, struct BattleStruct *ctx, struct AI_sDamageCalc *attacker, int moveno);
 BOOL LONG_CALL BattleAI_IsKnockOffPoweredUp(struct AI_sDamageCalc *defender);
 
@@ -160,4 +163,5 @@ BOOL LONG_CALL BattlerHasSoundBasedMove(struct BattleSystem *bsys, u32 battler, 
 BOOL LONG_CALL BattlerKnowsFlinchingMove(struct BattleSystem *bsys, u32 battler, struct AIContext *ai UNUSED);
 BOOL LONG_CALL BattlerKnowsMove(struct BattleSystem *bsys, u32 battler, u32 move, struct AIContext *ai UNUSED);
 BOOL LONG_CALL BattlerKnowsMoveWithEffect(struct BattleSystem *bsys, u32 battler, u32 moveEffect, struct AIContext *ai UNUSED);
+BOOL LONG_CALL IsUsedMoveEncouragedToEncore(struct BattleSystem *bsys UNUSED, u32 move, u32 moveEffect);
 #endif // !CUSTOM_AI_H
