@@ -7367,7 +7367,7 @@ mondata SPECIES_FEEBAS, "Feebas"
 
 mondata SPECIES_MILOTIC, "Milotic"
     basestats 95, 60, 79, 81, 100, 125
-    types TYPE_WATER, TYPE_WATER
+    types TYPE_WATER, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_WATER
     catchrate 60
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
@@ -11769,7 +11769,7 @@ mondata SPECIES_PURRLOIN, "Purrloin"
     abilities ABILITY_LIMBER, ABILITY_UNBURDEN
     runchance 0
     colorflip BODY_COLOR_PURPLE, 0
-    mondexentry SPECIES_PURRLOIN, "Their cute act is a ruse.\nThey trick people and steal their valuables\njust to see the looks on their faces."
+    mondexentry SPECIES_PURRLOIN, "Their cute act is a ruse. They trick\npeople and steal their valuables\njust to see the looks on their faces."
     mondexclassification SPECIES_PURRLOIN, "Devious Pokémon"
     mondexheight SPECIES_PURRLOIN, "1’04”"
     mondexweight SPECIES_PURRLOIN, "22.3 lbs."
@@ -12879,7 +12879,7 @@ mondata SPECIES_YAMASK, "Yamask"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_MINERAL, EGG_GROUP_AMORPHOUS
-    abilities ABILITY_MUMMY, ABILITY_NONE
+    abilities ABILITY_MUMMY, ABILITY_BULLETPROOF
     runchance 0
     colorflip BODY_COLOR_BLACK, 0
     mondexentry SPECIES_YAMASK, "These Pokémon arose from the\nspirits of people interred in graves.\nEach retains memories of its former life."
@@ -12890,7 +12890,7 @@ mondata SPECIES_YAMASK, "Yamask"
 
 mondata SPECIES_COFAGRIGUS, "Cofagrigus"
     basestats 58, 50, 145, 30, 95, 105
-    types TYPE_GHOST, TYPE_GHOST
+    types TYPE_GHOST, TYPE_STEEL
     catchrate 90
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
@@ -12900,7 +12900,7 @@ mondata SPECIES_COFAGRIGUS, "Cofagrigus"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_MINERAL, EGG_GROUP_AMORPHOUS
-    abilities ABILITY_MUMMY, ABILITY_NONE
+    abilities ABILITY_MUMMY, ABILITY_BULLETPROOF
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_COFAGRIGUS, "Grave robbers who mistake them\nfor real coffins and get too close\nend up trapped inside their bodies."
@@ -13645,18 +13645,18 @@ mondata SPECIES_FERROTHORN, "Ferrothorn"
 
 
 mondata SPECIES_KLINK, "Klink"
-    basestats 40, 55, 70, 30, 45, 60
-    types TYPE_STEEL, TYPE_STEEL
+    basestats 40, 60, 70, 35, 50, 60
+    types TYPE_STEEL, TYPE_ELECTRIC
     catchrate 130
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    items ITEM_NONE, ITEM_MAGNET
     genderratio 255
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MINERAL, EGG_GROUP_MINERAL
-    abilities ABILITY_PLUS, ABILITY_MINUS
+    abilities ABILITY_MOTOR_DRIVE, ABILITY_MAGNET_PULL
     runchance 0
     colorflip BODY_COLOR_GRAY, 0
     mondexentry SPECIES_KLINK, "Two bodies comprise a fixed pair.\nThey spin around each\nother to generate energy."
@@ -13666,18 +13666,18 @@ mondata SPECIES_KLINK, "Klink"
 
 
 mondata SPECIES_KLANG, "Klang"
-    basestats 60, 80, 95, 50, 70, 85
-    types TYPE_STEEL, TYPE_STEEL
+    basestats 60, 85, 95, 55, 70, 85
+    types TYPE_STEEL, TYPE_ELECTRIC
     catchrate 60
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    items ITEM_NONE, ITEM_MAGNET
     genderratio 255
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MINERAL, EGG_GROUP_MINERAL
-    abilities ABILITY_PLUS, ABILITY_MINUS
+    abilities ABILITY_MOTOR_DRIVE, ABILITY_MAGNET_PULL
     runchance 0
     colorflip BODY_COLOR_GRAY, 0
     mondexentry SPECIES_KLANG, "A minigear and big gear comprise its body.\nIf the minigear it launches at\na foe doesn't return, it will die."
@@ -13687,18 +13687,18 @@ mondata SPECIES_KLANG, "Klang"
 
 
 mondata SPECIES_KLINKLANG, "Klinklang"
-    basestats 60, 100, 115, 90, 70, 85
-    types TYPE_STEEL, TYPE_STEEL
+    basestats 60, 105, 115, 95, 75, 85
+    types TYPE_STEEL, TYPE_ELECTRIC
     catchrate 30
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
-    items ITEM_NONE, ITEM_NONE
+    items ITEM_NONE, ITEM_MAGNET
     genderratio 255
     eggcycles 20
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MINERAL, EGG_GROUP_MINERAL
-    abilities ABILITY_PLUS, ABILITY_MINUS
+    abilities ABILITY_MOTOR_DRIVE, ABILITY_MAGNET_PULL
     runchance 0
     colorflip BODY_COLOR_GRAY, 0
     mondexentry SPECIES_KLINKLANG, "The minigear spins at high speed.\nThen the energy from the red core charges\nthe minigear to make it ready to fire."
@@ -22879,7 +22879,7 @@ mondata SPECIES_MEGA_STEELIX, "-----"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_MINERAL, EGG_GROUP_MINERAL
-    abilities ABILITY_PRESSURE, ABILITY_PRESSURE
+    abilities ABILITY_SAND_FORCE, ABILITY_SAND_FORCE
     runchance 0
     colorflip 0, 0
 

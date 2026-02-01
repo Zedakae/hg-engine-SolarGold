@@ -5554,7 +5554,7 @@ walklevels 17, 19, 21, 17, 19, 21, 17, 19, 21, 17, 19, 21
 
 // morning encounter slots
 pokemon SPECIES_NOIBAT
-pokemon SPECIES_DRILLBUR
+pokemon SPECIES_DRILBUR
 pokemon SPECIES_GEODUDE
 pokemon SPECIES_PHANPY
 pokemon SPECIES_NOSEPASS
@@ -5568,7 +5568,7 @@ pokemon SPECIES_ARON
 
 // day encounter slots
 pokemon SPECIES_NOIBAT
-pokemon SPECIES_DRILLBUR
+pokemon SPECIES_DRILBUR
 pokemon SPECIES_GEODUDE
 pokemon SPECIES_PHANPY
 pokemon SPECIES_NOSEPASS
@@ -5762,7 +5762,7 @@ walklevels 30, 32, 34, 30, 32, 34, 30, 32, 34, 30, 32, 34
 
 // morning encounter slots
 pokemon SPECIES_NOIBAT
-pokemon SPECIES_DRILLBUR
+pokemon SPECIES_DRILBUR
 pokemon SPECIES_GRAVELER
 pokemon SPECIES_PHANPY
 pokemon SPECIES_NOSEPASS
@@ -5776,7 +5776,7 @@ pokemon SPECIES_LAIRON
 
 // day encounter slots
 pokemon SPECIES_NOIBAT
-pokemon SPECIES_DRILLBUR
+pokemon SPECIES_DRILBUR
 pokemon SPECIES_GRAVELER
 pokemon SPECIES_PHANPY
 pokemon SPECIES_NOSEPASS
