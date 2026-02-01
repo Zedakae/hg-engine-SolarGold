@@ -14,48 +14,6 @@
 #include "../../include/q412.h"
 
 
-
-extern const u8 HeldItemPowerUpTable[36][2];
-
-// this has been moved to src/battle/other_battle_calculators.c so it can be used in
-extern const u16 PunchingMovesTable[24];
-
-extern const u16 StrongJawMovesTable[10];
-
-extern const u16 MegaLauncherMovesTable[7];
-
-extern const u16 SharpnessMovesTable[24];
-
-static const u16 sLowKickWeightToPower[][2] =
-{
-    {   100,     20}, //   0- 10 kg ->  20 bp
-    {   250,     40}, //  10- 25 kg ->  40 bp
-    {   500,     60}, //  25- 50 kg ->  60 bp
-    {  1000,     80}, //  50-100 kg ->  80 bp
-    {  2000,    100}, // 100-200 kg -> 100 bp
-    {0xFFFF, 0xFFFF},
-};
-
-
-// TODO
-// Why is it offset if I use the original definition??????????????
-static const u8 StatBoostModifiersTemp[][2] = {
-    // numerator, denominator
-   { 2, 8 },
-   { 2, 7 },
-   { 2, 6 },
-   { 2, 5 },
-   { 2, 4 },
-   { 2, 3 },
-   { 2, 2 },
-   { 3, 2 },
-   { 4, 2 },
-   { 5, 2 },
-   { 6, 2 },
-   { 7, 2 },
-   { 8, 2 },
-};
-
 // int UNUSED CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond UNUSED,u32 field_cond, u16 pow UNUSED, u8 type UNUSED, u8 attacker, u8 defender, u8 critical) {
 int UNUSED CalcBaseDamageInternal(struct BattleSystem *bw, struct BattleStruct *sp, struct DamageCalcStruct *damageCalc) {
     u32 i = 0;
@@ -273,18 +231,20 @@ int UNUSED CalcBaseDamageInternal(struct BattleSystem *bw, struct BattleStruct *
         movepower = (255 - AttackingMon.happiness) * 10 / 25;
         break;
     // Counter-based
+    // Fury Cutter's damage cap is handled in src/battle/battle_script_commands.c. 
+    // By default, the modern cap is 3 (meaning furyCutterCount will be between 0-2).
     case MOVE_FURY_CUTTER:
-        for (u32 n = 0; n < AttackingMon.furyCutterCount; n++) {
+        for (u32 n = 1; n < AttackingMon.furyCutterCount; n++) {
+            if (movepower >= 160) {
+                break;
+            }
             movepower *= 2;
         }
         break;
     case MOVE_ROLLOUT:
     case MOVE_ICE_BALL:
-        // TODO: Handle Rollout storage, need to hook `BtlCmd_CalcRolloutPower`
-        // For now we use the Gen 4 implementation which is basically the same
-        // Edit: Rollout storage seems to be patched
-
-        for (u32 n = 0; n < 5 - AttackingMon.rolloutCount; n++) {
+        // https://github.com/pret/pokeheartgold/blob/29282f7bb45946dee63475022a8d506092bc3748/src/battle/battle_command.c#L3391
+        for (u32 n = 1; n < 5 - AttackingMon.rolloutCount; n++) {
             movepower *= 2;
         }
         break;
@@ -334,7 +294,7 @@ int UNUSED CalcBaseDamageInternal(struct BattleSystem *bw, struct BattleStruct *
         break;
     case MOVE_PAYBACK:
         // TODO: Check correctness
-        if (sp->playerActions[defender][0] == CONTROLLER_COMMAND_40) {
+        if (IsMovingAfterClient(sp, defender) == TRUE) { //as of Gen5 no longer doubles on switching
             movepower *= 2;
         }
         break;
@@ -527,7 +487,7 @@ int UNUSED CalcBaseDamageInternal(struct BattleSystem *bw, struct BattleStruct *
             break;
         case MOVE_EXPANDING_FORCE:
             // https://www.smogon.com/forums/threads/sword-shield-battle-mechanics-research.3655528/post-8520635
-            if ((terrainOverlayNumberOfTurnsLeft > 0) && (terrainOverlayType == MISTY_TERRAIN)) {
+            if ((terrainOverlayNumberOfTurnsLeft > 0) && (terrainOverlayType == PSYCHIC_TERRAIN)) {
                 basePowerModifier = QMul_RoundUp(basePowerModifier, UQ412__1_5);
             }
             break;
@@ -836,6 +796,12 @@ int UNUSED CalcBaseDamageInternal(struct BattleSystem *bw, struct BattleStruct *
             if (movetype == TYPE_STEEL && AttackingMon.ability == ABILITY_STEELY_SPIRIT) {
                 basePowerModifier = QMul_RoundUp(basePowerModifier, UQ412__1_5);
             }
+
+            // handle Stakeout
+            // TODO: confirm location
+            if (AttackingMon.ability == ABILITY_STAKEOUT && sp->playerActions[sp->defence_client][3] == CONTROLLER_COMMAND_40) {
+                basePowerModifier = QMul_RoundUp(basePowerModifier, UQ412__2_0);
+            }
         }
 
         if (BATTLER_ALLY(attacker) == damageCalc->rawSpeedNonRNGClientOrder[i]) {
@@ -1045,12 +1011,12 @@ int UNUSED CalcBaseDamageInternal(struct BattleSystem *bw, struct BattleStruct *
 #endif
 
     // Step 3.4. Attack boosts/drops
-    attack = AttackingMon.attack * StatBoostModifiersTemp[AttackingMon.atkstate + 6][0];
-    attack /= StatBoostModifiersTemp[AttackingMon.atkstate + 6][1];
+    attack = AttackingMon.attack * StatBoostModifiers[AttackingMon.atkstate + 6][0];
+    attack /= StatBoostModifiers[AttackingMon.atkstate + 6][1];
     attack = attack % 65536;
 
-    sp_attack = AttackingMon.sp_attack * StatBoostModifiersTemp[AttackingMon.spatkstate + 6][0];
-    sp_attack /= StatBoostModifiersTemp[AttackingMon.spatkstate + 6][1];
+    sp_attack = AttackingMon.sp_attack * StatBoostModifiers[AttackingMon.spatkstate + 6][0];
+    sp_attack /= StatBoostModifiers[AttackingMon.spatkstate + 6][1];
     sp_attack = sp_attack % 65536;
 
 #ifdef DEBUG_DAMAGE_CALC
@@ -1344,15 +1310,15 @@ int UNUSED CalcBaseDamageInternal(struct BattleSystem *bw, struct BattleStruct *
     debug_printf("[CalcBaseDamage] DefendingMon.spatkstate: %d\n", DefendingMon.spatkstate);
 #endif
 
-    // Step 4.2. Chip Away / Sacred Sword
-    if ((moveno == MOVE_CHIP_AWAY) || (moveno == MOVE_SACRED_SWORD)) {
+    // Step 4.2. Chip Away / Sacred Sword / Darkest Lariat
+    if ((moveno == MOVE_CHIP_AWAY) || (moveno == MOVE_SACRED_SWORD) || (moveno == MOVE_DARKEST_LARIAT)) {
         DefendingMon.defstate = 0;
         DefendingMon.spdefstate = 0;
     }
 
 #ifdef DEBUG_DAMAGE_CALC
     debug_printf("\n=================\n");
-    debug_printf("[CalcBaseDamage] Step 4.2. Chip Away / Sacred Sword\n");
+    debug_printf("[CalcBaseDamage] Step 4.2. Chip Away / Sacred Sword / Darkest Lariat\n");
     debug_printf("[CalcBaseDamage] DefendingMon.defstate: %d\n", DefendingMon.defstate);
     debug_printf("[CalcBaseDamage] DefendingMon.spdefstate: %d\n", DefendingMon.spdefstate);
 #endif
@@ -1386,12 +1352,12 @@ int UNUSED CalcBaseDamageInternal(struct BattleSystem *bw, struct BattleStruct *
 #endif
 
     // Step 4.6. Defense boosts/drops
-    defense = DefendingMon.defense * StatBoostModifiersTemp[DefendingMon.defstate + 6][0];
-    defense /= StatBoostModifiersTemp[DefendingMon.defstate + 6][1];
+    defense = DefendingMon.defense * StatBoostModifiers[DefendingMon.defstate + 6][0];
+    defense /= StatBoostModifiers[DefendingMon.defstate + 6][1];
     defense = defense % 65536;
 
-    sp_defense = DefendingMon.sp_defense * StatBoostModifiersTemp[DefendingMon.spdefstate + 6][0];
-    sp_defense /= StatBoostModifiersTemp[DefendingMon.spdefstate+ 6][1];
+    sp_defense = DefendingMon.sp_defense * StatBoostModifiers[DefendingMon.spdefstate + 6][0];
+    sp_defense /= StatBoostModifiers[DefendingMon.spdefstate+ 6][1];
     sp_defense = sp_defense % 65536;
 
 #ifdef DEBUG_DAMAGE_CALC

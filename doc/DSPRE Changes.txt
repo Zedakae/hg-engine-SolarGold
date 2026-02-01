@@ -8,21 +8,31 @@
 
 CURRENTLY WORKING ON:
 
-UPDATE TO LATEST KUMA AI TO FIX FIGHT BUGS FROM PLAYTESTERS FEEDBACK
+UNUSED REMOVED FLAGS FROM BASE HEARTGOLD: 474, 475
+
+ALL FIGHTS COMPLETED UP TO JASMINE!
+
+AWAITING PLAYTESTING UP TO JASMINE BEFORE MAKING MORE PROGRESS!
+
+WORKING ON ENCOUNTERS, CURRENTLY COMPLETED UP TO R44.
+
+SABRINA OPTIONAL FIGHT COMPLETED, AWAITING PLAYTESTING!
+
+IMPLEMENTED MEGA EVOLUTION BRACELET AND LYRA ENCOUNTER ON ROUTE 38 GATEHOUSE
+
+UPDATED TO LATEST KUMA AI
+
+FIXED BROCK FIGHT IN DARK CAVE, ALL TEXT ENTRIES WORKING IN 829.TXT ETC.
 
 VILE ENERGY MOVE FULLY RE-IMPLEMENTED POST HG-E UPDATE.
 
 SUCCESSFULLY PUT A CAMPER NPC ON GOLDENROD MAP WHICH IS KNOWN AS A "ALIAS"
 
-FIGHTS COMPLETED UP TO MORTY INCLUDING R38 AND R39.
-
 ERIKA/MORTY FIGHTS NEEDS PLAYTESTING. ALL TRIGGER TILES AND NPC'S WORKING UP TO END OF ROUTE 38
-
-*MENTAL NOTE* = EVENTUALLY LOOK BACK AT PUTTING A LYRA ENCOUNTER IN GATEHOUSE TO R38 POTENTIALLY A CAREPACKAGE WITH MEGA BRACELET/STONE
 
 \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 
-FLAGS USED FROM "2550" TO "2559" SO FAR! (2559 BEING THE OLD MAN BLOCKING PATH TO ROUTE 43)
+FLAGS USED FROM "2550" TO "2561" SO FAR! (2560 BEING JANINE AT CIANWOOD CITY)
 
 \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 
@@ -52,10 +62,11 @@ THEN WORK OUT THE DIFFERENCE FROM THE ORIGINAL DEX NUMBER TO THE NEW ONE TO GET 
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
-ITEMS IMPLEMENTED IN GAME UP TO "GOLDENROD CITY":
+ITEMS IMPLEMENTED IN GAME UP TO "ROUTE 38":
 
 MUSCLE BAND // SHARP BEAK // SHELL BELL // HARD STONE // TM03 - WATER PULSE // MYSTIC WATER //
-U-TURN // CHARCOAL // CUT HM // SILVER POWDER // QUICK CLAW // EVIOLITE
+U-TURN // CHARCOAL // CUT HM // SILVER POWDER // QUICK CLAW // EVIOLITE // LEFTOVERS //
+ROCKY HELMET // EXPERT BELT //
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
@@ -1512,3 +1523,596 @@ NOTABLE MOVE SOUND EFFECTS
 //Shadow Ball Sound Effect playsepan 1903, 117
 //End Of Night Daze Sound Effect playsepan 2107, 117
 //Start Of Night Daze Sound Effect playsepan 1989, 0
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+IMPLEMENTING MEGA BRACELET INTO THE GAME
+
+OW Entry 1032 = Marill Facing Up.
+
+Script 3:
+	MecScript 
+	LockAll 
+	CommonScript 2029
+	Movement Overworld.2 Action#1
+	WaitMovement 
+	PlayFanfare 1538
+	SetOWPosition Overworld.1 10 1 7 Left
+	SetOWPosition Overworld.2 10 1 7 Left
+	Movement Overworld.1 Action#2
+	WaitMovement 
+	WaitFanfare 1538
+	GetPlayerPosition 0x4000 0x4001
+	CheckPokemonAlive 0x4002
+	CompareVarValue 0x4002 1
+	JumpIf DIFFERENT Function#1
+	CompareVarValue 0x4001 6
+	JumpIf DIFFERENT Function#2
+	Movement Overworld.1 Action#3
+	Movement Overworld.2 Action#4
+Jump Function#3
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+Function 1:
+	CompareVarValue 0x4001 6
+	JumpIf DIFFERENT Function#4
+	Movement Overworld.1 Action#5
+	Movement Overworld.2 Action#6
+Jump Function#5
+
+Function 2:
+	CompareVarValue 0x4001 7
+	JumpIf DIFFERENT Function#6
+	Movement Overworld.1 Action#7
+	Movement Overworld.2 Action#8
+Jump Function#3
+
+Function 3:
+Jump Function#5
+
+Function 4:
+	CompareVarValue 0x4001 7
+	JumpIf DIFFERENT Function#7
+	Movement Overworld.1 Action#9
+	Movement Overworld.2 Action#10
+Jump Function#5
+
+Function 5:
+	WaitMovement 
+	Movement Player Action#11
+	CompareVarValue 0x4002 1
+	JumpIf DIFFERENT Function#8
+	Movement Following Action#11
+	WaitMovement 
+	TextPlayerName 0
+	GenderMessage 2 3
+	SetVar 0x8004 149
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 150
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 151
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 152
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 155
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 156
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 465
+	SetVar 0x8005 1
+	CommonScript 2033
+	GenderMessage 4 5
+	CloseMessage 
+	Movement Overworld.1 Action#11
+	WaitMovement 
+	GenderMessage 6 7
+	CloseMessage 
+	Movement Overworld.2 Action#12
+	WaitMovement 
+	CompareVarValue 0x4002 1
+	JumpIf DIFFERENT Function#9
+	CompareVarValue 0x4001 6
+	JumpIf DIFFERENT Function#10
+	Movement Overworld.1 Action#13
+	Movement Overworld.2 Action#14
+Jump Function#11
+
+Function 6:
+	Movement Overworld.1 Action#15
+	Movement Overworld.2 Action#16
+Jump Function#5
+
+Function 7:
+	Movement Overworld.1 Action#17
+	Movement Overworld.2 Action#18
+	WaitMovement 
+	Movement Player Action#11
+	CompareVarValue 0x4002 1
+	JumpIf DIFFERENT Function#8
+	Movement Following Action#11
+	WaitMovement 
+	TextPlayerName 0
+	GenderMessage 2 3
+	SetVar 0x8004 149
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 150
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 151
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 152
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 155
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 156
+	SetVar 0x8005 30
+	CommonScript 2033
+	SetVar 0x8004 465
+	SetVar 0x8005 1
+	CommonScript 2033
+	GenderMessage 4 5
+	CloseMessage 
+	Movement Overworld.1 Action#11
+	WaitMovement 
+	GenderMessage 6 7
+	CloseMessage 
+	Movement Overworld.2 Action#12
+	WaitMovement 
+	CompareVarValue 0x4002 1
+	JumpIf DIFFERENT Function#9
+	CompareVarValue 0x4001 6
+	JumpIf DIFFERENT Function#10
+	Movement Overworld.1 Action#13
+	Movement Overworld.2 Action#14
+Jump Function#11
+
+Function 8:
+	WaitMovement 
+	TextPlayerName 0
+	GenderMessage 2 3
+	SetVar 0x8004 149
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 150
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 151
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 152
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 155
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 156
+	SetVar 0x8005 30
+	CommonScript 2008
+	SetVar 0x8004 465
+	SetVar 0x8005 1
+	CommonScript 2033
+	GenderMessage 4 5
+	CloseMessage 
+	Movement Overworld.1 Action#11
+	WaitMovement 
+	GenderMessage 6 7
+	CloseMessage 
+	Movement Overworld.2 Action#12
+	WaitMovement 
+	CompareVarValue 0x4002 1
+	JumpIf DIFFERENT Function#9
+	CompareVarValue 0x4001 6
+	JumpIf DIFFERENT Function#10
+	Movement Overworld.1 Action#13
+	Movement Overworld.2 Action#14
+Jump Function#11
+
+Function 9:
+	CompareVarValue 0x4001 6
+	JumpIf DIFFERENT Function#12
+	Movement Overworld.1 Action#19
+	Movement Overworld.2 Action#20
+Jump Function#13
+
+Function 10:
+	CompareVarValue 0x4001 7
+	JumpIf DIFFERENT Function#14
+	Movement Overworld.1 Action#21
+	Movement Overworld.2 Action#22
+Jump Function#11
+
+Function 11:
+Jump Function#13
+
+Function 12:
+	CompareVarValue 0x4001 7
+	JumpIf DIFFERENT Function#15
+	Movement Overworld.1 Action#23
+	Movement Overworld.2 Action#24
+Jump Function#13
+
+Function 13:
+	WaitTime 16 0x800C
+	Movement Player Action#25
+	CompareVarValue 0x4002 1
+	JumpIf DIFFERENT Function#16
+	Movement Following Action#25
+	WaitMovement 
+	PlayFanfare 1538
+	WaitFanfare 1538
+	SetOWPosition Overworld.1 12 0 28 Up
+	SetOWPosition Overworld.2 12 0 28 Up
+	CommonScript 2030
+	SetVar 0x416F 14
+	Message 8
+	CloseMessage 
+	ReleaseAll 
+	SetVar 0x4132 1
+End 
+
+Function 14:
+	Movement Overworld.1 Action#26
+	Movement Overworld.2 Action#27
+Jump Function#13
+
+Function 15:
+	Movement Overworld.1 Action#28
+	Movement Overworld.2 Action#29
+	WaitTime 16 0x800C
+	Movement Player Action#25
+	CompareVarValue 0x4002 1
+	JumpIf DIFFERENT Function#16
+	Movement Following Action#25
+	WaitMovement 
+	PlayFanfare 1538
+	WaitFanfare 1538
+	SetOWPosition Overworld.1 12 0 28 Up
+	SetOWPosition Overworld.2 12 0 28 Up
+	CommonScript 2030
+	ReleaseAll 
+	SetVar 0x4132 1
+End 
+
+Function 16:
+	WaitMovement 
+	PlayFanfare 1538
+	WaitFanfare 1538
+	SetOWPosition Overworld.1 12 0 28 Up
+	SetOWPosition Overworld.2 12 0 28 Up
+	CommonScript 2030
+	ReleaseAll 
+	SetVar 0x4132 1
+End
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+Action 1:
+	DisappearTrue 0x1
+End
+
+Action 2:
+	Exclamation 0x1
+End
+
+Action 3:
+	WalkLeftFast 0x2
+	WalkUpFast 0x1
+	WalkLeftFast 0x1
+End
+
+Action 4:
+	Freeze8 0x1
+	DisappearFalse 0x1
+	WalkLeftFast 0x2
+	WalkUpFast 0x1
+	WalkLeftFastSite 0x1
+End
+
+Action 5:
+	WalkLeftFast 0x2
+	WalkUpFast 0x1
+	WalkLeftFast 0x2
+End
+
+Action 6:
+	Freeze8 0x1
+	DisappearFalse 0x1
+	WalkLeftFast 0x2
+	WalkUpFast 0x1
+	WalkLeftFast 0x1
+End
+
+Action 7:
+	WalkLeftFast 0x3
+End
+
+Action 8:
+	Freeze8 0x1
+	DisappearFalse 0x1
+	WalkLeftFast 0x2
+End
+
+Action 9:
+	WalkLeftFast 0x4
+End
+
+Action 10:
+	Freeze8 0x1
+	DisappearFalse 0x1
+	WalkLeftFast 0x3
+End
+
+Action 11:
+	WalkRightFastSite 0x1
+End
+
+Action 12:
+	JumpLeftSite 0x2
+End
+
+Action 13:
+	WaitWalkBackDown 0x1
+	WaitWalkBackLeft 0x6
+	DisappearTrue 0x1
+End
+
+Action 14:
+	Freeze2 0x1
+	WalkLeftVeryFast 0x1
+	WalkDownVeryFast 0x1
+	WalkLeftVeryFast 0x6
+	DisappearTrue 0x1
+End
+
+Action 15:
+	WalkLeftFast 0x2
+	WalkDownFast 0x1
+	WalkLeftFast 0x1
+End
+
+Action 16:
+	Freeze8 0x1
+	DisappearFalse 0x1
+	WalkLeftFast 0x2
+	WalkDownFast 0x1
+	WalkLeftFastSite 0x1
+End
+
+Action 17:
+	WalkLeftFast 0x2
+	WalkDownFast 0x1
+	WalkLeftFast 0x2
+End
+
+Action 18:
+	Freeze8 0x1
+	DisappearFalse 0x1
+	WalkLeftFast 0x2
+	WalkDownFast 0x1
+	WalkLeftFast 0x1
+End
+
+Action 19:
+	WaitWalkBackDown 0x1
+	WaitWalkBackLeft 0x5
+	DisappearTrue 0x1
+End
+
+Action 20:
+	Freeze2 0x1
+	WalkLeftVeryFast 0x1
+	WalkDownVeryFast 0x1
+	WalkLeftVeryFast 0x5
+	DisappearTrue 0x1
+End
+
+Action 21:
+	WaitWalkBackDown 0x1
+	WaitWalkBackLeft 0x4
+	WaitWalkBackUp 0x1
+	WaitWalkBackLeft 0x2
+	DisappearTrue 0x1
+End
+
+Action 22:
+	Freeze2 0x1
+	WalkLeftVeryFast 0x1
+	WalkDownVeryFast 0x1
+	WalkLeftVeryFast 0x4
+	WalkUpVeryFast 0x1
+	WalkLeftVeryFast 0x2
+	DisappearTrue 0x1
+End
+
+Action 23:
+	WaitWalkBackDown 0x1
+	WaitWalkBackLeft 0x3
+	WaitWalkBackUp 0x1
+	WaitWalkBackLeft 0x2
+	DisappearTrue 0x1
+End
+
+Action 24:
+	Freeze2 0x1
+	WalkLeftVeryFast 0x1
+	WalkDownVeryFast 0x1
+	WalkLeftVeryFast 0x3
+	WalkUpVeryFast 0x1
+	WalkLeftVeryFast 0x2
+	DisappearTrue 0x1
+End
+
+Action 25:
+	WalkLeftVeryFastSite 0x1
+End
+
+Action 26:
+	WaitWalkBackUp 0x1
+	WaitWalkBackLeft 0x6
+	DisappearTrue 0x1
+End
+
+Action 27:
+	Freeze2 0x1
+	WalkLeftVeryFast 0x1
+	WalkUpVeryFast 0x1
+	WalkLeftVeryFast 0x6
+	DisappearTrue 0x1
+End
+
+Action 28:
+	WaitWalkBackUp 0x1
+	WaitWalkBackLeft 0x5
+	DisappearTrue 0x1
+End
+
+Action 29:
+	Freeze2 0x1
+	WalkLeftVeryFast 0x1
+	WalkUpVeryFast 0x1
+	WalkLeftVeryFast 0x5
+	DisappearTrue 0x1
+End
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+TEXT BANKS TO ALTER, USE AS GUIDELINE
+
+Lyra: I knew it was you, \v0103ぁ\x0000\x0000!\rHow did you get past me?\nHere take these for surprising me..\n\v0103ぁ\x0000\x0000!\r
+
+Ethan: I knew it was you, \v0103ぁ\x0000\x0000!\rHow did you get past me?\nHere take these for surprising me..\n\v0103ぁ\x0000\x0000!\r
+
+I have to go now!\fI won’t let you pass me again!\r
+
+I have to go now!\fI won’t let you pass me again!\r
+
+Let’s go, MARILL!\r
+
+Come on, MARILL!\r
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+GIVE MEGA BRACELET WITH JUST THIS CODE
+
+SetVar 0x8004 744
+SetVar 0x8005 1
+CommonScript 2033
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+TRIGGER TILE VARIABLE FOR ECRUTEAK CITY WEST GATE LYRA ENCOUNTER
+
+VARIABLE = 16478 OR 405E, SCRIPT TO TRIGGER = 3, EXPECTED VALUE = 1
+
+SETUP MORTY END OF SCRIPT TO TRIGGER TILE AT VALUE = 1 THEN ONCE LYRA
+ENCOUNTER IS DONE CHANGE BACK TO VALUE = 0
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+SetFlag 2410
+	SetVar 0x40A5 2
+	SetVar 0x410E 1
+	SetFlag 471
+	ClearFlag 473
+	SetFlag 474
+	SetFlag 475
+	ClearFlag 476
+	ClearFlag 477
+	SetFlag 2456
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+BEATING JASMINE ENDS IN THIS VAR.
+
+SetVar 0x410E 1
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+CompareVarValue 0x410E 2
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+TO FIX INTERACTBLE GYM STATUES
+
+Function 16:
+	Message 24
+	WaitButton 
+	CloseMessage 
+	ReleaseAll 
+End 
+
+Function 17:
+	WaitButton 
+	CloseMessage 
+	ReleaseAll 
+End
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+Script 7:
+	PlayFanfare 1500
+	LockAll 
+	FacePlayer 
+	CheckBadge 5 0x800C
+	TextPlayerName 0
+	CompareVarValue 0x800C 0
+	JumpIf DIFFERENT Function#16
+	Message 23
+Jump Function#17
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+TO FIX GYM GUIDE GENT
+
+Script 6:
+	PlayFanfare 1500
+	LockAll 
+	FacePlayer 
+	CheckBadge 5 0x800C
+	CompareVarValue 0x800C 1
+	JumpIf EQUAL Function#13
+	CompareVarValue 0x410E 0
+	JumpIf DIFFERENT Function#14
+	Message 16
+Jump Function#15
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+Function 13:
+	Message 18
+	WaitButton 
+	CloseMessage 
+	ReleaseAll 
+End
+
+Function 14:
+	Message 17
+	WaitButton 
+	CloseMessage 
+	ReleaseAll 
+End 
+
+Function 15:
+	WaitButton 
+	CloseMessage 
+	ReleaseAll 
+End
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+Message 16: Jasmine, the Gym Leader?\nShe’s at the Lighthouse.\rShe’s been tending to a sick Pokémon.\rA strong Trainer is compassionate\nat the same time...
+
+Message 17: Jasmine uses Steel-type Pokémon.\rShe’s trying to hide her tenderness\nbehind her steely coldness.
+
+Message 18: That was awesome.\fThe Steel type, huh?\fThat was one heated battle you had!

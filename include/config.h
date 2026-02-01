@@ -119,7 +119,7 @@
 // SHINY_ODDS are the odds that a pokémon will be shiny.  actual odds are SHINY_ODDS over 65,536, by default 8 / 65536 or 1 / 8192
 // note that changing this still has no chance of spawning shiny mons in for trainers like the tutorial's method does
 // this will change existing mons too!  if you want to change the odds of wild mons only, you will have to add a certain amount of pid rerolls to the AddWildPartyPokemon routine
-#define SHINY_ODDS 8
+#define SHINY_ODDS 1
 
 // FRIENDSHIP_EVOLUTION_THRESHOLD defines the amount of friendship needed to evolve mons with friendship-related evolutions
 // modern generations have this value at 160, older ones at 220.  still max out at 255
@@ -186,5 +186,12 @@
 
 // FOG_SETS_MISTY_TERRAIN makes the Fog map header weather set permanent Misty Terrain in battle
 //#define FOG_WEATHER_MISTY_TERRAIN
+
+// NATURAL_GIFT_POWER_GEN defines the power of Natural Gift based on generation. Gen 6 or higher are modernized values.
+#define NATURAL_GIFT_POWER_GEN GEN_LATEST
+
+// BLOCK_LEARNING_UNIMPLEMENTED_MOVES prevents learning moves that are not implemented
+// based on the move having FLAG_UNUSABLE_UNIMPLEMENTED
+#define BLOCK_LEARNING_UNIMPLEMENTED_MOVES
 
 #endif
