@@ -3409,7 +3409,7 @@ trainerdata 54, "Troy"
         level 13
         pokemon SPECIES_GASTLY
         item ITEM_ORAN_BERRY
-        move MOVE_CONFUSE_RAY
+        move MOVE_PAYBACK
         move MOVE_HYPNOSIS
         move MOVE_MEAN_LOOK
         move MOVE_OMINOUS_WIND
