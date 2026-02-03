@@ -15,6 +15,7 @@
 #include "../../include/overlay.h"
 #include "../../include/constants/file.h"
 
+#define SKILL_SWAP_SCORING 1
 #define BATTLE_DEBUG_OUTPUT 1
 // #define ATTRACT_WORK_ON_ALL_SEXES 1
 
@@ -309,7 +310,7 @@ int LONG_CALL BasicScoring(struct BattleSystem *bsys, u32 attacker, int i, struc
         moveScore -= IMPOSSIBLE_MOVE; // TODO check
     }
 
-    if (ai->effectivenessOnPlayer[i] == TYPE_MUL_NO_EFFECT) // immunity
+    if (ai->effectivenessOnPlayer[i] == TYPE_MUL_NO_EFFECT && ctx->moveTbl[ai->attackerMove].split != SPLIT_STATUS) // immunity
     {
         moveScore -= IMMUNE_TO_MOVE;
     }
@@ -373,18 +374,18 @@ int LONG_CALL BasicScoring(struct BattleSystem *bsys, u32 attacker, int i, struc
     case MOVE_EFFECT_PARALYZE_HIT:
         if (ctx->moveTbl[ai->attackerMove].secondaryEffectChance == 100) // nuzzle
         {
-            if (ai->defenderImmuneToParalysis || ai->attackerRolledMoveDamages[i] == 0) {
+            if (ai->defenderImmuneToParalysis || ai->effectivenessOnPlayer[i] == TYPE_MUL_NO_EFFECT) {
                 moveScore -= NEVER_USE_MOVE_20;
             }
         }
         break;
     case MOVE_EFFECT_STATUS_PARALYZE:
-        if (ai->defenderImmuneToParalysis) {
+        if (ai->defenderImmuneToParalysis || ai->effectivenessOnPlayer[i] == TYPE_MUL_NO_EFFECT) {
             moveScore -= NEVER_USE_MOVE_20;
         }
         break;
     case MOVE_EFFECT_STATUS_BURN:
-        if (ai->defenderImmuneToBurn) {
+        if (ai->defenderImmuneToBurn || ai->effectivenessOnPlayer[i] == TYPE_MUL_NO_EFFECT) {
             moveScore -= NEVER_USE_MOVE_20;
         }
         break;
@@ -1481,6 +1482,12 @@ int LONG_CALL HarassmentScoring(struct BattleSystem *bsys, u32 attacker, int i, 
         }
         break;
     case MOVE_EFFECT_STATUS_SLEEP:
+#ifdef SKILL_SWAP_SCORING
+        if (ai->attackerMon.ability == ABILITY_PRANKSTER) {
+            moveScore += 2;
+        }
+        FALLTHROUGH;
+#endif // SKILL_SWAP_SCORING
     case MOVE_EFFECT_STATUS_SLEEP_NEXT_TURN:
         moveScore += 6;
         if (!ai->monCanOneShotPlayerWithAnyMove && (BattleRand(bsys) % 4 == 0)) // no kill
@@ -1489,7 +1496,7 @@ int LONG_CALL HarassmentScoring(struct BattleSystem *bsys, u32 attacker, int i, 
                 moveScore += 1;
             }
             if (((BattlerKnowsMove(bsys, attacker, MOVE_DREAM_EATER, ai) == TRUE) || (BattlerKnowsMove(bsys, attacker, MOVE_NIGHTMARE, ai) == TRUE))
-                && (BattlerKnowsMove(bsys, attacker, MOVE_SNORE, ai) == FALSE) && (BattlerKnowsMove(bsys, attacker, MOVE_SLEEP_TALK, ai) == FALSE)) {
+                && (BattlerKnowsMove(bsys, ai->defender, MOVE_SNORE, ai) == FALSE) && (BattlerKnowsMove(bsys, ai->defender, MOVE_SLEEP_TALK, ai) == FALSE)) {
                 moveScore += 1;
             }
             if ((BattlerKnowsMove(bsys, attacker, MOVE_HEX, ai) == TRUE)
@@ -1497,9 +1504,6 @@ int LONG_CALL HarassmentScoring(struct BattleSystem *bsys, u32 attacker, int i, 
             {
                 moveScore += 1;
             }
-        }
-        if (ai->attackerMon.ability == ABILITY_PRANKSTER) {
-            moveScore += 2;
         }
         break;
     case MOVE_EFFECT_STATUS_POISON:

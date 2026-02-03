@@ -3,6 +3,7 @@
 #include "../battle.h"
 
 //#define BATTLE_DEBUG_OUTPUT 1
+#define HLG_CUSTOM_WEATHER 1
 
 struct PACKED AI_sDamageCalc {
     u16 species;
@@ -140,7 +141,7 @@ int LONG_CALL BattleAI_GetTypeEffectiveness(void *bw, struct BattleStruct *sp, i
 
 BOOL LONG_CALL BattleAI_AttackerHasOnlyIneffectiveMoves(struct BattleStruct *ctx, u32 attacker, int knownMoves, u32 effectiveness[4]);
 
-int LONG_CALL BattleAI_AdjustUnusualMoveDamage(struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender, u32 damage, u32 moveEffect, u32 moveno);
+int LONG_CALL BattleAI_AdjustUnusualMoveDamage(struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender, u32 damage, u32 moveEffect, u32 moveno, u32 effectiveness);
 int LONG_CALL BattleAI_GetDynamicMoveType(struct BattleSystem *bsys, struct BattleStruct *ctx, struct AI_sDamageCalc *attacker, int moveno);
 BOOL LONG_CALL BattleAI_IsKnockOffPoweredUp(struct AI_sDamageCalc *defender);
 
