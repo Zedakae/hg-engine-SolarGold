@@ -3968,7 +3968,7 @@ trainerdata 64, "Ian"
         level 26
         pokemon SPECIES_PRIMEAPE
         item ITEM_PUNCHING_GLOVE
-        move MOVE_RAGE_FIST
+        move MOVE_NIGHT_SLASH
         move MOVE_BULK_UP
         move MOVE_DRAIN_PUNCH
         move MOVE_ACROBATICS
@@ -6808,12 +6808,12 @@ trainerdata 106, "Lucien"
         level 25
         pokemon SPECIES_CLAYDOL
         item ITEM_LEFTOVERS
-        move MOVE_ALLY_SWITCH
-        move MOVE_ANCIENT_POWER
+        move MOVE_HIDDEN_POWER
+        move MOVE_COSMIC_POWER
         move MOVE_EARTH_POWER
         move MOVE_PSYBEAM
         ability ABILITY_LEVITATE
-        setivs 31, 31, 31, 31, 31, 31
+        setivs 31, 31, 31, 30, 31, 30
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_QUIET
         additionalflags 0
