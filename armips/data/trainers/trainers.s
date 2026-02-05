@@ -22535,7 +22535,7 @@ trainerdata 504, "Brock"
         move MOVE_ROCK_SMASH
         move MOVE_BULLDOZE
         move MOVE_HEADBUTT
-        move MOVE_SMACK_DOWN
+        move MOVE_ROCK_THROW
         ability ABILITY_MOLD_BREAKER
         setivs 15, 15, 15, 15, 15, 15
         setevs 0, 0, 0, 0, 0, 0
@@ -22552,7 +22552,7 @@ trainerdata 504, "Brock"
         move MOVE_FURY_CUTTER
         move MOVE_METAL_CLAW
         move MOVE_HONE_CLAWS
-        move MOVE_SMACK_DOWN
+        move MOVE_ROCK_THROW
         ability ABILITY_BATTLE_ARMOR
         setivs 15, 15, 15, 15, 15, 15
         setevs 0, 0, 0, 0, 0, 0
@@ -22566,7 +22566,7 @@ trainerdata 504, "Brock"
         level 12
         pokemon SPECIES_ONIX
         item ITEM_ORAN_BERRY
-        move MOVE_SMACK_DOWN
+        move MOVE_ROCK_THROW
         move MOVE_ROCK_POLISH
         move MOVE_BULLDOZE
         move MOVE_NONE

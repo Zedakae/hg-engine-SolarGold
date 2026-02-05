@@ -105,13 +105,13 @@ _000C: // Trainer 496
     trainertextentry 496, TEXT_PLAYER_LOSES, "...Humph!\nThat was a waste of time.\n"
 	
 _000G: // Trainer 40
-	trainertextentry 40, TEXT_NOTICE_IN_OVERWORLD, "I ran the battle sim... Let's go!\n"
+	trainertextentry 40, TEXT_NOTICE_IN_OVERWORLD, "I ran the battle sim... Let's go!\r"
     trainertextentry 40, TEXT_DEFEATED_IN_BATTLE, "Algorithm... failed me...\n"
 	trainertextentry 40, TEXT_DEFEATED_IN_OVERWORLD, "Back to debugging...\n"
 	trainertextentry 40, TEXT_PLAYER_LOSES, "Science wins... stats never lie!\n"
 
 _000K: // Trainer 11
-    trainertextentry 11, TEXT_NOTICE_IN_OVERWORLD, "Not all campers rely on\nfire for spark...\n"
+    trainertextentry 11, TEXT_NOTICE_IN_OVERWORLD, "Not all campers rely on\nfire for spark...\r"
     trainertextentry 11, TEXT_LAST_MON_SENT_OUT, "I leave the best for last!\n"
     trainertextentry 11, TEXT_DEFEATED_IN_BATTLE, "Back to camping it is...\nSigh...\n"
     trainertextentry 11, TEXT_DEFEATED_IN_OVERWORLD, "Guess my spark needs some work...\n"
@@ -130,7 +130,7 @@ _000S: // Trainer 504
     trainertextentry 504, TEXT_PLAYER_LOSES, "Even granite cracks under pressure.\nCome back when your resolve’s reforged.\n"
 
 _000W: // Trainer 105
-    trainertextentry 105, TEXT_NOTICE_IN_OVERWORLD, "Axel: Hope you brought rubber boots\nthis is gonna spark!\n"
+    trainertextentry 105, TEXT_NOTICE_IN_OVERWORLD, "Axel: Hope you brought rubber boots\nthis is gonna spark!\r"
     trainertextentry 105, TEXT_DEFEATED_IN_BATTLE, "Axel: Got unplugged… shoulda charged\nfirst.\n"
     trainertextentry 105, TEXT_DEFEATED_IN_OVERWORLD, "Axel: Guess brain beats voltage… this\ntime.\n"
     trainertextentry 105, TEXT_PLAYER_LOSES, "Axel: BZZT! Shocking win, huh?\n"
@@ -225,27 +225,27 @@ _00F4: // Trainer 286
     trainertextentry 286, TEXT_PLAYER_LOSES, "Hmm, seems my Pokémon are pretty good.\n"
 
 _00G4: // Trainer 106
-    trainertextentry 106, TEXT_NOTICE_IN_OVERWORLD, "Lucien: If thoughts could fight, this\nwould be a clean sweep.\n"
+    trainertextentry 106, TEXT_NOTICE_IN_OVERWORLD, "Lucien: If thoughts could fight, this\nwould be a clean sweep.\r"
     trainertextentry 106, TEXT_DEFEATED_IN_BATTLE, "Lucien: Our minds weren’t quite aligned\ntoday.\n"
     trainertextentry 106, TEXT_DEFEATED_IN_OVERWORLD, "Lucien: Even the stars miss a\nprediction sometimes.\n"
     trainertextentry 106, TEXT_PLAYER_LOSES, "Lucien: No surprise the cosmos\nwhispered your defeat.\n"
 
 _00H4: // Trainer 63
-    trainertextentry 63, TEXT_NOTICE_IN_OVERWORLD, "I lie in wait where blades of grass\nconceal. Now… face my fists of steel!\n"
+    trainertextentry 63, TEXT_NOTICE_IN_OVERWORLD, "I lie in wait where blades of grass\nconceal. Now… face my fists of steel!\r"
     trainertextentry 63, TEXT_LAST_MON_SENT_OUT, "My final fighter’s built for comebacks!\n"
     trainertextentry 63, TEXT_DEFEATED_IN_BATTLE, "Seems hiding didn’t help my form…\n"
     trainertextentry 63, TEXT_DEFEATED_IN_OVERWORLD, "Grass tactics… 0. Discipline… 1.\n"
     trainertextentry 63, TEXT_PLAYER_LOSES, "Caught off guard?\nEvery strike begins with surprise.\n"
 
 _00I4: // Trainer 87
-    trainertextentry 87, TEXT_NOTICE_IN_OVERWORLD, "Georgia thinks her Magmar burns\nbrighter… She hasn’t seen nothing yet!\n"
+    trainertextentry 87, TEXT_NOTICE_IN_OVERWORLD, "Georgia thinks her Magmar burns\nbrighter… She hasn’t seen nothing yet!\r"
     trainertextentry 87, TEXT_LAST_MON_SENT_OUT, "Time to show what real steel can do!\n"
     trainertextentry 87, TEXT_DEFEATED_IN_BATTLE, "Guess her mushrooms pack more punch…\n"
     trainertextentry 87, TEXT_DEFEATED_IN_OVERWORLD, "Steel, stingers, and suction cups…\nStill not enough, huh?\n"
     trainertextentry 87, TEXT_PLAYER_LOSES, "Told you octopus tactics over fairy\ndust.\n"
 
 _00J4: // Trainer 88
-    trainertextentry 88, TEXT_NOTICE_IN_OVERWORLD, "Robert brags about his shiny gears… But\nmy Ribombee's cuter and deadlier!\n"
+    trainertextentry 88, TEXT_NOTICE_IN_OVERWORLD, "Robert brags about his shiny gears… But\nmy Ribombee's cuter and deadlier!\r"
     trainertextentry 88, TEXT_LAST_MON_SENT_OUT, "Go Magmar! Melt the iron ego!\n"
     trainertextentry 88, TEXT_DEFEATED_IN_BATTLE, "Nooo! Not the toxic fish again…\n"
     trainertextentry 88, TEXT_DEFEATED_IN_OVERWORLD, "Steel might win battles…\nBut fairies win hearts!\n"
