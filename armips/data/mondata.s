@@ -13016,7 +13016,7 @@ mondata SPECIES_TRUBBISH, "Trubbish"
 
 mondata SPECIES_GARBODOR, "Garbodor"
     basestats 80, 95, 82, 75, 60, 82
-    types TYPE_POISON, TYPE_POISON
+    types TYPE_POISON, TYPE_STEEL
     catchrate 60
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0

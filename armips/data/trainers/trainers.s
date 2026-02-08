@@ -3923,7 +3923,7 @@ trainerdata 63, "Randolph"
         move MOVE_BRICK_BREAK
         move MOVE_ROCK_TOMB
         move MOVE_SUCKER_PUNCH
-        move MOVE_TRAILBLAZE
+        move MOVE_RAZOR_LEAF
         ability ABILITY_STURDY
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
@@ -17930,16 +17930,16 @@ trainerdata 388, "Walt"
         ivs 186
         abilityslot 0
         level 28
-        monwithform SPECIES_MUK, 1
-        item ITEM_AIR_BALLOON
-        move MOVE_BODY_SLAM
+        pokemon SPECIES_MAGMAR
+        item ITEM_EVIOLITE
+        move MOVE_LAVA_PLUME
         move MOVE_KNOCK_OFF
-        move MOVE_POISON_JAB
-        move MOVE_SHADOW_SNEAK
-        ability ABILITY_POISON_TOUCH
+        move MOVE_WILL_O_WISP
+        move MOVE_ACID_SPRAY
+        ability ABILITY_FLAME_BODY
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_CAREFUL
+        nature NATURE_QUIRKY
         additionalflags 0
         ballseal 0
 
@@ -17947,16 +17947,16 @@ trainerdata 388, "Walt"
         ivs 186
         abilityslot 0
         level 28
-        pokemon SPECIES_PALOSSAND
-        item ITEM_LEFTOVERS
-        move MOVE_PROTECT
-        move MOVE_AMNESIA
-        move MOVE_SCORCHING_SANDS
-        move MOVE_GIGA_DRAIN
-        ability ABILITY_WATER_COMPACTION
+        pokemon SPECIES_NIDOKING
+        item ITEM_ASSAULT_VEST
+        move MOVE_FIRE_PUNCH
+        move MOVE_STONE_EDGE
+        move MOVE_POISON_JAB
+        move MOVE_DRILL_RUN
+        ability ABILITY_SHEER_FORCE
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_SASSY
+        nature NATURE_IMPISH
         additionalflags 0
         ballseal 0
 
@@ -17966,14 +17966,14 @@ trainerdata 388, "Walt"
         level 28
         pokemon SPECIES_HOUNDOOM
         item ITEM_FOCUS_SASH
+        move MOVE_SNARL
+        move MOVE_NASTY_PLOT
         move MOVE_SUCKER_PUNCH
-        move MOVE_PSYCHIC_FANGS
-        move MOVE_FIRE_FANG
-        move MOVE_THUNDER_FANG
+        move MOVE_FLAMETHROWER
         ability ABILITY_FLASH_FIRE
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_ADAMANT
+        nature NATURE_TIMID
         additionalflags 0
         ballseal 0
     endparty
