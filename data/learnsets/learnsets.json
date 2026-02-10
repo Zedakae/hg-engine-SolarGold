@@ -41282,7 +41282,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_GROWL"
+        "Move": "MOVE_BITE"
       },
       {
         "Level": 1,
@@ -41301,68 +41301,64 @@
         "Move": "MOVE_FAIRY_WIND"
       },
       {
-        "Level": 4,
+        "Level": 3,
         "Move": "MOVE_FAIRY_WIND"
       },
       {
-        "Level": 10,
-        "Move": "MOVE_BITE"
-      },
-      {
-        "Level": 15,
-        "Move": "MOVE_BATON_PASS"
-      },
-      {
-        "Level": 17,
-        "Move": "MOVE_VICE_GRIP"
-      },
-      {
-        "Level": 21,
-        "Move": "MOVE_FEINT_ATTACK"
-      },
-      {
-        "Level": 23,
-        "Move": "MOVE_SWEET_SCENT"
-      },
-      {
-        "Level": 25,
+        "Level": 6,
         "Move": "MOVE_FAKE_TEARS"
       },
       {
-        "Level": 27,
-        "Move": "MOVE_STOCKPILE"
+        "Level": 9,
+        "Move": "MOVE_BITE"
       },
       {
-        "Level": 27,
-        "Move": "MOVE_SWALLOW"
+        "Level": 12,
+        "Move": "MOVE_METAL_CLAW"
       },
       {
-        "Level": 27,
-        "Move": "MOVE_SPIT_UP"
+        "Level": 15,
+        "Move": "MOVE_CHARM"
+      },
+      {
+        "Level": 18,
+        "Move": "MOVE_COVET"
+      },
+      {
+        "Level": 21,
+        "Move": "MOVE_KNOCK_OFF"
+      },
+      {
+        "Level": 24,
+        "Move": "MOVE_DRAINING_KISS"
       },
       {
         "Level": 27,
         "Move": "MOVE_SUCKER_PUNCH"
       },
       {
-        "Level": 28,
+        "Level": 30,
         "Move": "MOVE_IRON_DEFENSE"
       },
       {
-        "Level": 28,
-        "Move": "MOVE_CRUNCH"
-      },
-      {
-        "Level": 40,
+        "Level": 33,
         "Move": "MOVE_IRON_HEAD"
       },
       {
-        "Level": 40,
+        "Level": 36,
         "Move": "MOVE_TAUNT"
       },
       {
-        "Level": 48,
+        "Level": 40,
         "Move": "MOVE_PLAY_ROUGH"
+      },
+      {
+        "Level": 44,
+        "Move": "MOVE_CRUNCH"      
+      },
+      {
+        "Level": 48,
+        "Move": "MOVE_FLASH_CANNON"      
       }
     ],
     "MachineMoves": [
@@ -77928,74 +77924,58 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_POUND"
+        "Move": "MOVE_HEADBUTT"
       },
       {
         "Level": 1,
-        "Move": "MOVE_POISON_GAS"
+        "Move": "MOVE_SMOKESCREEN"
       },
       {
-        "Level": 3,
-        "Move": "MOVE_RECYCLE"
-      },
-      {
-        "Level": 8,
-        "Move": "MOVE_ACID_SPRAY"
-      },
-      {
-        "Level": 11,
-        "Move": "MOVE_TOXIC_SPIKES"
-      },
-      {
-        "Level": 14,
-        "Move": "MOVE_DOUBLE_SLAP"
-      },
-      {
-        "Level": 18,
-        "Move": "MOVE_SLUDGE"
-      },
-      {
-        "Level": 21,
-        "Move": "MOVE_STOCKPILE"
-      },
-      {
-        "Level": 21,
-        "Move": "MOVE_SWALLOW"
-      },
-      {
-        "Level": 22,
-        "Move": "MOVE_CLEAR_SMOG"
-      },
-      {
-        "Level": 23,
+        "Level": 9,
         "Move": "MOVE_AMNESIA"
       },
       {
-        "Level": 24,
+        "Level": 12,
+        "Move": "MOVE_ROLLOUT"
+      },
+      {
+        "Level": 15,
+        "Move": "MOVE_TOXIC_SPIKES"
+      },
+      {
+        "Level": 18,
+        "Move": "MOVE_BRUTAL_SWING"
+      },
+      {
+        "Level": 20,
         "Move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "Level": 24,
+        "Move": "MOVE_POISON_JAB"
       },
       {
         "Level": 27,
         "Move": "MOVE_SLUDGE_BOMB"
       },
       {
-        "Level": 32,
+        "Level": 30,
         "Move": "MOVE_TOXIC"
       },
       {
-        "Level": 37,
-        "Move": "MOVE_BELCH"
+        "Level": 34,
+        "Move": "MOVE_SELF_DESTRUCT"
       },
       {
-        "Level": 37,
-        "Move": "MOVE_PAIN_SPLIT"
+        "Level": 38,
+        "Move": "MOVE_SLUDGE_WAVE"
       },
       {
-        "Level": 41,
+        "Level": 42,
         "Move": "MOVE_GUNK_SHOT"
       },
       {
-        "Level": 44,
+        "Level": 48,
         "Move": "MOVE_EXPLOSION"
       }
     ],
@@ -78040,12 +78020,12 @@
   "SPECIES_GARBODOR": {
     "LevelMoves": [
       {
-        "Level": 1,
-        "Move": "MOVE_POUND"
+        "Level": 0,
+        "Move": "MOVE_MAGNET_BOMB"
       },
       {
         "Level": 1,
-        "Move": "MOVE_TAKE_DOWN"
+        "Move": "MOVE_HEADBUTT"
       },
       {
         "Level": 1,
@@ -78053,82 +78033,62 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_POISON_GAS"
+        "Move": "MOVE_SMOKESCREEN"
       },
       {
-        "Level": 1,
-        "Move": "MOVE_RECYCLE"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_ACID_SPRAY"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_TOXIC_SPIKES"
-      },
-      {
-        "Level": 3,
-        "Move": "MOVE_RECYCLE"
-      },
-      {
-        "Level": 11,
-        "Move": "MOVE_TOXIC_SPIKES"
+        "Level": 9,
+        "Move": "MOVE_AMNESIA"
       },
       {
         "Level": 12,
-        "Move": "MOVE_ACID_SPRAY"
+        "Move": "MOVE_ROLLOUT"
       },
       {
-        "Level": 14,
-        "Move": "MOVE_DOUBLE_SLAP"
+        "Level": 15,
+        "Move": "MOVE_TOXIC_SPIKES"
       },
       {
         "Level": 18,
-        "Move": "MOVE_SLUDGE"
+        "Move": "MOVE_BRUTAL_SWING"
       },
       {
-        "Level": 21,
-        "Move": "MOVE_STOCKPILE"
-      },
-      {
-        "Level": 21,
-        "Move": "MOVE_SWALLOW"
-      },
-      {
-        "Level": 22,
-        "Move": "MOVE_CLEAR_SMOG"
+        "Level": 20,
+        "Move": "MOVE_TAKE_DOWN"
       },
       {
         "Level": 24,
-        "Move": "MOVE_BODY_SLAM"
-      },
-      {
-        "Level": 26,
-        "Move": "MOVE_AMNESIA"
+        "Move": "MOVE_POISON_JAB"
       },
       {
         "Level": 27,
         "Move": "MOVE_SLUDGE_BOMB"
       },
       {
-        "Level": 34,
+        "Level": 30,
         "Move": "MOVE_TOXIC"
       },
       {
+        "Level": 34,
+        "Move": "MOVE_SELF_DESTRUCT"
+      },
+      {
         "Level": 39,
-        "Move": "MOVE_PAIN_SPLIT"
+        "Move": "MOVE_SLUDGE_WAVE"
       },
       {
-        "Level": 40,
-        "Move": "MOVE_BELCH"
+        "Level": 42,
+        "Move": "MOVE_GYRO_BALL"
       },
       {
-        "Level": 48,
+        "Level": 45,
         "Move": "MOVE_GUNK_SHOT"
       },
       {
-        "Level": 53,
+        "Level": 48,
+        "Move": "MOVE_SPIN_OUT"
+      },
+      {
+        "Level": 52,
         "Move": "MOVE_EXPLOSION"
       }
     ],
