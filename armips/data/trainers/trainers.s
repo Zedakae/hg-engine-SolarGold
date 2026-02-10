@@ -421,8 +421,8 @@ trainerdata 7, "Irwin"
         pokemon SPECIES_SHIFTRY
         item ITEM_EXPERT_BELT
         move MOVE_FAKE_OUT
-        move MOVE_GIGA_DRAIN
-        move MOVE_AIR_CUTTER
+        move MOVE_LEAF_BLADE
+        move MOVE_AERIAL_ACE
         move MOVE_SUCKER_PUNCH
         ability ABILITY_WIND_RIDER
         setivs 31, 31, 31, 31, 31, 31
@@ -452,16 +452,16 @@ trainerdata 7, "Irwin"
         ivs 186
         abilityslot 0
         level 28
-        pokemon SPECIES_SEISMITOAD
-        item ITEM_CHESTO_BERRY
-        move MOVE_DRAIN_PUNCH
+        pokemon SPECIES_PALPITOAD
+        item ITEM_EVIOLITE
+        move MOVE_ICY_WIND
         move MOVE_BUBBLE_BEAM
-        move MOVE_STOMPING_TANTRUM
-        move MOVE_REST
-        ability ABILITY_SWIFT_SWIM
+        move MOVE_MUD_SHOT
+        move MOVE_TOXIC
+        ability ABILITY_WATER_ABSORB
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_BRAVE
+        nature NATURE_QUIET
         additionalflags 0
         ballseal 0
     endparty
@@ -2881,7 +2881,7 @@ trainerdata 45, "Ruth"
         move MOVE_SUCKER_PUNCH
         move MOVE_ROCK_SLIDE
         move MOVE_STEALTH_ROCK
-        move MOVE_TRAILBLAZE
+        move MOVE_RAZOR_LEAF
         ability ABILITY_STURDY
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
@@ -4797,13 +4797,13 @@ trainerdata 76, "Brooke"
         ivs 186
         abilityslot 0
         level 28
-        pokemon SPECIES_BISHARP
+        pokemon SPECIES_MAWILE
         item ITEM_AIR_BALLOON
-        move MOVE_IRON_HEAD
-        move MOVE_GRASS_KNOT
+        move MOVE_METAL_CLAW
+        move MOVE_COVET
         move MOVE_SUCKER_PUNCH
-        move MOVE_AERIAL_ACE
-        ability ABILITY_DEFIANT
+        move MOVE_KNOCK_OFF
+        ability ABILITY_HUGE_POWER
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_LONELY
@@ -4927,13 +4927,13 @@ trainerdata 78, "Arnie"
         ivs 186
         abilityslot 0
         level 28
-        pokemon SPECIES_KABUTOPS
-        item ITEM_RINDO_BERRY
-        move MOVE_FLIP_TURN
-        move MOVE_LEECH_LIFE
-        move MOVE_AQUA_JET
+        pokemon SPECIES_KLAWF
+        item ITEM_ASSAULT_VEST
+        move MOVE_KNOCK_OFF
+        move MOVE_X_SCISSOR
+        move MOVE_CRABHAMMER
         move MOVE_ROCK_SLIDE
-        ability ABILITY_BATTLE_ARMOR
+        ability ABILITY_SHELL_ARMOR
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_CAREFUL
@@ -17780,7 +17780,7 @@ trainerdata 384, "Daniel"
         level 19
         pokemon SPECIES_SUDOWOODO
         item ITEM_LUM_BERRY
-        move MOVE_TRAILBLAZE
+        move MOVE_RAZOR_LEAF
         move MOVE_LOW_SWEEP
         move MOVE_ROCK_TOMB
         move MOVE_TAKE_DOWN
@@ -22791,7 +22791,7 @@ trainerdata 508, "Lt. Surge"
         level 29
         pokemon SPECIES_ZEBSTRIKA
         item ITEM_ELECTRIC_SEED
-        move MOVE_TRAILBLAZE
+        move MOVE_SMART_STRIKE
         move MOVE_WILD_CHARGE
         move MOVE_FLAME_CHARGE
         move MOVE_BATON_PASS

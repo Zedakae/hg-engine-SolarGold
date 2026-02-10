@@ -11736,14 +11736,14 @@ movedata MOVE_ZIPPY_ZAP, "Zippy Zap"
     type TYPE_ELECTRIC
     accuracy 100
     pp 10
-    effectchance 100
+    effectchance 20
     target RANGE_SINGLE_TARGET
     priority 2
     flags FLAG_KEEP_HP_BAR | FLAG_PROTECT | FLAG_CONTACT | FLAG_UNUSABLE_IN_GEN_8 | FLAG_UNUSABLE_IN_GEN_9
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_ZIPPY_ZAP, "The user attacks with\nhigh-speed bursts of\nelectricity. This move\nboosts Evasion and\nalways goes first."
+    movedescription MOVE_ZIPPY_ZAP, "The user attacks with\nhigh-speed bursts of\nelectricity. This move may\nboost Evasion and\nalways goes first."
 
 movedata MOVE_SPLISHY_SPLASH, "Splishy Splash"
     battleeffect MOVE_EFFECT_PARALYZE_HIT

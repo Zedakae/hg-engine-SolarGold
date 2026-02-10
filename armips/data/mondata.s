@@ -6379,12 +6379,12 @@ mondata SPECIES_SABLEYE, "Sableye"
 
 
 mondata SPECIES_MAWILE, "Mawile"
-    basestats 50, 85, 85, 50, 55, 55
+    basestats 60, 80, 85, 60, 70, 65
     types TYPE_STEEL, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_STEEL
-    catchrate 45
+    catchrate 125
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
-    items ITEM_IRON_BALL, ITEM_OCCA_BERRY
+    items ITEM_OCCA_BERRY, ITEM_IRON_BALL
     genderratio 127
     eggcycles 20
     basefriendship 50
@@ -12994,7 +12994,7 @@ mondata SPECIES_ARCHEOPS, "Archeops"
 
 
 mondata SPECIES_TRUBBISH, "Trubbish"
-    basestats 50, 50, 62, 65, 40, 62
+    basestats 60, 50, 70, 65, 40, 60
     types TYPE_POISON, TYPE_POISON
     catchrate 190
     baseexp 0 // defined in baseexp.s
@@ -13015,7 +13015,7 @@ mondata SPECIES_TRUBBISH, "Trubbish"
 
 
 mondata SPECIES_GARBODOR, "Garbodor"
-    basestats 80, 95, 82, 75, 60, 82
+    basestats 90, 95, 95, 75, 60, 85
     types TYPE_POISON, TYPE_STEEL
     catchrate 60
     baseexp 0 // defined in baseexp.s
