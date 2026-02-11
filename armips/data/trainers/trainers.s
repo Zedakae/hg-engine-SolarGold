@@ -305,13 +305,13 @@ trainerdata 5, "Victoria"
         ivs 186
         abilityslot 0
         level 28
-        pokemon SPECIES_GREEDENT
-        item ITEM_AGUAV_BERRY
-        move MOVE_REST
-        move MOVE_COUNTER
-        move MOVE_STUFF_CHEEKS
-        move MOVE_BODY_SLAM
-        ability ABILITY_CHEEK_POUCH
+        pokemon SPECIES_DACHSBUN
+        item ITEM_LEFTOVERS
+        move MOVE_PLAY_ROUGH
+        move MOVE_YAWN
+        move MOVE_PROTECT
+        move MOVE_STOMPING_TANTRUM
+        ability ABILITY_WELL_BAKED_BODY
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_CAREFUL
@@ -18483,16 +18483,16 @@ trainerdata 398, "Valerie"
         ivs 186
         abilityslot 0
         level 32
-        pokemon SPECIES_KLAWF
-        item ITEM_ASSAULT_VEST
-        move MOVE_X_SCISSOR
-        move MOVE_METAL_CLAW
-        move MOVE_ROCK_TOMB
-        move MOVE_KNOCK_OFF
-        ability ABILITY_SHELL_ARMOR
+        pokemon SPECIES_CINCCINO
+        item ITEM_CHOPLE_BERRY
+        move MOVE_U_TURN
+        move MOVE_TAIL_SLAP
+        move MOVE_ENCORE
+        move MOVE_TRIPLE_AXEL
+        ability ABILITY_SKILL_LINK
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_CAREFUL
+        nature NATURE_JOLLY
         additionalflags 0
         ballseal 0
 
