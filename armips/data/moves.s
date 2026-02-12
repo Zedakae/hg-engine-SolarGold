@@ -7131,7 +7131,7 @@ movedata MOVE_STONE_EDGE, "Stone Edge"
     movedescription MOVE_STONE_EDGE, "The user stabs the\nfoe with a sharpened\nstone. It has a high\ncritical-hit ratio.\n"
 
 movedata MOVE_CAPTIVATE, "Captivate"
-    battleeffect MOVE_EFFECT_SP_ATK_DOWN_2_OPPOSITE_GENDER
+    battleeffect MOVE_EFFECT_SP_ATK_DOWN_2
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -7144,7 +7144,7 @@ movedata MOVE_CAPTIVATE, "Captivate"
     appeal APPEAL_KEEP_VOLTAGE_UP
     contesttype CONTEST_BEAUTY
     terminatedata
-    movedescription MOVE_CAPTIVATE, "If it is the opposite\ngender of the user,\nthe foe is charmed\ninto sharply lowering\nits Sp. Atk stat."
+    movedescription MOVE_CAPTIVATE, "The foe is charmed into sharply\nlowering its Sp. Atk stat."
 
 movedata MOVE_STEALTH_ROCK, "Stealth Rock"
     battleeffect MOVE_EFFECT_STEALTH_ROCK
