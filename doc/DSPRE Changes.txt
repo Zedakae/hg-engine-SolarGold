@@ -29,7 +29,15 @@ GOALS TO MAKE ROMHACK POPULAR TO AUDIENCE:
 
 CURRENTLY WORKING ON:
 
-REWORK ENCOUNTER POOL ON ROUTE 37 (CURRENTLY UP TO.)
+COMPLETE TRAINER FIGHTS IN TUNNEL UNDER GOLDENROD CITY.
+
+CREATE ALIAS OF NPC BETWEEN ECRUTEAK CITY AND ROUTE 37.
+
+MAKE CLEAN AND MAKE NEW ROM WTIH ECRUTEAK CITY GYM NPC BLOCKERS NEW DIALOGUE TO TEST IN GAME.
+
+ENSURE TO REMOVE NPC THAT GIVES POKEMON AT ECRUTEAK CITY WEST GATE.
+
+SET VAR )16477) AT END OF JASMINE GYM FIGHT SCRIPT WHEN WANTING TO EXTEND "DEMO"
 
 REVISIT FELL STINGER ANIMATION FOR ENEMY USING IT INTO PLAYER.
 
@@ -2151,3 +2159,31 @@ Message 16: Jasmine, the Gym Leader?\nShe’s at the Lighthouse.\rShe’s been t
 Message 17: Jasmine uses Steel-type Pokémon.\rShe’s trying to hide her tenderness\nbehind her steely coldness.
 
 Message 18: That was awesome.\fThe Steel type, huh?\fThat was one heated battle you had!
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+Script 21:
+	LockAll 
+	SetVar 0x416F 99
+	Message 22
+	GivePokemon 257 99 664 0 3 0x800C
+	WaitButton 
+	CloseMessage 
+	ReleaseAll 
+End
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+Script 18:
+	LockAll 
+	FacePlayer 
+	WaitMovement 
+	Message 20
+	WaitButton 
+	CloseMessage 
+	ReleaseAll 
+End
+
+Test\r
+
+ID: 9, Flag: 2558, Script 18 (Originally)

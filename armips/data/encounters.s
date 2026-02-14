@@ -2983,7 +2983,7 @@ pokemon SPECIES_FUECOCO
 // night encounter slots
 pokemon SPECIES_KOFFING
 pokemon SPECIES_HOUNDOUR
-pokemon SPECIES_SALAZZLE
+pokemon SPECIES_SALANDIT
 pokemon SPECIES_GULPIN
 pokemon SPECIES_LITWICK
 pokemon SPECIES_MURKROW
