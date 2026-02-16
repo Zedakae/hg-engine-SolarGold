@@ -17994,7 +17994,7 @@ trainerdata 389, "Nelson"
         // mon 0
         ivs 186
         abilityslot 0
-        level 32
+        level 37
         monwithform SPECIES_SLOWKING, 1
         item ITEM_BLACK_SLUDGE
         move MOVE_EERIE_SPELL
@@ -18011,7 +18011,7 @@ trainerdata 389, "Nelson"
         // mon 1
         ivs 186
         abilityslot 0
-        level 32
+        level 37
         pokemon SPECIES_PROBOPASS
         item ITEM_LEFTOVERS
         move MOVE_IRON_DEFENSE
@@ -18028,7 +18028,7 @@ trainerdata 389, "Nelson"
         // mon 2
         ivs 186
         abilityslot 0
-        level 32
+        level 38
         pokemon SPECIES_JYNX
         item ITEM_FOCUS_SASH
         move MOVE_ICE_BEAM

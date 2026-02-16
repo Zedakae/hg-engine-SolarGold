@@ -8,9 +8,8 @@
 
 _0000: // Trainer 0
        // Trainer 2
-       // Trainer 3       
+       // Trainer 3
        // Trainer 107
-       // Trainer 138
        // Trainer 141
        // Trainer 165
        // Trainer 166
@@ -260,6 +259,13 @@ _00L4: // Trainer 506
     trainertextentry 506, TEXT_LAST_MON_SENT_OUT, "Don’t just float there… drown their\nchances!\n"
     trainertextentry 506, TEXT_DEFEATED_IN_BATTLE, "What?! That wasn’t luck… that was a\ntotal tidal disaster!\n"
     trainertextentry 506, TEXT_PLAYER_LOSES, "Ha! You really thought you could wash\nout a storm like me?\n"
+
+_00M4: // Trainer 138
+    trainertextentry 138, TEXT_NOTICE_IN_OVERWORLD, "Hah! Been ridin all day. Let's see if\nyou can keep up!\r"
+    trainertextentry 138, TEXT_LAST_MON_SENT_OUT, "Still got some gas left in the tank!\n"
+    trainertextentry 138, TEXT_DEFEATED_IN_BATTLE, "Wiped out... Guess I took that corner too\nfast.\n"
+    trainertextentry 138, TEXT_DEFEATED_IN_OVERWORLD, "Heh, you’re pretty slick. Maybe I\noughta tune up my team.\n"
+    trainertextentry 138, TEXT_PLAYER_LOSES, "Whoa.. didn’t think you’d skid out that\nhard.\rHit the center and try again.\n"
 
 _0104: // Trainer 287
     trainertextentry 287, TEXT_LAST_MON_CRITICAL, "I see. You weren’t coming to Kanto just\nto show off...\n"
@@ -3295,7 +3301,7 @@ _1AD0: // Trainer 630
 /* Trainer 135 */ .halfword _0808
 /* Trainer 136 */ .halfword _05B0
 /* Trainer 137 */ .halfword _0D94
-/* Trainer 138 */ .halfword _0000
+/* Trainer 138 */ .halfword _00M4
 /* Trainer 139 */ .halfword _0F18
 /* Trainer 140 */ .halfword _061C
 /* Trainer 141 */ .halfword _0000
