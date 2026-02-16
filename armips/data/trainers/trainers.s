@@ -2487,7 +2487,7 @@ trainerdata 37, "Visage"
         // mon 0
         ivs 186
         abilityslot 0
-        level 39
+        level 37
         pokemon SPECIES_MEOWSCARADA
         item ITEM_CHOICE_SCARF
         move MOVE_KNOCK_OFF
@@ -2504,7 +2504,7 @@ trainerdata 37, "Visage"
         // mon 1
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         pokemon SPECIES_BRONZONG
         item ITEM_LEFTOVERS
         move MOVE_IRON_DEFENSE
@@ -2521,7 +2521,7 @@ trainerdata 37, "Visage"
         // mon 2
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         monwithform SPECIES_ROTOM, 1
         item ITEM_WHITE_HERB
         move MOVE_VOLT_SWITCH
@@ -4567,7 +4567,7 @@ trainerdata 73, "Theo"
         // mon 0
         ivs 186
         abilityslot 0
-        level 39
+        level 37
         pokemon SPECIES_JUMPLUFF
         item ITEM_YACHE_BERRY
         move MOVE_HEADBUTT
@@ -4584,7 +4584,7 @@ trainerdata 73, "Theo"
         // mon 1
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         pokemon SPECIES_PIDGEOT
         item ITEM_ASSAULT_VEST
         move MOVE_HEAT_WAVE
@@ -4601,7 +4601,7 @@ trainerdata 73, "Theo"
         // mon 2
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         pokemon SPECIES_CORVIKNIGHT
         item ITEM_LEFTOVERS
         move MOVE_BODY_PRESS
@@ -7902,7 +7902,7 @@ trainerdata 138, "Laurel"
         level 38
         pokemon SPECIES_COMFEY
         item ITEM_SITRUS_BERRY
-        move MOVE_FLORAL_HEALING
+        move MOVE_GIGA_DRAIN
         move MOVE_DRAINING_KISS
         move MOVE_ENCORE
         move MOVE_HELPING_HAND
@@ -10562,7 +10562,7 @@ trainerdata 211, "Huey"
         // mon 0
         ivs 186
         abilityslot 0
-        level 39
+        level 37
         pokemon SPECIES_WUGTRIO
         item ITEM_FOCUS_SASH
         move MOVE_SURF
@@ -10579,7 +10579,7 @@ trainerdata 211, "Huey"
         // mon 1
         ivs 186
         abilityslot 0
-        level 39
+        level 37
         pokemon SPECIES_WALREIN
         item ITEM_CHESTO_BERRY
         move MOVE_ICY_WIND
@@ -10596,7 +10596,7 @@ trainerdata 211, "Huey"
         // mon 2
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         pokemon SPECIES_BOMBIRDIER
         item ITEM_WACAN_BERRY
         move MOVE_KNOCK_OFF
@@ -10627,7 +10627,7 @@ trainerdata 212, "Terrell"
         // mon 0
         ivs 186
         abilityslot 0
-        level 39
+        level 37
         pokemon SPECIES_MILOTIC
         item ITEM_FLAME_ORB
         move MOVE_SCALD
@@ -10644,7 +10644,7 @@ trainerdata 212, "Terrell"
         // mon 1
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         pokemon SPECIES_ARCTOZOLT
         item ITEM_EXPERT_BELT
         move MOVE_THUNDER_PUNCH
@@ -10661,7 +10661,7 @@ trainerdata 212, "Terrell"
         // mon 2
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         pokemon SPECIES_WHISCASH
         item ITEM_LEFTOVERS
         move MOVE_SUBSTITUTE
@@ -10692,7 +10692,7 @@ trainerdata 213, "Kent"
         // mon 0
         ivs 186
         abilityslot 0
-        level 39
+        level 37
         pokemon SPECIES_KINGLER
         item ITEM_LIFE_ORB
         move MOVE_CRABHAMMER
@@ -10709,7 +10709,7 @@ trainerdata 213, "Kent"
         // mon 1
         ivs 186
         abilityslot 0
-        level 40
+        level 37
         pokemon SPECIES_MASQUERAIN
         item ITEM_FOCUS_SASH
         move MOVE_AIR_SLASH
@@ -10726,7 +10726,7 @@ trainerdata 213, "Kent"
         // mon 2
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         pokemon SPECIES_DRACOVISH
         item ITEM_SITRUS_BERRY
         move MOVE_CRUNCH
@@ -10757,7 +10757,7 @@ trainerdata 214, "Roberto"
         // mon 0
         ivs 186
         abilityslot 0
-        level 39
+        level 37
         pokemon SPECIES_MIENSHAO
         item ITEM_FOCUS_SASH
         move MOVE_CLOSE_COMBAT
@@ -10774,7 +10774,7 @@ trainerdata 214, "Roberto"
         // mon 1
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         pokemon SPECIES_CARRACOSTA
         item ITEM_RINDO_BERRY
         move MOVE_STONE_EDGE
@@ -10791,7 +10791,7 @@ trainerdata 214, "Roberto"
         // mon 2
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         monwithform SPECIES_SLOWKING, 1
         item ITEM_SITRUS_BERRY
         move MOVE_SLACK_OFF
@@ -10822,7 +10822,7 @@ trainerdata 215, "Mystique"
         // mon 0
         ivs 186
         abilityslot 0
-        level 39
+        level 37
         pokemon SPECIES_YANMEGA
         item ITEM_FOCUS_SASH
         move MOVE_BUG_BUZZ
@@ -10839,7 +10839,7 @@ trainerdata 215, "Mystique"
         // mon 1
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         pokemon SPECIES_PROBOPASS
         item ITEM_CHOPLE_BERRY
         move MOVE_MAGNET_RISE
@@ -10856,7 +10856,7 @@ trainerdata 215, "Mystique"
         // mon 2
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         pokemon SPECIES_GOODRA
         item ITEM_LEFTOVERS
         move MOVE_DRAGON_PULSE
@@ -10929,7 +10929,7 @@ trainerdata 217, "Denis"
         // mon 0
         ivs 186
         abilityslot 0
-        level 39
+        level 37
         pokemon SPECIES_TROPIUS
         item ITEM_ASSAULT_VEST
         move MOVE_DRAGON_PULSE
@@ -10946,7 +10946,7 @@ trainerdata 217, "Denis"
         // mon 1
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         pokemon SPECIES_STARAPTOR
         item ITEM_CHOICE_SCARF
         move MOVE_BRAVE_BIRD
@@ -10963,7 +10963,7 @@ trainerdata 217, "Denis"
         // mon 2
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         pokemon SPECIES_FEAROW
         item ITEM_FOCUS_SASH
         move MOVE_NIGHT_SLASH
@@ -17997,9 +17997,9 @@ trainerdata 389, "Nelson"
         level 37
         monwithform SPECIES_SLOWKING, 1
         item ITEM_BLACK_SLUDGE
-        move MOVE_EERIE_SPELL
+        move MOVE_PSYSHOCK
         move MOVE_SLACK_OFF
-        move MOVE_CHILLY_RECEPTION
+        move MOVE_SCALD
         move MOVE_SLUDGE_BOMB
         ability ABILITY_REGENERATOR
         setivs 31, 31, 31, 31, 31, 31
@@ -18015,7 +18015,7 @@ trainerdata 389, "Nelson"
         pokemon SPECIES_PROBOPASS
         item ITEM_LEFTOVERS
         move MOVE_IRON_DEFENSE
-        move MOVE_FLASH_CANNON
+        move MOVE_POWER_GEM
         move MOVE_PROTECT
         move MOVE_DISCHARGE
         ability ABILITY_STURDY
@@ -18630,7 +18630,7 @@ trainerdata 401, "Alfred"
         // mon 0
         ivs 186
         abilityslot 0
-        level 39
+        level 37
         pokemon SPECIES_NOCTOWL
         item ITEM_FOCUS_SASH
         move MOVE_AIR_SLASH
@@ -18647,7 +18647,7 @@ trainerdata 401, "Alfred"
         // mon 1
         ivs 186
         abilityslot 0
-        level 39
+        level 37
         pokemon SPECIES_ROSERADE
         item ITEM_BLACK_SLUDGE
         move MOVE_MEGA_DRAIN
@@ -18664,7 +18664,7 @@ trainerdata 401, "Alfred"
         // mon 2
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         pokemon SPECIES_MUDSDALE
         item ITEM_PASSHO_BERRY
         move MOVE_CURSE
@@ -18681,7 +18681,7 @@ trainerdata 401, "Alfred"
         // mon 3
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         pokemon SPECIES_BISHARP
         item ITEM_CHOPLE_BERRY
         move MOVE_SUCKER_PUNCH
@@ -23393,7 +23393,7 @@ trainerdata 516, "Bob"
         // mon 0
         ivs 186
         abilityslot 0
-        level 39
+        level 37
         pokemon SPECIES_PALOSSAND
         item ITEM_ASSAULT_VEST
         move MOVE_SHADOW_BALL
@@ -23410,7 +23410,7 @@ trainerdata 516, "Bob"
         // mon 1
         ivs 186
         abilityslot 0
-        level 39
+        level 37
         pokemon SPECIES_TOGEDEMARU
         item ITEM_AIR_BALLOON
         move MOVE_SPIKY_SHIELD
@@ -23427,7 +23427,7 @@ trainerdata 516, "Bob"
         // mon 2
         ivs 186
         abilityslot 0
-        level 40
+        level 38
         pokemon SPECIES_SCOVILLAIN
         item ITEM_EXPERT_BELT
         move MOVE_FLAMETHROWER
