@@ -2079,7 +2079,7 @@ trainerdata 31, "Morty"
         level 36
         pokemon SPECIES_BASCULEGION
         item ITEM_ASSAULT_VEST
-        move MOVE_LAST_RESPECTS
+        move MOVE_PHANTOM_FORCE
         move MOVE_AQUA_JET
         move MOVE_CRUNCH
         move MOVE_LIQUIDATION
@@ -2942,12 +2942,12 @@ trainerdata 46, "Martha"
         abilityslot 0
         level 35
         pokemon SPECIES_CURSOLA
-        item ITEM_EJECT_BUTTON
+        item ITEM_WHITE_HERB
         move MOVE_ANCIENT_POWER
         move MOVE_HEX
         move MOVE_PERISH_SONG
         move MOVE_STRENGTH_SAP
-        ability ABILITY_PERISH_BODY
+        ability ABILITY_WEAK_ARMOR
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_BOLD
@@ -2964,7 +2964,7 @@ trainerdata 46, "Martha"
         move MOVE_SHADOW_CLAW
         move MOVE_BULLDOZE
         move MOVE_PROTECT
-        ability ABILITY_WANDERING_SPIRIT
+        ability ABILITY_MUMMY
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_BRAVE
@@ -22020,7 +22020,7 @@ trainerdata 493, "Edith"
         level 35
         pokemon SPECIES_HOUNDSTONE
         item ITEM_CHESTO_BERRY
-        move MOVE_LAST_RESPECTS
+        move MOVE_SHADOW_CLAW
         move MOVE_REST
         move MOVE_CRUNCH
         move MOVE_PLAY_ROUGH

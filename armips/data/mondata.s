@@ -3219,7 +3219,7 @@ mondata SPECIES_CHIKORITA, "Chikorita"
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_GRASS
-    abilities ABILITY_OVERGROW, ABILITY_GRASSY_SURGE
+    abilities ABILITY_OVERGROW, ABILITY_TRIAGE
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_CHIKORITA, "A sweet aroma gently wafts from\nthe leaf on its head. It is docile\nand loves to soak up sunrays."
@@ -3240,7 +3240,7 @@ mondata SPECIES_BAYLEEF, "Bayleef"
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_GRASS
-    abilities ABILITY_OVERGROW, ABILITY_GRASSY_SURGE
+    abilities ABILITY_OVERGROW, ABILITY_TRIAGE
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_BAYLEEF, "The scent of spices comes from\naround its neck. Somehow,\nsniffing it makes you want to fight."
@@ -3261,7 +3261,7 @@ mondata SPECIES_MEGANIUM, "Meganium"
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_GRASS
-    abilities ABILITY_OVERGROW, ABILITY_GRASSY_SURGE
+    abilities ABILITY_OVERGROW, ABILITY_TRIAGE
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_MEGANIUM, "The aroma that rises from its\npetals contains a substance that\ncalms aggressive feelings."
@@ -3292,7 +3292,7 @@ mondata SPECIES_CYNDAQUIL, "Cyndaquil"
 
 
 mondata SPECIES_QUILAVA, "Quilava"
-    basestats 60, 60, 60, 85, 80, 70
+    basestats 60, 60, 60, 85, 80, 65
     types TYPE_FIRE, TYPE_GROUND
     catchrate 125
     baseexp 0 // defined in baseexp.s
@@ -3313,7 +3313,7 @@ mondata SPECIES_QUILAVA, "Quilava"
 
 
 mondata SPECIES_TYPHLOSION, "Typhlosion"
-    basestats 85, 70, 80, 110, 115, 90
+    basestats 80, 70, 80, 110, 115, 85
     types TYPE_FIRE, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
@@ -8280,7 +8280,7 @@ mondata SPECIES_PIPLUP, "Piplup"
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_WATER_1, EGG_GROUP_FIELD
-    abilities ABILITY_TORRENT, ABILITY_NONE
+    abilities ABILITY_TORRENT, ABILITY_HEATPROOF
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_PIPLUP, "It doesn’t like to be taken care\nof. It’s difficult to bond with since\nit won’t listen to its Trainer."
@@ -8301,7 +8301,7 @@ mondata SPECIES_PRINPLUP, "Prinplup"
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_WATER_1, EGG_GROUP_FIELD
-    abilities ABILITY_TORRENT, ABILITY_NONE
+    abilities ABILITY_TORRENT, ABILITY_HEATPROOF
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_PRINPLUP, "It lives a solitary life. Its wings\ndeliver wicked blows that can\nsnap even the thickest of trees."
@@ -8322,7 +8322,7 @@ mondata SPECIES_EMPOLEON, "Empoleon"
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_WATER_1, EGG_GROUP_FIELD
-    abilities ABILITY_TORRENT, ABILITY_NONE
+    abilities ABILITY_TORRENT, ABILITY_HEATPROOF
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_EMPOLEON, "It avoids unnecessary disputes,\nbut it will decimate anything that\nthreatens its pride."
@@ -19284,7 +19284,7 @@ mondata SPECIES_RUNERIGUS, "Runerigus"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_MINERAL, EGG_GROUP_AMORPHOUS
-    abilities ABILITY_WANDERING_SPIRIT, ABILITY_NONE
+    abilities ABILITY_MUMMY, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_GRAY, 0
     mondexentry SPECIES_RUNERIGUS, "Never touch its shadowlike body, or\nyou’ll be shown the horrific memories\nbehind the picture carved into it."
@@ -24175,7 +24175,7 @@ mondata SPECIES_YAMASK_GALARIAN, "-----"
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_MINERAL, EGG_GROUP_AMORPHOUS
-    abilities ABILITY_WANDERING_SPIRIT, ABILITY_NONE
+    abilities ABILITY_MUMMY, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BLACK, 0
 
