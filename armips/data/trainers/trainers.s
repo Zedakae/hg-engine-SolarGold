@@ -10570,7 +10570,7 @@ trainerdata 211, "Huey"
         move MOVE_NONE
         move MOVE_NONE
         ability ABILITY_GOOEY
-        setivs 31, 31, 31, 31, 31, 31
+        setivs 31, 31, 31, 31, 0, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_JOLLY
         additionalflags 0
@@ -10585,7 +10585,7 @@ trainerdata 211, "Huey"
         move MOVE_ICY_WIND
         move MOVE_REST
         move MOVE_YAWN
-        move MOVE_SCALD
+        move MOVE_CHILLING_WATER
         ability ABILITY_THICK_FAT
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0

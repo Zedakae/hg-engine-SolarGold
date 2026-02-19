@@ -68,7 +68,6 @@ _0000: // Trainer 0
        // Trainer 495
        // Trainer 511
        // Trainer 514
-       // Trainer 516
        // Trainer 519
        // Trainer 521
        // Trainer 524
@@ -266,6 +265,13 @@ _00M4: // Trainer 138
     trainertextentry 138, TEXT_DEFEATED_IN_BATTLE, "Wiped out... Guess I took that corner too\nfast.\n"
     trainertextentry 138, TEXT_DEFEATED_IN_OVERWORLD, "Heh, you’re pretty slick. Maybe I\noughta tune up my team.\n"
     trainertextentry 138, TEXT_PLAYER_LOSES, "Whoa.. didn’t think you’d skid out that\nhard.\rHit the center and try again.\n"
+
+_00N4: // Trainer 516
+    trainertextentry 516, TEXT_NOTICE_IN_OVERWORLD, "Kinda wild camping out in a\nlighthouse... Huey said it would be\rfun, so here I am!\r"
+    trainertextentry 516, TEXT_LAST_MON_SENT_OUT, "Still got plenty of spirit left!\n"
+    trainertextentry 516, TEXT_DEFEATED_IN_BATTLE, "Guess I am not cut out for lighthouse battles...\n"
+    trainertextentry 516, TEXT_DEFEATED_IN_OVERWORLD, "Camping, sailing, battling... Huey is always dragging me into new stuff.\n"
+    trainertextentry 516, TEXT_PLAYER_LOSES, "Whoa, did not expect that! Take a breather and try again, okay?\n"
 
 _0104: // Trainer 287
     trainertextentry 287, TEXT_LAST_MON_CRITICAL, "I see. You weren’t coming to Kanto just\nto show off...\n"
@@ -3679,7 +3685,7 @@ _1AD0: // Trainer 630
 /* Trainer 513 */ .halfword _1AB8
 /* Trainer 514 */ .halfword _0000
 /* Trainer 515 */ .halfword _1A94
-/* Trainer 516 */ .halfword _0000
+/* Trainer 516 */ .halfword _00N4
 /* Trainer 517 */ .halfword _1A70
 /* Trainer 518 */ .halfword _18B4
 /* Trainer 519 */ .halfword _0000
