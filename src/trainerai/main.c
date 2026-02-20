@@ -252,35 +252,59 @@ int LONG_CALL ScoreMovesAgainstAlly(struct BattleSystem *bsys, u32 attacker, u32
         return 0;
     }
     int highestScoredMove = 0;
-    switch (bsys->trainerId[BATTLER_ENEMY]) {
-    case 66: // trainer ID
-    {
-        u8 skillSwapPosition = 5;
-        for (int j = 0; j < GetBattlerLearnedMoveCount(bsys, ctx, attacker); j++) {
-            if (ctx->battlemon[attacker].move[j] == MOVE_SKILL_SWAP) {
-                skillSwapPosition = j;
-                break;
-            }
-        }
 
-        if (skillSwapPosition < 5) {
-            if ((ai->attackerMon.ability == ABILITY_FLASH_FIRE && ai->defenderAlly.ability != ABILITY_FLASH_FIRE && ai->defenderAlly.species == SPECIES_DURANT)
-                || (ai->attackerMon.ability == ABILITY_TECHNICIAN && ai->defenderAlly.ability != ABILITY_TECHNICIAN && ai->defenderAlly.species == SPECIES_DURANT)
-                || (ai->attackerMon.ability == ABILITY_PRANKSTER && ai->defenderAlly.ability != ABILITY_PRANKSTER && ai->defenderAlly.species == SPECIES_BRELOOM)) {
-                highestScoredMove = 1000;
-                highestScoredMove += 14;
-                moveScores[target][skillSwapPosition] += highestScoredMove;
+    switch (bsys->trainerId[BATTLER_ENEMY]) {
+        case 211:
+        {
+            if (ai->defenderAlly.ability == ABILITY_WATER_COMPACTION) {
+
+                // Use ctx->battlemon for live stat stage data rather than the (12 = +6, 10 = +4 & 8 = +2 stat boost)
+                // cached ai->defenderAlly snapshot which may not update mid-battle.
+                if (ctx->battlemon[BATTLER_ALLY(attacker)].states[STAT_DEFENSE] >= 10) {
+                    for (int j = 0; j < GetBattlerLearnedMoveCount(bsys, ctx, attacker); j++) {
+                        u16 move = ctx->battlemon[attacker].move[j];
+
+                        if (move == MOVE_NONE) continue;
+
+                        if (move == MOVE_AQUA_JET
+                         || move == MOVE_WATER_SHURIKEN
+                         || move == MOVE_WATER_GUN
+                         || move == MOVE_BUBBLE_BEAM) {
+                            moveScores[target][j] -= 1000;
+                        }
+                    }
+                }
+                else if (ai->defenderAlly.percenthp > 50) {
+                    for (int j = 0; j < GetBattlerLearnedMoveCount(bsys, ctx, attacker); j++) {
+                        u16 move = ctx->battlemon[attacker].move[j];
+
+                        if (move == MOVE_NONE) continue;
+
+                        if (move == MOVE_WATER_SHURIKEN) {
+                            int score = 1000 + 25;
+                            moveScores[target][j] += score;
+                            if (score > highestScoredMove) highestScoredMove = score;
+                        }
+                        else if (move == MOVE_AQUA_JET) {
+                            int score = 1000 + 20;
+                            moveScores[target][j] += score;
+                            if (score > highestScoredMove) highestScoredMove = score;
+                        }
+                        else if (move == MOVE_WATER_GUN
+                              || move == MOVE_BUBBLE_BEAM) {
+                            int score = 1000 + 10;
+                            moveScores[target][j] += score;
+                            if (score > highestScoredMove) highestScoredMove = score;
+                        }
+                    }
+                }
             }
+            break;
         }
-        break;
-    }
-    default:
-        break;
     }
 
     return highestScoredMove;
 }
-
 
 /*Heavily penalize stupid decisions that would fail, do nothing, or objectively hurt the user.*/
 int LONG_CALL BasicScoring(struct BattleSystem *bsys, u32 attacker, int i, struct AIContext *ai)
@@ -699,30 +723,28 @@ int LONG_CALL DamagingMoveScoring(struct BattleSystem *bsys, u32 attacker, int i
         }
     }
 
-    if (!isMoveHighestDamage && ai->attackerMoveEffect == MOVE_EFFECT_SWITCH_HIT) { //TODO Parting shot
-        if (ai->effectivenessOnPlayer[i] > TYPE_MUL_NO_EFFECT) { // no immunity
-            moveScore += 6;
-        }
-        /*
-        u8 switchThreshold = 1;
-        if (ai->monWithMegaInParty) {
-            switchThreshold = 2;
-        }
-        if (ai->livingMembersAttacker > switchThreshold && ai->attackerRolledMoveDamages[i] > 0) // no immunity
-        {
-            moveScore += 6;
-            if (ai->playerCanOneShotMonWithAnyMove && ai->attackerMovesFirst) {
-                moveScore += 1;
-            }
-            if (BattleRand(bsys) % 10 < 2) {
-                moveScore += 1;
-            }
-        }*/
-        /*
-        if (ai->attackerMon.ability == ABILITY_REGENERATOR && ai->attackerMon.percenthp < 67)
-            moveScore += 1;
-        */
-    }
+    if (!isMoveHighestDamage && ai->attackerMoveEffect == MOVE_EFFECT_SWITCH_HIT) { // TODO Parting shot
+     if (ai->effectivenessOnPlayer[i] > TYPE_MUL_NO_EFFECT) { // no immunity
+
+         u8 switchThreshold = 1;
+         if (ai->monWithMegaInParty) {
+             switchThreshold = 2;
+         }
+         if (ai->livingMembersAttacker > switchThreshold) // no immunity
+         {
+             if (ai->playerCanOneShotMonWithAnyMove && ai->attackerMovesFirst)
+             {
+                 moveScore += 1;
+             }
+             if (2 * ai->attackerRolledMaxDamage < ai->defenderMon.hp)
+             {
+                 moveScore += 6;
+             }
+         }
+     }
+     if (ai->attackerMon.ability == ABILITY_REGENERATOR && ai->attackerMon.percenthp < 67)
+         moveScore += 1;
+ }
 
     switch (ai->attackerMove) {
     case MOVE_RELIC_SONG: // TODO
