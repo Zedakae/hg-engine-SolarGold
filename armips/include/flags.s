@@ -1085,22 +1085,22 @@ FLAG_UNK_41F                                              equ 1055
 
 // Item ball collection flags
 
-FLAG_HIDE_ITEMBALL_R30_ANTIDOTE                           equ 1056
+FLAG_HIDE_ITEMBALL_R30_MAX_REPEL                          equ 1056
 FLAG_HIDE_ITEMBALL_R31_POTION                             equ 1057
-FLAG_HIDE_ITEMBALL_R31_POKE_BALL                          equ 1058
+FLAG_HIDE_ITEMBALL_R31_PERSIM_BERRY                       equ 1058
 FLAG_HIDE_ITEMBALL_T22_RARE_CANDY                         equ 1059
-FLAG_HIDE_ITEMBALL_T22_PP_UP                              equ 1060
+FLAG_HIDE_ITEMBALL_T22_TM60                               equ 1060
 FLAG_HIDE_ITEMBALL_D15R0101_PARLYZ_HEAL                   equ 1061
 FLAG_HIDE_ITEMBALL_D15R0102_X_ACCURACY                    equ 1062
 FLAG_HIDE_ITEMBALL_D15R0103_POTION                        equ 1063
 FLAG_HIDE_ITEMBALL_D15R0103_ESCAPE_ROPE                   equ 1064
-FLAG_HIDE_ITEMBALL_R32_REPEL                              equ 1065
-FLAG_HIDE_ITEMBALL_R32_GREAT_BALL                         equ 1066
-FLAG_HIDE_ITEMBALL_D25R0101_X_ATTACK                      equ 1067
+FLAG_HIDE_ITEMBALL_R32_MAX_REPEL                          equ 1065
+FLAG_HIDE_ITEMBALL_R32_BERRY_JUICE                        equ 1066
+FLAG_HIDE_ITEMBALL_D25R0101_LEPPA_BERRY                   equ 1067
 FLAG_HIDE_ITEMBALL_D25R0101_GREAT_BALL                    equ 1068
 FLAG_HIDE_ITEMBALL_D25R0101_POTION                        equ 1069
 FLAG_HIDE_ITEMBALL_D25R0101_AWAKENING                     equ 1070
-FLAG_HIDE_ITEMBALL_D25R0102_X_DEFENSE                     equ 1071
+FLAG_HIDE_ITEMBALL_D25R0102_HARD_STONE                    equ 1071
 FLAG_HIDE_ITEMBALL_D25R0102_TM39                          equ 1072
 FLAG_HIDE_ITEMBALL_D18R0101_HP_UP                         equ 1073
 FLAG_HIDE_ITEMBALL_D18R0102_TM12                          equ 1074
@@ -1113,11 +1113,11 @@ FLAG_UNK_438                                              equ 1080
 FLAG_HIDE_ITEMBALL_R29_POTION                             equ 1081
 FLAG_HIDE_ITEMBALL_D25R0103_ELIXIR                        equ 1082
 FLAG_HIDE_ITEMBALL_D25R0103_HYPER_POTION                  equ 1083
-FLAG_HIDE_ITEMBALL_D36R0101_X_ATTACK                      equ 1084
+FLAG_HIDE_ITEMBALL_D36R0101_SHED_SHELL                    equ 1084
 FLAG_HIDE_ITEMBALL_D36R0101_ANTIDOTE                      equ 1085
-FLAG_HIDE_ITEMBALL_D36R0101_ETHER                         equ 1086
+FLAG_HIDE_ITEMBALL_D36R0101_SILVER_POWDER                 equ 1086
 FLAG_HIDE_ITEMBALL_R34_NUGGET                             equ 1087
-FLAG_HIDE_ITEMBALL_R30_POTION                             equ 1088
+FLAG_HIDE_ITEMBALL_R30_RAWST_BERRY                        equ 1088
 FLAG_HIDE_ITEMBALL_D23R0104_ULTRA_BALL                    equ 1089
 FLAG_HIDE_ITEMBALL_D37R0103_BURN_HEAL                     equ 1090
 FLAG_HIDE_ITEMBALL_D37R0103_AMULET_COIN                   equ 1091
@@ -1128,9 +1128,9 @@ FLAG_HIDE_ITEMBALL_D37R0104_FULL_HEAL                     equ 1095
 FLAG_HIDE_ITEMBALL_D37R0104_SMOKE_BALL                    equ 1096
 FLAG_HIDE_ITEMBALL_R35_TM66                               equ 1097
 FLAG_HIDE_ITEMBALL_D27R0104_ETHER                         equ 1098
-FLAG_HIDE_ITEMBALL_D27R0105_TM87                          equ 1099
+FLAG_HIDE_ITEMBALL_D27R0105_METAL_COAT                    equ 1099
 FLAG_HIDE_ITEMBALL_D27R0106_SUPER_REPEL                   equ 1100
-FLAG_HIDE_ITEMBALL_D27R0107_SUPER_POTION                  equ 1101
+FLAG_HIDE_ITEMBALL_D27R0107_BABIRI_BERRY                  equ 1101
 FLAG_HIDE_ITEMBALL_D35R0102_HYPER_POTION                  equ 1102
 FLAG_HIDE_ITEMBALL_D35R0102_GUARD_SPEC_                   equ 1103
 FLAG_HIDE_ITEMBALL_D35R0102_NUGGET                        equ 1104
@@ -1201,7 +1201,7 @@ FLAG_HIDE_ITEMBALL_D40R0104_MAX_REVIVE                    equ 1168
 FLAG_HIDE_ITEMBALL_D40R0104_FULL_RESTORE                  equ 1169
 FLAG_HIDE_ITEMBALL_D40R0104_MAX_ELIXIR                    equ 1170
 FLAG_HIDE_ITEMBALL_D40R0106_RARE_CANDY                    equ 1171
-FLAG_HIDE_ITEMBALL_R42_SUPER_POTION                       equ 1172
+FLAG_HIDE_ITEMBALL_R42_FOCUS_SASH                         equ 1172
 FLAG_HIDE_ITEMBALL_D38R0101_ETHER                         equ 1173
 FLAG_HIDE_ITEMBALL_D38R0101_REVIVE                        equ 1174
 FLAG_HIDE_ITEMBALL_D38R0102_ESCAPE_ROPE                   equ 1175
@@ -1303,12 +1303,12 @@ FLAG_HIDE_ITEMBALL_D03R0103_DUSK_STONE                    equ 1270
 FLAG_HIDE_ITEMBALL_D03R0103_ELECTIRIZER                   equ 1271
 FLAG_HIDE_ITEMBALL_D03R0103_BLACK_SLUDGE                  equ 1272
 FLAG_HIDE_ITEMBALL_R32_TM09                               equ 1273
-FLAG_HIDE_ITEMBALL_R34_TM63                               equ 1274
-FLAG_HIDE_ITEMBALL_R35_PARLYZ_HEAL                        equ 1275
+FLAG_HIDE_ITEMBALL_R34_POISON_BARB                        equ 1274
+FLAG_HIDE_ITEMBALL_R35_MIRACLE_SEED                       equ 1275
 FLAG_HIDE_ITEMBALL_R36_HYPER_POTION                       equ 1276
-FLAG_HIDE_ITEMBALL_R38_MAX_POTION                         equ 1277
+FLAG_HIDE_ITEMBALL_R38_MAGNET                             equ 1277
 FLAG_HIDE_ITEMBALL_R38_LAX_INCENSE                        equ 1278
-FLAG_HIDE_ITEMBALL_R39_TM60                               equ 1279
+FLAG_HIDE_ITEMBALL_R39_SOFT_SAND                          equ 1279
 FLAG_HIDE_ITEMBALL_R28_TM35                               equ 1280
 FLAG_HIDE_ITEMBALL_R47_LAGGING_TAIL                       equ 1281
 FLAG_HIDE_ITEMBALL_R47_WAVE_INCENSE                       equ 1282

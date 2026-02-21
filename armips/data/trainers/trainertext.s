@@ -269,9 +269,9 @@ _00M4: // Trainer 138
 _00N4: // Trainer 516
     trainertextentry 516, TEXT_NOTICE_IN_OVERWORLD, "Kinda wild camping out in a\nlighthouse... Huey said it would be\rfun, so here I am!\r"
     trainertextentry 516, TEXT_LAST_MON_SENT_OUT, "Still got plenty of spirit left!\n"
-    trainertextentry 516, TEXT_DEFEATED_IN_BATTLE, "Guess I am not cut out for lighthouse battles...\n"
-    trainertextentry 516, TEXT_DEFEATED_IN_OVERWORLD, "Camping, sailing, battling... Huey is always dragging me into new stuff.\n"
-    trainertextentry 516, TEXT_PLAYER_LOSES, "Whoa, did not expect that! Take a breather and try again, okay?\n"
+    trainertextentry 516, TEXT_DEFEATED_IN_BATTLE, "Guess I am not cut out for\nlighthouse battles...\n"
+    trainertextentry 516, TEXT_DEFEATED_IN_OVERWORLD, "Camping, sailing, battling... Huey is\nalways dragging me into new stuff.\n"
+    trainertextentry 516, TEXT_PLAYER_LOSES, "Whoa, did not expect that!\nTake a breather and try again, okay?\n"
 
 _0104: // Trainer 287
     trainertextentry 287, TEXT_LAST_MON_CRITICAL, "I see. You weren’t coming to Kanto just\nto show off...\n"
@@ -2092,9 +2092,9 @@ _1248: // Trainer 217
     trainertextentry 217, TEXT_DEFEATED_IN_OVERWORLD, "My bird Pokémon trained in Cianwood.\nSince I’ve lost, maybe we’ll go across\fthe sea.\n"
 
 _1254: // Trainer 37
-    trainertextentry  37, TEXT_NOTICE_IN_OVERWORLD, "I travel the world to train my Pokémon.\nNow, I wish to battle with you.\r"
+    trainertextentry  37, TEXT_NOTICE_IN_OVERWORLD, "I've climbed to the top of this\nlighthouse to test my strength!\rThink you can keep up?\nLet's battle!\r"
     trainertextentry  37, TEXT_DEFEATED_IN_BATTLE, "...Aww... I must train some more...\n"
-    trainertextentry  37, TEXT_DEFEATED_IN_OVERWORLD, "Jasmine used to use Rock Pokémon\nlike ONIX.\n"
+    trainertextentry  37, TEXT_DEFEATED_IN_OVERWORLD, "The view from up here is something else.\nAt least I can enjoy that much.\n"
 
 _1260: // Trainer 401
     trainertextentry 401, TEXT_NOTICE_IN_OVERWORLD, "Eh? This is no place for playing.\r"
@@ -2103,9 +2103,9 @@ _1260: // Trainer 401
     trainertextentry 401, TEXT_REMATCH_IN_OVERWORLD, "Hey, you’re back!\r"
 
 _1270: // Trainer 215
-    trainertextentry 215, TEXT_NOTICE_IN_OVERWORLD, "Jasmine is this city’s Gym Leader.\nI intend to bring her back with me.\rNobody better get in my way!\r"
+    trainertextentry 215, TEXT_NOTICE_IN_OVERWORLD, "You there! This lighthouse is no place\nfor a rookie Trainer to be wandering!\rShow me what you've got!\r"
     trainertextentry 215, TEXT_DEFEATED_IN_BATTLE, "Aaack! My Pokémon!\n"
-    trainertextentry 215, TEXT_DEFEATED_IN_OVERWORLD, "Right. Anybody would be worried if his or\nher own Pokémon were hurt.\n"
+    trainertextentry 215, TEXT_DEFEATED_IN_OVERWORLD, "Hmph. You're stronger than you look.\nI'll give you that much.\n"
 
 _127C: // Trainer 211
     trainertextentry 211, TEXT_NOTICE_IN_OVERWORLD, "Men of the sea are always spoiling for a\ngood fight!\r"

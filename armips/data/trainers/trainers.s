@@ -4569,10 +4569,10 @@ trainerdata 73, "Theo"
         abilityslot 0
         level 37
         pokemon SPECIES_JUMPLUFF
-        item ITEM_YACHE_BERRY
+        item ITEM_OCCA_BERRY
         move MOVE_HEADBUTT
-        move MOVE_ACROBATICS
-        move MOVE_U_TURN
+        move MOVE_SLEEP_POWDER
+        move MOVE_RAZOR_LEAF
         move MOVE_TAILWIND
         ability ABILITY_AERILATE
         setivs 31, 31, 31, 31, 31, 31
@@ -4591,7 +4591,7 @@ trainerdata 73, "Theo"
         move MOVE_AIR_SLASH
         move MOVE_ICY_WIND
         move MOVE_HYPER_VOICE
-        ability ABILITY_WIND_RIDER
+        ability ABILITY_GALE_WINGS
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_BOLD
@@ -10563,23 +10563,23 @@ trainerdata 211, "Huey"
         ivs 186
         abilityslot 0
         level 37
-        pokemon SPECIES_WUGTRIO
+        pokemon SPECIES_ACCELGOR
         item ITEM_FOCUS_SASH
-        move MOVE_SURF
-        move MOVE_NONE
-        move MOVE_NONE
-        move MOVE_NONE
-        ability ABILITY_GOOEY
-        setivs 31, 31, 31, 31, 0, 31
+        move MOVE_WATER_SHURIKEN
+        move MOVE_U_TURN
+        move MOVE_ACID_SPRAY
+        move MOVE_BUG_BUZZ
+        ability ABILITY_UNBURDEN
+        setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_JOLLY
+        nature NATURE_TIMID
         additionalflags 0
         ballseal 0
 
         // mon 1
         ivs 186
         abilityslot 0
-        level 37
+        level 38
         pokemon SPECIES_WALREIN
         item ITEM_CHESTO_BERRY
         move MOVE_ICY_WIND
@@ -10602,7 +10602,7 @@ trainerdata 211, "Huey"
         move MOVE_KNOCK_OFF
         move MOVE_U_TURN
         move MOVE_ROCK_SLIDE
-        move MOVE_DUAL_WINGBEAT
+        move MOVE_BRAVE_BIRD
         ability ABILITY_ROCKY_PAYLOAD
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
@@ -23410,7 +23410,7 @@ trainerdata 516, "Bob"
         // mon 1
         ivs 186
         abilityslot 0
-        level 37
+        level 38
         pokemon SPECIES_TOGEDEMARU
         item ITEM_AIR_BALLOON
         move MOVE_SPIKY_SHIELD
@@ -23429,11 +23429,11 @@ trainerdata 516, "Bob"
         abilityslot 0
         level 38
         pokemon SPECIES_SCOVILLAIN
-        item ITEM_EXPERT_BELT
+        item ITEM_LIFE_ORB
         move MOVE_FLAMETHROWER
-        move MOVE_SUCKER_PUNCH
-        move MOVE_RAGE_POWDER
+        move MOVE_ENERGY_BALL
         move MOVE_SEED_BOMB
+        move MOVE_PROTECT
         ability ABILITY_INSOMNIA
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
