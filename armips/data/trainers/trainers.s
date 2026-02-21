@@ -5677,10 +5677,10 @@ trainerdata 90, "Kaylee"
         level 39
         pokemon SPECIES_SLOWKING
         item ITEM_LEFTOVERS
-        move MOVE_CHILLY_RECEPTION
+        move MOVE_SNOWSCAPE
         move MOVE_FUTURE_SIGHT
-        move MOVE_NONE
-        move MOVE_NONE
+        move MOVE_HEAL_PULSE
+        move MOVE_PROTECT
         ability ABILITY_REGENERATOR
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
@@ -10692,9 +10692,9 @@ trainerdata 213, "Kent"
         // mon 0
         ivs 186
         abilityslot 0
-        level 37
+        level 38
         pokemon SPECIES_KINGLER
-        item ITEM_LIFE_ORB
+        item ITEM_WACAN_BERRY
         move MOVE_CRABHAMMER
         move MOVE_KNOCK_OFF
         move MOVE_AQUA_JET
@@ -10709,7 +10709,7 @@ trainerdata 213, "Kent"
         // mon 1
         ivs 186
         abilityslot 0
-        level 37
+        level 38
         pokemon SPECIES_MASQUERAIN
         item ITEM_FOCUS_SASH
         move MOVE_AIR_SLASH
@@ -10726,11 +10726,11 @@ trainerdata 213, "Kent"
         // mon 2
         ivs 186
         abilityslot 0
-        level 38
+        level 37
         pokemon SPECIES_DRACOVISH
         item ITEM_SITRUS_BERRY
         move MOVE_CRUNCH
-        move MOVE_DIVE
+        move MOVE_FISHIOUS_REND
         move MOVE_ICE_FANG
         move MOVE_PSYCHIC_FANGS
         ability ABILITY_STRONG_JAW
@@ -10757,7 +10757,7 @@ trainerdata 214, "Roberto"
         // mon 0
         ivs 186
         abilityslot 0
-        level 37
+        level 38
         pokemon SPECIES_MIENSHAO
         item ITEM_FOCUS_SASH
         move MOVE_CLOSE_COMBAT
@@ -10791,13 +10791,13 @@ trainerdata 214, "Roberto"
         // mon 2
         ivs 186
         abilityslot 0
-        level 38
+        level 37
         monwithform SPECIES_SLOWKING, 1
         item ITEM_SITRUS_BERRY
         move MOVE_SLACK_OFF
         move MOVE_TOXIC
         move MOVE_VENOSHOCK
-        move MOVE_EERIE_SPELL
+        move MOVE_ICE_BEAM
         ability ABILITY_REGENERATOR
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
@@ -10822,7 +10822,7 @@ trainerdata 215, "Mystique"
         // mon 0
         ivs 186
         abilityslot 0
-        level 37
+        level 38
         pokemon SPECIES_YANMEGA
         item ITEM_FOCUS_SASH
         move MOVE_BUG_BUZZ
@@ -10856,7 +10856,7 @@ trainerdata 215, "Mystique"
         // mon 2
         ivs 186
         abilityslot 0
-        level 38
+        level 37
         pokemon SPECIES_GOODRA
         item ITEM_LEFTOVERS
         move MOVE_DRAGON_PULSE
@@ -10948,7 +10948,7 @@ trainerdata 217, "Denis"
         abilityslot 0
         level 38
         pokemon SPECIES_STARAPTOR
-        item ITEM_CHOICE_SCARF
+        item ITEM_WACAN_BERRY
         move MOVE_BRAVE_BIRD
         move MOVE_DOUBLE_EDGE
         move MOVE_CLOSE_COMBAT
@@ -10967,7 +10967,7 @@ trainerdata 217, "Denis"
         pokemon SPECIES_FEAROW
         item ITEM_FOCUS_SASH
         move MOVE_NIGHT_SLASH
-        move MOVE_DUAL_WINGBEAT
+        move MOVE_DRILL_PECK
         move MOVE_DRILL_RUN
         move MOVE_HONE_CLAWS
         ability ABILITY_INTIMIDATE
