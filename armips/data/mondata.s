@@ -352,7 +352,7 @@ mondata SPECIES_BEEDRILL, "Beedrill" // Buffed Hp, Def, SpDef and Spe
 
 
 mondata SPECIES_PIDGEY, "Pidgey"
-    basestats 40, 40, 45, 60, 60, 45
+    basestats 40, 45, 45, 60, 45, 40
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -373,7 +373,7 @@ mondata SPECIES_PIDGEY, "Pidgey"
 
 
 mondata SPECIES_PIDGEOTTO, "Pidgeotto"
-    basestats 70, 50, 65, 75, 75, 65
+    basestats 65, 60, 65, 75, 60, 60
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 120
     baseexp 0 // defined in baseexp.s
@@ -394,7 +394,7 @@ mondata SPECIES_PIDGEOTTO, "Pidgeotto"
 
 
 mondata SPECIES_PIDGEOT, "Pidgeot"
-    basestats 90, 75, 85, 105, 100, 85
+    basestats 90, 80, 85, 105, 80, 80
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
