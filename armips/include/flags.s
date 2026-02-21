@@ -188,7 +188,7 @@ FLAG_UNK_0AD                                               equ 173
 FLAG_UNK_0AE                                               equ 174
 FLAG_UNK_0AF                                               equ 175
 FLAG_UNK_0B0                                               equ 176
-FLAG_GOT_HARD_STONE_FROM_ARTHUR                            equ 177
+FLAG_GOT_STONE_PLATE_FROM_ARTHUR                           equ 177
 FLAG_UNK_0B2                                               equ 178
 FLAG_UNK_0B3                                               equ 179
 FLAG_UNK_0B4                                               equ 180
@@ -223,12 +223,12 @@ FLAG_TRADE_BLACKTHORN_CITY_DRAGONAIR_DODRIO                equ 208
 FLAG_UNK_0D1                                               equ 209
 FLAG_GOT_TM07_FROM_PRYCE                                   equ 210
 FLAG_UNK_0D3                                               equ 211
-FLAG_GOT_SOFT_SAND_FROM_SANTOS                             equ 212
-FLAG_GOT_BLACK_BELT_FROM_WESLEY                            equ 213
+FLAG_GOT_EARTH_PLATE_FROM_SANTOS                           equ 212
+FLAG_GOT_FIST_PLATE_FROM_WESLEY                            equ 213
 FLAG_UNK_0D6                                               equ 214
-FLAG_GOT_SHARP_BEAK_FROM_MONICA                            equ 215
-FLAG_GOT_TWISTEDSPOON_FROM_TUSCANY                         equ 216
-FLAG_GOT_POISON_BARB_FROM_FRIEDA                           equ 217
+FLAG_GOT_SKY_PLATE_FROM_MONICA                             equ 215
+FLAG_GOT_MIND_PLATE_FROM_TUSCANY                           equ 216
+FLAG_GOT_TOXIC_PLATE_FROM_FRIEDA                           equ 217
 FLAG_GOT_TM59_FROM_CLAIR                                   equ 218
 FLAG_FAILED_DRAGONS_DEN_QUIZ                               equ 219
 FLAG_GOT_DRATINI_FROM_MASTER_JUST_NOW                      equ 220
@@ -254,7 +254,7 @@ FLAG_UNK_0EF                                               equ 239
 FLAG_UNK_0F0                                               equ 240
 FLAG_UNK_0F1                                               equ 241
 FLAG_UNK_0F2                                               equ 242
-FLAG_GOT_MYSTIC_WATER_FROM_CHERRYGROVE_CITY_MAN            equ 243
+FLAG_GOT_SPLASH_PLATE_FROM_CHERRYGROVE_CITY_MAN            equ 243
 FLAG_UNK_0F4                                               equ 244
 FLAG_UNK_0F5                                               equ 245
 FLAG_UNK_0F6                                               equ 246
@@ -281,7 +281,7 @@ FLAG_UNK_10A                                               equ 266
 FLAG_UNK_10B                                               equ 267
 FLAG_GOT_TYROGUE_FROM_KARATE_KING                          equ 268
 FLAG_BEAT_KARATE_KING                                      equ 269
-FLAG_GOT_QUICK_CLAW_FROM_NATIONAL_PARK_WOMAN               equ 270
+FLAG_GOT_MAGNET_FROM_NATIONAL_PARK_WOMAN                   equ 270
 FLAG_UNK_10F                                               equ 271
 FLAG_GOT_UNOWN_REPORT                                      equ 272
 FLAG_UNK_111                                               equ 273
@@ -1106,7 +1106,7 @@ FLAG_HIDE_ITEMBALL_D18R0101_HP_UP                         equ 1073
 FLAG_HIDE_ITEMBALL_D18R0102_TM12                          equ 1074
 FLAG_HIDE_ITEMBALL_D26R0102_SUPER_POTION                  equ 1075
 FLAG_HIDE_ITEMBALL_D26R0103_TM18                          equ 1076
-FLAG_HIDE_ITEMBALL_D36R0101_REVIVE                        equ 1077
+FLAG_HIDE_ITEMBALL_D36R0101_WISE_GLASSES                  equ 1077
 FLAG_HIDE_ITEMBALL_D37R0105_TM82                          equ 1078
 FLAG_HIDE_ITEMBALL_D37R0105_MAX_ETHER                     equ 1079
 FLAG_UNK_438                                              equ 1080
@@ -1114,7 +1114,7 @@ FLAG_HIDE_ITEMBALL_R29_POTION                             equ 1081
 FLAG_HIDE_ITEMBALL_D25R0103_ELIXIR                        equ 1082
 FLAG_HIDE_ITEMBALL_D25R0103_HYPER_POTION                  equ 1083
 FLAG_HIDE_ITEMBALL_D36R0101_SHED_SHELL                    equ 1084
-FLAG_HIDE_ITEMBALL_D36R0101_ANTIDOTE                      equ 1085
+FLAG_HIDE_ITEMBALL_D36R0101_LUM_BERRY                     equ 1085
 FLAG_HIDE_ITEMBALL_D36R0101_SILVER_POWDER                 equ 1086
 FLAG_HIDE_ITEMBALL_R34_NUGGET                             equ 1087
 FLAG_HIDE_ITEMBALL_R30_RAWST_BERRY                        equ 1088
@@ -1189,7 +1189,7 @@ FLAG_HIDE_ITEMBALL_D17R0108_FULL_RESTORE                  equ 1156
 FLAG_HIDE_ITEMBALL_D17R0108_MAX_ELIXIR                    equ 1157
 FLAG_HIDE_ITEMBALL_D17R0108_NUGGET                        equ 1158
 FLAG_HIDE_ITEMBALL_D17R0109_HP_UP                         equ 1159
-FLAG_HIDE_ITEMBALL_D27R0103_RARE_CANDY                    equ 1160
+FLAG_HIDE_ITEMBALL_D27R0103_LIECHI_BERRY                  equ 1160
 FLAG_HIDE_ITEMBALL_D40R0101_ULTRA_BALL                    equ 1161
 FLAG_HIDE_ITEMBALL_D40R0101_ULTRA_BALL_2                  equ 1162
 FLAG_HIDE_ITEMBALL_D40R0102_ESCAPE_ROPE                   equ 1163
@@ -1303,10 +1303,10 @@ FLAG_HIDE_ITEMBALL_D03R0103_DUSK_STONE                    equ 1270
 FLAG_HIDE_ITEMBALL_D03R0103_ELECTIRIZER                   equ 1271
 FLAG_HIDE_ITEMBALL_D03R0103_BLACK_SLUDGE                  equ 1272
 FLAG_HIDE_ITEMBALL_R32_TM09                               equ 1273
-FLAG_HIDE_ITEMBALL_R34_POISON_BARB                        equ 1274
+FLAG_HIDE_ITEMBALL_R34_TM31                               equ 1274
 FLAG_HIDE_ITEMBALL_R35_MIRACLE_SEED                       equ 1275
 FLAG_HIDE_ITEMBALL_R36_HYPER_POTION                       equ 1276
-FLAG_HIDE_ITEMBALL_R38_MAGNET                             equ 1277
+FLAG_HIDE_ITEMBALL_R38_TWISTED_SPOON                      equ 1277
 FLAG_HIDE_ITEMBALL_R38_LAX_INCENSE                        equ 1278
 FLAG_HIDE_ITEMBALL_R39_SOFT_SAND                          equ 1279
 FLAG_HIDE_ITEMBALL_R28_TM35                               equ 1280
@@ -1337,10 +1337,10 @@ FLAG_HIDE_ITEMBALL_R09_MAX_POTION                         equ 1304
 FLAG_HIDE_ITEMBALL_T07_TM67                               equ 1305
 FLAG_HIDE_ITEMBALL_R15_ROSE_INCENSE                       equ 1306
 FLAG_HIDE_ITEMBALL_R11_TM86                               equ 1307
-FLAG_HIDE_ITEMBALL_T03_WISE_GLASSES                       equ 1308
+FLAG_HIDE_ITEMBALL_T03_CHOICE_SCARF                       equ 1308
 FLAG_HIDE_ITEMBALL_R03_BIG_ROOT                           equ 1309
 FLAG_HIDE_ITEMBALL_T26_TM57                               equ 1310
-FLAG_UNK_51F                                              equ 1311
+FLAG_HIDE_ITEMBALL_R37_POISON_BARB                        equ 1311
 FLAG_UNK_520                                              equ 1312
 FLAG_UNK_521                                              equ 1313
 FLAG_UNK_522                                              equ 1314
