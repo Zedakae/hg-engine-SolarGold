@@ -10730,7 +10730,7 @@ trainerdata 213, "Kent"
         pokemon SPECIES_DRACOVISH
         item ITEM_SITRUS_BERRY
         move MOVE_CRUNCH
-        move MOVE_FISHIOUS_REND
+        move MOVE_LIQUIDATION
         move MOVE_ICE_FANG
         move MOVE_PSYCHIC_FANGS
         ability ABILITY_STRONG_JAW
