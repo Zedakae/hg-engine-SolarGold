@@ -10,7 +10,6 @@ _0000: // Trainer 0
        // Trainer 2
        // Trainer 3
        // Trainer 107
-       // Trainer 141
        // Trainer 165
        // Trainer 166
        // Trainer 167
@@ -272,6 +271,11 @@ _00N4: // Trainer 516
     trainertextentry 516, TEXT_DEFEATED_IN_BATTLE, "Guess I am not cut out for\nlighthouse battles...\n"
     trainertextentry 516, TEXT_DEFEATED_IN_OVERWORLD, "Camping, sailing, battling... Huey is\nalways dragging me into new stuff.\n"
     trainertextentry 516, TEXT_PLAYER_LOSES, "Whoa, did not expect that!\nTake a breather and try again, okay?\n"
+
+_00O4: // Trainer 141
+    trainertextentry  141, TEXT_NOTICE_IN_OVERWORLD, "Race you to the other side!\rLast one there's a Magikarp!\r"
+    trainertextentry  141, TEXT_DEFEATED_IN_BATTLE, "I got more waterlogged than I thought!\n"
+    trainertextentry  141, TEXT_DEFEATED_IN_OVERWORLD, "The current out here is stronger\nthan it looks, you know.\n"
 
 _0104: // Trainer 287
     trainertextentry 287, TEXT_LAST_MON_CRITICAL, "I see. You weren’t coming to Kanto just\nto show off...\n"
@@ -3310,7 +3314,7 @@ _1AD0: // Trainer 630
 /* Trainer 138 */ .halfword _00M4
 /* Trainer 139 */ .halfword _0F18
 /* Trainer 140 */ .halfword _061C
-/* Trainer 141 */ .halfword _0000
+/* Trainer 141 */ .halfword _00O4
 /* Trainer 142 */ .halfword _1A50
 /* Trainer 143 */ .halfword _0E18
 /* Trainer 144 */ .halfword _0E24

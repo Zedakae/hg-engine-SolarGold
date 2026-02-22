@@ -1341,8 +1341,8 @@ FLAG_HIDE_ITEMBALL_T03_CHOICE_SCARF                       equ 1308
 FLAG_HIDE_ITEMBALL_R03_BIG_ROOT                           equ 1309
 FLAG_HIDE_ITEMBALL_T26_TM57                               equ 1310
 FLAG_HIDE_ITEMBALL_R37_POISON_BARB                        equ 1311
-FLAG_UNK_520                                              equ 1312
-FLAG_UNK_521                                              equ 1313
+FLAG_HIDE_ITEMBALL_R39_SITRUS_BERRY                       equ 1312
+FLAG_HIDE_ITEMBALL_T24_BLACK_BELT                         equ 1313
 FLAG_UNK_522                                              equ 1314
 FLAG_UNK_523                                              equ 1315
 FLAG_UNK_524                                              equ 1316

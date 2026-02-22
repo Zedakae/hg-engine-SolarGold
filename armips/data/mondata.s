@@ -3271,7 +3271,7 @@ mondata SPECIES_MEGANIUM, "Meganium"
 
 
 mondata SPECIES_CYNDAQUIL, "Cyndaquil"
-    basestats 40, 50, 45, 65, 65, 50
+    basestats 40, 50, 45, 65, 60, 50
     types TYPE_FIRE, TYPE_FIRE
     catchrate 200
     baseexp 0 // defined in baseexp.s
@@ -3292,7 +3292,7 @@ mondata SPECIES_CYNDAQUIL, "Cyndaquil"
 
 
 mondata SPECIES_QUILAVA, "Quilava"
-    basestats 60, 60, 60, 85, 80, 65
+    basestats 65, 60, 65, 75, 75, 70
     types TYPE_FIRE, TYPE_GROUND
     catchrate 125
     baseexp 0 // defined in baseexp.s
@@ -3313,7 +3313,7 @@ mondata SPECIES_QUILAVA, "Quilava"
 
 
 mondata SPECIES_TYPHLOSION, "Typhlosion"
-    basestats 80, 70, 80, 110, 115, 85
+    basestats 85, 70, 85, 100, 110, 85
     types TYPE_FIRE, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
@@ -5308,7 +5308,7 @@ mondata SPECIES_CELEBI, "Celebi"
 
 
 mondata SPECIES_TREECKO, "Treecko"
-    basestats 40, 45, 35, 70, 65, 55
+    basestats 40, 65, 35, 70, 45, 55
     types TYPE_GRASS, TYPE_GRASS
     catchrate 200
     baseexp 0 // defined in baseexp.s
@@ -5329,7 +5329,7 @@ mondata SPECIES_TREECKO, "Treecko"
 
 
 mondata SPECIES_GROVYLE, "Grovyle"
-    basestats 50, 65, 45, 95, 85, 65
+    basestats 50, 85, 45, 95, 65, 65
     types TYPE_GRASS, TYPE_DRAGON
     catchrate 125
     baseexp 0 // defined in baseexp.s
@@ -5350,7 +5350,7 @@ mondata SPECIES_GROVYLE, "Grovyle"
 
 
 mondata SPECIES_SCEPTILE, "Sceptile"
-    basestats 70, 85, 65, 120, 105, 85
+    basestats 70, 105, 65, 120, 85, 85
     types TYPE_GRASS, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
