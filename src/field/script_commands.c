@@ -68,7 +68,7 @@ BOOL ScrCmd_GiveEgg(SCRIPTCONTEXT *ctx)
 }
 
 /**
- *  @brief script command to give the togepi egg
+ *  @brief script command to give a random egg from a predefined pool
  *
  *  @param ctx script context structure
  *  @return FALSE
@@ -77,10 +77,61 @@ BOOL ScrCmd_GiveTogepiEgg(SCRIPTCONTEXT *ctx) {
     s32 i;
     u8 pp;
     u16 moveData;
-    struct PartyPokemon *togepi;
+    struct PartyPokemon *egg;
     void *profile;
     struct Party *party;
     FieldSystem *fsys = ctx->fsys;
+    u16 selectedSpecies;
+    u16 selectedMove;
+
+    // Define the pool of possible egg Pokémon (baby forms from Gen 1-9)
+    const u16 eggPool[] = {
+        SPECIES_PICHU,      // Gen 2
+        SPECIES_CLEFFA,     // Gen 2
+        SPECIES_IGGLYBUFF,  // Gen 2
+        SPECIES_SUNKERN,    // Gen 2
+        SPECIES_TYROGUE,    // Gen 2
+        SPECIES_SMOOCHUM,   // Gen 2
+        SPECIES_ELEKID,     // Gen 2
+        SPECIES_MAGBY,      // Gen 2
+        SPECIES_AZURILL,    // Gen 3
+        SPECIES_TAROUNTULA, // Gen 9
+        SPECIES_BUDEW,      // Gen 4
+        SPECIES_CHINGLING,  // Gen 4
+        SPECIES_BONSLY,     // Gen 4
+        SPECIES_MIME_JR,    // Gen 4
+        SPECIES_HAPPINY,    // Gen 4
+        SPECIES_MUNCHLAX,   // Gen 4
+        SPECIES_RIOLU,      // Gen 4
+        SPECIES_MANTYKE,    // Gen 4
+        SPECIES_TOXEL,      // Gen 8
+        SPECIES_SMOLIV      // Gen 9
+    };
+    const u8 poolSize = sizeof(eggPool) / sizeof(eggPool[0]);
+
+    // Define special moves for each Pokémon (optional - can be MOVE_NONE for no special move)
+    const u16 specialMoves[] = {
+        MOVE_FAKE_OUT,         // Pichu
+        MOVE_ENCORE,           // Cleffa
+        MOVE_WISH,             // Igglybuff
+        MOVE_MORNING_SUN,      // Sunkern
+        MOVE_MACH_PUNCH,       // Tyrogue
+        MOVE_FAKE_OUT,         // Smoochum
+        MOVE_CHARGE_BEAM,      // Elekid
+        MOVE_WILL_O_WISP,      // Magby
+        MOVE_AQUA_JET,         // Azurill
+        MOVE_FIRST_IMPRESSION, // Tarountula
+        MOVE_LIFE_DEW,         // Budew
+        MOVE_RECOVER,          // Chingling
+        MOVE_STEALTH_ROCK,     // Bonsly
+        MOVE_FAKE_OUT,         // Mime Jr.
+        MOVE_SEISMIC_TOSS,     // Happiny
+        MOVE_CURSE,            // Munchlax
+        MOVE_BULLET_PUNCH,     // Riolu
+        MOVE_MIRROR_COAT,      // Mantyke
+        MOVE_ENCORE,           // Toxel
+        MOVE_STRENGTH_SAP      // Smoliv
+    };
 
     profile = Sav2_PlayerData_GetProfileAddr(fsys->savedata);
     party = SaveData_GetPlayerPartyPtr(fsys->savedata);
@@ -89,45 +140,58 @@ BOOL ScrCmd_GiveTogepiEgg(SCRIPTCONTEXT *ctx) {
         return FALSE;
     }
 
-    togepi = AllocMonZeroed(11);
-    ZeroMonData(togepi);
+    // Generate egg first with random personality
+    egg = AllocMonZeroed(11);
+    ZeroMonData(egg);
 
-    SetEggStats(togepi, SPECIES_TOGEPI, 1, profile, 3, sub_02017FE4(1, 13));
+    // Use a temporary species to generate personality, then we'll pick the real one
+    SetEggStats(egg, SPECIES_PICHU, 1, profile, 3, sub_02017FE4(1, 13));
 
-    //SetMonData(togepi, MON_DATA_FORM, &form); // add form capability
+    // Now use the personality value to pick our species
+    u32 personality = GetMonData(egg, MON_DATA_PERSONALITY, 0);
+    u8 randomIndex = personality % poolSize;
+    selectedSpecies = eggPool[randomIndex];
+    selectedMove = specialMoves[randomIndex];
+
+    // Re-set the egg with the actual species we want
+    SetEggStats(egg, selectedSpecies, 1, profile, 3, sub_02017FE4(1, 13));
+
+    //SetMonData(egg, MON_DATA_FORM, &form); // add form capability
 
     //ClearMonMoves(pokemon);
     //InitBoxMonMoveset(&pokemon->box);
 
-    for (i = 0; i < 4; i++) {
-        if (!GetMonData(togepi, MON_DATA_MOVE1 + i, 0)) {
-            break;
+    // Only add special move if one is defined
+    if (selectedMove != MOVE_NONE) {
+        for (i = 0; i < 4; i++) {
+            if (!GetMonData(egg, MON_DATA_MOVE1 + i, 0)) {
+                break;
+            }
         }
+
+        if (i == 4) {
+            i = 3;
+        }
+
+        moveData = selectedMove;
+        SetMonData(egg, MON_DATA_MOVE1 + i, &moveData);
+
+        pp = GetMonData(egg, MON_DATA_MOVE1MAXPP + i, 0);
+        SetMonData(egg, MON_DATA_MOVE1PP + i, &pp);
     }
-
-    if (i == 4) {
-        i = 3;
-    }
-
-    moveData = MOVE_EXTRASENSORY; // add extrasensory to the togepi
-    SetMonData(togepi, MON_DATA_MOVE1 + i, &moveData);
-
-    pp = GetMonData(togepi, MON_DATA_MOVE1MAXPP + i, 0);
-    SetMonData(togepi, MON_DATA_MOVE1PP + i, &pp);
 
     if (CheckScriptFlag(HIDDEN_ABILITIES_FLAG) == 1) // add HA capability
     {
-        SET_MON_HIDDEN_ABILITY_BIT(togepi)
-        ResetPartyPokemonAbility(togepi);
+        SET_MON_HIDDEN_ABILITY_BIT(egg)
+        ResetPartyPokemonAbility(egg);
         ClearScriptFlag(HIDDEN_ABILITIES_FLAG);
     }
 
+    PokeParty_Add(party, egg);
 
-    PokeParty_Add(party, togepi);
+    sys_FreeMemoryEz(egg);
 
-    sys_FreeMemoryEz(togepi);
-
-    SaveMisc_SetTogepiPersonalityGender(Sav2_Misc_get(fsys->savedata), GetMonData(togepi, MON_DATA_PERSONALITY, 0), GetMonData(togepi, MON_DATA_GENDER, 0));
+    SaveMisc_SetTogepiPersonalityGender(Sav2_Misc_get(fsys->savedata), GetMonData(egg, MON_DATA_PERSONALITY, 0), GetMonData(egg, MON_DATA_GENDER, 0));
 
     return FALSE;
 }
