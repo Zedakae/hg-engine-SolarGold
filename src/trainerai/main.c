@@ -1348,16 +1348,16 @@ int LONG_CALL HarassmentScoring(struct BattleSystem *bsys, u32 attacker, int i, 
         }
         break;
     case MOVE_EFFECT_DOUBLE_SPEED_3_TURNS:
-        if (IsBattleMonSlowerThanOpposition(bsys, attacker, ai->isDoubleBattle)
-            || (ai->isDoubleBattle && ctx->battlemon[BATTLER_ALLY(attacker)].hp > 0 && IsBattleMonSlowerThanOpposition(bsys, BATTLER_ALLY(attacker), ai->isDoubleBattle))) { // or partner is slower
-            moveScore += 9;
-        } else {
-            moveScore += 5;
-        }
-        if (ctx->side_condition[ai->attackerSide] & SIDE_STATUS_TAILWIND) {
-            moveScore -= NEVER_USE_MOVE_20;
-        }
-        break;
+    if (IsBattleMonSlowerThanOpposition(bsys, attacker, ai->isDoubleBattle)
+        || (ai->isDoubleBattle && ctx->battlemon[BATTLER_ALLY(attacker)].hp > 0 && IsBattleMonSlowerThanOpposition(bsys, BATTLER_ALLY(attacker), ai->isDoubleBattle))) {
+        moveScore += 9;
+    } else {
+        moveScore += 5;
+    }
+    if (ctx->tailwindCount[IsClientEnemy(bsys, attacker)]) {  // ← CHECK THE ACTUAL TAILWIND COUNTER
+        moveScore -= NEVER_USE_MOVE_20;
+    }
+    break;
     case MOVE_EFFECT_TRICK_ROOM:
         if (IsBattleMonSlowerThanOpposition(bsys, attacker, ai->isDoubleBattle)
             || (ai->isDoubleBattle && ctx->battlemon[BATTLER_ALLY(attacker)].hp > 0 && IsBattleMonSlowerThanOpposition(bsys, BATTLER_ALLY(attacker), ai->isDoubleBattle))) { // or partner is slower
