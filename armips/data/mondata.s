@@ -7051,18 +7051,18 @@ mondata SPECIES_ALTARIA, "Altaria"
 
 
 mondata SPECIES_ZANGOOSE, "Zangoose"
-    basestats 73, 115, 60, 90, 60, 60
-    types TYPE_NORMAL, TYPE_NORMAL
+    basestats 80, 120, 65, 95, 50, 70
+    types TYPE_NORMAL, TYPE_FIGHTING
     catchrate 90
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
-    items ITEM_NONE, ITEM_QUICK_CLAW
+    items ITEM_PERSIM_BERRY, ITEM_NONE
     genderratio 127
     eggcycles 20
     basefriendship 70
     growthrate GROWTH_ERRATIC
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_IMMUNITY, ABILITY_NONE
+    abilities ABILITY_IMMUNITY, ABILITY_SCRAPPY
     runchance 0
     colorflip BODY_COLOR_WHITE, 0
     mondexentry SPECIES_ZANGOOSE, "Its fur would all stand on end if\nit smelled a SEVIPER nearby.\nIts sharp claws tear up its foes."
@@ -7072,8 +7072,8 @@ mondata SPECIES_ZANGOOSE, "Zangoose"
 
 
 mondata SPECIES_SEVIPER, "Seviper"
-    basestats 73, 100, 60, 65, 100, 60
-    types TYPE_POISON, TYPE_POISON
+    basestats 85, 105, 75, 70, 70, 75
+    types TYPE_POISON, TYPE_DARK
     catchrate 90
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
@@ -7083,7 +7083,7 @@ mondata SPECIES_SEVIPER, "Seviper"
     basefriendship 70
     growthrate GROWTH_FLUCTUATING
     egggroups EGG_GROUP_FIELD, EGG_GROUP_DRAGON
-    abilities ABILITY_SHED_SKIN, ABILITY_NONE
+    abilities ABILITY_SHED_SKIN, ABILITY_INFILTRATOR
     runchance 0
     colorflip BODY_COLOR_BLACK, 0
     mondexentry SPECIES_SEVIPER, "In battle, it uses its bladed tail to\ncounter any ZANGOOSE. It secretes\na deadly venom in its tail."
@@ -24191,7 +24191,7 @@ mondata SPECIES_STUNFISK_GALARIAN, "-----"
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_WATER_1, EGG_GROUP_AMORPHOUS
-    abilities ABILITY_MIMICRY, ABILITY_NONE
+    abilities ABILITY_MIMICRY, ABILITY_STURDY
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
 

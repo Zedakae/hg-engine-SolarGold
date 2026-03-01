@@ -2230,9 +2230,9 @@ trainerdata 33, "Jasmine"
         item ITEM_EVIOLITE
         move MOVE_FLASH_CANNON
         move MOVE_THUNDERBOLT
-        move MOVE_BODY_PRESS
+        move MOVE_HEAVY_SLAM
         move MOVE_DRAGON_PULSE
-        ability ABILITY_STALWART
+        ability ABILITY_HEAVY_METAL
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_BOLD
@@ -6190,7 +6190,7 @@ trainerdata 96, "George"
         move MOVE_PROTECT
         move MOVE_SNAP_TRAP
         move MOVE_METAL_CLAW
-        ability ABILITY_MIMICRY
+        ability ABILITY_STURDY
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_SASSY
@@ -6272,7 +6272,7 @@ trainerdata 97, "Berke"
         move MOVE_DRAGON_PULSE
         move MOVE_FLASH_CANNON
         move MOVE_BODY_PRESS
-        ability ABILITY_STALWART
+        ability ABILITY_LIGHT_METAL
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_CALM
@@ -18264,7 +18264,7 @@ trainerdata 392, "Donald"
         move MOVE_METAL_BURST
         move MOVE_YAWN
         move MOVE_EARTHQUAKE
-        ability ABILITY_MIMICRY
+        ability ABILITY_STURDY
         setivs 31, 31, 31, 31, 31, 31
         setevs 0, 0, 0, 0, 0, 0
         nature NATURE_SASSY

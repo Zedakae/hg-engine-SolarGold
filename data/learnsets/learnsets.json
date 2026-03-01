@@ -48028,7 +48028,15 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_VILE_ENERGY"
+        "Move": "MOVE_ICE_FANG"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_THUNDER_FANG"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_FIRE_FANG"
       },
       {
         "Level": 4,
@@ -48036,63 +48044,63 @@
       },
       {
         "Level": 6,
-        "Move": "MOVE_SNARL"
+        "Move": "MOVE_LICK"
       },
       {
-        "Level": 9,
-        "Move": "MOVE_SLUDGE"
+        "Level": 10,
+        "Move": "MOVE_POISON_TAIL"
       },
       {
-        "Level": 11,
-        "Move": "MOVE_FEINT_ATTACK"
+        "Level": 13,
+        "Move": "MOVE_FEINT"
       },
       {
-        "Level": 14,
+        "Level": 16,
         "Move": "MOVE_SCREECH"
       },
       {
         "Level": 19,
+        "Move": "MOVE_POISON_TAIL"
+      },
+      {
+        "Level": 22,
         "Move": "MOVE_GLARE"
       },
       {
-        "Level": 21,
-        "Move": "MOVE_POISON_FANG"
+        "Level": 25,
+        "Move": "MOVE_KNOCK_OFF"
       },
       {
-        "Level": 24,
+        "Level": 28,
         "Move": "MOVE_VENOSHOCK"
       },
       {
-        "Level": 29,
+        "Level": 31,
         "Move": "MOVE_GASTRO_ACID"
       },
       {
-        "Level": 31,
-        "Move": "MOVE_POISON_JAB"
-      },
-      {
         "Level": 34,
-        "Move": "MOVE_HAZE"
-      },
-      {
-        "Level": 37,
-        "Move": "MOVE_DARK_PULSE"
-      },
-      {
-        "Level": 39,
         "Move": "MOVE_CRUNCH"
       },
       {
-        "Level": 42,
-        "Move": "MOVE_NASTY_PLOT"
+        "Level": 38,
+        "Move": "MOVE_HAZE"
+      },
+      {
+        "Level": 41,
+        "Move": "MOVE_POISON_JAB"
       },
       {
         "Level": 44,
-        "Move": "MOVE_SLUDGE_BOMB"
+        "Move": "MOVE_COIL"
       },
       {
-        "Level": 46,
-        "Move": "MOVE_COIL"
+        "Level": 47,
+        "Move": "MOVE_BELCH"
+      },
+      {
+        "Level": 50,
+        "Move": "MOVE_SLUDGE_BOMB"
       }
     ],
     "MachineMoves": [
