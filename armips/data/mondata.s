@@ -21689,7 +21689,7 @@ mondata SPECIES_FARIGIRAF, "Farigiraf"
 
 mondata SPECIES_DUDUNSPARCE, "Dudunspars"
     basestats 125, 100, 80, 55, 85, 75
-    types TYPE_NORMAL, TYPE_NORMAL
+    types TYPE_NORMAL, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0

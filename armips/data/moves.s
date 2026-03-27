@@ -3805,7 +3805,7 @@ movedata MOVE_MOONLIGHT, "Moonlight"
 movedata MOVE_HIDDEN_POWER, "Hidden Power"
     battleeffect MOVE_EFFECT_RANDOM_TYPE_BASED_ON_IVS
     pss SPLIT_SPECIAL
-    basepower 60
+    basepower 70
     type TYPE_NORMAL
     accuracy 100
     pp 15

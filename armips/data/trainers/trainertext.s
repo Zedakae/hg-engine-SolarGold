@@ -10,9 +10,6 @@ _0000: // Trainer 0
        // Trainer 2
        // Trainer 3
        // Trainer 107
-       // Trainer 165
-       // Trainer 166
-       // Trainer 167
        // Trainer 168
        // Trainer 169
        // Trainer 170
@@ -276,6 +273,21 @@ _00O4: // Trainer 141
     trainertextentry  141, TEXT_NOTICE_IN_OVERWORLD, "Race you to the other side!\rLast one there's a Magikarp!\r"
     trainertextentry  141, TEXT_DEFEATED_IN_BATTLE, "I got more waterlogged than I thought!\n"
     trainertextentry  141, TEXT_DEFEATED_IN_OVERWORLD, "The current out here is stronger\nthan it looks, you know.\n"
+
+_00P4: // Trainer 165
+    trainertextentry  165, TEXT_NOTICE_IN_OVERWORLD, "Ah, you're the one who helped Amphy!\nSplendid work, but let's see if you can\rhandle me first!\r"
+    trainertextentry  165, TEXT_DEFEATED_IN_BATTLE, "Marvelous! You're as skilled as you are\nkind!\n"
+    trainertextentry  165, TEXT_DEFEATED_IN_OVERWORLD, "Amphy's recovery has lifted everyone's\nspirits, mine included!\n"
+
+_00Q4: // Trainer 166
+    trainertextentry  166, TEXT_NOTICE_IN_OVERWORLD, "Thanks for saving Amphy!\nBut Jasmine asked me to test you before\ryou challenge her!\r"
+    trainertextentry  166, TEXT_DEFEATED_IN_BATTLE, "Wow! No wonder you could help Amphy!\n"
+    trainertextentry  166, TEXT_DEFEATED_IN_OVERWORLD, "I'm so relieved Amphy's okay! Jasmine's\nbeen smiling again!\n"
+
+_00R4: // Trainer 167
+    trainertextentry  167, TEXT_NOTICE_IN_OVERWORLD, "Hey there! I'm doing laps to build up\nmy stamina!\rHow about a battle to build yours?\r"
+    trainertextentry  167, TEXT_DEFEATED_IN_BATTLE, "Whew! That was a better workout than\nrunning!\n"
+    trainertextentry  167, TEXT_DEFEATED_IN_OVERWORLD, "Nothing beats the mountain air! Keeps\nme and my Pokémon strong!\n"
 
 _0104: // Trainer 287
     trainertextentry 287, TEXT_LAST_MON_CRITICAL, "I see. You weren’t coming to Kanto just\nto show off...\n"
@@ -1549,14 +1561,15 @@ _0D1C: // Trainer 123
 
 _0D2C: // Trainer 129
     trainertextentry 129, TEXT_NOTICE_IN_OVERWORLD, "Hey!\rThis is my secret place!\nGet lost, you outsider!\r"
-    trainertextentry 129, TEXT_DEFEATED_IN_BATTLE, "I should have used my Moon Stone...\n"
+    trainertextentry 129, TEXT_DEFEATED_IN_BATTLE, "The Moon Stone did nothing, sigh...\n"
     trainertextentry 129, TEXT_DEFEATED_IN_OVERWORLD, "You’re working on a Pokédex?\rWow, you must know some pretty\nrare Pokémon!\fMay I please see it? Please?\n"
 
 _0D38: // Trainer 134
-    trainertextentry 134, TEXT_NOTICE_IN_OVERWORLD, "What’s the other side of Mt. Mortar\nlike, do you know?\rIf you can beat me, I’ll let you know.\r"
-    trainertextentry 134, TEXT_DEFEATED_IN_BATTLE, "Gwah ha ha!\nI lost!\n"
-    trainertextentry 134, TEXT_DEFEATED_IN_OVERWORLD, "I said a pretty boastful lie. I’m sorry!\rThere’s this huge waterfall in the way,\nso I’ve never been on the other side of\fMt. Mortar!\n"
-
+    trainertextentry 134, TEXT_NOTICE_IN_OVERWORLD, "What’s the other side of Mt. Mortar\nlike, do you know?\rIf you can beat me, I will let you know.\r"
+    trainertextentry 134, TEXT_DEFEATED_IN_BATTLE, "Gwah ha ha!\nWe lost!\r"
+    trainertextentry 134, TEXT_DEFEATED_IN_OVERWORLD, "I said a pretty boastful lie. I’m sorry!\rThere’s this huge waterfall in the way,\nso I’ve never been on the other side of\fMt. Mortar!\r"
+    trainertextentry 134, TEXT_LAST_MON_SENT_OUT, "I mean there's still a chance..\nright..?\r"
+    
 _0D44: // Trainer 403
     trainertextentry 403, TEXT_NOTICE_IN_OVERWORLD, "I can do so much with my Pokémon!\nIt’s super fun!\r"
     trainertextentry 403, TEXT_DEFEATED_IN_BATTLE, "Losing isn’t fun at all...\n"
@@ -3338,9 +3351,9 @@ _1AD0: // Trainer 630
 /* Trainer 162 */ .halfword _0E7C
 /* Trainer 163 */ .halfword _0E80
 /* Trainer 164 */ .halfword _0E84
-/* Trainer 165 */ .halfword _0000
-/* Trainer 166 */ .halfword _0000
-/* Trainer 167 */ .halfword _0000
+/* Trainer 165 */ .halfword _00P4
+/* Trainer 166 */ .halfword _00Q4
+/* Trainer 167 */ .halfword _00R4
 /* Trainer 168 */ .halfword _0000
 /* Trainer 169 */ .halfword _0000
 /* Trainer 170 */ .halfword _0000

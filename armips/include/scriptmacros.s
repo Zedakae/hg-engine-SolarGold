@@ -208,6 +208,7 @@ std_fade_end_kimono_girl_music  equ 2068
 std_fade_heal_fade              equ 2069
 std_play_rival_outro_music      equ 2070
 std_fade_end_rival_outro_music  equ 2071
+std_qol_menu                    equ 2085
 
 // Creates a new script context to run the indicated script and wait
 .macro callstd,id
@@ -10375,6 +10376,14 @@ PHOTO_BLUE                                  equ 92
 .halfword 852
 .byte arg0
 .byte arg1
+.endmacro
+
+.macro RepelToggleOn
+RunNewCommand 100, 0x800C
+.endmacro
+
+.macro RepelToggleOff
+RunNewCommand 101, 0x800C
 .endmacro
 
 // Convenience macros
