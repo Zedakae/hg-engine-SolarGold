@@ -9,6 +9,7 @@
 #include "../../include/rtc.h"
 #include "../../include/save.h"
 #include "../../include/script.h"
+#include "../../include/repel.h"
 #include "../../include/constants/ability.h"
 #include "../../include/constants/file.h"
 #include "../../include/constants/game.h"
@@ -410,7 +411,8 @@ void LONG_CALL ClearOverworldRequestFlags(OVERWORLD_REQUEST_FLAGS* req)
  req->DebugHook = 0;
  req->DebugKeyPush = 0;
 
-    req->OpenPCCheck = 0; // new:  check if pc should be opened
+    req->OpenPCCheck  = 0; // new:  check if pc should be opened   
+    req->OpenQOLMenu = 0; // new:  check if pc should be opened
 
     req->Site = 0xFF;
     req->PushSite = 0xFF;
@@ -425,19 +427,24 @@ void LONG_CALL ClearOverworldRequestFlags(OVERWORLD_REQUEST_FLAGS* req)
 void LONG_CALL SetOverworldRequestFlags(OVERWORLD_REQUEST_FLAGS* req, u16 trg)
 {
     if (trg & PAD_BUTTON_L) {
-        req->OpenPCCheck = TRUE;
+        req->OpenQOLMenu = TRUE;  // ← CHANGED: Use OpenQOLMenu instead of OpenPCCheck
     }
 }
 
-/**
- *  @brief handle overworld request flags
- *
- *  @param req OVERWORLD_REQUEST_FLAGS structure to set flags in
- */
 void LONG_CALL CheckOverworldRequestFlags(OVERWORLD_REQUEST_FLAGS* req, FieldSystem* fsys)
 {
     if (req->OpenPCCheck) {
-        SetScriptFlag(0x18F); // some random flag that should be set by script 2010 (file 3 script 10)
-        EventSet_Script(fsys, 2010, NULL); // set up script 2010
+        SetScriptFlag(0x18F);
+        EventSet_Script(fsys, 2010, NULL);
+    }
+    
+    if (req->OpenQOLMenu) {
+        // Check if QoL menu has been unlocked via flag 2580
+        if (CheckScriptFlag(2580)) {
+            req->OpenQOLMenu = FALSE;
+            EventSet_Script(fsys, 2085, NULL);
+        } else {
+            req->OpenQOLMenu = FALSE;
+        }
     }
 }

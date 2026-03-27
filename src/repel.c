@@ -3,6 +3,7 @@
 #include "../include/constants/item.h"
 #include "../include/bag.h"
 #include "../include/constants/file.h"
+#include "../include/script.h"
 
 
 void Repel_SetCurrentType();
@@ -12,7 +13,13 @@ u16 ALIGN4 CurrentRepelType = 0;
 
 bool32 PlayerStepEvent_RepelCounterDecrement(SaveData *saveData, FieldSystem *fieldSystem) {
     void *roamerSaveData = EncDataSave_GetSaveDataPtr(saveData);
-    u8* repel_addr = SaveData_GetRepelPtr(roamerSaveData);
+    u8 *repel_addr = SaveData_GetRepelPtr(roamerSaveData);
+    
+    // Check if permanent repel is enabled
+    if (CheckScriptFlag(0x1002)) {
+        *repel_addr = 255;  // Maintain counter at max
+        return FALSE;
+    }
 
     if (*repel_addr != 0) {
         (*repel_addr)--;
@@ -25,7 +32,6 @@ bool32 PlayerStepEvent_RepelCounterDecrement(SaveData *saveData, FieldSystem *fi
             } else {
                 EventSet_Script(fieldSystem, 2022, NULL);
             }
-
             return TRUE;
         }
     }

@@ -88,6 +88,18 @@ scrdef scr_seq_0003_070
 scrdef scr_seq_0003_071
 scrdef scr_seq_0003_072_repels
 scrdef scr_seq_0003_073_autobattle_testing
+scrdef scr_seq_0003_074
+scrdef scr_seq_0003_075
+scrdef scr_seq_0003_076
+scrdef scr_seq_0003_077
+scrdef scr_seq_0003_078
+scrdef scr_seq_0003_079
+scrdef scr_seq_0003_080
+scrdef scr_seq_0003_081
+scrdef scr_seq_0003_082
+scrdef scr_seq_0003_083
+scrdef scr_seq_0003_084
+scrdef scr_seq_0003_085_qol_menu
 scrdef_end
 
 scr_seq_0003_002:
@@ -1749,6 +1761,164 @@ scr_seq_0003_073_autobattle_testing:
     releaseall
     end
 
+scr_seq_0003_074:
+    lockall
+    Message 121
+    WaitButton
+    CloseMessage
+    releaseall
+    end
 
+scr_seq_0003_075:
+    lockall
+    Message 121
+    WaitButton
+    CloseMessage
+    releaseall
+    end
+
+scr_seq_0003_076:
+    lockall
+    Message 121
+    WaitButton
+    CloseMessage
+    releaseall
+    end
+
+scr_seq_0003_077:
+    lockall
+    Message 121
+    WaitButton
+    CloseMessage
+    releaseall
+    end
+
+scr_seq_0003_078:
+    lockall
+    Message 121
+    WaitButton
+    CloseMessage
+    releaseall
+    end
+
+scr_seq_0003_079:
+    lockall
+    Message 121
+    WaitButton
+    CloseMessage
+    releaseall
+    end
+
+scr_seq_0003_080:
+    lockall
+    Message 121
+    WaitButton
+    CloseMessage
+    releaseall
+    end
+
+scr_seq_0003_081:
+    lockall
+    Message 121
+    WaitButton
+    CloseMessage
+    releaseall
+    end
+
+scr_seq_0003_082:
+    lockall
+    Message 121
+    WaitButton
+    CloseMessage
+    releaseall
+    end
+
+scr_seq_0003_083:
+    lockall
+    Message 121
+    WaitButton
+    CloseMessage
+    releaseall
+    end
+
+scr_seq_0003_084:
+    lockall
+    Message 121
+    WaitButton
+    CloseMessage
+    releaseall
+    end
+
+scr_seq_0003_085_qol_menu:
+    scrcmd_609
+    lockall
+    npc_msg 121
+    touchscreen_menu_hide
+    prepare_list_local_text 21, 1, 0, 1, VAR_SPECIAL_RESULT
+    add_list_option 123, 255, 0
+    add_list_option 124, 255, 1
+    add_list_option 125, 255, 2
+    add_list_option 126, 255, 3
+    show_prepared_list
+    
+    switch VAR_SPECIAL_RESULT
+    case 0, _qol_portable_pc
+    case 1, _qol_heal_party
+    case 2, _qol_repel_toggle
+    goto _qol_cancel
+
+_qol_portable_pc:
+    closemsg
+    lockall
+    play_se SEQ_SE_DP_PC_ON
+    setflag 0x18F
+    call _0A18
+    buffer_players_name 0
+    npc_msg 33
+    touchscreen_menu_hide
+    goto _0A2E
+
+_qol_heal_party:
+    closemsg
+    fade_screen 6, 1, 0, RGB_BLACK
+    wait_fade
+    play_fanfare SEQ_ME_ASA
+    wait_fanfare
+    heal_party
+    fade_screen 6, 1, 1, RGB_BLACK
+    wait_fade
+    npc_msg 122
+    wait_button_or_walk_away
+    closemsg
+    touchscreen_menu_show
+    releaseall
+    end
+
+_qol_repel_toggle:
+    closemsg
+    checkflag 0x1002
+    goto_if_eq _repel_is_on
+    RepelToggleOn
+    npc_msg 128
+    wait_button_or_walk_away
+    closemsg
+    touchscreen_menu_show
+    releaseall
+    end
+
+_repel_is_on:
+    RepelToggleOff
+    npc_msg 127
+    wait_button_or_walk_away
+    closemsg
+    touchscreen_menu_show
+    releaseall
+    end
+
+_qol_cancel:
+    closemsg
+    touchscreen_menu_show
+    releaseall
+    end
 
 .close
