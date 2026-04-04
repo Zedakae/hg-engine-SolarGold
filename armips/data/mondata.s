@@ -18791,7 +18791,7 @@ mondata SPECIES_SILICOBRA, "Silicobra"
 
 mondata SPECIES_SANDACONDA, "Sandaconda"
     basestats 80, 65, 70, 70, 110, 125
-    types TYPE_GROUND, TYPE_GROUND
+    types TYPE_GROUND, TYPE_DRAGON
     catchrate 120
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
