@@ -9523,38 +9523,85 @@ trainerdata 167, "Henry"
         ballseal 0
     endparty
 
-trainerdata 168, "Mickey"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_SWIMMER_M
-    nummons 3
+trainerdata 168, "Fennell"
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
+    trainerclass TRAINERCLASS_BIRD_KEEPER_GS
+    nummons 4
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
-    aiflags F_PRIORITIZE_SUPER_EFFECTIVE | 0
+    aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_EXPERT_ATTACKS | F_PRIORITIZE_DAMAGE | F_EVALUATE_ATTACKS | 0
     battletype SINGLE_BATTLE
     endentry
 
     party 168
         // mon 0
-        ivs 0
+        ivs 186
         abilityslot 0
-        level 25
-        pokemon SPECIES_SEEL
+        level 17
+        pokemon SPECIES_VULLABY
+        item ITEM_LEFTOVERS
+        move MOVE_TAILWIND
+        move MOVE_PLUCK
+        move MOVE_KNOCK_OFF
+        move MOVE_FLATTER
+        ability ABILITY_OVERCOAT
+        setivs 15, 15, 15, 15, 15, 15
+        setevs 0, 0, 0, 0, 0, 0
+        nature NATURE_LONELY
+        additionalflags 0
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 186
         abilityslot 0
-        level 26
-        pokemon SPECIES_DEWGONG
+        level 16
+        pokemon SPECIES_FLETCHINDER
+        item ITEM_CHARTI_BERRY
+        move MOVE_QUICK_ATTACK
+        move MOVE_ACROBATICS
+        move MOVE_FLAME_CHARGE
+        move MOVE_FLAIL
+        ability ABILITY_FLAME_BODY
+        setivs 15, 15, 15, 15, 15, 15
+        setevs 0, 0, 0, 0, 0, 0
+        nature NATURE_IMPISH
+        additionalflags 0
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 186
         abilityslot 0
-        level 25
-        pokemon SPECIES_SEEL
+        level 17
+        pokemon SPECIES_RUFFLET
+        item ITEM_FOCUS_SASH
+        move MOVE_SLASH
+        move MOVE_HONE_CLAWS
+        move MOVE_WING_ATTACK
+        move MOVE_TAILWIND
+        ability ABILITY_HUSTLE
+        setivs 15, 15, 15, 15, 15, 15
+        setevs 0, 0, 0, 0, 0, 0
+        nature NATURE_JOLLY
+        additionalflags 0
+        ballseal 0
+
+        // mon 3
+        ivs 186
+        abilityslot 0
+        level 16
+        pokemon SPECIES_TOGETIC
+        item ITEM_ORAN_BERRY
+        move MOVE_METRONOME
+        move MOVE_MAGICAL_LEAF
+        move MOVE_YAWN
+        move MOVE_FAIRY_WIND
+        ability ABILITY_SUPER_LUCK
+        setivs 15, 15, 15, 15, 15, 15
+        setevs 0, 0, 0, 0, 0, 0
+        nature NATURE_RASH
+        additionalflags 0
         ballseal 0
     endparty
 
@@ -11681,7 +11728,7 @@ trainerdata 224, "Grunt"
 
 trainerdata 225, "Mickey"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_TEAM_ROCKET
+    trainerclass TRAINERCLASS_TEAM_ROCKET_F
     nummons 1
     item ITEM_NONE
     item ITEM_NONE
@@ -13505,7 +13552,7 @@ trainerdata 261, "Blue"
 
 trainerdata 262, "Mickey"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_TEAM_ROCKET
+    trainerclass TRAINERCLASS_TEAM_ROCKET_F
     nummons 3
     item ITEM_NONE
     item ITEM_NONE
@@ -14374,7 +14421,7 @@ trainerdata 272, "Silver"
 
 trainerdata 273, "Mickey"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_SWIMMER_M
+    trainerclass TRAINERCLASS_TEAM_ROCKET_F
     nummons 3
     item ITEM_NONE
     item ITEM_NONE
@@ -15343,7 +15390,7 @@ trainerdata 291, "Debbie"
 
 trainerdata 292, "Mickey"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_SWIMMER_F
+    trainerclass TRAINERCLASS_TEAM_ROCKET
     nummons 1
     item ITEM_NONE
     item ITEM_NONE
@@ -15446,7 +15493,7 @@ trainerdata 294, "Lori"
 
 trainerdata 295, "Mickey"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_SWIMMER_F
+    trainerclass TRAINERCLASS_TEAM_ROCKET
     nummons 1
     item ITEM_NONE
     item ITEM_NONE
@@ -15689,7 +15736,7 @@ trainerdata 303, "Jose"
 
 trainerdata 304, "Mickey"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_CAMPER
+    trainerclass TRAINERCLASS_TEAM_ROCKET_F
     nummons 4
     item ITEM_NONE
     item ITEM_NONE

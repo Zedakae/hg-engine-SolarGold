@@ -2753,7 +2753,7 @@ pokemon SPECIES_PAWNIARD
 monwithform SPECIES_MEOWTH, 2
 pokemon SPECIES_ILLUMISE
 pokemon SPECIES_PARAS
-monwithform SPECIES_VULPIX, 0
+monwithform SPECIES_VULPIX, 1
 monwithform SPECIES_GROWLITHE, 0
 pokemon SPECIES_SPEAROW
 pokemon SPECIES_GOTHITA
@@ -2767,7 +2767,7 @@ pokemon SPECIES_PAWNIARD
 monwithform SPECIES_MEOWTH, 2
 pokemon SPECIES_ILLUMISE
 pokemon SPECIES_PARAS
-monwithform SPECIES_VULPIX, 0
+monwithform SPECIES_VULPIX, 1
 monwithform SPECIES_GROWLITHE, 0
 pokemon SPECIES_SPEAROW
 pokemon SPECIES_GOTHITA
@@ -2775,13 +2775,13 @@ pokemon SPECIES_GOTHITA
 // night encounter slots
 pokemon SPECIES_STANTLER
 pokemon SPECIES_STANTLER
-pokemon SPECIES_MORGREM
+pokemon SPECIES_IMPIDIMP
 pokemon SPECIES_HOOTHOOT
 pokemon SPECIES_PAWNIARD
 monwithform SPECIES_MEOWTH, 1
 pokemon SPECIES_VOLBEAT
 pokemon SPECIES_SPINARAK
-monwithform SPECIES_VULPIX, 1
+monwithform SPECIES_VULPIX, 0
 monwithform SPECIES_GROWLITHE, 1
 pokemon SPECIES_HOOTHOOT
 pokemon SPECIES_GOTHITA
@@ -2958,7 +2958,7 @@ pokemon SPECIES_HOUNDOUR
 pokemon SPECIES_DARUMAKA
 pokemon SPECIES_GULPIN
 pokemon SPECIES_LITWICK
-pokemon SPECIES_VULLABY
+pokemon SPECIES_CHARCADET
 pokemon SPECIES_EKANS
 monwithform SPECIES_GRIMER, 0
 pokemon SPECIES_MISDREAVUS
@@ -2972,7 +2972,7 @@ pokemon SPECIES_HOUNDOUR
 pokemon SPECIES_DARUMAKA
 pokemon SPECIES_GULPIN
 pokemon SPECIES_LITWICK
-pokemon SPECIES_VULLABY
+pokemon SPECIES_CHARCADET
 pokemon SPECIES_EKANS
 monwithform SPECIES_GRIMER, 0
 pokemon SPECIES_MISDREAVUS
@@ -3059,7 +3059,7 @@ walklevels 13, 14, 15, 13, 14, 15, 13, 14, 15, 13, 14, 15
 // morning encounter slots
 pokemon SPECIES_KOFFING
 pokemon SPECIES_HOUNDOUR
-pokemon SPECIES_SALAZZLE
+pokemon SPECIES_SALANDIT
 pokemon SPECIES_GULPIN
 pokemon SPECIES_LITWICK
 pokemon SPECIES_MURKROW
@@ -3073,7 +3073,7 @@ pokemon SPECIES_CHIMCHAR
 // day encounter slots
 pokemon SPECIES_KOFFING
 pokemon SPECIES_HOUNDOUR
-pokemon SPECIES_SALAZZLE
+pokemon SPECIES_SALANDIT
 pokemon SPECIES_GULPIN
 pokemon SPECIES_LITWICK
 pokemon SPECIES_MURKROW
@@ -3090,7 +3090,7 @@ pokemon SPECIES_HOUNDOUR
 pokemon SPECIES_DARUMAKA
 pokemon SPECIES_GULPIN
 pokemon SPECIES_LITWICK
-pokemon SPECIES_VULLABY
+pokemon SPECIES_CHARCADET
 pokemon SPECIES_EKANS
 monwithform SPECIES_GRIMER, 0
 pokemon SPECIES_MISDREAVUS
@@ -8560,55 +8560,55 @@ pokemon SPECIES_MAGIKARP
 
 encounterdata  82   // Cliff Edge Gate
 
-walkrate 0
+walkrate 20
 surfrate 15
 rocksmashrate 0
 oldrodrate 35
 goodrodrate 50
 superrodrate 75
-walklevels 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+walklevels 17, 18, 19, 17, 18, 19, 17, 18, 19, 17, 18, 19
 
 // morning encounter slots
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
+pokemon SPECIES_NACLI
+pokemon SPECIES_DUNSPARCE
+pokemon SPECIES_DWEBBLE
+pokemon SPECIES_SANDYGAST
+monwithform SPECIES_GEODUDE, 1
+pokemon SPECIES_MURKROW
+pokemon SPECIES_TRUBBISH
+pokemon SPECIES_TYRUNT
+pokemon SPECIES_MAWILE
+pokemon SPECIES_TINKATINK
+pokemon SPECIES_MUDKIP
+pokemon SPECIES_ARON
 
 // day encounter slots
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
+pokemon SPECIES_NACLI
+pokemon SPECIES_DUNSPARCE
+pokemon SPECIES_DWEBBLE
+pokemon SPECIES_SANDYGAST
+monwithform SPECIES_GEODUDE, 1
+pokemon SPECIES_WOOBAT
+pokemon SPECIES_TRUBBISH
+pokemon SPECIES_TYRUNT
+pokemon SPECIES_MAWILE
+pokemon SPECIES_TINKATINK
+pokemon SPECIES_MUDKIP
+pokemon SPECIES_ARON
 
 // night encounter slots
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
-pokemon SPECIES_NONE
+pokemon SPECIES_NACLI
+pokemon SPECIES_DUNSPARCE
+pokemon SPECIES_DWEBBLE
+pokemon SPECIES_GEODUDE
+pokemon SPECIES_GOLETT
+pokemon SPECIES_MURKROW
+pokemon SPECIES_WOOBAT
+pokemon SPECIES_TYRUNT
+pokemon SPECIES_MAWILE
+pokemon SPECIES_TINKATINK
+pokemon SPECIES_TURTWIG
+pokemon SPECIES_LARVITAR
 
 // hoenn encounter slots
 pokemon SPECIES_NONE
@@ -8619,36 +8619,36 @@ pokemon SPECIES_NONE
 pokemon SPECIES_NONE
 
 // surf encounters
-encounter SPECIES_WOOPER, 20, 30
-encounter SPECIES_WOOPER, 20, 30
-encounter SPECIES_QUAGSIRE, 30, 40
-encounter SPECIES_QUAGSIRE, 30, 40
-encounter SPECIES_QUAGSIRE, 30, 40
+encounter SPECIES_SHELLOS, 20, 30
+encounter SPECIES_REMORAID, 20, 30
+encounter SPECIES_CORSOLA, 30, 40
+encounter SPECIES_OMANYTE, 30, 40
+encounter SPECIES_KABUTO, 30, 40
 
 // rock smash encounters
 encounter SPECIES_NONE, 0, 0
 encounter SPECIES_NONE, 0, 0
 
 // old rod encounters
+encounter SPECIES_PINCURCHIN, 10, 10
+encounter SPECIES_PYUKUMUKU, 10, 10
+encounter SPECIES_RELICANTH, 10, 10
 encounter SPECIES_MAGIKARP, 10, 10
-encounter SPECIES_MAGIKARP, 10, 10
-encounter SPECIES_MAGIKARP, 10, 10
-encounter SPECIES_MAGIKARP, 10, 10
-encounter SPECIES_MAGIKARP, 10, 10
+encounter SPECIES_QUAXLY, 10, 10
 
 // good rod encounters
+encounter SPECIES_PINCURCHIN, 20, 20
+encounter SPECIES_PYUKUMUKU, 20, 20
+encounter SPECIES_RELICANTH, 20, 20
 encounter SPECIES_MAGIKARP, 20, 20
-encounter SPECIES_MAGIKARP, 20, 20
-encounter SPECIES_MAGIKARP, 20, 20
-encounter SPECIES_POLIWAG, 20, 20
-encounter SPECIES_POLIWAG, 20, 20
+encounter SPECIES_QUAXWELL, 20, 20
 
 // super rod encounters
-encounter SPECIES_MAGIKARP, 40, 40
-encounter SPECIES_MAGIKARP, 40, 40
-encounter SPECIES_POLIWAG, 40, 40
-encounter SPECIES_POLIWAG, 40, 40
-encounter SPECIES_POLIWAG, 40, 40
+encounter SPECIES_PINCURCHIN, 40, 40
+encounter SPECIES_PYUKUMUKU, 40, 40
+encounter SPECIES_RELICANTH, 40, 40
+encounter SPECIES_GYARADOS, 40, 40
+encounter SPECIES_QUAQUAVAL, 40, 40
 
 // swarm grass
 pokemon SPECIES_NONE
@@ -14806,7 +14806,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 11, 13, 15, 11, 13, 15, 11, 13, 15, 11, 13, 15
+walklevels 10, 11, 12, 10, 11, 12, 10, 11, 12, 10, 11, 12
 
 // morning encounter slots
 pokemon SPECIES_ROLYCOLY
