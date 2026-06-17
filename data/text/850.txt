@@ -52,10 +52,10 @@ On rare occasions, these shards form\nwhen a Tera Pokémon falls in battle\nand 
 An item to be held by Pokémon with\nselect Abilities. The energy within\nthis capsule boosts the strength of\rthe Pokémon.
 An item to be held by a Pokémon.\nThis cute shield protects the holder\nfrom having its Ability changed by\rothers.
 An item to be held by a Pokémon.\nThis amulet protects from stat drops\nfrom opposing moves or abilities.
-An item to be held by a Pokémon.\nThis herb allows the holder to\nmirror an opponent’s stat\rincreases-but only once.
-An item to be held by a Pokémon.\nThis glove boosts the power of\npunching moves and prevents direct\rcontact.
-An item to be held by a Pokémon.\nThis cloak conceals the holder,\nprotecting it from the additional\reffects of moves.
-An item to be held by a Pokémon.\nThis dice always rolls a good\nnumber, ensuring multistrike moves\rhit more times.
+An item to be held by a Pokémon.\nThis herb allows the holder to mirror an\nopponent’s stat increases--but only once.
+An item to be held by a Pokémon.\nThis glove boosts the power of punching\nmoves and prevents direct contact.
+An item to be held by a Pokémon.\nThis cloak conceals the holder, protecting\nit from the additional effects of moves.
+An item to be held by a Pokémon.\nThis dice always rolls a good number,\nensuring multistrike moves hit more times.
 N/A
 A long loaf sliced into top and\nbottom halves. Its aroma of wheat\nand its straightforward, salty\rflavor make it pair well with all\nkinds of sandwich ingredients.
 A condiment that packs a very tart\npunch yet pairs well with various\ningredients.
@@ -719,11 +719,133 @@ A snack made from ingredients\nfavored by the Legendary Pokémon\nSpectrier.
 A mysterious disk with an indigo\nshine to it, given to you by the Top\nChampion. It seems to be tied to\rArea Zero.
 A pick designed after Magmortar.\nIt’s said that using this pick makes\nany sandwich look like it’s fresh\rout of the oven.
 On rare occasions, these shards form\nwhen a Tera Pokémon falls in battle\nand its Tera Jewel shatters.
-A Pecha Berry of the highest\nquality. It’s said that a Pecha\nBerry tree carefully tended by an\rexpert gardener will produce just\none of these Berries every few\nyears.
-Blueberry Academy’s standard issue\ntablecloth, made with the latest\nfiber-processing technology. It’s\rheat-resistant and so tough even a\nRazor Claw can’t tear it.
-A set of chairs that are ideal for\npicnicking. Their design was\ninspired by the Blueberry\rTablecloth.
-A device that synchronizes your mind\nand feelings with your Pokémon’s so\nthat you can work as one. It’s still\ra prototype-hence its unrefined\nappearance.
-A rock that fell to earth from\nspace. It’s warm to the touch. It\nchanges the form of a certain\rspecies of Pokémon.
-A record of an expedition to the\nGreat Crater of Paldea, given to you\nby Professor Sada. The book has the\rname “Sada” written on it in clumsy\nhandwriting.
-A record of an expedition to the\nGreat Crater of Paldea, given to you\nby Professor Turo. The book has the\rname “Turo” written on it in clumsy\nhandwriting.
-A proof copy of the exploration\nnotes covering the Area Zero\nUnderdepths. It’s filled with long\rparagraphs describing what happened,\nalong with Briar’s thoughts.
+A Pecha Berry of the highest quality.\nIt’s said that a Pecha Berry tree\ncarefully tended by an expert gardener\rwill produce just one of these Berries\nevery few years.
+Blueberry Academy’s standard issue\ntablecloth, made with the latest\nfiber-processing technology.\rIt’s heat-resistant and so tough\neven a Razor Claw can’t tear it.
+A set of chairs that are ideal\nfor picnicking. Their design was\ninspired by the Blueberry Tablecloth.
+A device that synchronizes your mind\nand feelings with your Pokémon’s so\nthat you can work as one.\rIt’s still a prototype-hence its\nunrefined appearance.
+A rock that fell to earth from space.\nIt’s warm to the touch. It changes the\nform of a certain species of Pokémon.
+A record of an expedition to the\nGreat Crater of Paldea, given\nto you by Professor Sada.\rThe book has the name “Sada” written\non it in clumsy handwriting.
+A record of an expedition to the\nGreat Crater of Paldea, given\nto you by Professor Turo.\rThe book has the name “Turo” written\non it in clumsy handwriting.
+A proof copy of the\nexploration notes covering\nthe Area Zero Underdepths.\rIt’s filled with long paragraphs\ndescribing what happened,\nalong with Briar’s thoughts.
+TEMP
+A variety of the mysterious Mega Stones.\nA Clefable holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Victreebel holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Starmie holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Dragonite holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Meganium holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Feraligatr holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Skarmory holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Froslass holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Heatran holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Darkrai holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Emboar holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Excadrill holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Scolipede holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Scrafty holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Eelektross holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Chandelure holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Chesnaught holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Delphox holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Greninja holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Pyroar holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Floette holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Malamar holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Barbaracle holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Dragalge holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Hawlucha holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Zygarde holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Drampa holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Falinks holding this stone will be\nable to Mega Evolve during battle.
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+A variety of the mysterious Mega Stones.\nA Raichu holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Raichu holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Chimecho holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nAn Absol holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Staraptor holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Garchomp holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Lucario holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Golurk holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Meowstic holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Crabominable holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Golisopod holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Magearna holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Scovillain holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Baxcalibur holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Tatsugiri holding this stone will be\nable to Mega Evolve during battle.
+A variety of the mysterious Mega Stones.\nA Glimmora holding this stone will be\nable to Mega Evolve during battle.
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP
+TEMP

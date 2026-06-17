@@ -382,14 +382,6 @@ BOOL ScrCmd_DaycareSanitizeMon(SCRIPTCONTEXT *ctx) {
     return FALSE;
 }
 
-BOOL ScrCmd_BufferItemName(SCRIPTCONTEXT *ctx) {
-    MessageFormat **msgFmt = FieldSysGetAttrAddr(ctx->fsys, 16);
-    u8 idx = ScriptReadByte(ctx);
-    u16 itemId = ScriptGetVar(ctx);
-    BufferItemNameGiveItem(*msgFmt, idx, itemId);
-    return FALSE;
-}
-
 /**
  *  @brief clear overworld request flags
  *
