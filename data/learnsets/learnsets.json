@@ -78828,14 +78828,6 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_SPIKY_SHIELD"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_PECK"
-      },
-      {
-        "Level": 1,
         "Move": "MOVE_ABSORB"
       },
       {
@@ -78844,11 +78836,19 @@
       },
       {
         "Level": 1,
+        "Move": "MOVE_COTTON_GUARD"
+      },
+      {
+        "Level": 1,
         "Move": "MOVE_INGRAIN"
       },
       {
         "Level": 1,
-        "Move": "MOVE_COTTON_GUARD"
+        "Move": "MOVE_PECK"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_SPIKY_SHIELD"
       },
       {
         "Level": 4,
@@ -78867,60 +78867,60 @@
         "Move": "MOVE_PIN_MISSILE"
       },
       {
-        "Level": 16,
-        "Move": "MOVE_SWEET_SCENT"
+        "Level": 18,
+        "Move": "MOVE_MUD_BOMB"
       },
       {
         "Level": 22,
         "Move": "MOVE_NEEDLE_ARM"
       },
       {
-        "Level": 24,
+        "Level": 25,
         "Move": "MOVE_GIGA_DRAIN"
       },
       {
-        "Level": 24,
+        "Level": 28,
         "Move": "MOVE_SYNTHESIS"
       },
       {
-        "Level": 28,
-        "Move": "MOVE_SUCKER_PUNCH"
+        "Level": 31,
+        "Move": "MOVE_SCORCHING_SANDS"
       },
       {
-        "Level": 29,
+        "Level": 34,
         "Move": "MOVE_COTTON_SPORE"
       },
       {
-        "Level": 33,
+        "Level": 37,
         "Move": "MOVE_INGRAIN"
-      },
-      {
-        "Level": 41,
-        "Move": "MOVE_PETAL_BLIZZARD"
       },
       {
         "Level": 41,
         "Move": "MOVE_ACUPRESSURE"
       },
       {
-        "Level": 44,
-        "Move": "MOVE_SUNNY_DAY"
+        "Level": 43,
+        "Move": "MOVE_PETAL_BLIZZARD"
       },
       {
         "Level": 47,
+        "Move": "MOVE_SUNNY_DAY"
+      },
+      {
+        "Level": 50,
         "Move": "MOVE_PETAL_DANCE"
       },
       {
-        "Level": 48,
+        "Level": 53,
         "Move": "MOVE_SOLAR_BEAM"
       },
       {
-        "Level": 57,
-        "Move": "MOVE_COTTON_GUARD"
+        "Level": 56,
+        "Move": "MOVE_AFTER_YOU"
       },
       {
-        "Level": 57,
-        "Move": "MOVE_AFTER_YOU"
+        "Level": 59,
+        "Move": "MOVE_COTTON_GUARD"
       }
     ],
     "MachineMoves": [
@@ -78942,6 +78942,7 @@
       "MOVE_REST",
       "MOVE_RETURN",
       "MOVE_SAFEGUARD",
+      "MOVE_SCORCHING_SANDS",
       "MOVE_SECRET_POWER",
       "MOVE_SLEEP_TALK",
       "MOVE_SOLAR_BEAM",
