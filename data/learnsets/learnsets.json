@@ -70304,7 +70304,7 @@
       "MOVE_ZEN_HEADBUTT"
     ]
   },
-  "SPECIES_GIRATINA_ORIGIN": {
+  "SPECIES_501": {
     "LevelMoves": [
       {
         "Level": 1,
@@ -70440,7 +70440,7 @@
       "MOVE_UPROAR"
     ]
   },
-  "SPECIES_SHAYMIN_SKY": {
+  "SPECIES_502": {
     "LevelMoves": [
       {
         "Level": 1,
@@ -70534,7 +70534,7 @@
       "MOVE_UPROAR"
     ]
   },
-  "SPECIES_ROTOM_HEAT": {
+  "SPECIES_503": {
     "LevelMoves": [
       {
         "Level": 1,
@@ -70667,7 +70667,7 @@
       "MOVE_UPROAR"
     ]
   },
-  "SPECIES_ROTOM_WASH": {
+  "SPECIES_504": {
     "LevelMoves": [
       {
         "Level": 1,
@@ -70800,7 +70800,7 @@
       "MOVE_UPROAR"
     ]
   },
-  "SPECIES_ROTOM_FROST": {
+  "SPECIES_505": {
     "LevelMoves": [
       {
         "Level": 1,
@@ -70933,7 +70933,7 @@
       "MOVE_UPROAR"
     ]
   },
-  "SPECIES_ROTOM_FAN": {
+  "SPECIES_506": {
     "LevelMoves": [
       {
         "Level": 1,
@@ -71055,7 +71055,7 @@
     "EggMoves": [],
     "TutorMoves": []
   },
-  "SPECIES_ROTOM_MOW": {
+  "SPECIES_507": {
     "LevelMoves": [
       {
         "Level": 1,
