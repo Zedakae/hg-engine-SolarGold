@@ -22,32 +22,36 @@ BOOL Script_RunNewCmd(SCRIPTCONTEXT *ctx)
         SetScriptVar(arg0, most_recent_repel);
         Repel_Use(most_recent_repel, HEAPID_MAIN_HEAP);
 #endif
-            break;
-            
-        case SCRIPT_NEW_CMD_REPEL_TOGGLE_ON:;
-            {
-                SaveData *saveData = SaveBlock2_get();
-                void *roamerSaveData = EncDataSave_GetSaveDataPtr(saveData);
-                u8 *repel_addr = SaveData_GetRepelPtr(roamerSaveData);
-                
-                SetScriptFlag(0x1002);
-                *repel_addr = 255;
-            }
-            break;
-            
-        case SCRIPT_NEW_CMD_REPEL_TOGGLE_OFF:;
-            {
-                SaveData *saveData = SaveBlock2_get();
-                void *roamerSaveData = EncDataSave_GetSaveDataPtr(saveData);
-                u8 *repel_addr = SaveData_GetRepelPtr(roamerSaveData);
-                
-                ClearScriptFlag(0x1002);
-                *repel_addr = 0;
-            }
-            break;
+        break;
 
-        default: break;
+    case SCRIPT_NEW_CMD_REPEL_TOGGLE_ON:;
+        {
+            SaveData *saveData = SaveBlock2_get();
+            void *roamerSaveData = EncDataSave_GetSaveDataPtr(saveData);
+            u8 *repel_addr = SaveData_GetRepelPtr(roamerSaveData);
+
+            SetScriptFlag(0x1002);
+            *repel_addr = 255;
+        }
+        break;
+
+    case SCRIPT_NEW_CMD_REPEL_TOGGLE_OFF:;
+        {
+            SaveData *saveData = SaveBlock2_get();
+            void *roamerSaveData = EncDataSave_GetSaveDataPtr(saveData);
+            u8 *repel_addr = SaveData_GetRepelPtr(roamerSaveData);
+
+            ClearScriptFlag(0x1002);
+            *repel_addr = 0;
+        }
+        break;
+
+    default:
+        break;
     }
+
+    return FALSE;
+}
 
 BOOL LONG_CALL ScrCmd_CreateRoamer(SCRIPTCONTEXT *ctx)
 {
