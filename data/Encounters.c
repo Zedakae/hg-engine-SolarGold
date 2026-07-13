@@ -6569,11 +6569,11 @@ const EncounterData __data[] =
             SPECIES_NONE,
         },
         .surfSlots = {
-            { 10, 20, SPECIES_SPHEAL },
-            { 5, 15, SPECIES_SEEL },
-            { 2, 10, SPECIES_MAGIKARP },
-            { 2, 10, SPECIES_TOTODILE },
-            { 2, 10, SPECIES_PIPLUP },
+            { 20, 30, SPECIES_SPHEAL },
+            { 20, 25, SPECIES_SEEL },
+            { 20, 30, SPECIES_MAGIKARP },
+            { 25, 30, SPECIES_TOTODILE },
+            { 25, 30, SPECIES_PIPLUP },
         },
         .rockSmashSlots = {
             { 0, 0, SPECIES_NONE },
