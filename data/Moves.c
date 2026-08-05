@@ -11979,7 +11979,7 @@ const MoveSourceEntry sMoveSource[NUM_OF_MOVES + 1] = {
         },
         .battle = {
             .target = RANGE_SINGLE_TARGET,
-            .priority = 0,
+            .priority = 0,            
             .flags = FLAG_MIRROR_MOVE | FLAG_PROTECT,
         },
         .contest = {

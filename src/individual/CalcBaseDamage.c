@@ -1080,22 +1080,22 @@ int UNUSED CalcBaseDamageInternal(struct BattleSystem *bw, struct BattleStruct *
             }
 
             // handle Overgrow
-            if ((movetype == TYPE_GRASS) && (AttackingMon.ability == ABILITY_OVERGROW) && (AttackingMon.hp <= AttackingMon.maxhp / 3)) {
+            if ((movetype == TYPE_GRASS) && (AttackingMon.ability == ABILITY_OVERGROW) && (AttackingMon.hp <= AttackingMon.maxhp / 2)) {
                 attackModifier = QMul_RoundUp(attackModifier, UQ412__1_5);
             }
 
             // handle Blaze
-            if ((movetype == TYPE_FIRE) && (AttackingMon.ability == ABILITY_BLAZE) && (AttackingMon.hp <= AttackingMon.maxhp / 3)) {
+            if ((movetype == TYPE_FIRE) && (AttackingMon.ability == ABILITY_BLAZE) && (AttackingMon.hp <= AttackingMon.maxhp / 2)) {
                 attackModifier = QMul_RoundUp(attackModifier, UQ412__1_5);
             }
 
             // handle Torrent
-            if ((movetype == TYPE_WATER) && (AttackingMon.ability == ABILITY_TORRENT) && (AttackingMon.hp <= AttackingMon.maxhp / 3)) {
+            if ((movetype == TYPE_WATER) && (AttackingMon.ability == ABILITY_TORRENT) && (AttackingMon.hp <= AttackingMon.maxhp / 2)) {
                 attackModifier = QMul_RoundUp(attackModifier, UQ412__1_5);
             }
 
             // handle Swarm
-            if ((movetype == TYPE_BUG) && (AttackingMon.ability == ABILITY_SWARM) && (AttackingMon.hp <= AttackingMon.maxhp / 3)) {
+            if ((movetype == TYPE_BUG) && (AttackingMon.ability == ABILITY_SWARM) && (AttackingMon.hp <= AttackingMon.maxhp / 2)) {
                 attackModifier = QMul_RoundUp(attackModifier, UQ412__1_5);
             }
 

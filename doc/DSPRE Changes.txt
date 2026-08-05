@@ -80,7 +80,7 @@ REMEMBER TO UPDATE TEXT/DIALOGUE FOR TM'S TO USE THIS SNIPPET WHEN IN WSL >> mak
 
 FLAG 2580 IS BEING USED FOR QOL MENU TO BE USEABLE IN PROF ELM SCRIPT WHEN LEAVING NEW BARK TOWN FOR FIRST TIME.
 
-FLAGS USED FROM "2550" TO "2562" SO FAR! (2562 BEING TRIGGER TILE AT R36 TO FIX BROKEN 2555 FLAG)
+FLAGS USED FROM "2550" TO "2587" SO FAR! (2587 BEING TR GRUNT ON 5TH FLOOR OF LIGHTHOUSE)
 
 FLAGS USED FOR NEW TEAM ROCKET ARC AT LIGHTHOUSE STARTS AT
 
@@ -2221,3 +2221,75 @@ End
 Test\r
 
 ID: 9, Flag: 2558, Script 18 (Originally)
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+SCRIPT And Actions FOR TOP OF LIGHTHOUSE:
+
+Script 6:
+	LockAll
+	SetVar 0x4125 0
+	SetVar 0x4061 0
+	FadeScreen 6 1 1 0
+	WaitFadeScreen
+	FadeOutMusic 0 15
+	PlayMusic SEQ_GS_EYE_ROCKET
+	Message 19
+	WaitButton
+	CloseMessage
+	Message 20
+	WaitButton
+	CloseMessage
+	Movement Overworld.1 Action#2
+	Message 21
+	CloseMessage
+	Movement Overworld.6 Action#3
+	PlaySound SEQ_SE_DP_KI_GASYAN
+	Movement Overworld.6 Action#4
+	WaitMovement
+	Movement Overworld.6 Action#5
+	WaitMovement
+	Message 22
+	CloseMessage
+	PlaySound SEQ_SE_DP_NAGERU
+	PlaySound SEQ_SE_DP_BOWA2
+	Release Overworld.9
+	SetOWPosition Overworld.9 7 0 9 Down
+	Lock Overworld.9
+	PlayCry SPECIES_STEELIX 0
+	WaitCry
+	Movement Overworld.1 Action#6
+	Movement Overworld.1 Action#7
+	WaitMovement
+	Message 23
+	WaitButton
+	CloseMessage
+	Message 24
+	WaitButton
+	CloseMessage
+	ReleaseAll
+End
+
+Action 2:
+		FaceSouth 0x1
+End
+
+Action 3:
+		LockDir 0x1
+End
+
+Action 4:
+		JumpSouth8 0x1
+End
+
+Action 5:
+		ReleaseDir 0x1
+End
+
+Action 6:
+		EmoteDoubleExclamation 0x1
+End
+
+Action 7:
+		FaceEast 0x1
+End
