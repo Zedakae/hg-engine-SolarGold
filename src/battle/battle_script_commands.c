@@ -2323,7 +2323,13 @@ BOOL btl_scr_cmd_E4_settailwind(void *bw, struct BattleStruct *sp)
 
     client_no = GrabClientFromBattleScriptParam(bw, sp, client_no);
 
-    sp->tailwindCount[IsClientEnemy(bw, client_no)] = 4;
+    // If the overworld variable 0x4060 is set, give them 99 turns (effectively permanent)
+    if (GetScriptVar(0x4060) == 1) {
+        sp->tailwindCount[IsClientEnemy(bw, client_no)] = 254;
+    } else {
+        // Otherwise, keep the standard 4-turn duration for normal moves
+        sp->tailwindCount[IsClientEnemy(bw, client_no)] = 4;
+    }
 
     return FALSE;
 }

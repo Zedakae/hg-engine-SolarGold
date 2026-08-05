@@ -46,52 +46,60 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
     // 022531A8
     do
     {
-        switch(sp->switch_in_check_seq_no)
+        switch (sp->switch_in_check_seq_no) {
+
+        case SWITCH_IN_CHECK_WEATHER: // 022531DE
         {
-            case SWITCH_IN_CHECK_WEATHER:  // 022531DE
-            {
 #ifdef DEBUG_SWITCH_IN_ABILITY_CHECK
             debug_printf("in SWITCH_IN_CHECK_WEATHER %d\n", sp->switch_in_check_seq_no);
 #endif
-                if (sp->weather_check_flag == 0) {
-                    switch (BattleWorkWeatherGet(bw)) {
-                        case WEATHER_SYS_RAIN:
-                        case WEATHER_SYS_HEAVY_RAIN:
-                        case WEATHER_SYS_THUNDER:
-                            scriptnum = SUB_SEQ_OVERWORLD_RAIN;
-                            ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
-                            break;
-                        case WEATHER_SYS_SNOW:
-                        case WEATHER_SYS_SNOWSTORM:
-                            // case WEATHER_SYS_BLIZZARD:
-                            scriptnum = SUB_SEQ_OVERWORLD_HAIL;
-                            ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
-                            break;
-                        case WEATHER_SYS_SANDSTORM:
-                            scriptnum = SUB_SEQ_OVERWORLD_SANDSTORM;
-                            ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
-                            break;
-                        case WEATHER_SYS_MIST1:
-                        case WEATHER_SYS_MIST2:
-                            scriptnum = SUB_SEQ_OVERWORLD_FOG;
-                            ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
-                            break;
-                        case WEATHER_SYS_HIGH_SUN:
-                            scriptnum = SUB_SEQ_OVERWORLD_SUN;
-                            ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
-                            break;
-                        case WEATHER_SYS_TRICK_ROOM:
-                            scriptnum = SUB_SEQ_OVERWORLD_TRICK_ROOM;
-                            ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
-                            break;
+            if (sp->weather_check_flag == 0) {
+                switch (BattleWorkWeatherGet(bw)) {
+                case WEATHER_SYS_RAIN:
+                case WEATHER_SYS_HEAVY_RAIN:
+                case WEATHER_SYS_THUNDER:
+                    scriptnum = SUB_SEQ_OVERWORLD_RAIN;
+                    ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
+                    break;
+                case WEATHER_SYS_SNOW:
+                case WEATHER_SYS_SNOWSTORM:
+                    scriptnum = SUB_SEQ_OVERWORLD_HAIL;
+                    ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
+                    break;
+                case WEATHER_SYS_SANDSTORM:
+                    scriptnum = SUB_SEQ_OVERWORLD_SANDSTORM;
+                    ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
+                    break;
+                case WEATHER_SYS_MIST1:
+                case WEATHER_SYS_MIST2:
+                    scriptnum = SUB_SEQ_OVERWORLD_FOG;
+                    ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
+                    break;
+                case WEATHER_SYS_HIGH_SUN:
+                    scriptnum = SUB_SEQ_OVERWORLD_SUN;
+                    ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
+                    break;
+                case WEATHER_SYS_TRICK_ROOM:
+                    scriptnum = SUB_SEQ_OVERWORLD_TRICK_ROOM;
+                    ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
+                    break;
+                default:
+                    if (GetScriptVar(0x4060) == 1) {
+                        scriptnum = SUB_SEQ_OVERWORLD_TAILWIND;
+                        ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
                     }
-                    if (ret == SWITCH_IN_CHECK_MOVE_SCRIPT) {
-                        sp->weather_check_flag = 1;
-                    }
+                    break;
                 }
-                sp->switch_in_check_seq_no++;
             }
-                break;
+            
+            if (ret == SWITCH_IN_CHECK_MOVE_SCRIPT) {
+                sp->weather_check_flag = 1;
+            }
+
+            sp->switch_in_check_seq_no++;
+        }
+        break;
+
             case SWITCH_IN_CHECK_FIELD: // TODO come back to this
                 sp->switch_in_check_seq_no++;
                 break;
