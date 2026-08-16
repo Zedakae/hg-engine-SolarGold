@@ -1,9 +1,9 @@
-#include "../../include/constants/item.h"
-#include "../../include/debug.h"
-#include "../../include/pokemon.h"
-#include "../../include/save.h"
-#include "../../include/script.h"
-#include "../../include/types.h"
+#include "constants/item.h"
+#include "debug.h"
+#include "pokemon.h"
+#include "save.h"
+#include "script.h"
+#include "types.h"
 
 #ifdef MART_EXPANSION
 
@@ -99,6 +99,51 @@ const struct BadgeMartItems sBadgeMart[] = {
     { ITEM_SWAMPERTITE,    4 },
     { ITEM_TYRANITARITE,   5 },
     { ITEM_VENUSAURITE,    4 },
+    { ITEM_FERALIGITE,     4 },
+    { ITEM_MEGANIUMITE,    4 },
+    { ITEM_CLEFABLITE,     5 },
+    { ITEM_VICTREEBELITE,  4 },
+    { ITEM_STARMINITE,     6 },
+    { ITEM_DRAGONINITE,    7 },
+    { ITEM_SKARMORITE,     5 },
+    { ITEM_FROSLASSITE,    6 },
+    { ITEM_HEATRANITE,     8 },
+    { ITEM_DARKRANITE,     8 },
+    { ITEM_EMBOARITE,      4 },
+    { ITEM_EXCADRITE,      6 },
+    { ITEM_SCOLIPITE,      5 },
+    { ITEM_SCRAFTINITE,    5 },
+    { ITEM_EELEKTROSSITE,  6 },
+    { ITEM_CHANDELURITE,   6 },
+    { ITEM_CHESNAUGHTITE,  4 },
+    { ITEM_DELPHOXITE,     4 },
+    { ITEM_GRENINJITE,     4 },
+    { ITEM_PYROARITE,      5 },
+    { ITEM_FLOETTITE,      7 },
+    { ITEM_MALAMARITE,     4 },
+    { ITEM_BARBARACITE,    5 },
+    { ITEM_DRAGALGITE,     6 },
+    { ITEM_HAWLUCHANITE,   5 },
+    { ITEM_ZYGARDITE,      8 },
+    { ITEM_DRAMPANITE,     5 },
+    { ITEM_ZERAORITE,      8 },
+    { ITEM_FALINKSITE,     5 },
+    { ITEM_RAICHUNITE_X,   5 },
+    { ITEM_RAICHUNITE_Y,   5 },
+    { ITEM_CHIMECHITE,     4 },
+    { ITEM_ABSOLITE_Z,     5 },
+    { ITEM_STARAPTITE,     5 },
+    { ITEM_GARCHOMPITE_Z,  7 },
+    { ITEM_LUCARIONITE_Z,  7 },
+    { ITEM_GOLURKITE,      5 },
+    { ITEM_MEOWSTICITE,    4 },
+    { ITEM_CRABOMINITE,    5 },
+    { ITEM_GOLISOPITE,     6 },
+    { ITEM_MAGEARNITE,     7 },
+    { ITEM_SCOVILLAINITE,  5 },
+    { ITEM_BAXCALIBRITE,   7 },
+    { ITEM_TATSUGIRINITE,  7 },
+    { ITEM_GLIMMORANITE,   6 },
 };
 
 void LONG_CALL InitMartUI(void *taskManager, FieldSystem *fieldSystem, const u16 *items, int kind, int buySell, int decoWhich, const struct MartItem *priceOverrides);

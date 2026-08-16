@@ -11926,8 +11926,8 @@ const EvolutionTable __data[MAX_SPECIES_INCLUDING_FORMS + 1] =
 
     [SPECIES_ROCKRUFF] = {
         .entries = {
-            { EVO_LEVEL_DAY, 24, MON_WITH_FORM(SPECIES_LYCANROC, 3) },
-            { EVO_LEVEL_NIGHT, 24, MON_WITH_FORM(SPECIES_LYCANROC, 1) },
+            { EVO_LEVEL_DAY, 25, SPECIES_LYCANROC },
+            { EVO_LEVEL_NIGHT, 25, MON_WITH_FORM(SPECIES_LYCANROC, 1) },
             { EVO_NONE, 0, SPECIES_NONE },
             { EVO_NONE, 0, SPECIES_NONE },
             { EVO_NONE, 0, SPECIES_NONE },
