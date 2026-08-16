@@ -48,7 +48,7 @@ u8 LONG_CALL BattleAI_CalcSpeed(void *bw, struct BattleStruct *sp, int client1, 
     }
 
     //Room Service
-    if (sp->field_condition & FIELD_STATUS_TRICK_ROOM && hold_effect2 == HOLD_EFFECT_DROP_SPEED_IN_TRICK_ROOM) {
+    if (sp->field_condition & FIELD_CONDITION_TRICK_ROOM && hold_effect2 == HOLD_EFFECT_DROP_SPEED_IN_TRICK_ROOM) {
         stat_stage_spd2 = stat_stage_spd2 - 1;
     }
 
@@ -89,16 +89,16 @@ u8 LONG_CALL BattleAI_CalcSpeed(void *bw, struct BattleStruct *sp, int client1, 
 
     if ((CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_CLOUD_NINE) == 0)
         && (CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_AIR_LOCK) == 0)) {
-        if (((ability1 == ABILITY_SWIFT_SWIM) && (sp->field_condition & WEATHER_RAIN_ANY))
-            || ((ability1 == ABILITY_CHLOROPHYLL) && (sp->field_condition & WEATHER_SUNNY_ANY))
-            || ((ability1 == ABILITY_SAND_RUSH) && (sp->field_condition & WEATHER_SANDSTORM_ANY))
-            || ((ability1 == ABILITY_SLUSH_RUSH) && (sp->field_condition & (WEATHER_HAIL_ANY | WEATHER_SNOW_ANY)))) {
+        if (((ability1 == ABILITY_SWIFT_SWIM) && (sp->field_condition & FIELD_CONDITION_RAIN_ALL))
+            || ((ability1 == ABILITY_CHLOROPHYLL) && (sp->field_condition & FIELD_CONDITION_SUN_ALL))
+            || ((ability1 == ABILITY_SAND_RUSH) && (sp->field_condition & FIELD_CONDITION_SANDSTORM_ALL))
+            || ((ability1 == ABILITY_SLUSH_RUSH) && (sp->field_condition & (FIELD_CONDITION_SNOW_ALL | FIELD_CONDITION_HAIL_ALL)))) {
             speedModifier1 = QMul_RoundUp(speedModifier1, UQ412__2_0);
         }
-        if (((ability2 == ABILITY_SWIFT_SWIM) && (sp->field_condition & WEATHER_RAIN_ANY))
-            || ((ability2 == ABILITY_CHLOROPHYLL) && (sp->field_condition & WEATHER_SUNNY_ANY))
-            || ((ability2 == ABILITY_SAND_RUSH) && (sp->field_condition & WEATHER_SANDSTORM_ANY))
-            || ((ability2 == ABILITY_SLUSH_RUSH) && (sp->field_condition & (WEATHER_HAIL_ANY | WEATHER_SNOW_ANY)))) {
+        if (((ability2 == ABILITY_SWIFT_SWIM) && (sp->field_condition & FIELD_CONDITION_RAIN_ALL))
+            || ((ability2 == ABILITY_CHLOROPHYLL) && (sp->field_condition & FIELD_CONDITION_SUN_ALL))
+            || ((ability2 == ABILITY_SAND_RUSH) && (sp->field_condition & FIELD_CONDITION_SANDSTORM_ALL))
+            || ((ability2 == ABILITY_SLUSH_RUSH) && (sp->field_condition & (FIELD_CONDITION_SNOW_ALL | FIELD_CONDITION_HAIL_ALL)))) {
             speedModifier2 = QMul_RoundUp(speedModifier2, UQ412__2_0);
         }
     }
@@ -169,11 +169,30 @@ u8 LONG_CALL BattleAI_CalcSpeed(void *bw, struct BattleStruct *sp, int client1, 
     debug_printf("[CalcSpeed] %s's speedModifier2: %d\n", client2Nickname, speedModifier2);
 #endif
 
+     if ((ability1 == ABILITY_PROTOSYNTHESIS || ability1 == ABILITY_QUARK_DRIVE)
+        && (sp->paradoxBoostedStat[client1] == STAT_SPEED)) {
+        speedModifier1 = QMul_RoundUp(speedModifier1, UQ412__1_5);
+     }
+
+     if ((ability2 == ABILITY_PROTOSYNTHESIS && ((sp->field_condition & FIELD_CONDITION_SUN_ALL) || hold_effect2 == HOLD_EFFECT_ACTIVATE_PARADOX_ABILITIES))
+         || (ability2 == ABILITY_QUARK_DRIVE && ((sp->terrainOverlay.type == ELECTRIC_TERRAIN && sp->terrainOverlay.numberOfTurnsLeft) || hold_effect2 == HOLD_EFFECT_ACTIVATE_PARADOX_ABILITIES))) {
+         u16 atk = GetMonData(partyMon, MON_DATA_ATTACK, 0);
+         u16 def = GetMonData(partyMon, MON_DATA_DEFENSE, 0);
+         u16 spatk = GetMonData(partyMon, MON_DATA_SPECIAL_ATTACK, 0);
+         u16 spdef = GetMonData(partyMon, MON_DATA_SPECIAL_DEFENSE, 0);
+         u16 spe = GetMonData(partyMon, MON_DATA_SPEED, 0);
+         u8 paradoxBoostedStat = BattleAI_GetHighestParadoxStat(atk, def, spatk, spdef, spe);
+         if (paradoxBoostedStat == STAT_SPEED) {
+             speedModifier2 = QMul_RoundUp(speedModifier1, UQ412__1_5);
+         }
+     }
+
+
     // Step 4: Quick Powder
 
     if ((hold_effect1 == HOLD_EFFECT_DITTO_SPEED_UP) && (sp->battlemon[client1].species == SPECIES_DITTO)
         // Not transformed
-        && !(sp->battlemon[client1].condition2 & STATUS2_TRANSFORMED)) {
+        && !(sp->battlemon[client1].condition2 & STATUS2_TRANSFORM)) {
         speedModifier1 = QMul_RoundUp(speedModifier1, UQ412__2_0);
     }
 
@@ -320,7 +339,7 @@ u8 LONG_CALL BattleAI_CalcSpeed(void *bw, struct BattleStruct *sp, int client1, 
 
     // Step 14: Trick Room
 
-    if (sp->field_condition & FIELD_STATUS_TRICK_ROOM) {
+    if (sp->field_condition & FIELD_CONDITION_TRICK_ROOM) {
         speed1 = 10000 - speed1;
         speedPartyMon = 10000 - speedPartyMon;
     }

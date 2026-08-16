@@ -155,14 +155,14 @@ BOOL LONG_CALL MonDiesFromResidualDamage(struct BattleStruct *ctx, u32 attacker,
     u32 item = ctx->battlemon[attacker].item;
     int damageReceived = 0;
 
-    if (ctx->field_condition & WEATHER_SANDSTORM_ANY) {
+    if (ctx->field_condition & FIELD_CONDITION_SANDSTORM_ALL) {
         if (!HasType(ctx, attacker, TYPE_ROCK) && !HasType(ctx, attacker, TYPE_GROUND) && !HasType(ctx, attacker, TYPE_STEEL)
             && ability != ABILITY_SAND_FORCE && ability != ABILITY_SAND_RUSH && ability != ABILITY_SAND_VEIL
             && ability != ABILITY_OVERCOAT && ability != ABILITY_MAGIC_GUARD
             && item != ITEM_SAFETY_GOGGLES) {
             damageReceived += maxHp / 16;
         }
-    } else if (ctx->field_condition & WEATHER_HAIL_ANY || ctx->field_condition & WEATHER_SNOW_ANY) {
+    } else if (ctx->field_condition & (FIELD_CONDITION_SNOW_ALL | FIELD_CONDITION_HAIL_ALL)) {
         if (ability == ABILITY_ICE_BODY) {
             damageReceived -= maxHp / 16;
         } else if (SNOW_WARNING_GENERATION < GEN_LATEST) {
@@ -173,11 +173,11 @@ BOOL LONG_CALL MonDiesFromResidualDamage(struct BattleStruct *ctx, u32 attacker,
                 damageReceived += maxHp / 16;
             }
         }
-    } else if (ctx->field_condition & WEATHER_SUNNY_ANY) {
+    } else if (ctx->field_condition & FIELD_CONDITION_SUN_ALL) {
         if (ability == ABILITY_DRY_SKIN || ability == ABILITY_SOLAR_POWER) {
             damageReceived += maxHp / 8;
         }
-    } else if (ctx->field_condition & WEATHER_RAIN_ANY) {
+    } else if (ctx->field_condition & FIELD_CONDITION_RAIN_ALL) {
         if (ability == ABILITY_RAIN_DISH) {
             damageReceived -= maxHp / 16;
         }
@@ -232,7 +232,7 @@ BOOL LONG_CALL IsMonInflictedWithAnyNegativeStatus(struct BattleStruct *ctx, u32
     if (ctx->battlemon[attacker].condition & (STATUS_POISON_ALL | STATUS_BURN | STATUS_PARALYSIS)) {
         return TRUE;
     }
-    if (ctx->battlemon[attacker].effect_of_moves & (MOVE_EFFECT_YAWN_COUNTER | MOVE_EFFECT_FLAG_LEECH_SEED_ACTIVE | MOVE_EFFECT_FLAG_PERISH_SONG_ACTIVE)) {
+    if (ctx->battlemon[attacker].effect_of_moves & (MOVE_EFFECT_FLAG_YAWN | MOVE_EFFECT_FLAG_LEECH_SEED | MOVE_EFFECT_FLAG_PERISH_SONG)) {
         return TRUE;
     }
     if (ctx->battlemon[attacker].condition2 & (STATUS2_ATTRACT | STATUS2_CURSE)) {
@@ -317,8 +317,8 @@ BOOL LONG_CALL IsUsedMoveEncouragedToEncore(struct BattleSystem *bsys UNUSED, u3
     case MOVE_EFFECT_REMOVE_HAZARDS_SCREENS_EVA_DOWN:
     case MOVE_EFFECT_TRICK_ROOM:
     case MOVE_EFFECT_CHANGE_TO_WATER_TYPE:
-    case MOVE_EFFECT_ADD_THIRD_TYPE_GHOST:
-    case MOVE_EFFECT_ADD_THIRD_TYPE_GRASS:
+    case MOVE_EFFECT_ADD_TYPE_GHOST:
+    case MOVE_EFFECT_ADD_TYPE_GRASS:
     case MOVE_EFFECT_CHANGE_TO_PSYCHIC_TYPE:
     case MOVE_EFFECT_APPLY_TERRAINS:
         return TRUE;

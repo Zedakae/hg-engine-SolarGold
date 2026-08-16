@@ -1,9 +1,20 @@
 #ifndef CUSTOM_AI_H
 #define CUSTOM_AI_H
 #include "../battle.h"
+#include "../trainer_ai.h"
 
-//#define BATTLE_DEBUG_OUTPUT 1
-#define HLG_CUSTOM_WEATHER 1
+#define DEBUG_AI_SCORING 1
+
+
+
+
+struct PACKED AI_turnState {
+    int moveScores[4][4]; // account for BATTLER_OPPONENT (0), attacker (1), BATTLER_ACROSS(2), BATTLER_ALLY(3),  4 moves each or
+                          // account for BATTLER_OPPONENT (2), attacker (3), BATTLER_ACROSS(0), BATTLER_ALLY(1),  4 moves each
+    int damages[4][4]; // rolled damage for each move against each target
+
+    int highestScoredMove;
+};
 
 struct PACKED AI_sDamageCalc {
     u16 species;
@@ -48,25 +59,33 @@ struct PACKED AI_sDamageCalc {
     u8 lastResortCount;
     u8 attackerHasMoveFailureLastTurn;
     u8 canBelch;
+    u8 paradoxBoostedStat;
 };
 
 struct PACKED AIContext {
     struct AI_sDamageCalc attackerMon;
     struct AI_sDamageCalc defenderMon; //"player"
-    struct AI_sDamageCalc defenderAlly;
+    struct AI_sDamageCalc aimonAlly;
+
+    int highestPostKoScoreFromParty;
+    int postKoScoringPosition;
+    int highestDamageHitPrct;
 
     BOOL isAllyAlive;
     BOOL isDoubleBattle;
     BOOL isPartnerGrounded;
 
-    BOOL defenderImmuneToPoison;
-    BOOL defenderImmuneToParalysis;
-    BOOL defenderImmuneToBurn;
-    BOOL defenderImmuneToSleep;
-    BOOL defenderImmuneToStatDrop;
+    BOOL defenderHasMagicBounce : 1;
+    BOOL defenderAllyHasMagicBounce : 1;
+    BOOL defenderImmuneToPoison : 1;
+    BOOL defenderImmuneToParalysis : 1;
+    BOOL defenderImmuneToBurn : 1;
+    BOOL defenderImmuneToSleep : 1;
+    BOOL defenderImmuneToStatDrop : 1;
+    BOOL padding1 : 1;
 
-    u8 attackerMovesFirst;
-    u8 defenderMovesFirst;
+    u8 aiMovesFirst;
+    u8 playerMovesFirst;
     u8 isSpeedTie;
 
     int attacker;
@@ -96,24 +115,34 @@ struct PACKED AIContext {
     u32 attackerMove;
     u32 attackerMoveEffect;
 
-    BOOL isDefenderIncapacitated;
-    BOOL defenderKnowsThawingMove;
-    BOOL defenderHasAtleastOneUsefulSoundMove;
-    BOOL defenderCanForceSwitching;
+    BOOL isDefenderIncapacitated : 1;
+    BOOL defenderKnowsThawingMove : 1;
+    BOOL defenderHasAtleastOneUsefulSoundMove : 1;
+    BOOL defenderCanForceSwitching : 1;
+    BOOL defenderHasSturdyOrFocusSashActive : 1;
+    BOOL attackerHasSturdyOrFocusSashActive : 1;
+    BOOL padding2 : 2;
 
     u32 maxDamageReceived;
 
-    BOOL defenderHasAtleastOnePhysicalMove;
-    BOOL defenderHasAtleastOneSpecialMove;
-    BOOL defenderHasAtleastOneStatusMove;
     BOOL playerCanOneShotMonWithMove[4];
     BOOL playerCanOneShotMonWithAnyMove;
     BOOL monCanOneShotPlayerWithAnyMove;
+    BOOL defenderHasAtleastOnePhysicalMove;
+    BOOL defenderHasAtleastOneSpecialMove;
+    BOOL defenderHasAtleastOneStatusMove;
+    BOOL attackerHasValidSwitchingMove;
+    BOOL attackerHasValidDamagingMove;
+    BOOL shouldSwitch;
     
     BOOL monCanOneShotPlayerWithMove[4];
     u32 attackerRolledMoveDamages[4];
     u32 effectivenessOnPlayer[4];
     u32 attackerRolledMaxDamage;
+
+    u32 partnerMoveNo;
+    BOOL partnerClicksAttackingMove;
+    BOOL ignoreTarget;
 };
 
 struct PACKED AI_damage {
@@ -124,8 +153,13 @@ struct PACKED AI_damage {
 
 void LONG_CALL SetupStateVariables(struct BattleSystem *bsys, u32 attacker, u32 defender, struct AIContext *ai);
 
+
+int LONG_CALL ScoreMovesAgainstDefender(struct BattleSystem *bsys, u32 attacker, u32 target, int moveScores[4][4], struct AIContext *ai);
+int LONG_CALL ScoreMovesAgainstAlly(struct BattleSystem *bsys, u32 attacker, u32 target, int moveScores[4][4], struct AIContext *ai);
+
+
 int LONG_CALL BattleAI_PostKOSwitchIn(struct BattleSystem *bsys, int attacker);
-int LONG_CALL BattleAI_PostKOSwitchIn_Internal(struct BattleSystem *bsys, int attacker, int *score, BOOL calcWithHighestDamageHit);
+int LONG_CALL BattleAI_PostKOSwitchIn_Internal(struct BattleSystem *bsys, int attacker, int *score, BOOL calcWithHighestDamageHit, int *highestDamageHitPrct);
 
 u8 LONG_CALL BattleAI_CalcSpeed(void *bw, struct BattleStruct *sp, int client1, struct PartyPokemon *partyMon, int flag);
 
@@ -137,11 +171,11 @@ void LONG_CALL FillDamageStructFromPartyMon(void *bw UNUSED, struct BattleStruct
 void LONG_CALL FillDamageStructFromBattleMon(void *bw, struct BattleStruct *sp, struct AI_sDamageCalc *monStruct, int numSlot);
 
 BOOL LONG_CALL IsMoveBoostedBySheerForce(u32 moveno, u32 moveeffect);
-int LONG_CALL BattleAI_GetTypeEffectiveness(void *bw, struct BattleStruct *sp, int moveno, int move_type, u32 *flag UNUSED, struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender);
+int LONG_CALL BattleAI_GetTypeEffectiveness(void *bw, struct BattleStruct *sp, int moveno, int move_type, u8 attackerSlot, u8 defenderSlot, struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender);
 
 BOOL LONG_CALL BattleAI_AttackerHasOnlyIneffectiveMoves(struct BattleStruct *ctx, u32 attacker, int knownMoves, u32 effectiveness[4]);
 
-int LONG_CALL BattleAI_AdjustUnusualMoveDamage(struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender, u32 damage, u32 moveEffect, u32 moveno, u32 effectiveness);
+int LONG_CALL BattleAI_AdjustUnusualMoveDamage(struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender, u32 damage, u32 moveEffect, u32 moveno UNUSED, u32 effectiveness);
 int LONG_CALL BattleAI_GetDynamicMoveType(struct BattleSystem *bsys, struct BattleStruct *ctx, struct AI_sDamageCalc *attacker, int moveno);
 BOOL LONG_CALL BattleAI_IsKnockOffPoweredUp(struct AI_sDamageCalc *defender);
 
@@ -154,6 +188,15 @@ BOOL LONG_CALL IsBattleMonSlowerThanOpposition(struct BattleSystem *bsys, u8 slo
 
 BOOL LONG_CALL IsPartyPokemonGrounded(struct BattleStruct *sp, struct PartyPokemon *pp);
 
+BOOL LONG_CALL IsMoveUsefulSoundMove(u32 moveno);
+BOOL LONG_CALL IsMoveForceSwitching(u32 moveno);
+BOOL LONG_CALL IsMoveValidSwitchingMove(u32 moveno);
+
+u32 LONG_CALL BattleAI_GetWeather(struct BattleSystem *bsys, struct BattleStruct *ctx, int ability);
+
+u8 LONG_CALL BattleAI_GetHighestParadoxStat(u8 atk, u8 def, u8 spatk, u8 spdef, u8 speed);
+
+BOOL LONG_CALL HasMovePranksterPriority(struct BattleSystem *bsys, u8 attacker, u32 attackerMove, u32 attackerAbility, u8 defender);
 
 
 int LONG_CALL BattlerPositiveStatChangesSum(struct BattleSystem *bsys, u32 battler, struct AIContext *ai UNUSED);

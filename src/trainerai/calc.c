@@ -43,7 +43,6 @@ void LONG_CALL FillDamageStructFromPartyMon(void *bw UNUSED, struct BattleStruct
     monStruct->type2 = GetMonData(pp, MON_DATA_TYPE_2, 0);
     monStruct->type3 = TYPE_TYPELESS;
 
-
     monStruct->condition = GetMonData(pp, MON_DATA_STATUS, 0);
     monStruct->condition2 = 0;
     monStruct->isGrounded = IsPartyPokemonGrounded(sp, pp);
@@ -86,6 +85,12 @@ void LONG_CALL FillDamageStructFromPartyMon(void *bw UNUSED, struct BattleStruct
     monStruct->lastResortCount = 0;
     monStruct->attackerHasMoveFailureLastTurn = 0;
     monStruct->canBelch = 0; // sp->onceOnlyMoveConditionFlags[SanitizeClientForTeamAccess(bw, attackerPos)][partyPos].berryEatenAndCanBelch;
+    monStruct->paradoxBoostedStat = 0;
+    if ((monStruct->ability == ABILITY_PROTOSYNTHESIS && ((sp->field_condition & FIELD_CONDITION_SUN_ALL) || monStruct->item == ITEM_BOOSTER_ENERGY))
+        || (monStruct->ability == ABILITY_QUARK_DRIVE && ((sp->terrainOverlay.type == ELECTRIC_TERRAIN && sp->terrainOverlay.numberOfTurnsLeft) || monStruct->item == ITEM_BOOSTER_ENERGY)))
+    {
+        monStruct->paradoxBoostedStat = BattleAI_GetHighestParadoxStat(monStruct->attack, monStruct->defense, monStruct->sp_attack, monStruct->sp_defense, monStruct->speed);
+    }
 }
 
 void LONG_CALL FillDamageStructFromBattleMon(void *bw, struct BattleStruct *sp, struct AI_sDamageCalc *monStruct, int numSlot)
@@ -121,9 +126,9 @@ void LONG_CALL FillDamageStructFromBattleMon(void *bw, struct BattleStruct *sp, 
     }
 
     monStruct->states[STAT_ATTACK] = BattlePokemonParamGet(sp, numSlot, BATTLE_MON_DATA_STATE_ATK, NULL) - 6;
-    monStruct->states[STAT_SPATK] = BattlePokemonParamGet(sp, numSlot, BATTLE_MON_DATA_STATE_SPATK, NULL) - 6;
+    monStruct->states[STAT_SPECIAL_ATTACK] = BattlePokemonParamGet(sp, numSlot, BATTLE_MON_DATA_STATE_SPATK, NULL) - 6;
     monStruct->states[STAT_DEFENSE] = BattlePokemonParamGet(sp, numSlot, BATTLE_MON_DATA_STATE_DEF, NULL) - 6;
-    monStruct->states[STAT_SPDEF] = BattlePokemonParamGet(sp, numSlot, BATTLE_MON_DATA_STATE_SPDEF, NULL) - 6;
+    monStruct->states[STAT_SPECIAL_DEFENSE] = BattlePokemonParamGet(sp, numSlot, BATTLE_MON_DATA_STATE_SPDEF, NULL) - 6;
     monStruct->states[STAT_SPEED] = BattlePokemonParamGet(sp, numSlot, BATTLE_MON_DATA_STATE_SPE, NULL) - 6;
     monStruct->states[STAT_ACCURACY] = BattlePokemonParamGet(sp, numSlot, BATTLE_MON_DATA_STATE_ACCURACY, NULL) - 6;
     monStruct->states[STAT_EVASION] = BattlePokemonParamGet(sp, numSlot, BATTLE_MON_DATA_STATE_EVASIVENESS, NULL) - 6;
@@ -155,18 +160,34 @@ void LONG_CALL FillDamageStructFromBattleMon(void *bw, struct BattleStruct *sp, 
     monStruct->lastResortCount = sp->battlemon[numSlot].moveeffect.lastResortCount;
     monStruct->attackerHasMoveFailureLastTurn = sp->moveConditionsFlags[numSlot].moveFailureLastTurn;
     monStruct->canBelch = 0; // sp->onceOnlyMoveConditionFlags[SanitizeClientForTeamAccess(bw, numSlot)][sp->sel_mons_no[numSlot]].berryEatenAndCanBelch;
+    monStruct->paradoxBoostedStat = sp->paradoxBoostedStat[numSlot];
 }
 
-u8 LONG_CALL BattleAI_UpdateTypeEffectiveness(u32 move_no, u32 held_effect UNUSED, u8 defender_type, u8 defaultEffectiveness)
+u8 LONG_CALL BattleAI_GetHighestParadoxStat(u8 atk, u8 def, u8 spatk, u8 spdef, u8 speed)
 {
-    if (move_no == MOVE_FREEZE_DRY && defender_type == TYPE_WATER) {
-        defaultEffectiveness = TYPE_MUL_SUPER_EFFECTIVE;
-    }
+    u8 highestId = STAT_ATTACK;
+    u16 highestStat = atk;
 
-    return defaultEffectiveness;
+    if (highestStat < def) {
+        highestId = STAT_DEFENSE;
+        highestStat = def;
+    }
+    if (highestStat < spatk) {
+        highestId = STAT_SPECIAL_ATTACK;
+        highestStat = spatk;
+    }
+    if (highestStat < spdef) {
+        highestId = STAT_SPECIAL_DEFENSE;
+        highestStat = spdef;
+    }
+    if (highestStat < speed) {
+        highestId = STAT_SPEED;
+        highestStat = speed;
+    }
+    return highestId;
 }
 
-int LONG_CALL BattleAI_GetTypeEffectiveness(void *bw, struct BattleStruct *sp, int moveno, int move_type, u32 *flag UNUSED, struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender)
+int LONG_CALL BattleAI_GetTypeEffectiveness(void *bw, struct BattleStruct *sp, int moveno, int move_type, u8 attackerSlot, u8 defenderSlot, struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender)
 {
     int typeTableEntryNo = 0; // Used to cycle through all (non-neutral) type interactions.
 
@@ -179,10 +200,18 @@ int LONG_CALL BattleAI_GetTypeEffectiveness(void *bw, struct BattleStruct *sp, i
     u32 type2Effectiveness = TYPE_MUL_NORMAL;
     u32 type3Effectiveness = TYPE_MUL_NORMAL;
 
+    u32 type1Effectiveness_Dual = TYPE_MUL_NORMAL;
+    u32 type2Effectiveness_Dual = TYPE_MUL_NORMAL;
+    u32 type3Effectiveness_Dual = TYPE_MUL_NORMAL;
+
+    if (HasMovePranksterPriority(bw, attackerSlot, moveno, attacker->ability, defenderSlot) && HasType(sp, defenderSlot, TYPE_DARK)) {
+        return TYPE_MUL_NO_EFFECT;
+    }
+
     // [0]: Attacking type
     // [1]: Defending type
     // [2]: TYPE_MUL
-    // TODO: handle Ring Target, Thousand Arrows, Freeze-Dry, Flying Press
+    // TODO: handle Ring Target, Thousand Arrows
     while (TypeEffectivenessTable[typeTableEntryNo][0] != TYPE_ENDTABLE) {
         if (TypeEffectivenessTable[typeTableEntryNo][0] == TYPE_FORESIGHT) {
             if ((defender->condition2 & STATUS2_FORESIGHT)
@@ -204,24 +233,43 @@ int LONG_CALL BattleAI_GetTypeEffectiveness(void *bw, struct BattleStruct *sp, i
                     && !StrongWindsShouldWeaken(bw, sp, typeTableEntryNo, defender_type_1))
                 {
                     //no ring target
-                    type1Effectiveness = UpdateTypeEffectiveness(moveno, HOLD_EFFECT_NONE, defender_type_1, TypeEffectivenessTable[typeTableEntryNo][2]);
+                    type1Effectiveness = UpdateTypeEffectiveness(moveno, defender_type_1, TypeEffectivenessTable[typeTableEntryNo][2]);
                 }
             } else if (TypeEffectivenessTable[typeTableEntryNo][1] == defender_type_2) {
                 if (AI_ShouldUseNormalTypeEffCalc(sp, defender->item_held_effect, typeTableEntryNo)
                     && !StrongWindsShouldWeaken(bw, sp, typeTableEntryNo, defender_type_2)) {
-                    type2Effectiveness = UpdateTypeEffectiveness(moveno, HOLD_EFFECT_NONE, defender_type_2, TypeEffectivenessTable[typeTableEntryNo][2]);
+                    type2Effectiveness = UpdateTypeEffectiveness(moveno, defender_type_2, TypeEffectivenessTable[typeTableEntryNo][2]);
                 }
             } else if (TypeEffectivenessTable[typeTableEntryNo][1] == defender_type_3) {
                 if (AI_ShouldUseNormalTypeEffCalc(sp, defender->item_held_effect, typeTableEntryNo)
                     && !StrongWindsShouldWeaken(bw, sp, typeTableEntryNo, defender_type_3)) {
-                    type3Effectiveness = UpdateTypeEffectiveness(moveno, HOLD_EFFECT_NONE, defender_type_3, TypeEffectivenessTable[typeTableEntryNo][2]);
+                    type3Effectiveness = UpdateTypeEffectiveness(moveno, defender_type_3, TypeEffectivenessTable[typeTableEntryNo][2]);
+                }
+            }
+        }
+        else if (sp->current_move_index == MOVE_FLYING_PRESS && TypeEffectivenessTable[typeTableEntryNo][0] == TYPE_FLYING)
+        {
+            if (TypeEffectivenessTable[typeTableEntryNo][1] == defender_type_1) {
+                if (AI_ShouldUseNormalTypeEffCalc(sp, defender->item_held_effect, typeTableEntryNo)
+                    && !StrongWindsShouldWeaken(bw, sp, typeTableEntryNo, defender_type_1)) {
+                    type1Effectiveness_Dual = UpdateTypeEffectiveness(moveno, defender_type_1, TypeEffectivenessTable[typeTableEntryNo][2]);
+                }
+            } else if (TypeEffectivenessTable[typeTableEntryNo][1] == defender_type_2) {
+                if (AI_ShouldUseNormalTypeEffCalc(sp, defender->item_held_effect, typeTableEntryNo)
+                    && !StrongWindsShouldWeaken(bw, sp, typeTableEntryNo, defender_type_2)) {
+                    type2Effectiveness_Dual = UpdateTypeEffectiveness(moveno, defender_type_2, TypeEffectivenessTable[typeTableEntryNo][2]);
+                }
+            } else if (TypeEffectivenessTable[typeTableEntryNo][1] == defender_type_3) {
+                if (AI_ShouldUseNormalTypeEffCalc(sp, defender->item_held_effect, typeTableEntryNo)
+                    && !StrongWindsShouldWeaken(bw, sp, typeTableEntryNo, defender_type_3)) {
+                    type3Effectiveness_Dual = UpdateTypeEffectiveness(moveno, defender_type_3, TypeEffectivenessTable[typeTableEntryNo][2]);
                 }
             }
         }
         typeTableEntryNo++;
     }
   
-    int typeMul = type1Effectiveness * type2Effectiveness * type3Effectiveness;
+    int typeMul = type1Effectiveness * type2Effectiveness * type3Effectiveness * (type1Effectiveness_Dual * type2Effectiveness_Dual * type3Effectiveness_Dual);
     switch (typeMul) {
     case EFFECTIVENESS_MULT_TRIPLE_SUPER_EFFECTIVE:
         return TYPE_MUL_TRIPLE_SUPER_EFFECTIVE; // 40
@@ -303,7 +351,7 @@ BOOL IsMoveBoostedBySheerForce(u32 moveno, u32 moveeffect)
     return isBoosted;
 }
 
-BOOL IsMoveUsefulSoundMove(u32 moveno)
+BOOL LONG_CALL IsMoveUsefulSoundMove(u32 moveno)
 {
     switch (moveno)
     {
@@ -347,7 +395,20 @@ BOOL IsMoveUsefulSoundMove(u32 moveno)
     }
 }
 
-BOOL IsMoveForceSwitching(u32 moveno)
+BOOL LONG_CALL IsMoveValidSwitchingMove(u32 moveno)
+{
+    switch (moveno) {
+    case MOVE_FLIP_TURN:
+    case MOVE_U_TURN:
+    case MOVE_VOLT_SWITCH:
+    case MOVE_PARTING_SHOT:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
+BOOL LONG_CALL IsMoveForceSwitching(u32 moveno)
 {
     switch (moveno) {
     case MOVE_ROAR:
@@ -360,7 +421,7 @@ BOOL IsMoveForceSwitching(u32 moveno)
     }
 }
 
-int LONG_CALL BattleAI_AdjustUnusualMoveDamage(struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender, u32 damage, u32 moveEffect, u32 moveno, u32 effectiveness)
+int LONG_CALL BattleAI_AdjustUnusualMoveDamage(struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender, u32 damage, u32 moveEffect, u32 moveno UNUSED, u32 effectiveness)
 {
     if (effectiveness == TYPE_MUL_NO_EFFECT) {
         return 0;
@@ -415,25 +476,12 @@ int LONG_CALL BattleAI_AdjustUnusualMoveDamage(struct AI_sDamageCalc *attacker, 
     }
     case MOVE_EFFECT_ONE_HIT_KO: // sheer cold, guillotine, horn drill, fissure
     {
-        if (attacker->level <= defender->level) {
-            return 0;
-        }
+        return defender->hp;
     }
     default:
         break;
     }
 
-    switch (moveno) {
-    case MOVE_SHEER_COLD:
-        if (defender->type1 == TYPE_ICE || defender->type2 == TYPE_ICE || defender->type3 == TYPE_ICE) {
-            return 0;
-        } else {
-            return defender->hp;
-        }
-        break;
-    default:
-        break;
-    }
     return damage;
 }
 
@@ -452,6 +500,7 @@ BOOL LONG_CALL BattleAI_IsKnockOffPoweredUp(struct AI_sDamageCalc *defender)
 int LONG_CALL BattleAI_GetDynamicMoveType(struct BattleSystem *bsys, struct BattleStruct *ctx, struct AI_sDamageCalc *attacker, int moveNo)
 {
     int type = ctx->moveTbl[moveNo].type;
+    u32 weatherAttacker = BattleAI_GetWeather(bsys, ctx, attacker->ability);
 
     switch (moveNo) {
     case MOVE_NATURAL_GIFT:
@@ -522,28 +571,26 @@ int LONG_CALL BattleAI_GetDynamicMoveType(struct BattleSystem *bsys, struct Batt
         type = attacker->hiddenPowerType;
         break;
     case MOVE_WEATHER_BALL:
-        if (!CheckSideAbility(bsys, ctx, CHECK_ABILITY_ALL_HP, 0, ABILITY_CLOUD_NINE) && !CheckSideAbility(bsys, ctx, CHECK_ABILITY_ALL_HP, 0, ABILITY_AIR_LOCK)) {
-            if (ctx->field_condition & FIELD_CONDITION_WEATHER) {
-                if (ctx->field_condition & WEATHER_RAIN_ANY) {
-                    type = TYPE_WATER;
-                }
-                if (ctx->field_condition & WEATHER_SANDSTORM_ANY) {
-                    type = TYPE_ROCK;
-                }
-                if (ctx->field_condition & WEATHER_SUNNY_ANY) {
-                    type = TYPE_FIRE;
-                }
-                if (ctx->field_condition & WEATHER_HAIL_ANY) {
-                    type = TYPE_ICE;
-                }
-                // BUG: If the weather is foggy, then type doesn't get set properly before being returned
-                // BUGFIX
-                if (ctx->field_condition & FIELD_STATUS_FOG) {
-                    type = TYPE_NORMAL;
-                }
-                if (ctx->field_condition & WEATHER_SHADOWY_AURA_ANY) {
-                    type = TYPE_TYPELESS;
-                }
+        if (weatherAttacker & FIELD_CONDITION_WEATHER) {
+            if (weatherAttacker & FIELD_CONDITION_RAIN_ALL) {
+                type = TYPE_WATER;
+            }
+            if (weatherAttacker & FIELD_CONDITION_SANDSTORM_ALL) {
+                type = TYPE_ROCK;
+            }
+            if (weatherAttacker & FIELD_CONDITION_SUN_ALL) {
+                type = TYPE_FIRE;
+            }
+            if (weatherAttacker & (FIELD_CONDITION_SNOW_ALL|FIELD_CONDITION_HAIL_ALL)) {
+                type = TYPE_ICE;
+            }
+            // BUG: If the weather is foggy, then type doesn't get set properly before being returned
+            // BUGFIX
+            if (weatherAttacker & FIELD_CONDITION_FOG) {
+                type = TYPE_NORMAL;
+            }
+            if (weatherAttacker & FIELD_CONDITION_SHADOWY_AURA_ALL) {
+                type = TYPE_TYPELESS;
             }
         }
         break;
@@ -640,12 +687,12 @@ int LONG_CALL BattleAI_GetDynamicMoveType(struct BattleSystem *bsys, struct Batt
                 break;
 
             default:
-                // Aura Wheel can only be successfully used by Morpeko (or a Pokémon that has transformed into Morpeko). This line does not prevent the move from being used!!!
+                // Aura Wheel can only be successfully used by Morpeko (or a PokÃ©mon that has transformed into Morpeko). This line does not prevent the move from being used!!!
                 type = TYPE_TYPELESS;
                 break;
             }
         } else {
-            // Aura Wheel can only be successfully used by Morpeko (or a Pokémon that has transformed into Morpeko). This line does not prevent the move from being used!!!
+            // Aura Wheel can only be successfully used by Morpeko (or a PokÃ©mon that has transformed into Morpeko). This line does not prevent the move from being used!!!
             type = TYPE_TYPELESS;
         }
         break;
@@ -744,7 +791,10 @@ int LONG_CALL BattleAI_GetDynamicMoveType(struct BattleSystem *bsys, struct Batt
             typeLocal = TYPE_FLYING;
         } else if (attacker->ability == ABILITY_GALVANIZE) {
             typeLocal = TYPE_ELECTRIC;
-        } else // needs to be for sure initialized
+        } else if (attacker->ability == ABILITY_DRAGONIZE) {
+            typeLocal = TYPE_DRAGON;
+        }
+        else // needs to be for sure initialized
         {
             typeLocal = TYPE_NORMAL;
         }
@@ -758,7 +808,7 @@ int LONG_CALL BattleAI_GetDynamicMoveType(struct BattleSystem *bsys, struct Batt
         typeLocal = TYPE_WATER;
     }
     // Ion Deluge's effect is applied after all type-modifying abilities have activated.
-    if (typeLocal == TYPE_NORMAL && (ctx->field_condition & FIELD_STATUS_ION_DELUGE) == FIELD_STATUS_ION_DELUGE) {
+    if (typeLocal == TYPE_NORMAL && (ctx->field_condition & FIELD_CONDITION_ION_DELUGE) == FIELD_CONDITION_ION_DELUGE) {
         typeLocal = TYPE_ELECTRIC;
     }
 
@@ -767,10 +817,10 @@ int LONG_CALL BattleAI_GetDynamicMoveType(struct BattleSystem *bsys, struct Batt
 
 BOOL LONG_CALL CanAttackerOneShotDefender(u32 attackerDamage, u8 split, u32 moveno, struct AI_sDamageCalc *attacker, struct AI_sDamageCalc *defender)
 {
-    BOOL isMoveMultihit = IsMultiHitMove(moveno);
+    //BOOL isMoveMultihit = IsMultiHitMove(moveno);
     BOOL canOneShot = TRUE;
 
-    if (attackerDamage >= defender->hp) {
+    if (attackerDamage >= defender->hp) { /*
         if (defender->hp == defender->maxhp) {
 
             if (!isMoveMultihit
@@ -783,7 +833,7 @@ BOOL LONG_CALL CanAttackerOneShotDefender(u32 attackerDamage, u8 split, u32 move
                 canOneShot = FALSE;
             }
         }
-
+        */
     } else {
         canOneShot = FALSE;
     }
@@ -854,427 +904,42 @@ BOOL LONG_CALL IsPartyPokemonGrounded(struct BattleStruct *sp, struct PartyPokem
 
     u8 holdeffect = BattleItemDataGet(sp, item, 1);
 
-    if ((GetMonData(pp, MON_DATA_ABILITY, 0) != ABILITY_LEVITATE && holdeffect != HOLD_EFFECT_UNGROUND_DESTROYED_ON_HIT // not holding Air Balloon
+    if ((GetMonData(pp, MON_DATA_ABILITY, 0) != ABILITY_LEVITATE && GetMonData(pp, MON_DATA_ABILITY, 0) != ABILITY_EELEVATE && holdeffect != HOLD_EFFECT_UNGROUND_DESTROYED_ON_HIT // not holding Air Balloon
             && !(GetMonData(pp, MON_DATA_TYPE_1, 0) == TYPE_FLYING) && !(GetMonData(pp, MON_DATA_TYPE_2, 0) == TYPE_FLYING))
         || (holdeffect == HOLD_EFFECT_SPEED_DOWN_GROUNDED // holding Iron Ball
-            || (sp->field_condition & FIELD_STATUS_GRAVITY))) {
+            || (sp->field_condition & FIELD_CONDITION_GRAVITY))) {
         return TRUE;
     }
 
     return FALSE;
 }
 
-void LONG_CALL SetupStateVariables(struct BattleSystem *bsys, u32 attacker, u32 defender, struct AIContext *ai)
+u32 LONG_CALL BattleAI_GetWeather(struct BattleSystem *bsys, struct BattleStruct *ctx, int ability)
 {
-    struct BattleStruct *ctx = bsys->sp;
-    u8 critical = 0;
-    u8 speedCalc;
-    u32 effectivenessFlag = 0;
-
-    FillDamageStructFromBattleMon(bsys, ctx, &ai->attackerMon, attacker);
-    FillDamageStructFromBattleMon(bsys, ctx, &ai->defenderMon, defender);
-    ai->isDoubleBattle = FALSE;
-    if (BattleTypeGet(bsys) & (BATTLE_TYPE_MULTI | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TAG)) {
-        ai->isDoubleBattle = TRUE;
-    }
-    ai->isAllyAlive = FALSE;
-    if (ai->isDoubleBattle && ctx->battlemon[BATTLER_ALLY(attacker)].hp) {
-        ai->isAllyAlive = TRUE;
-        FillDamageStructFromBattleMon(bsys, ctx, &ai->defenderAlly, BATTLER_ALLY(attacker));
+    if (ability == ABILITY_MEGA_SOL) {
+        return FIELD_CONDITION_NONE;
     }
 
-    ai->attacker = attacker;
-    ai->defender = defender;
-    ai->attackerSide = BATTLER_IS_ENEMY(ai->attacker);
-    ai->defenderSide = BATTLER_IS_ENEMY(ai->defender);
-
-    ai->attackerLastUsedMove = ctx->waza_no_old[ai->attacker];
-    ai->defenderLastUsedMove = ctx->waza_no_old[ai->defender];
-    ai->defenderLastUsedMoveEffect = ctx->moveTbl[ai->defenderLastUsedMove].effect;
-    ai->defenderTurnsOnField = ctx->total_turn - ctx->battlemon[ai->defender].moveeffect.fakeOutCount;
-    ai->attackerTurnsOnField = ctx->total_turn - ctx->battlemon[attacker].moveeffect.fakeOutCount;
-
-    ai->defenderMovesFirst = 0;
-    ai->attackerMovesFirst = 0;
-    ai->isSpeedTie = 0;
-    ai->maxDamageReceived = 0;
-    ai->attackerRolledMaxDamage = 0;
-
-    ai->defenderKnowsThawingMove = BattlerKnowsThawingMove(bsys, ai->defender, ai);
-
-    ai->isPartnerGrounded = FALSE;
-    if (ai->isDoubleBattle && ctx->battlemon[BATTLER_ALLY(attacker)].hp) {
-        ai->isPartnerGrounded = IsClientGrounded(ctx, BATTLER_ALLY(attacker));
+    if (CheckSideAbility(bsys, ctx, CHECK_ABILITY_ALL_HP, 0, ABILITY_CLOUD_NINE) || CheckSideAbility(bsys, ctx, CHECK_ABILITY_ALL_HP, 0, ABILITY_AIR_LOCK)) {
+        return FIELD_CONDITION_NONE;
     }
 
-    ai->defenderHasAtleastOneUsefulSoundMove = FALSE;
-    ai->defenderCanForceSwitching = FALSE;
-
-    speedCalc = CalcSpeed(bsys, ctx, defender, attacker, CALCSPEED_FLAG_NO_PRIORITY); // checks actual turn order with field state considered
-    // evaluates to 0 if ai->defender > attacker (false)
-    // and 1 if ai->defender < attacker (true)
-    // if speed tie, then 2.
-
-    if (speedCalc == 0) {
-        ai->defenderMovesFirst = 1;
-    } else {
-        ai->attackerMovesFirst = 1;
-        if (speedCalc == 2) {
-            ai->isSpeedTie = 1;
-        }
-    }
-    ai->attackerMon.speed = ctx->effectiveSpeed[attacker];
-    ai->defenderMon.speed = ctx->effectiveSpeed[defender];
-
-    debug_printf("SpeedCalc %d, defMovesFirst %d, atkSpeed %d, defSpeed %d\n", speedCalc, ai->defenderMovesFirst, ai->attackerMon.speed, ai->defenderMon.speed);
-
-    ai->isDefenderIncapacitated = FALSE;
-    if ((ai->defenderMon.condition & STATUS_SLEEP)
-        || ((ai->defenderMon.condition & STATUS_FREEZE) && !ai->defenderKnowsThawingMove)
-        || (ai->defenderMon.condition2 & STATUS2_RECHARGE)
-        || ST_CheckIfInTruant(ctx, defender)) {
-        ai->isDefenderIncapacitated = TRUE;
-    }
-
-    BOOL isDefenderImmuneToAnyStatus = FALSE;
-    if ((ai->defenderMon.condition & STATUS_ALL)
-        || (!ai->attackerMon.hasMoldBreaker
-            && (ai->defenderMon.ability == ABILITY_GOOD_AS_GOLD 
-                || ai->defenderMon.ability == ABILITY_PURIFYING_SALT
-                || (ai->defenderMon.ability == ABILITY_SHIELDS_DOWN && ai->defenderMon.percenthp > 50)
-                || (ai->defenderMon.ability == ABILITY_LEAF_GUARD && ctx->field_condition & WEATHER_SUNNY_ANY)))
-        || (ai->defenderMon.ability == ABILITY_HYDRATION && ctx->field_condition & WEATHER_RAIN_ANY)
-        || (ai->defenderMon.ability == ABILITY_COMATOSE)
-        || (ctx->side_condition[ai->defenderSide] & SIDE_STATUS_SAFEGUARD)) {
-        isDefenderImmuneToAnyStatus = TRUE;
-    }
-
-    ai->defenderImmuneToPoison = FALSE;
-    if (isDefenderImmuneToAnyStatus
-        || ai->defenderMon.ability == ABILITY_MAGIC_GUARD || ai->defenderMon.ability == ABILITY_IMMUNITY || ai->defenderMon.ability == ABILITY_POISON_HEAL
-        || (ai->defenderMon.isGrounded && ctx->terrainOverlay.type == MISTY_TERRAIN)
-        || ((HasType(ctx, ai->defender, TYPE_POISON) || HasType(ctx, ai->defender, TYPE_STEEL)) && ai->attackerMon.ability != ABILITY_CORROSION)) {
-        ai->defenderImmuneToPoison = TRUE;
-    }
-
-    ai->defenderImmuneToParalysis = FALSE;
-    if (isDefenderImmuneToAnyStatus || ai->defenderMon.ability == ABILITY_LIMBER || (ai->defenderMon.isGrounded && ctx->terrainOverlay.type == MISTY_TERRAIN) || HasType(ctx, ai->defender, TYPE_ELECTRIC)) {
-        ai->defenderImmuneToParalysis = TRUE;
-    }
-
-    ai->defenderImmuneToBurn = FALSE;
-    if (isDefenderImmuneToAnyStatus
-        || ai->defenderMon.ability == ABILITY_WATER_VEIL || ai->defenderMon.ability == ABILITY_THERMAL_EXCHANGE
-        || ai->defenderMon.ability == ABILITY_MAGIC_GUARD || ai->defenderMon.ability == ABILITY_WATER_BUBBLE
-        || (ai->defenderMon.isGrounded && ctx->terrainOverlay.type == MISTY_TERRAIN)
-        || HasType(ctx, ai->defender, TYPE_FIRE)) {
-        ai->defenderImmuneToBurn = TRUE;
-    }
-
-    ai->defenderImmuneToSleep = FALSE;
-    if (isDefenderImmuneToAnyStatus
-        || ai->defenderMon.ability == ABILITY_VITAL_SPIRIT || ai->defenderMon.ability == ABILITY_INSOMNIA
-        || (ai->defenderMon.isGrounded && (ctx->terrainOverlay.type == MISTY_TERRAIN || ctx->terrainOverlay.type == ELECTRIC_TERRAIN))) {
-        ai->defenderImmuneToSleep = TRUE;
-    }
-
-    ai->defenderImmuneToStatDrop = FALSE;
-    if (ai->defenderMon.ability == ABILITY_FULL_METAL_BODY 
-        || ai->defenderMon.item_held_effect == HOLD_EFFECT_PREVENT_STAT_DROPS
-        || (!ai->attackerMon.hasMoldBreaker
-            && (ai->defenderMon.ability == ABILITY_CLEAR_BODY
-            || ai->defenderMon.ability == ABILITY_CONTRARY
-            || ai->defenderMon.ability == ABILITY_WHITE_SMOKE)))
-    {
-        ai->defenderImmuneToStatDrop = TRUE;
-    }
-
-    ai->partySizeAttacker = Battle_GetClientPartySize(bsys, attacker);
-    ai->livingMembersAttacker = 0;
-    ai->partySizeDefender = Battle_GetClientPartySize(bsys, ai->defender);
-    ai->livingMembersDefender = 0;
-
-    ai->monWithMegaInParty = FALSE;
-    for (int i = 0; i < ai->partySizeAttacker; i++) {
-        struct PartyPokemon *current = Battle_GetClientPartyMon(bsys, attacker, i);
-        if (!(GetMonData(current, MON_DATA_HP, 0) == 0 || GetMonData(current, MON_DATA_SPECIES_OR_EGG, 0) == 0 || GetMonData(current, MON_DATA_SPECIES_OR_EGG, 0) == SPECIES_EGG)) {
-            u32 item = GetMonData(current, MON_DATA_HELD_ITEM, 0);
-            if (IS_ITEM_MEGA_STONE(item)) {
-                ai->monWithMegaInParty = TRUE;
-            }
-            ai->livingMembersAttacker++;
-        }
-    }
-
-    for (int i = 0; i < ai->partySizeDefender; i++) {
-        struct PartyPokemon *current = Battle_GetClientPartyMon(bsys, ai->defender, i);
-        if (!(GetMonData(current, MON_DATA_HP, 0) == 0 || GetMonData(current, MON_DATA_SPECIES_OR_EGG, 0) == 0 || GetMonData(current, MON_DATA_SPECIES_OR_EGG, 0) == SPECIES_EGG)) {
-            ai->livingMembersDefender++;
-        }
-    }
-
-    ai->attackerMovesKnown = GetBattlerLearnedMoveCount(bsys, ctx, attacker);
-
-#ifdef BATTLE_DEBUG_OUTPUT
-    int highestDamageMoveIndex = 0;
-#endif
-    ai->playerCanOneShotMonWithAnyMove = FALSE;
-    for (int k = 0; k < GetBattlerLearnedMoveCount(bsys, ctx, ai->defender); k++) {
-        struct AI_damage damages = { 0 };
-        u32 defenderMoveno = ctx->battlemon[defender].move[k];
-        struct BattleMove defenderMove = ctx->moveTbl[defenderMoveno];
-
-        u8 movetype = GetAdjustedMoveTypeBasics(ctx, defenderMoveno, ai->defenderMon.ability, defenderMove.type);
-        u32 effectiveness = BattleAI_GetTypeEffectiveness(bsys, ctx, defenderMoveno, movetype, &effectivenessFlag, &ai->defenderMon, &ai->attackerMon);
-
-        if (defenderMove.split != SPLIT_STATUS && defenderMove.power && ctx->battlemon[defender].pp[k]) {
-            damages.damageRoll = BattleAI_CalcDamage(bsys, ctx, defenderMoveno, ctx->side_condition[BATTLER_IS_ENEMY(defender)], ctx->field_condition, defenderMove.power, defenderMove.type, critical, defender, attacker, &damages, &ai->defenderMon, &ai->attackerMon);
-
-            damages.damageRoll = BattleAI_AdjustUnusualMoveDamage(&ai->defenderMon, &ai->attackerMon, damages.damageRoll, defenderMove.effect, defenderMoveno, effectiveness);
-            for (int u = 0; u < 16; u++) {
-                damages.damageRange[u] = BattleAI_AdjustUnusualMoveDamage(&ai->defenderMon, &ai->attackerMon, damages.damageRange[u], defenderMove.effect, defenderMoveno, effectiveness);
-            }
-
-            BOOL playerCanOneShotAiMon = CanAttackerOneShotDefender(damages.damageRoll, defenderMove.split, defenderMoveno, &ai->defenderMon, &ai->attackerMon);
-            if (playerCanOneShotAiMon) {
-                ai->playerCanOneShotMonWithAnyMove = TRUE;
-                ai->playerCanOneShotMonWithMove[k] = TRUE;
-            }
-
-            if (damages.damageRoll > ai->maxDamageReceived) {
-                ai->maxDamageReceived = damages.damageRoll;
-#ifdef BATTLE_DEBUG_OUTPUT
-                highestDamageMoveIndex = k;
-#endif
-            }
-            if (defenderMove.split == SPLIT_SPECIAL) {
-                ai->defenderHasAtleastOneSpecialMove = 1;
-            } else {
-                ai->defenderHasAtleastOnePhysicalMove = 1;
-            }
-            if (IsMoveUsefulSoundMove(defenderMoveno) && (defenderMove.split == SPLIT_STATUS || damages.moveEffectiveness >= TYPE_MUL_NORMAL)) {
-                ai->defenderHasAtleastOneUsefulSoundMove = TRUE;
-            }
-            if (IsMoveForceSwitching(defenderMoveno)) {
-                ai->defenderCanForceSwitching = TRUE;
-            }
-
-            debug_printf("Receiving from move %d: %3d is [%4d-%4d], roll %4d > att.HP %d\n", k, defenderMoveno, damages.damageRange[0], damages.damageRange[15], damages.damageRoll, ai->attackerMon.hp);
-        } else {
-            ai->defenderHasAtleastOneStatusMove = TRUE;
-        }
-    }
-
-#ifdef BATTLE_DEBUG_OUTPUT
-    debug_printf("Overall Max damage received from %i:%i is %d > %d att.HP\n", highestDamageMoveIndex, ctx->battlemon[ai->defender].move[highestDamageMoveIndex], ai->maxDamageReceived, ai->attackerMon.hp);
-#endif // BATTLE_DEBUG_OUTPUT
-
-    ai->attackerHasAttackingMoves = FALSE;
-    ai->monCanOneShotPlayerWithAnyMove = FALSE;
-    for (int j = 0; j < ai->attackerMovesKnown; j++) {
-        struct AI_damage damages = { 0 };
-        u32 attackerMoveno = ctx->battlemon[attacker].move[j];
-        struct BattleMove attackerMove = ctx->moveTbl[attackerMoveno];
-        if (attackerMove.split == SPLIT_STATUS && ctx->battlemon[attacker].pp[j]) {
-            u8 movetype = GetAdjustedMoveTypeBasics(ctx, attackerMoveno, ai->attackerMon.ability, attackerMove.type);
-            ai->effectivenessOnPlayer[j] = BattleAI_GetTypeEffectiveness(bsys, ctx, attackerMoveno, movetype, &effectivenessFlag, &ai->attackerMon, &ai->defenderMon);
-        } else if (attackerMove.power && ctx->battlemon[attacker].pp[j]) {
-            ai->attackerHasAttackingMoves = TRUE;
-            damages.damageRoll = BattleAI_CalcDamage(bsys, ctx, attackerMoveno, ctx->side_condition[BATTLER_IS_ENEMY(attacker)], ctx->field_condition, attackerMove.power, attackerMove.type, critical, attacker, defender, &damages, &ai->attackerMon, &ai->defenderMon);
-            ai->effectivenessOnPlayer[j] = damages.moveEffectiveness;
-
-            damages.damageRoll = BattleAI_AdjustUnusualMoveDamage(&ai->attackerMon, &ai->defenderMon, damages.damageRoll, attackerMove.effect, attackerMoveno, ai->effectivenessOnPlayer[j]);
-            for (int u = 0; u < 16; u++) {
-                damages.damageRange[u] = BattleAI_AdjustUnusualMoveDamage(&ai->attackerMon, &ai->defenderMon, damages.damageRange[u], attackerMove.effect, attackerMoveno, ai->effectivenessOnPlayer[j]);
-            }
-
-            BOOL aiMonCanOneshotPlayer = CanAttackerOneShotDefender(damages.damageRoll, attackerMove.split, attackerMoveno, &ai->attackerMon, &ai->defenderMon);
-
-            ai->attackerRolledMoveDamages[j] = damages.damageRoll;
-            if (aiMonCanOneshotPlayer) {
-                ai->monCanOneShotPlayerWithAnyMove = TRUE;
-                ai->monCanOneShotPlayerWithMove[j] = TRUE;
-                ai->attackerRolledMoveDamages[j] = ai->defenderMon.hp; // cap killing move's damage at defender HP, so that all killing moves are treated equally as "highest damage"
-            }
-            debug_printf("Dealing with move %d: %3d is [%4d-%4d], roll %4d > def.HP %d\n", j, attackerMoveno, damages.damageRange[0], damages.damageRange[15], damages.damageRoll, ai->defenderMon.hp);
-
-            if (ai->attackerRolledMoveDamages[j] > ai->attackerRolledMaxDamage) {
-                ai->attackerRolledMaxDamage = ai->attackerRolledMoveDamages[j];
-            }
-        }
-    }
+    return ctx->field_condition & FIELD_CONDITION_WEATHER;
 }
 
-int LONG_CALL BattleAI_PostKOSwitchIn_Internal(struct BattleSystem *bsys, int attacker, int *score, BOOL calcWithHighestDamageHit)
+
+BOOL LONG_CALL HasMovePranksterPriority(struct BattleSystem *bsys, u8 attacker, u32 attackerMove, u32 attackerAbility, u8 defender)
 {
-    debug_printf("BattleAI_PostKOSwitchIn_Internal %d\n", attacker);
-
     struct BattleStruct *ctx = bsys->sp;
-    int battleType = BattleTypeGet(bsys);
+    struct BattleMove attackerMoveStruct = ctx->moveTbl[attackerMove];
 
-    struct AI_sDamageCalc attackerMon = { 0 };
-    struct AI_sDamageCalc defenderMon = { 0 };
-
-    u8 critical = 0;
-
-    u8 speedCalc;
-    u32 defender = BATTLER_OPPONENT(attacker); // default for singles -- updated in the doubles section
-    u8 slot1, slot2;
-    u16 moveno = 0;
-    u32 monDealsRolledDamage[6] = { 0 };
-    u32 monHighestDamageMoveno = 0;
-    u32 monReceivingHighestDamageMoveno = 0;
-    u32 monReceivesDamage[6] = { 0 };
-    u16 switchInScore[6] = { 0 };
-    int partySize = 0;
-    int picked = 6; // in Order
-    u32 effectivenessFlag = 0;
-
-    slot1 = attacker;
-    slot2 = slot1;
-    debug_printf("Targeting defender in slot %d(%d) with hp %d\n", defender, ctx->battlemon[defender].species, ctx->battlemon[defender].hp);
-
-    if (battleType & (BATTLE_TYPE_TAG | BATTLE_TYPE_MULTI | BATTLE_TYPE_DOUBLE)) {
-        slot2 = BATTLER_ALLY(attacker);
-        if (ctx->battlemon[defender].hp == 0) {
-            debug_printf("No target\n");
-            return 6;
-        }
+    if (attackerAbility == ABILITY_PRANKSTER
+        && attackerMoveStruct.split == SPLIT_STATUS
+        //&& ctx->clientPriority[attacker] > 0
+        && (attackerMoveStruct.target == RANGE_ADJACENT_OPPONENTS
+            || (attackerMoveStruct.target == RANGE_SINGLE_TARGET
+                && BATTLERS_ON_DIFFERENT_SIDE(attacker, defender)))) {
+        return TRUE;
     }
-    
-    FillDamageStructFromBattleMon(bsys, ctx, &defenderMon, defender);
-
-    partySize = Battle_GetClientPartySize(bsys, attacker);
-    for (int i = 0; i < partySize; i++) {
-        struct PartyPokemon *mon = Battle_GetClientPartyMon(bsys, attacker, i);
-        attackerMon.species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
-        debug_printf("Slot %d:%d hp:%d,\n", i, attackerMon.species, GetMonData(mon, MON_DATA_HP, 0));
-        debug_printf("sel_m1 %d, sel_m2 %d, switchSl1 %d, switchSl1 %d\n", ctx->sel_mons_no[slot1], ctx->sel_mons_no[slot2], ctx->aiSwitchedPartySlot[slot1], ctx->aiSwitchedPartySlot[slot2]);
-
-        if (attackerMon.species != SPECIES_NONE && attackerMon.species != SPECIES_EGG && GetMonData(mon, MON_DATA_HP, 0)
-            && i != ctx->sel_mons_no[slot1]
-            && i != ctx->sel_mons_no[slot2]
-            && i != ctx->aiSwitchedPartySlot[slot1]
-            && i != ctx->aiSwitchedPartySlot[slot2]) {
-            switchInScore[i] = 100;
-
-            FillDamageStructFromPartyMon(bsys, ctx, &attackerMon, mon, attacker, i);
-
-            speedCalc = BattleAI_CalcSpeed(bsys, ctx, defender, mon, CALCSPEED_FLAG_NO_PRIORITY); // checks actual turn order with field state considered
-
-            for (u8 j = 0; j < CLIENT_MAX; ++j) {
-                struct AI_damage damages = { 0 };
-                moveno = GetMonData(mon, MON_DATA_MOVE1 + j, NULL);
-                u8 pp = GetMonData(mon, MON_DATA_MOVE1PP + j, NULL);
-                if (moveno != MOVE_NONE && pp) {
-                    struct BattleMove attackerMove = ctx->moveTbl[moveno];
-
-                    u8 movetype = GetAdjustedMoveTypeBasics(ctx, moveno, attackerMon.ability, attackerMove.type);
-                    u32 effectiveness = BattleAI_GetTypeEffectiveness(bsys, ctx, moveno, movetype, &effectivenessFlag, &attackerMon, &defenderMon);
-
-                    if (attackerMove.split != SPLIT_STATUS && attackerMove.power) {
-                        damages.damageRoll = BattleAI_CalcDamage(bsys, ctx, moveno, ctx->side_condition[BATTLER_IS_ENEMY(attacker)], ctx->field_condition, attackerMove.power, attackerMove.type, critical, attacker, defender, &damages, &attackerMon, &defenderMon);
-                        damages.damageRoll = damages.damageRange[15]; //max Damage
-
-                        damages.damageRoll = BattleAI_AdjustUnusualMoveDamage(&attackerMon, &defenderMon, damages.damageRoll, attackerMove.effect, moveno, effectiveness);
-                        for (int u = 0; u < 16; u++) {
-                            damages.damageRange[u] = BattleAI_AdjustUnusualMoveDamage(&attackerMon, &defenderMon, damages.damageRange[u], attackerMove.effect, moveno, effectiveness);
-                        }
-
-                        if (damages.damageRoll > monDealsRolledDamage[i]) {
-                            monHighestDamageMoveno = moveno;
-                            monDealsRolledDamage[i] = damages.damageRoll;
-                        }
-                    }
-                    debug_printf("Dealing with move %d: %3d deals [%4d-%4d], roll %4d > def.HP %d\n", j, moveno, damages.damageRange[0], damages.damageRange[15], damages.damageRoll, defenderMon.hp);
-                }
-            }
-
-            for (int k = 0; k < GetBattlerLearnedMoveCount(bsys, ctx, defender); ++k) {
-                struct AI_damage damages = { 0 };
-                u32 defenderMoveno = ctx->battlemon[defender].move[k];
-                struct BattleMove defenderMove = ctx->moveTbl[defenderMoveno];
-
-                u8 movetype = GetAdjustedMoveTypeBasics(ctx, defenderMoveno, defenderMon.ability, defenderMove.type);
-                u32 effectiveness = BattleAI_GetTypeEffectiveness(bsys, ctx, defenderMoveno, movetype, &effectivenessFlag, &defenderMon, &attackerMon);
-
-                if (defenderMove.split != SPLIT_STATUS && defenderMove.power && ctx->battlemon[defender].pp[k]) {
-                    damages.damageRoll = BattleAI_CalcDamage(bsys, ctx, defenderMoveno, ctx->side_condition[BATTLER_IS_ENEMY(defender)], ctx->field_condition, defenderMove.power, defenderMove.type, critical, defender, attacker, &damages, &defenderMon, &attackerMon);
-                    damages.damageRoll = damages.damageRange[15]; // max Damage
-
-                    damages.damageRoll = BattleAI_AdjustUnusualMoveDamage(&defenderMon, &attackerMon, damages.damageRoll, defenderMove.effect, defenderMoveno, effectiveness);
-                    for (int u = 0; u < 16; u++) {
-                        damages.damageRange[u] = BattleAI_AdjustUnusualMoveDamage(&defenderMon, &attackerMon, damages.damageRange[u], defenderMove.effect, defenderMoveno, effectiveness);
-                    }
-
-                    if (damages.damageRoll > monReceivesDamage[i]) {
-                        monReceivingHighestDamageMoveno = defenderMoveno;
-                        monReceivesDamage[i] = damages.damageRoll;
-                    }
-                }
-                debug_printf("Receiving from move %d: %3d is [%4d-%4d], roll %4d > att.HP %d\n", k, defenderMoveno, damages.damageRange[0], damages.damageRange[15], damages.damageRoll, attackerMon.hp);
-            }
-
-            // TODO stealth rocks, spikes, toxic spikes, etc...
-            u8 aiMonCanOneshotPlayer = CanAttackerOneShotDefender(monDealsRolledDamage[i], ctx->moveTbl[monHighestDamageMoveno].split, monHighestDamageMoveno, &attackerMon, &defenderMon);
-            u8 playerCanOneShotAiMon = CanAttackerOneShotDefender(monReceivesDamage[i], ctx->moveTbl[monReceivingHighestDamageMoveno].split, monReceivingHighestDamageMoveno, &defenderMon, &attackerMon);
-            u16 partyMonPercentDamageDealt = (100 * monDealsRolledDamage[i] / defenderMon.hp);
-            u16 partyMonPercentDamageReceived = (100 * monReceivesDamage[i] / attackerMon.hp);
-
-            debug_printf("SwitchScore: SpeedCalc %d. Attacker %d deals %dpct to defender %d. Receives %dpct", speedCalc, attacker, (defenderMon.hp > 0 ? (100 * monDealsRolledDamage[i] / defenderMon.hp) : 0), defender, (100 * monReceivesDamage[i] / attackerMon.hp));
-            if (calcWithHighestDamageHit) {
-                if (partyMonPercentDamageReceived >= 100) {
-                    switchInScore[i] -= 10;
-                } else if (speedCalc == 0 && (2 * partyMonPercentDamageReceived >= 100)) {
-                    switchInScore[i] -= 10;
-                }
-                if (IS_ITEM_MEGA_STONE(attackerMon.item)) {
-                    switchInScore[i] -= 10;
-                }
-            }
-
-            if (!playerCanOneShotAiMon && (attackerMon.species == SPECIES_WYNAUT || attackerMon.species == SPECIES_WOBBUFFET)) {
-                switchInScore[i] += 2;
-            }
-
-            if (speedCalc > 0) {
-                if (aiMonCanOneshotPlayer) {
-                    switchInScore[i] += 5;
-                } else if (partyMonPercentDamageDealt >= partyMonPercentDamageReceived) {
-                    switchInScore[i] += 3;
-                } else {
-                    switchInScore[i] += 1;
-                }
-
-                if (attackerMon.species == SPECIES_DITTO) {
-                    switchInScore[i] += 2;
-                }
-            } else {
-                if (aiMonCanOneshotPlayer && !playerCanOneShotAiMon) {
-                    switchInScore[i] += 4;
-                } else if (partyMonPercentDamageDealt > partyMonPercentDamageReceived) {
-                    switchInScore[i] += 2;
-                } else if (playerCanOneShotAiMon) {
-                    switchInScore[i] -= 1;
-                }
-            }
-            debug_printf(": %d\n", switchInScore[i]);
-            // default += 0;
-        }
-    }
-
-    u16 currentScore = switchInScore[0];
-    for (int i = 0; i < partySize; i++) {
-        if (switchInScore[i] > currentScore) {
-            picked = i;
-            *score = switchInScore[i];
-            currentScore = switchInScore[i];
-        }
-    }
-    for (int i = 0; i < partySize; i++) {
-        debug_printf("%i ", switchInScore[i]);
-    }
-    debug_printf("-> picked %i\n", picked);
-
-    return picked;
+    return FALSE;
 }
