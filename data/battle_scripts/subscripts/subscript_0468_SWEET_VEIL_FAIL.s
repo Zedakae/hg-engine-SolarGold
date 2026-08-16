@@ -1,4 +1,5 @@
-.include "asm/include/battle_commands.inc"
+#include "constants/battle_constants.h"
+.include "battle_commands.inc"
 
 .data
 
@@ -10,7 +11,7 @@ _000:
     // ability popup
 
     // {0} can’t fall asleep due to a veil of sweetness!
-    PrintMessage 1594, TAG_NICKNAME, BATTLER_CATEGORY_MSG_TEMP
+    PrintMessage 1594, TAG_NICKNAME, BATTLER_CATEGORY_MSG_BATTLER_TEMP
     Wait
     WaitButtonABTime 30
     End

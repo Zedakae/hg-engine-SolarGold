@@ -1,4 +1,5 @@
-.include "asm/include/battle_commands.inc"
+#include "constants/battle_constants.h"
+.include "battle_commands.inc"
 
 .data
 
@@ -101,10 +102,20 @@ _193:
     WaitButtonABTime 30
     CompareVarToValue OPCODE_FLAG_SET, BSCRIPT_VAR_BATTLE_STATUS, BATTLE_STATUS_SYNCRONIZE, _209
     UpdateVar OPCODE_FLAG_ON, BSCRIPT_VAR_BATTLE_STATUS, BATTLE_STATUS_SYNCRONIZE
+    TrySynchronizeStatus _203
+    CallFromVar BSCRIPT_VAR_TEMP_DATA
+
+_203:
+    TryCureStatusBerry BATTLER_CATEGORY_DEFENDER, _218
+    CallFromVar BSCRIPT_VAR_TEMP_DATA
     End
 
 _209:
     UpdateVar OPCODE_FLAG_OFF, BSCRIPT_VAR_BATTLE_STATUS, BATTLE_STATUS_SYNCRONIZE
+    TryCureStatusBerry BATTLER_CATEGORY_SIDE_EFFECT_MON, _218
+    CallFromVar BSCRIPT_VAR_TEMP_DATA
+
+_218:
     End
 
 _214:

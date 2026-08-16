@@ -3,11 +3,6 @@
 
 .include "armips/include/animscriptcmd.s"
 
-.include "asm/include/abilities.inc"
-.include "asm/include/items.inc"
-.include "asm/include/species.inc"
-.include "asm/include/moves.inc"
-
 .create "build/move/move_anim/0_568", 0
 
 //Fell Stinger
@@ -18,11 +13,13 @@ a010_568:
     //Stinger Projectile Launching With Releasing/Inertia Effect
     addparticle 0, 1, 3
     addparticle 0, 2, 3
-    addparticle 0, 0, 3
+    addparticle 0, 0, 17
+    cmd37 6, 0, 2, 1, 1, 0, 0, "NAN", "NAN"
     playsepanmod 2120, -64, 64, 4, 2
 
     //Small Circles Particles Following Stinger Towards Opponent
-    addparticle 0, 4, 3
+    addparticle 0, 4, 17
+    cmd37 6, 0, 2, 1, 1, 0, 0, "NAN", "NAN"
     wait 10
 
     //Stinger Hitting/Impacting Opposing Pokemon Sound Effect

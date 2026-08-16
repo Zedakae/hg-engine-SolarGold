@@ -1,19 +1,19 @@
 
-#include "../../include/types.h"
-#include "../../include/config.h"
-#include "../../include/battle.h"
-#include "../../include/item.h"
-#include "../../include/mega.h"
-#include "../../include/pokemon.h"
-#include "../../include/constants/ability.h"
-#include "../../include/constants/battle_script_constants.h"
-#include "../../include/constants/file.h"
-#include "../../include/constants/item.h"
-#include "../../include/constants/moves.h"
-#include "../../include/constants/move_effects.h"
-#include "../../include/constants/species.h"
-#include "../../include/constants/system_control.h"
-#include "../../include/overlay.h"
+#include "types.h"
+#include "config.h"
+#include "battle.h"
+#include "item.h"
+#include "mega.h"
+#include "pokemon.h"
+#include "constants/ability.h"
+#include "constants/battle_script_constants.h"
+#include "constants/file.h"
+#include "constants/item.h"
+#include "constants/moves.h"
+#include "constants/move_effects.h"
+#include "constants/species.h"
+#include "constants/system_control.h"
+#include "overlay.h"
 
 static BOOL MegaEvolutionOrUltraBurst(struct BattleSystem *bsys, struct BattleStruct *ctx);
 
@@ -49,6 +49,7 @@ void __attribute__((section (".init"))) ServerBeforeActInternal(struct BattleSys
 #ifdef DEBUG_BEFORE_MOVE_LOGIC
     debug_printf("In ServerBeforeActInternal\n");
 #endif
+
     ret = 0;
     u32 flag = FALSE;
     client_set_max = BattleWorkClientSetMaxGet(bw);
@@ -64,6 +65,9 @@ void __attribute__((section (".init"))) ServerBeforeActInternal(struct BattleSys
         switch (sp->sba_seq_no) {
             case SBA_RESET_DEFIANT: {
                 // debug_printf("In SBA_RESET_DEFIANT\n");
+#ifdef DEBUG_BATTLE_SCENARIOS
+                debug_printf("--- Turn %d ---\n", sp->total_turn);
+#endif
 
                 CalcPriorityAndQuickClawCustapBerry(bw, sp);
 
@@ -105,55 +109,48 @@ void __attribute__((section (".init"))) ServerBeforeActInternal(struct BattleSys
                 // debug_printf("In SBA_SET_GIMMICK_REQUEST_STATUS\n");
 
                 for (client_no = 0; client_no < client_set_max; client_no++) {
+#ifdef DEBUG_BATTLE_SCENARIOS
+                    newBS.playerWantMega = No2Bit(client_no);
+#endif
                     flag = FALSE;
-                    if (sp->playerActions[0][3] != SELECT_ESCAPE_COMMAND &&
-                        sp->playerActions[2][3] != SELECT_ESCAPE_COMMAND) {
-                        if (BattleTypeGet(bw) & BATTLE_TYPE_MULTI) {
-                            // player requests mega
-                            if (!(client_no)) {
-                                if (CheckCanMega(sp, client_no) && (newBS.playerWantMega & No2Bit(client_no)) != 0) {
-                                    sp->battlemon[client_no].canMega = 1;
-                                    newBS.SideMega[0] = TRUE;
-                                    if (sp->battlemon[client_no].id_no == sp->battlemon[2].id_no)
-                                        newBS.SideMega[2] = TRUE;
-                                    flag = TRUE;
-                                }
-                            }
-                            // ai requests mega
-                            else {
-                                if (CheckCanMega(sp, client_no) && (BattleTypeGet(bw) & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_BATTLE_TOWER))) {
-                                    sp->battlemon[client_no].canMega = 1;
-                                    newBS.SideMega[client_no] = TRUE;
-                                    flag = TRUE;
-                                }
-                            }
-                        } else {
-                            // player requests mega
+                    if (sp->playerActions[0][3] != SELECT_ESCAPE_COMMAND && sp->playerActions[2][3] != SELECT_ESCAPE_COMMAND) {
+
+                        // Validate if the current battler can Mega Evolve
+                        if (CheckCanMega(sp, client_no)) {
+                            // Determine player request vs AI request check
+                            BOOL canProceed = FALSE;
+
                             if (!(client_no & 1)) {
-                                if (CheckCanMega(sp, client_no) && (newBS.playerWantMega & No2Bit(client_no)) != 0) {
-                                    sp->battlemon[client_no].canMega = 1;
-                                    newBS.SideMega[0] = TRUE;
-                                    newBS.SideMega[2] = TRUE;
-                                    flag = TRUE;
+                                // Player Side (Slots 0 and 2)
+                                if ((newBS.playerWantMega & No2Bit(client_no)) != 0) {
+                                    canProceed = TRUE;
+                                }
+                            } else {
+                                // AI Side (Slots 1 and 3)
+                                if (BattleTypeGet(bw) & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_FRONTIER)) {
+                                    canProceed = TRUE;
                                 }
                             }
-                            // ai requests mega
-                            else {
-                                if (CheckCanMega(sp, client_no) && (BattleTypeGet(bw) & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_BATTLE_TOWER))) {
-                                    sp->battlemon[client_no].canMega = 1;
-                                    newBS.SideMega[1] = TRUE;
-                                    newBS.SideMega[3] = TRUE;
-                                    flag = TRUE;
+
+                            if (canProceed) {
+                                sp->battlemon[client_no].canMega = 1;
+                                newBS.SideMega[client_no] = TRUE; // Mark THIS specific slot as having Mega Evolved
+
+                                // Determine partner slot index (0 <-> 2, 1 <-> 3)
+                                u32 partner_slot = client_no ^ 2;
+
+                                // If both slots belong to the SAME Trainer ID, lock out the partner slot too
+                                if (sp->battlemon[client_no].id_no == sp->battlemon[partner_slot].id_no) {
+                                    newBS.SideMega[partner_slot] = TRUE;
                                 }
+
+                                flag = TRUE;
                             }
                         }
                     }
 
                     if (flag) {
                         newBS.needMega[client_no] = MEGA_NEED;
-                        // 應該沒需要在這裡處理
-                        // sp->battlemon[client_no].form_no = GrabMegaTargetForm(sp->battlemon[client_no].species, sp->battlemon[client_no].item);
-                        // BattleFormChange(client_no, sp->battlemon[client_no].form_no, bw, sp, FALSE);
                     }
                 }
                 sp->sba_seq_no++;
@@ -355,7 +352,7 @@ void __attribute__((section (".init"))) ServerBeforeActInternal(struct BattleSys
                         sp->battlerIdTemp = client_no;
                         // decomp doesn't have this???
                         // sp->battlemon[client_no].form_no = 1; // ?
-                        LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_FOCUS_PUNCH_START);
+                        LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, BATTLE_SUBSCRIPT_TIGHTEN_FOCUS);
                         sp->next_server_seq_no = sp->server_seq_no;
                         sp->server_seq_no = 22;
                         sp->oneTurnFlag[client_no].pendingFocusPunchFlag = TRUE;
@@ -404,7 +401,6 @@ void __attribute__((section (".init"))) ServerBeforeActInternal(struct BattleSys
 static BOOL MegaEvolutionOrUltraBurst(struct BattleSystem *bsys, struct BattleStruct *ctx) {
     int client_no, i;
     int client_set_max;
-    int seq;
 
     client_set_max = BattleWorkClientSetMaxGet(bsys);
     for (i = 0; i < client_set_max; i++) {
@@ -417,6 +413,10 @@ static BOOL MegaEvolutionOrUltraBurst(struct BattleSystem *bsys, struct BattleSt
                 newBS.PlayerMegaed = TRUE;
             }
 
+            if (IS_CLIENT_IN_ILLUSION(bsys, client_no)) {
+                gIllusionStruct.dontRemoveIllusion = TRUE;
+            }
+
             ctx->battlemon[client_no].form_no = GrabMegaTargetForm(ctx->battlemon[client_no].species, ctx->battlemon[client_no].item);
 
             // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9458017
@@ -427,9 +427,9 @@ static BOOL MegaEvolutionOrUltraBurst(struct BattleSystem *bsys, struct BattleSt
             newBS.needMega[client_no] = MEGA_CHECK_APPER;
             ctx->battlerIdTemp = client_no;
             if (CheckCanSpeciesMegaEvolveByMove(ctx, client_no)) {
-                LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, SUB_SEQ_HANDLE_MOVE_MEGA_EVOLUTION);
+                LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, BATTLE_SUBSCRIPT_HANDLE_MOVE_MEGA_EVOLUTION);
             } else {
-                LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, SUB_SEQ_HANDLE_MEGA_EVOLUTION);  // load sequence 297 and execute
+                LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, BATTLE_SUBSCRIPT_HANDLE_MEGA_EVOLUTION);  // load sequence 297 and execute
             }
             ctx->next_server_seq_no = ctx->server_seq_no;
             ctx->server_seq_no = CONTROLLER_COMMAND_RUN_SCRIPT;
@@ -437,13 +437,11 @@ static BOOL MegaEvolutionOrUltraBurst(struct BattleSystem *bsys, struct BattleSt
         }
         if (newBS.needMega[client_no] == MEGA_CHECK_APPER && ctx->battlemon[client_no].hp) {
             newBS.needMega[client_no] = MEGA_NO_NEED;
-            seq = ST_ServerPokeAppearCheck(bsys, ctx);
-            if (seq) {
-                LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, seq);
-                ctx->next_server_seq_no = ctx->server_seq_no;
-                ctx->server_seq_no = CONTROLLER_COMMAND_RUN_SCRIPT;
-                return TRUE;
-            }
+
+            LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, BATTLE_SUBSCRIPT_SWITCH_IN_ABILITY_CHECK);
+            ctx->next_server_seq_no = ctx->server_seq_no;
+            ctx->server_seq_no = CONTROLLER_COMMAND_RUN_SCRIPT;
+            return TRUE;
         }
         newBS.needMega[client_no] = MEGA_NO_NEED;
     }

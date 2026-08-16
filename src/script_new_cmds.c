@@ -1,7 +1,8 @@
-#include "../include/types.h"
-#include "../include/script.h"
-#include "../include/repel.h"
 #include "../include/constants/file.h"
+#include "../include/repel.h"
+#include "../include/roamer.h"
+#include "../include/script.h"
+#include "../include/types.h"
 
 #define SCRIPT_NEW_CMD_REPEL_USE            0
 #define SCRIPT_NEW_CMD_REPEL_TOGGLE_ON      100
@@ -9,44 +10,53 @@
 
 #define SCRIPT_NEW_CMD_MAX                  256
 
-BOOL Script_RunNewCmd(SCRIPTCONTEXT *ctx) {
+BOOL Script_RunNewCmd(SCRIPTCONTEXT *ctx)
+{
     u8 sw = ScriptReadByte(ctx);
     u16 UNUSED arg0 = ScriptReadHalfword(ctx);
 
     switch (sw) {
-        case SCRIPT_NEW_CMD_REPEL_USE:;
+    case SCRIPT_NEW_CMD_REPEL_USE:;
 #ifdef IMPLEMENT_REUSABLE_REPELS
-            u16 most_recent_repel = Repel_GetMostRecent();
-            SetScriptVar(arg0, most_recent_repel);
-            Repel_Use(most_recent_repel, HEAPID_MAIN_HEAP);
+        u16 most_recent_repel = Repel_GetMostRecent();
+        SetScriptVar(arg0, most_recent_repel);
+        Repel_Use(most_recent_repel, HEAPID_MAIN_HEAP);
 #endif
-            break;
-            
-        case SCRIPT_NEW_CMD_REPEL_TOGGLE_ON:;
-            {
-                SaveData *saveData = SaveBlock2_get();
-                void *roamerSaveData = EncDataSave_GetSaveDataPtr(saveData);
-                u8 *repel_addr = SaveData_GetRepelPtr(roamerSaveData);
-                
-                SetScriptFlag(0x1002);
-                *repel_addr = 255;
-            }
-            break;
-            
-        case SCRIPT_NEW_CMD_REPEL_TOGGLE_OFF:;
-            {
-                SaveData *saveData = SaveBlock2_get();
-                void *roamerSaveData = EncDataSave_GetSaveDataPtr(saveData);
-                u8 *repel_addr = SaveData_GetRepelPtr(roamerSaveData);
-                
-                ClearScriptFlag(0x1002);
-                *repel_addr = 0;
-            }
-            break;
+        break;
 
-        default: break;
+    case SCRIPT_NEW_CMD_REPEL_TOGGLE_ON:;
+        {
+            SaveData *saveData = SaveBlock2_get();
+            void *roamerSaveData = EncDataSave_GetSaveDataPtr(saveData);
+            u8 *repel_addr = SaveData_GetRepelPtr(roamerSaveData);
+
+            SetScriptFlag(0x1002);
+            *repel_addr = 255;
+        }
+        break;
+
+    case SCRIPT_NEW_CMD_REPEL_TOGGLE_OFF:;
+        {
+            SaveData *saveData = SaveBlock2_get();
+            void *roamerSaveData = EncDataSave_GetSaveDataPtr(saveData);
+            u8 *repel_addr = SaveData_GetRepelPtr(roamerSaveData);
+
+            ClearScriptFlag(0x1002);
+            *repel_addr = 0;
+        }
+        break;
+
+    default:
+        break;
     }
 
+    return FALSE;
+}
+
+BOOL LONG_CALL ScrCmd_CreateRoamer(SCRIPTCONTEXT *ctx)
+{
+    u8 roamerNo = ScriptReadByte(ctx);
+    Save_CreateRoamerByID(ctx->fsys->savedata, roamerNo);
     return FALSE;
 }
 

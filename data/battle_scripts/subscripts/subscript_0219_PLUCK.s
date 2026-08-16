@@ -1,10 +1,10 @@
-.include "asm/include/battle_commands.inc"
+#include "constants/battle_constants.h"
+.include "battle_commands.inc"
 
 .data
 
 
  _000:
-    CheckSubstitute BATTLER_CATEGORY_DEFENDER, _noitemlost //not really need here, since TryEatBerry checks Sub too
     CompareMonDataToValue OPCODE_NEQ, BATTLER_CATEGORY_DEFENDER, BMON_DATA_CUSTAP_FLAG, 0, _noitemlost
     TryPluck _noitemlost, _notused
     PrintBufferedMessage 

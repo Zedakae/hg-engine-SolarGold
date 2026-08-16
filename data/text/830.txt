@@ -23,20 +23,20 @@ A spray-type medicine to wake the\nsleeping. It can be used to rouse a\nPokémon
 A spray-type medicine for treating\nparalysis. It can be used to free a\nPokémon that has been paralyzed.
 A medicine that can be used to fully\nrestore the max HP of a Pokémon and\ncure any status conditions it may\rhave.
 A spray-type medicine for treating\nwounds. It can be used to fully\nrestore the max HP of a Pokémon.
-A spray-type medicine for treating\nwounds. It can be used to restore\n120 HP to a Pokémon.
-A spray-type medicine for treating\nwounds. It can be used to restore 60\nHP to a Pokémon.
-A spray-type medicine that is\nbroadly effective. It can be used to\ncure any status condition a Pokémon\rmay have.
-A medicine that can be used to\nrevive a Pokémon that has fainted.\nIt also restores half the Pokémon’s\rmax HP.
-A medicine that can be used to\nrevive a Pokémon that has fainted.\nIt also fully restores the Pokémon’s\rmax HP.
-Water with high mineral content. It\ncan be used to restore 30 HP to a\nPokémon.
-A highly carbonated soda drink. It\ncan be used to restore 50 HP to a\nPokémon.
-A very sweet and refreshing drink.\nIt can be used to restore 70 HP to a\nPokémon.
-A bottle of highly nutritious milk.\nIt can be used to restore 100 HP to\na Pokémon.
-A very bitter medicinal powder. It\ncan be used to restore 60 HP to a\nPokémon.
-A very bitter medicinal root. It can\nbe used to restore 120 HP to a\nPokémon.
-A very bitter medicinal powder. It\ncan be used to cure any status\ncondition a Pokémon may have.
-A terribly bitter medicinal herb. It\nrevives a fainted Pokémon and fully\nrestores its max HP.
-A medicine that can be used to\nrestore 10 PP to a single move that\na Pokémon knows.
+A spray-type medicine for treating\nwounds. It can be used to restore\n200 HP to a Pokémon.
+A spray-type medicine for treating\nwounds. It can be used to restore\n50 HP to a Pokémon.
+A spray-type medicine that is broadly\neffective. It can be used to cure any\nstatus condition a Pokémon may have.
+A medicine that can be used to revive\na Pokémon that has fainted. It also\nrestores half the Pokémon’s max HP.
+A medicine that can be used to revive\na Pokémon that has fainted. It also\nfully restores the Pokémon’s max HP.
+Water with high mineral content.\nIt can be used to restore 30 HP\nto a Pokémon.
+A highly carbonated soda drink.\nIt can be used to restore 50 HP\nto a Pokémon.
+A very sweet and refreshing drink.\nIt can be used to restore 70 HP\nto a Pokémon.
+A bottle of highly nutritious milk.\nIt can be used to restore 100 HP\nto a Pokémon.
+A very bitter medicinal powder.\nIt can be used to restore 60 HP\nto a Pokémon.
+A very bitter medicinal root.\nIt can be used to restore 120 HP\nto a Pokémon.
+A very bitter medicinal powder.\nIt can be used to cure any status\ncondition a Pokémon may have.
+A terribly bitter medicinal herb.\nIt revives a fainted Pokémon\nand fully restores its max HP.
+A medicine that can be used to\nrestore 10 PP to a single move\nthat a Pokémon knows.
 A medicine that can be used to fully\nrestore the max PP of a single move\nthat a Pokémon knows.
 A medicine that can be used to\nrestore 10 PP to all four moves that\na Pokémon knows.
 A medicine that can be used to fully\nrestore the max PP of all four moves\nthat a Pokémon knows.
@@ -54,13 +54,13 @@ A nutritious drink for Pokémon. This\ndrink increases base points for a\nPokém
 A medicine that can be used to raise\nthe max PP of a single move that a\nPokémon knows as high as it can\rpossibly go.
 A hidden gem found in the Old\nChateau. It can be used to cure any\nstatus condition a Pokémon may have.
 An item that prevents Pokémon on\nyour side from having their stats\nlowered in battle for five turns.
-An item that raises the critical-hit\nratio greatly. It can be used only\nonce and wears off if the Pokémon is\rwithdrawn.
-An item that sharply boosts the\nAttack stat of a Pokémon during a\nbattle. It wears off once the\rPokémon is withdrawn.
-An item that sharply boosts the\nDefense stat of a Pokémon during a\nbattle. It wears off once the\rPokémon is withdrawn.
-An item that sharply boosts the\nSpeed stat of a Pokémon during a\nbattle. It wears off once the\rPokémon is withdrawn.
-An item that sharply boosts the\naccuracy of a Pokémon during a\nbattle. It wears off once the\rPokémon is withdrawn.
-An item that sharply boosts the Sp.\nAtk stat of a Pokémon during a\nbattle. It wears off once the\rPokémon is withdrawn.
-An item that sharply boosts the Sp.\nDef stat of a Pokémon during a\nbattle. It wears off once the\rPokémon is withdrawn.
+An item that raises the critical-hit\nratio. It can be used only once and\nwears off if the Pokémon is withdrawn.
+An item that boosts the Attack stat of\na Pokémon during battle. It wears off\nonce the Pokémon is withdrawn.
+An item that boosts the Defense stat of\na Pokémon during battle. It wears off\nonce the Pokémon is withdrawn.
+An item that boosts the Speed stat of\na Pokémon during battle. It wears off\nonce the Pokémon is withdrawn.
+An item that boosts the Accuracy stat of\na Pokémon during battle. It wears off\nonce the Pokémon is withdrawn.
+An item that boosts the Sp. Atk stat of\na Pokémon during battle. It wears off\nonce the Pokémon is withdrawn.
+An item that boosts the Sp. Def stat of\na Pokémon during battle. It wears off\nonce the Pokémon is withdrawn.
 A doll that attracts the attention\nof Pokémon. It guarantees escape\nfrom any battle with wild Pokémon.
 A toy that attracts the attention of\nPokémon. It guarantees escape from\nany battle with wild Pokémon.
 A flute made from blue glass. It\nawakens sleeping Pokémon.
@@ -144,80 +144,80 @@ Stationery featuring a print of cool\nmechanical designs. Let a Pokémon\nhold i
 Stationery featuring a print of\ngiant heart patterns. Let a Pokémon\nhold it for delivery.
 Stationery featuring a print of a\nchilly, snow-covered world. Let a\nPokémon hold it for delivery.
 Stationery featuring a print\ndepicting the huge expanse of space.\nLet a Pokémon hold it for delivery.
-Stationery featuring a print of\ncolorful letter sets. Let a Pokémon\nhold it for delivery.
-Stationery featuring a print of a\nvivid rainbow pattern. Let a Pokémon\nhold it for delivery.
-Stationery featuring a print of a\ntough-looking brick pattern. Let a\nPokémon hold it for delivery.
-If a Pokémon holds one of these\nBerries, it will be able to free\nitself from paralysis.
-If a Pokémon holds one of these\nBerries, it will be able to wake\nitself from sleep.
-If a Pokémon holds one of these\nBerries, it will be able to lift the\neffects of being poisoned from\ritself.
-If a Pokémon holds one of these\nBerries, it will be able to cure\nitself of a burn.
-If a Pokémon holds one of these\nBerries, it will be able to thaw\nitself after being  frozen.
-If a Pokémon holds one of these\nBerries, it will be able to restore\n10 PP to a move.
-If a Pokémon holds one of these\nBerries, it will be able to restore\n10 HP to itself.
-If a Pokémon holds one of these\nBerries, it will be able to cure\nitself of confusion.
-If a Pokémon holds one of these\nBerries, it will be able to cure\nitself of any status condition it\rmay have.
-If a Pokémon holds one of these\nBerries, it will be able to restore\na small amount of HP to itself.
-If a Pokémon holds one of these\nBerries, it restores their HP in a\npinch, but will cause confusion if\rit hates the taste.
-If a Pokémon holds one of these\nBerries, it restores their HP in a\npinch, but will cause confusion if\rit hates the taste.
-If a Pokémon holds one of these\nBerries, it restores their HP in a\npinch, but will cause confusion if\rit hates the taste.
-If a Pokémon holds one of these\nBerries, it restores their HP in a\npinch, but will cause confusion if\rit hates the taste.
-If a Pokémon holds one of these\nBerries, it restores their HP in a\npinch, but will cause confusion if\rit hates the taste.
-Used to make Pokéblocks that will\nenhance Coolness. Its red flesh is\nspicy if eaten.
-Used to make Pokéblocks that will\nenhance Beauty. Its blue flesh is\ndry if eaten.
-Used to make Pokéblocks that will\nenhance Cuteness. Its pink flesh is\nsweet if eaten.
-Used to make Pokéblocks that will\nenhance Cleverness. Its green flesh\nis bitter if eaten.
-Used to make Pokéblocks that will\nenhance Toughness. Its yellow flesh\nis sour if eaten.
-If a Pokémon is fed this Berry, it\nwill grow more friendly, but it will\nlose base points for its HP stat.
-If a Pokémon is fed this Berry, it\nwill grow more friendly, but it will\nlose base points for its Attack\rstat.
-If a Pokémon is fed this Berry, it\nwill grow more friendly, but it will\nlose base points for its Defense\rstat.
-If a Pokémon is fed this Berry, it\nwill grow more friendly, but it will\nlose base points for its Sp. Atk\rstat.
-If a Pokémon is fed this Berry, it\nwill grow more friendly, but it will\nlose base points for its Sp. Def\rstat.
-If a Pokémon is fed this Berry, it\nwill grow more friendly, but it will\nlose base points for its Speed stat.
-Used to make Pokéblocks that will\nenhance Beauty. This Berry is rare\nin other regions.
-Used to make Pokéblocks that will\nenhance Cuteness. This Berry is rare\nin other regions.
-Used to make Pokéblocks that will\nenhance Cleverness. This Berry is\nrare in other regions.
-Used to make Pokéblocks that will\nenhance Toughness. This Berry is\nrare in other regions.
-Used to make Pokéblocks that will\nenhance Cuteness. This Berry is rare\nin other regions.
-Used to make Pokéblocks that will\nenhance Beauty. This Berry is rare\nin other regions.
-Used to make Pokéblocks that will\nenhance Cleverness. This Berry is\nrare in other regions.
-Used to make Pokéblocks that will\nenhance Cleverness. This Berry is\nrare in other regions.
-Used to make Pokéblocks that will\nenhance Beauty. This Berry is rare\nin other regions.
-If a Pokémon holding this Berry is\nhit with a supereffective Fire-type\nmove, the power of that move will be\rweakened.
-If a Pokémon holding this Berry is\nhit with a supereffective Water-type\nmove, the power of that move will be\rweakened.
-If a Pokémon holding this Berry is\nhit with a supereffective\nElectric-type move, the power of\rthat move will be weakened.
-If a Pokémon holding this Berry is\nhit with a supereffective Grass-type\nmove, the power of that move will be\rweakened.
-If a Pokémon holding this Berry is\nhit with a supereffective Ice-type\nmove, the power of that move will be\rweakened.
-If a Pokémon holding this Berry is\nhit with a supereffective\nFighting-type move, the power of\rthat move will be weakened.
-If a Pokémon holding this Berry is\nhit with a supereffective\nPoison-type move, the power of that\rmove will be weakened.
-If a Pokémon holding this Berry is\nhit with a supereffective\nGround-type move, the power of that\rmove will be weakened.
-If a Pokémon holding this Berry is\nhit with a supereffective\nFlying-type move, the power of that\rmove will be weakened.
-If a Pokémon holding this Berry is\nhit with a supereffective\nPsychic-type move, the power of that\rmove will be weakened.
-If a Pokémon holding this Berry is\nhit with a supereffective Bug-type\nmove, the power of that move will be\rweakened.
-If a Pokémon holding this Berry is\nhit with a supereffective Rock-type\nmove, the power of that move will be\rweakened.
-If a Pokémon holding this Berry is\nhit with a supereffective Ghost-type\nmove, the power of that move will be\rweakened.
-If a Pokémon holding this Berry is\nhit with a supereffective\nDragon-type move, the power of that\rmove will be weakened.
-If a Pokémon holding this Berry is\nhit with a supereffective Dark-type\nmove, the power of that move will be\rweakened.
-If a Pokémon holding this Berry is\nhit with a supereffective Steel-type\nmove, the power of that move will be\rweakened.
-If a Pokémon holding this Berry is\nhit with a Normal-type move, the\npower of that move will be weakened.
-If a Pokémon holds one of these\nBerries, its Attack stat will be\nboosted should it find itself in a\rpinch.
-If a Pokémon holds one of these\nBerries, its Defense stat will be\nboosted should it find itself in a\rpinch.
-If a Pokémon holds one of these\nBerries, its Speed stat will be\nboosted should it find itself in a\rpinch.
-If a Pokémon holds one of these\nBerries, its Sp. Atk stat will be\nboosted should it find itself in a\rpinch.
-If a Pokémon holds one of these\nBerries, its Sp. Def stat will be\nboosted should it find itself in a\rpinch.
-If a Pokémon holds one of these\nBerries, its critical-hit ratio will\nbe boosted should it find itself in\ra pinch.
-If a Pokémon holds one of these\nBerries, one of its stats will be\nsharply boosted should it find\ritself in a pinch.
-If a Pokémon holds one of these\nBerries, it will be able to regain\nsome HP if it is hit with a\rsupereffective move.
-If a Pokémon holds one of these\nBerries, its accuracy will be\nboosted just once should it find\ritself in a pinch.
-If a Pokémon holds one of these\nBerries, it will be able to act\nfaster just once should it find\ritself in a pinch.
-If a Pokémon holding this Berry is\nhit with a physical move, the\nattacker will also take damage.
-If a Pokémon holding this Berry is\nhit with a special move, the\nattacker will also take damage.
-An item to be held by a Pokémon. It\ncasts a tricky glare that lowers the\nopposing Pokémon’s accuracy.
-An item to be held by a Pokémon. It\nwill restore any lowered stat in\nbattle-but only once.
-An item to be held by a Pokémon.\nThis stiff, heavy brace helps\nPokémon grow strong but cuts Speed\rin battle.
-An item to be held by a Pokémon. The\nholder gets a share of a battle’s\nExp. Points without battling.
+Stationery featuring a print\nof colorful letter sets.\nLet a Pokémon hold it for delivery.
+Stationery featuring a print\nof a vivid rainbow pattern.\nLet a Pokémon hold it for delivery.
+Stationery featuring a print\nof a tough-looking brick pattern.\nLet a Pokémon hold it for delivery.
+If a Pokémon holds one of these Berries,\nit will be able to free itself from\nparalysis.
+If a Pokémon holds one of these Berries,\nit will be able to wake itself from sleep.
+If a Pokémon holds one of these Berries,\nit will be able to lift the effects of\nbeing poisoned from itself.
+If a Pokémon holds one of these Berries,\nit will be able to cure itself of a burn.
+If a Pokémon holds one of these Berries,\nit will be able to thaw itself after being\n frozen.
+If a Pokémon holds one of these Berries,\nit will be able to restore 10 PP to a\nmove.
+If a Pokémon holds one of these Berries,\nit will be able to restore 10 HP to\nitself.
+If a Pokémon holds one of these Berries,\nit will be able to cure itself of\nconfusion.
+If a Pokémon holds one of these Berries,\nit will be able to cure itself of any\nstatus condition it may have.
+If a Pokémon holds one of these Berries,\nit will be able to restore a small amount\nof HP to itself.
+If a Pokémon holds one of these Berries,\nit restores their HP in a pinch, but will\ncause confusion if it hates the taste.
+If a Pokémon holds one of these Berries,\nit restores their HP in a pinch, but will\ncause confusion if it hates the taste.
+If a Pokémon holds one of these Berries,\nit restores their HP in a pinch, but will\ncause confusion if it hates the taste.
+If a Pokémon holds one of these Berries,\nit restores their HP in a pinch, but will\ncause confusion if it hates the taste.
+If a Pokémon holds one of these Berries,\nit restores their HP in a pinch, but will\ncause confusion if it hates the taste.
+Used to make Pokéblocks\nthat will enhance Coolness.\nIts red flesh is spicy if eaten.
+Used to make Pokéblocks\nthat will enhance Beauty.\nIts blue flesh is dry if eaten.
+Used to make Pokéblocks\nthat will enhance Cuteness.\nIts pink flesh is sweet if eaten.
+Used to make Pokéblocks\nthat will enhance Cleverness.\nIts green flesh is bitter if eaten.
+Used to make Pokéblocks\nthat will enhance Toughness.\nIts yellow flesh is sour if eaten.
+If a Pokémon is fed this Berry,\nit will grow more friendly, but it\nwill lose base points for its HP stat.
+If a Pokémon is fed this Berry,\nit will grow more friendly, but it\nwill lose base points for its Attack stat.
+If a Pokémon is fed this Berry,\nit will grow more friendly, but it\nwill lose base points for its Defense stat.
+If a Pokémon is fed this Berry,\nit will grow more friendly, but it\nwill lose base points for its Sp. Atk stat.
+If a Pokémon is fed this Berry,\nit will grow more friendly, but it\nwill lose base points for its Sp. Def stat.
+If a Pokémon is fed this Berry,\nit will grow more friendly, but it\nwill lose base points for its Speed stat.
+Used to make Pokéblocks that will\nenhance Beauty.\nThis Berry is rare in other regions.
+Used to make Pokéblocks that will\nenhance Cuteness.\nThis Berry is rare in other regions.
+Used to make Pokéblocks that will\nenhance Cleverness.\nThis Berry is rare in other regions.
+Used to make Pokéblocks that will\nenhance Toughness.\nThis Berry is rare in other regions.
+Used to make Pokéblocks that will\nenhance Cuteness.\nThis Berry is rare in other regions.
+Used to make Pokéblocks that will\nenhance Beauty.\nThis Berry is rare in other regions.
+Used to make Pokéblocks that will\nenhance Cleverness.\nThis Berry is rare in other regions.
+Used to make Pokéblocks that will\nenhance Cleverness.\nThis Berry is rare in other regions.
+Used to make Pokéblocks that will\nenhance Beauty.\nThis Berry is rare in other regions.
+If a Pokémon holding this Berry is hit\nwith a supereffective Fire-type move,\nthe power of that move will be weakened.
+If a Pokémon holding this Berry is hit\nwith a supereffective Water-type move,\nthe power of that move will be weakened.
+If a Pokémon holding this Berry is hit\nwith a supereffective Electric-type move,\nthe power of that move will be weakened.
+If a Pokémon holding this Berry is hit\nwith a supereffective Grass-type move,\nthe power of that move will be weakened.
+If a Pokémon holding this Berry is hit\nwith a supereffective Ice-type move,\nthe power of that move will be weakened.
+If a Pokémon holding this Berry is hit\nwith a supereffective Fighting-type move,\nthe power of that move will be weakened.
+If a Pokémon holding this Berry is hit\nwith a supereffective Poison-type move,\nthe power of that move will be weakened.
+If a Pokémon holding this Berry is hit\nwith a supereffective Ground-type move,\nthe power of that move will be weakened.
+If a Pokémon holding this Berry is hit\nwith a supereffective Flying-type move,\nthe power of that move will be weakened.
+If a Pokémon holding this Berry is hit\nwith a supereffective Psychic-type move,\nthe power of that move will be weakened.
+If a Pokémon holding this Berry is hit\nwith a supereffective Bug-type move,\nthe power of that move will be weakened.
+If a Pokémon holding this Berry is hit\nwith a supereffective Rock-type move,\nthe power of that move will be weakened.
+If a Pokémon holding this Berry is hit\nwith a supereffective Ghost-type move,\nthe power of that move will be weakened.
+If a Pokémon holding this Berry is hit\nwith a supereffective Dragon-type move,\nthe power of that move will be weakened.
+If a Pokémon holding this Berry is hit\nwith a supereffective Dark-type move,\nthe power of that move will be weakened.
+If a Pokémon holding this Berry is hit\nwith a supereffective Steel-type move,\nthe power of that move will be weakened.
+If a Pokémon holding this Berry is hit\nwith a Normal-type move, the power of\nthat move will be weakened.
+If a Pokémon holds one of these Berries,\nits Attack stat will be boosted should\nit find itself in a pinch.
+If a Pokémon holds one of these Berries,\nits Defense stat will be boosted should\nit find itself in a pinch.
+If a Pokémon holds one of these Berries,\nits Speed stat will be boosted should\nit find itself in a pinch.
+If a Pokémon holds one of these Berries,\nits Sp. Atk stat will be boosted should\nit find itself in a pinch.
+If a Pokémon holds one of these Berries,\nits Sp. Def stat will be boosted should\nit find itself in a pinch.
+If a Pokémon holds one of these Berries,\nits critical-hit ratio will be boosted\nshould it find itself in a pinch.
+If a Pokémon holds one of these Berries,\none of its stats will be sharply boosted\nshould it find itself in a pinch.
+If a Pokémon holds one of these Berries,\nit will be able to regain some HP if it is\nhit with a supereffective move.
+If a Pokémon holds one of these Berries,\nits accuracy will be boosted just once\nshould it find itself in a pinch.
+If a Pokémon holds one of these Berries,\nit will be able to act faster just once\nshould it find itself in a pinch.
+If a Pokémon holding this Berry is hit\nwith a physical move, the attacker will\nalso take damage.
+If a Pokémon holding this Berry is hit\nwith a special move, the attacker will\nalso take damage.
+An item to be held by a Pokémon.\nIt casts a tricky glare that lowers\nthe opposing Pokémon’s accuracy.
+An item to be held by a Pokémon.\nIt will restore any lowered stat\nin battle--but only once.
+An item to be held by a Pokémon.\nThis stiff, heavy brace helps Pokémon\ngrow strong but cuts Speed in battle.
+An item to be held by a Pokémon.\nThe holder gets a share of a battle’s\nExp. Points without battling.
 An item to be held by a Pokémon.\nThis light, sharp claw lets the\nholder move first occasionally.
-An item to be held by a Pokémon. The\ncomforting chime of this bell calms\nthe holder, making it friendly.
-An item to be held by a Pokémon. It\nsnaps the user out of move-binding\neffects to move freely-but only\ronce.
+An item to be held by a Pokémon.\nThe comforting chime of this bell\ncalms the holder, making it friendly.
+An item to be held by a Pokémon.\nIt snaps the user out of move-binding\neffects to move freely--but only once.
 An item to be held by a Pokémon.\nThis curious headband boosts Attack\nbut only allows the use of one move.
 An item to be held by a Pokémon.\nWhen the holder successfully\ninflicts damage, the target may also\rflinch.
 An item to be held by a Pokémon.\nIt’s a shiny silver powder that\nboosts the power of the holder’s\rBug-type moves.
@@ -266,10 +266,10 @@ When a Pokémon holds this during a\ncontest, it looks even tougher than\nusual.
 An item to be held by a Pokémon.\nIt’s a magnifying lens that slightly\nboosts the accuracy of moves.
 An item to be held by a Pokémon.\nThis headband exudes strength,\nslightly boosting the power of\rphysical moves.
 An item to be held by a Pokémon.\nThis thick pair of glasses slightly\nboosts the power of special moves.
-An item to be held by a Pokémon.\nIt’s a well-worn belt that slightly\nboosts the power of supereffective\rmoves.
-An item to be held by a Pokémon.\nProtective moves like Light Screen\nand Reflect will be effective\rlonger.
-An item to be held by a Pokémon. It\nboosts the power of moves but at the\ncost of some HP on each hit.
-An item to be held by a Pokémon. It\nallows the instant use of a move\nthat charges on the first turn-but\ronly once.
+An item to be held by a Pokémon.\nIt’s a well-worn belt that slightly boosts\nthe power of supereffective moves.
+An item to be held by a Pokémon.\nProtective moves like Light Screen\nand Reflect will be effective longer.
+An item to be held by a Pokémon.\nIt boosts the power of moves but\nat the cost of some HP on each hit.
+An item to be held by a Pokémon.\nIt allows the instant use of a move that\ncharges on the first turn--but only once.
 An item to be held by a Pokémon.\nIt’s a bizarre orb that will badly\npoison the holder during battle.
 An item to be held by a Pokémon.\nIt’s a bizarre orb that will afflict\nthe holder with a burn during\rbattle.
 An item to be held by Ditto.\nExtremely fine yet hard, this odd\npowder boosts Ditto’s Speed stat.
@@ -462,10 +462,10 @@ A coupon to be exchanged for a\nPokémon Watch- Pokétch for short.\nThree coupo
 A coupon to be exchanged for a\nPokémon Watch- Pokétch for short.\nThree coupons are needed.
 A coupon to be exchanged for a\nPokémon Watch- Pokétch for short.\nThree coupons are needed.
 The key to Team Galactic’s sinister\nwarehouse located at the edge of\nVeilstone City.
-A fantastic medicine dispensed by\nthe pharmacy in Cianwood City. It\nfully heals a Pokémon of any\railment.
-An amazing device that can record a\nbattle between friends or the\nbattles at certain special battle\rfacilities.
-A flower sometimes bundled in\nbouquets to convey gratitude on\nspecial occasions, such as birthdays\ror anniversaries.
-A high-tech key that has to be used\nat a specific location. It emits a\nspecial electronic signal to open a\rdoor.
+A fantastic medicine dispensed by the\npharmacy in Cianwood City.\nIt fully heals a Pokémon of any ailment.
+An amazing device that can record a\nbattle between friends or the battles\nat certain special battle facilities.
+A flower sometimes bundled in\nbouquets to convey gratitude on\nspecial occasions, such as birthdays.
+A high-tech key that has to be used at\na specific location. It emits a special\nelectronic signal to open a door.
 A handy box where you can store up\nto 99 of each kind of Apricorn.
 A report of all the discovered kinds\nof Unown.
 Portable containers that allow you\nto easily cultivate Berries anywhere\nand anytime.
@@ -482,21 +482,21 @@ A pass required for riding the\nMagnet Train. It allows you to ride\nwhenever an
 An important part of a machine that\nwas stolen from the Power Plant.
 A strange feather that gleams with a\nsilvery color.
 A strange feather that gleams in\nrainbow colors.
-An Egg obtained from Mr. Pokémon. It\nhas a mysterious pattern on it, and\nwhat is in the Egg is unknown.
-A red Apricorn. It has a pungent\nscent that assails the nostrils.
-A yellow Apricorn. It has a light,\nrefreshing scent.
-A blue Apricorn. It has a slightly\ngrassy smell to it.
-A green Apricorn. It has a\nmysterious and aromatic scent.
-A pink Apricorn. It has a pleasantly\nsweet scent.
-A white Apricorn. It doesn’t have\nany aroma at all.
-A black Apricorn. It has a smell\nthat cannot be captured in words.
-A somewhat different Poké Ball that\nis more effective when catching\nPokémon that are usually very quick\rto run away.
-A somewhat different Poké Ball that\nbecomes more effective the lower the\nlevel of the Pokémon compared to\ryour own.
-A somewhat different Poké Ball that\nis more effective when catching\nPokémon in or on the water.
+An Egg obtained from Mr. Pokémon.\nIt has a mysterious pattern on it,\nand what is in the Egg is unknown.
+A red Apricorn.\nIt has a pungent scent that assails the\nnostrils.
+A yellow Apricorn.\nIt has a light, refreshing scent.
+A blue Apricorn.\nIt has a slightly grassy smell to it.
+A green Apricorn.\nIt has a mysterious and aromatic scent.
+A pink Apricorn.\nIt has a pleasantly sweet scent.
+A white Apricorn.\nIt doesn’t have any aroma at all.
+A black Apricorn.\nIt has a smell that cannot be captured\nin words.
+A somewhat different Poké Ball that is\nmore effective when catching Pokémon\nthat are usually very quick to run away.
+A somewhat different Poké Ball that\nbecomes more effective the lower the\nlevel of the Pokémon compared to your own.
+A somewhat different Poké Ball that is\nmore effective when catching Pokémon\nin or on the water.
 A somewhat different Poké Ball that\nbecomes more effective the heavier\nthe Pokémon is.
-A somewhat different Poké Ball that\nis more effective when catching\nPokémon of the opposite gender to\ryour own Pokémon.
-A somewhat different Poké Ball that\nmakes a wild Pokémon more friendly\ntoward you immediately after it’s\rcaught.
-A somewhat different Poké Ball that\nis more effective when catching\nPokémon that can be evolved using a\rMoon Stone.
+A somewhat different Poké Ball that is\nmore effective when catching Pokémon\nof the opposite gender to your own.
+A somewhat different Poké Ball that\nmakes a wild Pokémon more friendly\ntoward you immediately.
+A somewhat different Poké Ball that is\nmore effective when catching Pokémon\nthat can be evolved using a Moon Stone.
 A special Poké Ball that is used\nduring the Bug-Catching Contest.
 A special Poké Ball used in the Pal\nPark.
 A nice photo album for storing all\nthe photos taken along your\nadventure.

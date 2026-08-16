@@ -29,6 +29,10 @@ GOALS TO MAKE ROMHACK POPULAR TO AUDIENCE:
 
 CURRENTLY WORKING ON:
 
+FINISH TEAM-ROCKET ARC IN LIGHTHOUSE. MAKE SURE ALL FLAGS, TRIGGER TILES ETC ALL PLAYTESTED.
+
+THEN CREATE ALL TEAM ROCKET FIGHTS TO FINISH OFF THE EVENT ^^
+
 PLAYTEST FIGHTS TULLY/123 AND SHANE/129 ON R42.
 
 PLAYTEST TO BE DONE ON FIGHTS 166/167 (CONNIE AND PRESTON)
@@ -72,9 +76,15 @@ REMEMBER TO UPDATE TEXT/DIALOGUE FOR TM'S TO USE THIS SNIPPET WHEN IN WSL >> mak
 
 \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 
+[FLAGS USED)
+
 FLAG 2580 IS BEING USED FOR QOL MENU TO BE USEABLE IN PROF ELM SCRIPT WHEN LEAVING NEW BARK TOWN FOR FIRST TIME.
 
-FLAGS USED FROM "2550" TO "2562" SO FAR! (2562 BEING TRIGGER TILE AT R36 TO FIX BROKEN 2555 FLAG)
+FLAGS USED FROM "2550" TO "2600" SO FAR! (2600 BEING TR GRUNT BLOCKING ELEVATOR IN LIGHTHOUSE)
+
+FLAGS USED FOR NEW TEAM ROCKET ARC AT LIGHTHOUSE STARTS AT
+
+FLAG 2563 ONWARDS [2563-2572](ORIGINAL NPCS "Completed"), [2573-2581](TEAM ROCKET NPCS "So Far").
 
 FLAG 2555 UNKNOWN WHERE ITS USED BUT DON'T USE FOR NOW.
 
@@ -151,7 +161,7 @@ void ItemMenuUseFunc_InfiniteCandy(struct ItemMenuUseData* data, const struct It
     sub_0203C8F0(env, 0x0203CA9C | 1);
 }
 
-ADDED PORTABLE PC
+ADDED QOL MENU WITH TOGGLEABLE REPEL, PORTA PC & HEAL PARTY. 
 
 ADJUSTED POKEMART ITEMS
 
@@ -2211,3 +2221,75 @@ End
 Test\r
 
 ID: 9, Flag: 2558, Script 18 (Originally)
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+SCRIPT And Actions FOR TOP OF LIGHTHOUSE:
+
+Script 6:
+	LockAll
+	SetVar 0x4125 0
+	SetVar 0x4061 0
+	FadeScreen 6 1 1 0
+	WaitFadeScreen
+	FadeOutMusic 0 15
+	PlayMusic SEQ_GS_EYE_ROCKET
+	Message 19
+	WaitButton
+	CloseMessage
+	Message 20
+	WaitButton
+	CloseMessage
+	Movement Overworld.1 Action#2
+	Message 21
+	CloseMessage
+	Movement Overworld.6 Action#3
+	PlaySound SEQ_SE_DP_KI_GASYAN
+	Movement Overworld.6 Action#4
+	WaitMovement
+	Movement Overworld.6 Action#5
+	WaitMovement
+	Message 22
+	CloseMessage
+	PlaySound SEQ_SE_DP_NAGERU
+	PlaySound SEQ_SE_DP_BOWA2
+	Release Overworld.9
+	SetOWPosition Overworld.9 7 0 9 Down
+	Lock Overworld.9
+	PlayCry SPECIES_STEELIX 0
+	WaitCry
+	Movement Overworld.1 Action#6
+	Movement Overworld.1 Action#7
+	WaitMovement
+	Message 23
+	WaitButton
+	CloseMessage
+	Message 24
+	WaitButton
+	CloseMessage
+	ReleaseAll
+End
+
+Action 2:
+		FaceSouth 0x1
+End
+
+Action 3:
+		LockDir 0x1
+End
+
+Action 4:
+		JumpSouth8 0x1
+End
+
+Action 5:
+		ReleaseDir 0x1
+End
+
+Action 6:
+		EmoteDoubleExclamation 0x1
+End
+
+Action 7:
+		FaceEast 0x1
+End

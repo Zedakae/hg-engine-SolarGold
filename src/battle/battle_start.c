@@ -1,18 +1,22 @@
-#include "../../include/types.h"
-#include "../../include/config.h"
-#include "../../include/battle.h"
-#include "../../include/item.h"
-#include "../../include/mega.h"
-#include "../../include/pokemon.h"
-#include "../../include/constants/ability.h"
-#include "../../include/constants/battle_script_constants.h"
-#include "../../include/constants/file.h"
-#include "../../include/constants/item.h"
-#include "../../include/constants/moves.h"
-#include "../../include/constants/move_effects.h"
-#include "../../include/constants/species.h"
-#include "../../include/constants/system_control.h"
-#include "../../include/overlay.h"
+#include "types.h"
+#include "config.h"
+#include "battle.h"
+#include "item.h"
+#include "mega.h"
+#include "pokemon.h"
+#include "constants/ability.h"
+#include "constants/battle_script_constants.h"
+#include "constants/file.h"
+#include "constants/item.h"
+#include "constants/moves.h"
+#include "constants/move_effects.h"
+#include "constants/species.h"
+#include "constants/system_control.h"
+#include "overlay.h"
+
+#ifdef DEBUG_BATTLE_SCENARIOS
+#include "test_battle.h"
+#endif // DEBUG_BATTLE_SCENARIOS
 
 /********************************************************************************************************************/
 /********************************************************************************************************************/
@@ -57,7 +61,7 @@ struct BattleStruct *ServerInit(struct BattleSystem *bw) {
 
 #ifdef DEBUG_BATTLE_SCENARIOS
     // Apply test battle state (recharge, charging, etc.)
-    TestBattle_ApplyBattleState(bw, sp);
+    TestBattle_ApplyBattleState(sp);
 #endif
 
     return sp;
