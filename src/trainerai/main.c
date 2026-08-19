@@ -192,10 +192,10 @@ int LONG_CALL ScoreMovesAgainstAlly(struct BattleSystem *bsys, u32 attacker, u32
             case MOVE_WATER_SHURIKEN:
             case MOVE_WATER_GUN:
             case MOVE_BUBBLE_BEAM: {
-                if (bsys->trainerId[BATTLER_ENEMY] == 211 && ai->defenderAlly.ability == ABILITY_WATER_COMPACTION) {
-                    if (ctx->battlemon[BATTLER_ALLY(attacker)].states[STAT_DEFENSE] >= 10) {
-                        moveScore -= 1000;
-                    } else if (ai->defenderAlly.percenthp > 50) {
+                if (bsys->trainerId[BATTLER_ENEMY] == 211 && ai->aimonAlly.ability == ABILITY_WATER_COMPACTION) {
+                    if (ctx->battlemon[target].states[STAT_DEFENSE] >= 10) {
+                        moveScores[target][i] -= 1000;
+                    } else if (ai->aimonAlly.percenthp > 50) {
                         if (attackerMove == MOVE_WATER_SHURIKEN) {
                             moveScore += 25;
                         } else { // MOVE_WATER_GUN, MOVE_BUBBLE_BEAM
@@ -206,10 +206,10 @@ int LONG_CALL ScoreMovesAgainstAlly(struct BattleSystem *bsys, u32 attacker, u32
                 break;
             }
             case MOVE_AQUA_JET: {
-                if (bsys->trainerId[BATTLER_ENEMY] == 211 && ai->defenderAlly.ability == ABILITY_WATER_COMPACTION) {
-                    if (ctx->battlemon[BATTLER_ALLY(attacker)].states[STAT_DEFENSE] >= 10) {
-                        moveScore -= 1000;
-                    } else if (ai->defenderAlly.percenthp > 50) {
+                if (bsys->trainerId[BATTLER_ENEMY] == 211 && ai->aimonAlly.ability == ABILITY_WATER_COMPACTION) {
+                    if (ctx->battlemon[target].states[STAT_DEFENSE] >= 10) {
+                        moveScores[target][i] -= 1000;
+                    } else if (ai->aimonAlly.percenthp > 50) {
                         moveScore += 20;
                     }
                 } else if (ai->aimonAlly.item == ITEM_WEAKNESS_POLICY) {

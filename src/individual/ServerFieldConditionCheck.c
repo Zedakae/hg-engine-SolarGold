@@ -1906,6 +1906,12 @@ void ServerFieldConditionCheck(void *bw, struct BattleStruct *sp) {
                 debug_printf("In ENDTURN_END\n");
 
 #endif
+                sp->aiTurnScoring.calcState = 0;
+                for (int i = 0; i < CLIENT_MAX; i++)
+                {
+                    sp->aiTurnScoring.targets[i] = 0;
+                    sp->aiTurnScoring.choice[i] = 0;
+                }
 
                 for (int i = 0; i < client_set_max; i++) {
                     sp->battlemon[i].moveeffect.quickClawFlag = 0;
