@@ -50463,7 +50463,7 @@ const SpeciesDataEntry sSpeciesData[MAX_SPECIES_INCLUDING_FORMS + 1] = {
                 .spDefense = 50,
                 .speed = 26,
             },
-            .types = { TYPE_ELECTRIC, TYPE_ELECTRIC },
+            .types = { TYPE_ELECTRIC, TYPE_NORMAL },
             .catchRate = 255,
             .baseExpRewardPadding = 0,
             .evYields = {
@@ -50520,7 +50520,7 @@ const SpeciesDataEntry sSpeciesData[MAX_SPECIES_INCLUDING_FORMS + 1] = {
                 .spDefense = 60,
                 .speed = 121,
             },
-            .types = { TYPE_ELECTRIC, TYPE_ELECTRIC },
+            .types = { TYPE_ELECTRIC, TYPE_NORMAL },
             .catchRate = 45,
             .baseExpRewardPadding = 0,
             .evYields = {
