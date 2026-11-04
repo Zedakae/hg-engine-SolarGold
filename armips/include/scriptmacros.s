@@ -6121,7 +6121,7 @@ MOVE_16_Facing_Left                                             equ 16
 MOVE_17_Facing_Right                                            equ 17
 MOVE_18_Counterclockwise_Spinning                               equ 18
 MOVE_19_Clockwise_Spinning                                      equ 19
-MOVE_20_Running_Side_To_Side                                    equ 20 // can be either horizontally or vertically depending on the overworld's movement ranges
+MOVE_20_Running_Side_To_Side                                    equ 20 // can be either horizontally or vertically depending on the overworlds movement ranges
 MOVE_21_L_Run_Up_and_Right                                      equ 21
 MOVE_22_Patrols_Then_Stops_CRASH                                equ 22
 MOVE_23_Patrols_Then_Stops_CRASH                                equ 23
