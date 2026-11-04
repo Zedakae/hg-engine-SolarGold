@@ -982,9 +982,9 @@ const MoveSourceEntry sMoveSource[NUM_OF_MOVES + 1] = {
         .data = {
             .effect = MOVE_EFFECT_RECOIL_QUARTER,
             .split = SPLIT_PHYSICAL,
-            .power = 80,
+            .power = 70,
             .type = TYPE_NORMAL,
-            .accuracy = 90,
+            .accuracy = 95,
             .pp = 20,
             .effectChance = 0,
         },
@@ -12376,9 +12376,9 @@ const MoveSourceEntry sMoveSource[NUM_OF_MOVES + 1] = {
         .data = {
             .effect = MOVE_EFFECT_HIT_TWICE,
             .split = SPLIT_PHYSICAL,
-            .power = 35,
+            .power = 40,
             .type = TYPE_NORMAL,
-            .accuracy = 90,
+            .accuracy = 95,
             .pp = 10,
             .effectChance = 0,
         },

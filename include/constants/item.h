@@ -1692,7 +1692,7 @@
 #define ITEM_POP_POD                      1686
 #define ITEM_SOOTFOOT_ROOT                1687
 #define ITEM_SPOILED_APRICORN             1688
-#define ITEM_SNOWBALL_PLA                  1689
+#define ITEM_SNOWBALL_PLA                 1689
 #define ITEM_STICKY_GLOB                  1690
 #define ITEM_BLACK_AUGURITE               1691
 #define ITEM_PEAT_BLOCK                   1692
